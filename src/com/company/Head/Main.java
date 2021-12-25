@@ -20,9 +20,7 @@ public class Main {
         GamePanel gamepanel = new GamePanel();
         Gracz gracz = null;
         Scanner scan = new Scanner(System.in);
-        /*System.out.println("1 - wczytaj gracza \n" +
-                "2 - Stwórz nowego gracza");
-        int a = scan.nextInt();*/
+
         while (gamepanel.getWybor() != 1 || gamepanel.getWybor() != 1){
             //bardzo chamskie czekanie na odpowiedz z GamePanel na dokonanie wyboru w menu xddd
         }
