@@ -61,6 +61,9 @@ public class GamePanel extends JPanel implements ActionListener {
         } else if(e.getSource()==gra.fotowoltaiczna){
             System.out.println("Wybrano elektrownie fotowoltaiczna...");
             //uruchomienie panelu
+        }else if(e.getSource()==gra.nastepnyDzien){
+            System.out.println("Nastepny dzien...");
+            //nastepny dzien + serializacja
         }
         this.revalidate();
         this.repaint();

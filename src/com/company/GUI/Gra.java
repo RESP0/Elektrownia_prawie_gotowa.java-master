@@ -6,6 +6,7 @@ import java.awt.*;
 public class Gra extends JPanel{
     ImageIcon plansza;
     JLabel tlo;
+    JLabel stan_konta;
     JButton atomowa;
     JButton weglowa;
     JButton gazowa;
@@ -19,10 +20,16 @@ public class Gra extends JPanel{
         tlo.setIcon(plansza);
         this.add(tlo);
 
+        String stan = "5000";
+        stan_konta = new JLabel("Aktualny stan konta: " + stan);
+        stan_konta.setBounds(350, 5, 300, 30);
+        stan_konta.setFont(new Font("Arial black", Font.BOLD, 20));
+
+
         //atomowa
         ImageIcon Atomowa = new ImageIcon("Atomowa_v2.png");
         atomowa = new JButton(Atomowa);
-        atomowa.setBounds(200, 30, 343, 147);
+        atomowa.setBounds(210, 38, 343, 147);
         atomowa.setFocusable(false);
 
         //weglowa
@@ -42,10 +49,12 @@ public class Gra extends JPanel{
         fotowoltaiczna = new JButton(Fotowoltaiczna);
         fotowoltaiczna.setBounds(480, 510, 320, 85);
 
-        //nastepny dzien
         nastepnyDzien = new JButton("Nastepny dzien");
-        nastepnyDzien.setBounds(480, 510, 320, 85);
+        nastepnyDzien.setBounds(787, 5, 150, 50);
+        nastepnyDzien.setBackground(Color.cyan);
         nastepnyDzien.setFocusable(false);
+        nastepnyDzien.setFont(new Font("Arial black", Font.BOLD, 15));
+        nastepnyDzien.setAlignmentX(CENTER_ALIGNMENT);
 
         //dodaje przyciski do okna
         tlo.add(atomowa);
@@ -53,5 +62,7 @@ public class Gra extends JPanel{
         tlo.add(gazowa);
         tlo.add(fotowoltaiczna);
         tlo.add(nastepnyDzien);
+        tlo.add(stan_konta);
     }
 }
+
