@@ -1,5 +1,7 @@
 package com.company.GUI;
 
+import com.company.Head.Gracz;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -20,7 +22,9 @@ public class Gra extends JPanel{
         tlo.setIcon(plansza);
         this.add(tlo);
 
-        String stan = "5000";
+        Gracz gracz = new Gracz();
+        String stan = Integer.toString((int) gracz.getBalans());
+
         stan_konta = new JLabel("Aktualny stan konta: " + stan);
         stan_konta.setBounds(350, 5, 300, 30);
         stan_konta.setFont(new Font("Arial black", Font.BOLD, 20));
