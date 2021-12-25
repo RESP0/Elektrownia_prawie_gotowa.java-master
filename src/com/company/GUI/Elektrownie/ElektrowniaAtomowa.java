@@ -27,7 +27,8 @@ public class ElektrowniaAtomowa extends JFrame {
         this.setLayout(new GridBagLayout());
         JPanel panel = new JPanel();
 
-        panel.setBackground(Color.black);
+        panel.setBackground(Color.blue);
+        panel.setLayout(new BoxLayout(panel,BoxLayout.Y_AXIS));
         this.add(panel, new GridBagConstraints());
 
         miasto = new JLabel("Lokalizacja elektrowni: ");
