@@ -1,7 +1,8 @@
 package com.company.GUI;
-
+import com.company.Elektrownie.Elektrownia;
 import com.company.Head.Gracz;
 import com.company.Head.Serializacja;
+import com.company.GUI.Elektrownie.*;
 
 import javax.swing.*;
 import java.awt.Menu;
@@ -40,28 +41,39 @@ public class GamePanel extends JPanel implements ActionListener {
             this.remove(menu);
             setWybor(1);
             this.add(gra, BorderLayout.CENTER);
-        } else if(e.getSource()==menu.wczytajGre){
+        }
+        else if(e.getSource()==menu.wczytajGre){
             System.out.println("Otwieram zapisana gre...");
             this.remove(menu);
             setWybor(2);
             //otorz zapisana
             this.add(gra, BorderLayout.CENTER);
-        } else if(e.getSource()==menu.zakoncz){
+        }
+        else if(e.getSource()==menu.zakoncz){
             System.out.println("Zamykam...");
             System.exit(0);
-        } else if(e.getSource()==gra.atomowa){
+        }
+        else if(e.getSource()==gra.atomowa){
             System.out.println("Wybrano elektrownie atomowa...");
             //uruchomienie panelu
-        } else if(e.getSource()==gra.weglowa){
+            new ElektrowniaAtomowa();
+        }
+        else if(e.getSource()==gra.weglowa){
             System.out.println("Wybrano elektrownie weglowa...");
             //uruchomienie panelu
-        } else if(e.getSource()==gra.gazowa){
+            new ElektrowniaWeglowa();
+        }
+        else if(e.getSource()==gra.gazowa){
             System.out.println("Wybrano elektrownie gazowa...");
             //uruchomienie panelu
-        } else if(e.getSource()==gra.fotowoltaiczna){
+            new ElektrowniaGazowa();
+        }
+        else if(e.getSource()==gra.fotowoltaiczna){
             System.out.println("Wybrano elektrownie fotowoltaiczna...");
             //uruchomienie panelu
-        }else if(e.getSource()==gra.nastepnyDzien){
+            new ElektrowniaFotowoltaiczna();
+        }
+        else if(e.getSource()==gra.nastepnyDzien){
             System.out.println("Nastepny dzien...");
             //nastepny dzien + serializacja
         }
