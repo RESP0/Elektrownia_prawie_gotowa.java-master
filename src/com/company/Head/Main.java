@@ -5,6 +5,7 @@ import java.util.Scanner;
 import com.company.AtakTerro.ReakcjeNaAtakTerrorystyczny;
 import com.company.Awarie.ReakcjaNaAwarieZasilania;
 import com.company.Elektrownie.ElektrowniaAtomowa;
+import com.company.GUI.GamePanel;
 import com.company.uslugodawcy.DystrybutorPradu;
 import com.company.uslugodawcy.OdbiorcaOdpadow;
 import com.company.GUI.MyFrame;
@@ -16,24 +17,24 @@ public class Main {
 
     public static void main(String[] args) {
         new MyFrame();
-
-        ElektrowniaAtomowa atom = new ElektrowniaAtomowa("Czarnobyl", 100, 42000, 3, new Wlasciciel(), false, 86, 897, new DystrybutorPradu(), 345, new OdbiorcaOdpadow[]{new OdbiorcaOdpadow(),new OdbiorcaOdpadow()});
-        Gracz gracz;
+        GamePanel gamepanel = new GamePanel();
+        Gracz gracz = null;
         Scanner scan = new Scanner(System.in);
-        System.out.println("1 - wczytaj gracza  \n2 - Stwórz nowego gracza");
-        int a = scan.nextInt();
-        switch (a){
+        /*System.out.println("1 - wczytaj gracza \n" +
+                "2 - Stwórz nowego gracza");
+        int a = scan.nextInt();*/
+        while (gamepanel.getWybor() != 1 || gamepanel.getWybor() != 1){
+            //bardzo chamskie czekanie na odpowiedz z GamePanel na dokonanie wyboru w menu xddd
+        }
+        switch (gamepanel.getWybor()){
             case 1:
                 gracz = Serializacja.odczyt();
                 break;
             case 2:
                  gracz = new Gracz();
                  break;
-            default:
-                System.out.println("Niewłasciwy wybór");
-                return;
         }
-        while(gracz.getBalans()>0) {
+        while(gracz.getBalans()>=0) {
             for (int i = 0; i < gracz.getListaElektrowni().size(); i++) {
                 gracz.getListaElektrowni().get(i).setMocChwilowa(100);
                 gracz.getListaElektrowni().get(i).setCzyPracuje(true);

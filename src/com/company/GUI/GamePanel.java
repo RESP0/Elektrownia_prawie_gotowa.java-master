@@ -1,5 +1,8 @@
 package com.company.GUI;
 
+import com.company.Head.Gracz;
+import com.company.Head.Serializacja;
+
 import javax.swing.*;
 import java.awt.Menu;
 import java.awt.*;
@@ -11,7 +14,7 @@ public class GamePanel extends JPanel implements ActionListener {
     final int height = 628;
     Menue menu;
     Gra gra;
-    GamePanel(){
+    public GamePanel(){
         this.setPreferredSize(new Dimension(width,height));
         menu = new Menue(width,height);
         gra = new Gra(width,height);
@@ -28,16 +31,21 @@ public class GamePanel extends JPanel implements ActionListener {
         this.add(gra);
     }
 
+
     @Override
     public void actionPerformed(ActionEvent e) {
+
         if(e.getSource()==menu.nowaGra){
             System.out.println("Otwieram nowa gre...");
             this.remove(menu);
+            setWybor(1);
             this.add(gra, BorderLayout.CENTER);
         } else if(e.getSource()==menu.wczytajGre){
             System.out.println("Otwieram zapisana gre...");
             this.remove(menu);
+            setWybor(2);
             //otorz zapisana
+            this.add(gra, BorderLayout.CENTER);
         } else if(e.getSource()==menu.zakoncz){
             System.out.println("Zamykam...");
             System.exit(0);
@@ -56,5 +64,13 @@ public class GamePanel extends JPanel implements ActionListener {
         }
         this.revalidate();
         this.repaint();
+    }
+
+    private int wybor;
+    public void setWybor(int x){
+        wybor = x;
+    }
+    public int getWybor(){
+        return wybor;
     }
 }
