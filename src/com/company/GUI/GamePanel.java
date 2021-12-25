@@ -1,11 +1,6 @@
 package com.company.GUI;
-import com.company.Elektrownie.Elektrownia;
-import com.company.Head.Gracz;
-import com.company.Head.Serializacja;
 import com.company.GUI.Elektrownie.*;
-
 import javax.swing.*;
-import java.awt.Menu;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
