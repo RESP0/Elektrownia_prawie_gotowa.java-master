@@ -1,5 +1,11 @@
 package com.company.GUI;
-import com.company.GUI.Elektrownie.*;
+import com.company.Elektrownie.ElektrowniaAtomowa;
+import com.company.GUI.ElektrownieOkno.ElektrowniaAtomowaOkno;
+import com.company.GUI.ElektrownieOkno.ElektrowniaFotowoltaicznaOkno;
+import com.company.GUI.ElektrownieOkno.ElektrowniaGazowaOkno;
+import com.company.GUI.ElektrownieOkno.ElektrowniaWeglowaOkno;
+import com.company.Head.Gracz;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -8,12 +14,20 @@ import java.awt.event.ActionListener;
 public class GamePanel extends JPanel implements ActionListener {
     final int width = 942;
     final int height = 628;
+    Gracz gracz;
     Menue menu;
     Gra gra;
+    ListaEle listaAtom;
+    ListaEle listaWegiel;
+    ListaEle listaGaz;
+    ListaEle listaFoto;
+
     public GamePanel(){
         this.setPreferredSize(new Dimension(width,height));
+        gracz = new Gracz();
         menu = new Menue(width,height);
         gra = new Gra(width,height);
+        listaAtom = new ListaEle(gracz, new ElektrowniaAtomowa());
 
         menu.nowaGra.addActionListener(this);
         menu.wczytajGre.addActionListener(this);
@@ -51,22 +65,23 @@ public class GamePanel extends JPanel implements ActionListener {
         else if(e.getSource()==gra.atomowa){
             System.out.println("Wybrano elektrownie atomowa...");
             //uruchomienie panelu
-            new ElektrowniaAtomowa();
+            new ElektrowniaAtomowaOkno();
+            System.out.println(gracz.getListaElektrowni());
         }
         else if(e.getSource()==gra.weglowa){
             System.out.println("Wybrano elektrownie weglowa...");
             //uruchomienie panelu
-            new ElektrowniaWeglowa();
+            new ElektrowniaWeglowaOkno();
         }
         else if(e.getSource()==gra.gazowa){
             System.out.println("Wybrano elektrownie gazowa...");
             //uruchomienie panelu
-            new ElektrowniaGazowa();
+            new ElektrowniaGazowaOkno();
         }
         else if(e.getSource()==gra.fotowoltaiczna){
             System.out.println("Wybrano elektrownie fotowoltaiczna...");
             //uruchomienie panelu
-            new ElektrowniaFotowoltaiczna();
+            new ElektrowniaFotowoltaicznaOkno();
         }
         else if(e.getSource()==gra.nastepnyDzien){
             System.out.println("Nastepny dzien...");

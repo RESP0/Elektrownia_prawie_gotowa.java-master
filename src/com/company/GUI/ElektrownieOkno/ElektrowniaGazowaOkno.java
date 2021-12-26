@@ -1,11 +1,11 @@
-package com.company.GUI.Elektrownie;
+package com.company.GUI.ElektrownieOkno;
 
 import javax.swing.*;
 import java.awt.*;
 
-public class ElektrowniaFotowoltaiczna extends JFrame {
-    public ElektrowniaFotowoltaiczna(){
-        this.setTitle("Elektrownia fotowoltaiczna");
+public class ElektrowniaGazowaOkno extends JFrame {
+    public ElektrowniaGazowaOkno(){
+        this.setTitle("Elektrownia gazowa");
         this.setResizable(false);
         this.setLayout(null);
         this.setSize(900, 630);

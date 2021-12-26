@@ -58,9 +58,9 @@ public abstract class Elektrownia implements Serializable, ObliczDochodElektrown
 		MocChwilowa = 0;
 		MocMaksymalna = 0;
 		LiczbaPracownikow = 0;
-		wlasciciel = new Wlasciciel();
 		czyPracuje = false;
-
+		wlasciciel = new Wlasciciel();
+		Dystrybutor = new DystrybutorPradu();
 	}
 	
 	public Elektrownia(String miasto, int MocChwilowa, int MocMaksymalna, int LiczbaPracownikow, boolean czyPracuje, Wlasciciel wlasciciel, DystrybutorPradu Dystrybutor)

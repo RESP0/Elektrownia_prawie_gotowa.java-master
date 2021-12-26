@@ -16,6 +16,11 @@ public class ElektrowniaAtomowa extends Elektrownia {
     private float IloscOdpadow;
     private com.company.uslugodawcy.OdbiorcaOdpadow[] OdbiorcaOdpadow;
 
+    public ElektrowniaAtomowa(){
+        super();
+        this.LiczbaReaktorow = 3;
+    }
+
 
     public ElektrowniaAtomowa(String miasto, int MocChwilowa, int MocMaksymalna, int LiczbaPracownikow, Wlasciciel wlasciciel, boolean czyPracuje, int LiczbaReaktorow, float ZuzycieWody, DystrybutorPradu Dystrybutor, float IloscOdpadow, OdbiorcaOdpadow[] OdbiorcaOdpadow){
 

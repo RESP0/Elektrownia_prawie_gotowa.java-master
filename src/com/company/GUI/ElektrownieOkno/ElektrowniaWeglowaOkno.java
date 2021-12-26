@@ -1,10 +1,10 @@
-package com.company.GUI.Elektrownie;
+package com.company.GUI.ElektrownieOkno;
 
 import javax.swing.*;
 import java.awt.*;
 
-public class ElektrowniaWeglowa extends JFrame {
-    public ElektrowniaWeglowa(){
+public class ElektrowniaWeglowaOkno extends JFrame {
+    public ElektrowniaWeglowaOkno(){
         this.setTitle("Elektrownia weglowa");
         this.setResizable(false);
         this.setLayout(null);

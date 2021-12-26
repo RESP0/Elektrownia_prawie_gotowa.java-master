@@ -1,8 +1,8 @@
-package com.company.GUI.Elektrownie;
+package com.company.GUI.ElektrownieOkno;
 import javax.swing.*;
 import java.awt.*;
 
-public class ElektrowniaAtomowa extends JFrame {
+public class ElektrowniaAtomowaOkno extends JFrame {
     JLabel miasto;
     JLabel moc_chwilowa;
     JLabel moc_maksymalna;
@@ -16,7 +16,7 @@ public class ElektrowniaAtomowa extends JFrame {
     JLabel odbiorca_odpadow;
 
 
-    public ElektrowniaAtomowa(){
+    public ElektrowniaAtomowaOkno(){
         this.setTitle("Elektrownia atomowa");
         this.setResizable(false);
         this.setLayout(null);

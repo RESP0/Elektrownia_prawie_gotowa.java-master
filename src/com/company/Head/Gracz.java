@@ -28,6 +28,7 @@ public class Gracz implements Serializable {
         Wlasciciel Promyk = new Wlasciciel("Promyk", "PL46372837", "Kamil Glik");
         OdbiorcaOdpadow Odbiorca1 = new OdbiorcaOdpadow(34.56f, NajtanszyOdbiorSmieci);
         OdbiorcaOdpadow Odbiorca2 = new OdbiorcaOdpadow(43.34f, Promyk);
+        listaElektrowni.add(new ElektrowniaAtomowa());
     }
 
     DystrybutorPradu Tauron = new DystrybutorPradu();
