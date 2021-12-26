@@ -23,6 +23,10 @@ abstract public class ElektrowniaOknoAbstract extends JFrame implements ActionLi
     JPanel pracownicy;
     JPanel sprzedaj;
     JPanel dostawca;
+    JButton dokupButton;
+    JButton zatrudnijPracownika;
+    JButton zwolnijPracownika;
+    JButton nowyDostawca;  //<--- bedzie losowac nowego dostawce pradu z kilku zapisanch
     JButton sprzedajButton;
 
     //wybory
@@ -76,14 +80,37 @@ abstract public class ElektrowniaOknoAbstract extends JFrame implements ActionLi
         tekst(iloscWeglaLabel);
         wegiel.add(iloscWeglaLabel);
 
+        wegiel.setLayout(new FlowLayout());
+
+        dokupButton = new JButton("DOKUP");
+        dokupButton.setFont(new Font("Arial black", Font.BOLD, 22));
+        dokupButton.setForeground(Color.green);
+        dokupButton.addActionListener(this);
+        wegiel.add(dokupButton);
+
         pracownicy.setBackground(new Color(50, 110, 150));
         pracownicy.setLayout(new CardLayout());
         podstawoweAkcje.add(pracownicy, new GridBagConstraints());
 
-        JLabel pracownicyLabel = new JLabel("ZWOLNIJ/ZATRUDNIJ PRACOWNIKOW", SwingConstants.CENTER);
+        JLabel pracownicyLabel = new JLabel("<html>ZWOLNIJ/ZATRUDNIJ<br>PRACOWNIKÓW</html>", SwingConstants.CENTER);
         pracownicyLabel.setVerticalAlignment(SwingConstants.TOP);
         tekst(pracownicyLabel);
         pracownicy.add(pracownicyLabel);
+//zly layout
+        pracownicy.setLayout(new FlowLayout());
+
+        zatrudnijPracownika = new JButton("ZATRUDNIJ");
+        zatrudnijPracownika.setFont(new Font("Arial black", Font.BOLD, 22));
+        zatrudnijPracownika.setForeground(Color.green);
+        zatrudnijPracownika.addActionListener(this);
+        pracownicy.add(zatrudnijPracownika);
+
+        zwolnijPracownika = new JButton("ZWOLNIJ");
+        zwolnijPracownika.setFont(new Font("Arial black", Font.BOLD, 22));
+        zwolnijPracownika.setForeground(Color.red);
+        zwolnijPracownika.addActionListener(this);
+        pracownicy.add(zwolnijPracownika);
+
 
         dostawca.setBackground(Color.gray);
         dostawca.setLayout(new CardLayout());
@@ -94,6 +121,14 @@ abstract public class ElektrowniaOknoAbstract extends JFrame implements ActionLi
         tekst(dostawcaLabel);
         dostawca.add(dostawcaLabel);
 
+        dostawca.setLayout(new FlowLayout());
+
+        nowyDostawca = new JButton("<html>ZNAJDZ NOWEGO<br>DOSTAWCE</html>");
+        nowyDostawca.setFont(new Font("Arial black", Font.BOLD, 20));
+        nowyDostawca.setForeground(Color.green);
+        nowyDostawca.addActionListener(this);
+        dostawca.add(nowyDostawca);
+
         sprzedaj.setBackground(new Color(50, 110, 150));
         sprzedaj.setLayout(new CardLayout());
         podstawoweAkcje.add(sprzedaj, new GridBagConstraints());
@@ -103,7 +138,8 @@ abstract public class ElektrowniaOknoAbstract extends JFrame implements ActionLi
         tekst(sprzedajLabel);
         sprzedaj.add(sprzedajLabel);
 
-        //nie dodaje sie przycisk
+        sprzedaj.setLayout(new FlowLayout());
+//zły layout
         sprzedajButton = new JButton("SPRZEDAJ");
         sprzedajButton.setFont(new Font("Arial black", Font.BOLD, 22));
         sprzedajButton.setForeground(Color.red);
