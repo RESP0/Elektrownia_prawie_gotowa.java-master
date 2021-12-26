@@ -55,17 +55,17 @@ public class Gracz implements Serializable {
                 balans -= 10000;
                 break;
             case 2:
-                el = new ElektrowniaWeglowa("Belchatow",100,690,15, own, false, "roksana wegiel", 109f, 25, Tauron, 103.5f, Rosja, 190f);
+                el = new ElektrowniaWeglowa("Belchatowek", "Belchatow",100,690,15, own, false, "roksana wegiel", 109f, 25, Tauron, 103.5f, Rosja, 190f);
                 listaElektrowni.add(el);
                 balans -= 2000;
                 break;
             case 3:
-                el= new ElektrowniaGazowa("Turow",100,420,5, own, false, "gaz", 89f, 15, Tauron, 123f, new DostawcaGazu(), 200f);
+                el= new ElektrowniaGazowa("Tauronek", "Turow",100,420,5, own, false, "gaz", 89f, 15, Tauron, 123f, new DostawcaGazu(), 200f);
                 listaElektrowni.add(el);
                 balans -= 2500;
                 break;
             case 4:
-                el = new ElektrowniaFotowoltaiczna("Brudzew", 100, 300, 1, own, false, 10, Tauron);
+                el = new ElektrowniaFotowoltaiczna("Brudzewek", "Brudzew", 100, 300, 1, own, false, 10, Tauron);
                 listaElektrowni.add(el);
                 balans -= 5000;
                 break;

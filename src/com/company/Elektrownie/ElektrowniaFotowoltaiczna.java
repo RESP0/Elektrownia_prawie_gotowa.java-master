@@ -14,10 +14,10 @@ public class ElektrowniaFotowoltaiczna extends Elektrownia {
 	private float ZuzyciePaneli;
 	
 
-	public ElektrowniaFotowoltaiczna(String Miasto, int MocChwilowa, int MocMaksymalna, int LiczbaPracownikow, Wlasciciel wlasciciel,
+	public ElektrowniaFotowoltaiczna(String Nazwa, String Miasto, int MocChwilowa, int MocMaksymalna, int LiczbaPracownikow, Wlasciciel wlasciciel,
 			boolean czyPracuje, float ZuzyciePaneli, DystrybutorPradu Dystrybutor)
 	{
-		super(Miasto, MocChwilowa, MocMaksymalna, LiczbaPracownikow, czyPracuje, wlasciciel, Dystrybutor);
+		super(Nazwa, Miasto, MocChwilowa, MocMaksymalna, LiczbaPracownikow, czyPracuje, wlasciciel, Dystrybutor);
 		
 		this.ZuzyciePaneli = ZuzyciePaneli;
 

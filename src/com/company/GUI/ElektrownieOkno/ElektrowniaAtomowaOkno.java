@@ -24,6 +24,9 @@ public class ElektrowniaAtomowaOkno extends ElektrowniaOknoAbstract {
         panel.setLayout(new BoxLayout(panel,BoxLayout.Y_AXIS));
         this.add(panel, new GridBagConstraints());
 
+        nazwa = new JLabel("Nazwa elektrowni: ");
+        tekst(nazwa);
+
         miasto = new JLabel("Lokalizacja elektrowni: ");
         tekst(miasto);
 
@@ -57,6 +60,7 @@ public class ElektrowniaAtomowaOkno extends ElektrowniaOknoAbstract {
         odbiorca_odpadow = new JLabel("Odbiorca odpadów: ");
         tekst(odbiorca_odpadow);
 
+        panel.add(nazwa);
         panel.add(miasto);
         panel.add(moc_chwilowa);
         panel.add(moc_maksymalna);

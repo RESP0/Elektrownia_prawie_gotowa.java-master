@@ -14,8 +14,8 @@ public class ElektrowniaGazowa extends ElektrowniaNaPaliwoStale  {
 	private com.company.uslugodawcy.DostawcaGazu DostawcaGazu;
 	private float MaxPojemnoscMagazynu;
 
-	public ElektrowniaGazowa(String Miasto, int MocChwilowa, int MocMaksymalna, int LiczbaPracownikow, Wlasciciel wlasciciel, boolean czyPracuje, String RodzajPaliwa, float ZuzyciePaliwa, int LiczbaBlokow, DystrybutorPradu Dystrubutor, float IloscGazuWMagazynie, DostawcaGazu DostawcaGazu, float MaxPojemnoscMagazynu) {
-		super(Miasto, MocChwilowa, MocMaksymalna, LiczbaPracownikow, wlasciciel, czyPracuje, RodzajPaliwa, ZuzyciePaliwa, LiczbaBlokow, Dystrubutor);
+	public ElektrowniaGazowa(String Nazwa, String Miasto, int MocChwilowa, int MocMaksymalna, int LiczbaPracownikow, Wlasciciel wlasciciel, boolean czyPracuje, String RodzajPaliwa, float ZuzyciePaliwa, int LiczbaBlokow, DystrybutorPradu Dystrubutor, float IloscGazuWMagazynie, DostawcaGazu DostawcaGazu, float MaxPojemnoscMagazynu) {
+		super(Nazwa, Miasto, MocChwilowa, MocMaksymalna, LiczbaPracownikow, wlasciciel, czyPracuje, RodzajPaliwa, ZuzyciePaliwa, LiczbaBlokow, Dystrubutor);
 
 		this.IloscGazuWMagazynie = IloscGazuWMagazynie;
 		this.DostawcaGazu = DostawcaGazu;

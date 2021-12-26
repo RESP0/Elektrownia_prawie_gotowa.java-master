@@ -4,6 +4,8 @@ import javax.swing.*;
 import java.awt.*;
 
 public class ElektrowniaOknoAbstract extends JFrame{
+
+    JLabel nazwa;
     JLabel miasto;
     JLabel moc_chwilowa;
     JLabel moc_maksymalna;

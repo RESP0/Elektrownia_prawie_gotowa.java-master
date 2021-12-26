@@ -12,9 +12,9 @@ public abstract class ElektrowniaNaPaliwoStale extends Elektrownia  {
 	private int LiczbaBlokow;
 	
 
-	public ElektrowniaNaPaliwoStale(String miasto, int MocChwilowa, int MocMaksymalna, int LiczbaPracownikow, Wlasciciel wlasciciel, boolean czyPracuje, String RodzajPaliwa, float ZuzyciePaliwa, int LiczbaBlokow, DystrybutorPradu Dystrybutor)
+	public ElektrowniaNaPaliwoStale(String Nazwa, String miasto, int MocChwilowa, int MocMaksymalna, int LiczbaPracownikow, Wlasciciel wlasciciel, boolean czyPracuje, String RodzajPaliwa, float ZuzyciePaliwa, int LiczbaBlokow, DystrybutorPradu Dystrybutor)
 	{
-		super(miasto, MocChwilowa, MocMaksymalna, LiczbaPracownikow, czyPracuje, wlasciciel, Dystrybutor);
+		super(Nazwa, miasto, MocChwilowa, MocMaksymalna, LiczbaPracownikow, czyPracuje, wlasciciel, Dystrybutor);
 		this.RodzajPaliwa = RodzajPaliwa;
 		this.ZuzyciePaliwa = ZuzyciePaliwa;
 		this.LiczbaBlokow = LiczbaBlokow;
