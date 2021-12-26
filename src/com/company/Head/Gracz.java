@@ -50,7 +50,7 @@ public class Gracz implements Serializable {
         numer = scan.nextInt();
         switch (numer) {
             case 1:
-                el = new ElektrowniaAtomowa("Czarnobyl", 100, 42000, 3, own, false, 86, 897, Tauron, 345, new OdbiorcaOdpadow[]{Odbiorca1,Odbiorca2});
+                el = new ElektrowniaAtomowa("Konik","Czarnobyl", 100, 42000, 3, own, false, 86, 897, Tauron, 345, new OdbiorcaOdpadow[]{Odbiorca1,Odbiorca2});
                 listaElektrowni.add(el);
                 balans -= 10000;
                 break;

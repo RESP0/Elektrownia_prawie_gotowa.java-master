@@ -15,6 +15,7 @@ public abstract class Elektrownia implements Serializable, ObliczDochodElektrown
 
 	private static final long serialVersionUID = 1234770990255762290L;
 
+	private String nazwa;
 	private String miasto;
 	private int MocChwilowa;
 	private int MocMaksymalna;
@@ -54,6 +55,7 @@ public abstract class Elektrownia implements Serializable, ObliczDochodElektrown
 
 	public Elektrownia()
 	{
+		nazwa = " ";
 		miasto = "";
 		MocChwilowa = 0;
 		MocMaksymalna = 0;
@@ -63,8 +65,9 @@ public abstract class Elektrownia implements Serializable, ObliczDochodElektrown
 		Dystrybutor = new DystrybutorPradu();
 	}
 	
-	public Elektrownia(String miasto, int MocChwilowa, int MocMaksymalna, int LiczbaPracownikow, boolean czyPracuje, Wlasciciel wlasciciel, DystrybutorPradu Dystrybutor)
+	public Elektrownia(String nazwa, String miasto, int MocChwilowa, int MocMaksymalna, int LiczbaPracownikow, boolean czyPracuje, Wlasciciel wlasciciel, DystrybutorPradu Dystrybutor)
 	{
+		this.nazwa = nazwa;
 		this.miasto = miasto;
 		this.MocChwilowa = MocChwilowa;
 		this.MocMaksymalna = MocMaksymalna;
@@ -144,10 +147,17 @@ public abstract class Elektrownia implements Serializable, ObliczDochodElektrown
 		Dystrybutor = dystrybutor;
 	}
 
+	public String getNazwa() {
+		return nazwa;
+	}
+
+	public void setNazwa(String nazwa) {
+		this.nazwa = nazwa;
+	}
 
 	public String toString()
 	{
-		 return "\nMiasto: " + miasto + "\nmoc chwilowa: " + MocChwilowa + "\nmoc maksymalna: " + MocMaksymalna + "\nliczba pracownikow: " + LiczbaPracownikow + "\nczy pracuje: " + czyPracuje + " \nwlasciciel elektrowni:\t\t" + wlasciciel  + "\npracownicy: " + Arrays.toString(pracownicy) + "\nDystrybutor: " + Dystrybutor.toString();
+		 return "\nNazwa: " + nazwa +"\nMiasto: " + miasto + "\nmoc chwilowa: " + MocChwilowa + "\nmoc maksymalna: " + MocMaksymalna + "\nliczba pracownikow: " + LiczbaPracownikow + "\nczy pracuje: " + czyPracuje + " \nwlasciciel elektrowni:\t\t" + wlasciciel  + "\npracownicy: " + Arrays.toString(pracownicy) + "\nDystrybutor: " + Dystrybutor.toString();
 	}
 	
 	public void RozpoczeciePracy(){
