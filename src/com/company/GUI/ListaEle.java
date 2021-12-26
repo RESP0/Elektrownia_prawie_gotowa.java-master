@@ -117,7 +117,7 @@ public class ListaEle extends JPanel implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == przyciski.get(0)){
             System.out.println("Oiweram nowa elektrownie");
-            new ElektrowniaAtomowa();
+            new ElektrowniaAtomowaOkno();
         }
 
         this.revalidate();
