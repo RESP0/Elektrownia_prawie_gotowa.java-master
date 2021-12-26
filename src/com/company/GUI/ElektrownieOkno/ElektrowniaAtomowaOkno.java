@@ -2,14 +2,7 @@ package com.company.GUI.ElektrownieOkno;
 import javax.swing.*;
 import java.awt.*;
 
-public class ElektrowniaAtomowaOkno extends JFrame {
-    JLabel miasto;
-    JLabel moc_chwilowa;
-    JLabel moc_maksymalna;
-    JLabel liczba_pracowanikow;
-    JLabel wlasciciel;
-    JLabel czypracuje;
-    JLabel dystrybutor;
+public class ElektrowniaAtomowaOkno extends ElektrowniaOknoAbstract {
     JLabel liczba_reaktorow;
     JLabel zuzycie_wody;
     JLabel ilosc_odpadow;
@@ -75,10 +68,5 @@ public class ElektrowniaAtomowaOkno extends JFrame {
         panel.add(czypracuje);
         panel.add(dystrybutor);
         panel.add(odbiorca_odpadow);
-    }
-
-    public void tekst(JLabel tekst){
-        tekst.setFont(new Font("Arial black", Font.BOLD, 20));
-        tekst.setForeground(Color.white);
     }
 }
