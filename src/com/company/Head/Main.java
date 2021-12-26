@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import com.company.AtakTerro.ReakcjeNaAtakTerrorystyczny;
 import com.company.Awarie.ReakcjaNaAwarieZasilania;
+import com.company.Dochod.DochodAtomowa;
 import com.company.Elektrownie.ElektrowniaAtomowa;
 import com.company.GUI.GamePanel;
 import com.company.uslugodawcy.DystrybutorPradu;
@@ -20,6 +21,7 @@ public class Main {
         GamePanel gamepanel = new GamePanel();
         Gracz gracz = null;
         Scanner scan = new Scanner(System.in);
+
 
         while (gamepanel.getWybor() != 1 || gamepanel.getWybor() != 1){
             //bardzo chamskie czekanie na odpowiedz z GamePanel na dokonanie wyboru w menu xddd

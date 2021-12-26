@@ -7,7 +7,7 @@ import java.io.Serializable;
 
 public class DochodAtomowa implements ObliczDochodElektrowni, Serializable {
 
-    int cenaZaWode = 100;
+    int cenaZaWode = 1;
 
     @Override
     public float ObliczDochod(Elektrownia e) {

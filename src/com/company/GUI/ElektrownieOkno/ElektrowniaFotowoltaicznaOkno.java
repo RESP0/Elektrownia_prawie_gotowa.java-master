@@ -2,6 +2,7 @@ package com.company.GUI.ElektrownieOkno;
 
 import javax.swing.*;
 import java.awt.*;
+import com.company.Head.*;
 
 public class ElektrowniaFotowoltaicznaOkno extends ElektrowniaOknoAbstract {
 
@@ -21,6 +22,9 @@ public class ElektrowniaFotowoltaicznaOkno extends ElektrowniaOknoAbstract {
         panel.setBackground(Color.black);
         panel.setLayout(new BoxLayout(panel,BoxLayout.Y_AXIS));
         this.add(panel, new GridBagConstraints());
+
+        Gracz gracz= new Gracz();
+        gracz.getListaElektrowni();
 
         nazwa = new JLabel("Nazwa elektrowni: ");
         tekst(nazwa);

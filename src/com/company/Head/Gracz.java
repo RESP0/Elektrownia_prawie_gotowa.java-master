@@ -1,5 +1,6 @@
 package com.company.Head;
 
+import com.company.Dochod.DochodAtomowa;
 import com.company.Elektrownie.*;
 import com.company.uslugodawcy.DostawcaGazu;
 import com.company.uslugodawcy.DostawcaWegla;
@@ -71,7 +72,6 @@ public class Gracz implements Serializable {
                 break;
         }
     }
-
 
     public void SprzedajElektrownie() {
         int a;

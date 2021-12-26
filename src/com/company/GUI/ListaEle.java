@@ -30,7 +30,6 @@ public class ListaEle extends JPanel implements ActionListener {
     JPanel panelPrzyciskow;
     JButton powrot;
     JPanel dol;
-    JButton test = new JButton("kuwunf");
 
     ListaEle(int szer, int wys,String title, Gracz gracz, Elektrownia e, ArrayList<Elektrownia> lista){
         //USTAWIENIA PANELU
@@ -89,8 +88,6 @@ public class ListaEle extends JPanel implements ActionListener {
             panelPrzyciskow.add(przyciski.get(i));
         }
 
-        test.addActionListener(this);
-        przyciski.get(0).add(test);
         this.add(panelPrzyciskow);
         this.add(Box.createRigidArea(new Dimension(0,200)));
 
@@ -100,29 +97,22 @@ public class ListaEle extends JPanel implements ActionListener {
 
 
         powrot = new JButton("Powrot");
-        powrot.setBounds(szer-100,0,30,60);
+        powrot.setBounds(szer-150,5,130,60);
+        powrot.setFont(new Font("Arial black", Font.BOLD, 18));
         powrot.addActionListener(this);
         dol.add(powrot);
         //dol.setAlignmentX(RIGHT_ALIGNMENT);
         this.add(dol);
 
-
-
-
         for (Elektrownia elektrownia : gracz.getListaElektrowni()){
             if (elektrownia.getClass() == e.getClass()){
                 liczbaEle +=1;
-
             }
         }
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == test){
-            przyciski.get(0).remove(test);
-            przyciski.get(0).setEnabled(true);
-        }
 
 
         this.revalidate();

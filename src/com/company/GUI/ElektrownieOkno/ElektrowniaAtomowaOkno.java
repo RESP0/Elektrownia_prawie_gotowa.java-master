@@ -20,7 +20,7 @@ public class ElektrowniaAtomowaOkno extends ElektrowniaOknoAbstract {
         this.setLayout(new GridBagLayout());
         JPanel panel = new JPanel();
 
-        panel.setBackground(Color.blue);
+        panel.setBackground(Color.black);
         panel.setLayout(new BoxLayout(panel,BoxLayout.Y_AXIS));
         this.add(panel, new GridBagConstraints());
 
