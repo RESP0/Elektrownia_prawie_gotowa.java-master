@@ -6,6 +6,8 @@ import com.company.Elektrownie.Elektrownia;
 import com.company.Head.Gracz;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.time.Year;
 import java.util.ArrayList;
 
@@ -13,7 +15,8 @@ import java.util.ArrayList;
 //LUB GDY LICZBA ELE JEST ROWNA 5
 
 //oPCJONaLNIE DO KAŻDEGO BUTTONA DOADAĆ INNĄ ICONE ZEBY ŁADNIE WYGLĄDAŁO
-public class ListaEle extends JPanel {
+public class ListaEle extends JPanel implements ActionListener {
+
     private int liczbaEle = 0;
     JLabel tytul;
     JLabel nazwa;
@@ -24,8 +27,11 @@ public class ListaEle extends JPanel {
     JButton button4;
     JButton button5;
     ArrayList<JButton> przyciski;
-
     JPanel panelPrzyciskow;
+    JButton powrot;
+    JPanel dol;
+    JButton test = new JButton("kuwunf");
+
     ListaEle(int szer, int wys,String title, Gracz gracz, Elektrownia e, ArrayList<Elektrownia> lista){
         //USTAWIENIA PANELU
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
@@ -43,7 +49,9 @@ public class ListaEle extends JPanel {
         //USTAWIENIA PANELU Z PRZYCISKAMI
         panelPrzyciskow = new JPanel();
         this.add(Box.createRigidArea(new Dimension(0,120)));
-        panelPrzyciskow.setSize(new Dimension(szer,100));
+        panelPrzyciskow.setPreferredSize(new Dimension(szer,120));
+
+
         panelPrzyciskow.setLayout(new GridLayout());
 
         //DODANIE PRZYCISKÓW DO LISTY
@@ -75,12 +83,28 @@ public class ListaEle extends JPanel {
             przyciski.get(i).add(Box.createRigidArea(new Dimension(0,20)));
             przyciski.get(i).add(nazwa);
             przyciski.get(i).add(miasto);
+
+            przyciski.get(i).setEnabled(false);
+
             panelPrzyciskow.add(przyciski.get(i));
         }
-        //JButton test = new JButton("kuwunf");
-        //przyciski.get(0).add(test);
+
+        test.addActionListener(this);
+        przyciski.get(0).add(test);
         this.add(panelPrzyciskow);
-        this.add(Box.createRigidArea(new Dimension(0,305)));
+        this.add(Box.createRigidArea(new Dimension(0,200)));
+
+        dol = new JPanel();
+        dol.setLayout(null);
+        dol.setPreferredSize(new Dimension(szer,60));
+
+
+        powrot = new JButton("Powrot");
+        powrot.setBounds(szer-100,0,30,60);
+        powrot.addActionListener(this);
+        dol.add(powrot);
+        //dol.setAlignmentX(RIGHT_ALIGNMENT);
+        this.add(dol);
 
 
 
@@ -93,4 +117,15 @@ public class ListaEle extends JPanel {
         }
     }
 
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == test){
+            przyciski.get(0).remove(test);
+            przyciski.get(0).setEnabled(true);
+        }
+
+
+        this.revalidate();
+        this.repaint();
+    }
 }

@@ -41,7 +41,8 @@ public class GamePanel extends JPanel implements ActionListener {
         gra.gazowa.addActionListener(this);
         gra.fotowoltaiczna.addActionListener(this);
         gra.nastepnyDzien.addActionListener(this);
-        this.add(gra);
+        //this.add(gra);
+        listaAtom.powrot.addActionListener(this);
     }
 
 
@@ -89,6 +90,10 @@ public class GamePanel extends JPanel implements ActionListener {
         else if(e.getSource()==gra.nastepnyDzien){
             System.out.println("Nastepny dzien...");
             //nastepny dzien + serializacja
+        }
+        else if(e.getSource() == listaAtom.powrot){
+            this.remove(listaAtom);
+            add(gra,BorderLayout.CENTER);
         }
         this.revalidate();
         this.repaint();
