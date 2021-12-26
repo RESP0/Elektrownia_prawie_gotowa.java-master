@@ -3,6 +3,8 @@ package com.company.GUI;
 import javax.swing.*;
 
 import com.company.Elektrownie.Elektrownia;
+import com.company.Elektrownie.ElektrowniaAtomowa;
+import com.company.GUI.ElektrownieOkno.ElektrowniaAtomowaOkno;
 import com.company.Head.Gracz;
 
 import java.awt.*;
@@ -83,8 +85,8 @@ public class ListaEle extends JPanel implements ActionListener {
             przyciski.get(i).add(nazwa);
             przyciski.get(i).add(miasto);
 
-            przyciski.get(i).setEnabled(false);
-
+            przyciski.get(i).setEnabled(true);
+            przyciski.get(i).addActionListener(this);
             panelPrzyciskow.add(przyciski.get(i));
         }
 
@@ -113,7 +115,10 @@ public class ListaEle extends JPanel implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-
+        if (e.getSource() == przyciski.get(0)){
+            System.out.println("Oiweram nowa elektrownie");
+            new ElektrowniaAtomowa();
+        }
 
         this.revalidate();
         this.repaint();

@@ -44,8 +44,6 @@ public class ElektrowniaWeglowaOkno extends ElektrowniaOknoAbstract{
         dostawca_wegla = new JLabel("Dostawca wegla: ");
         tekst(dostawca_wegla);
 
-        wlasciciel = new JLabel("Wlasciciel elektrowni: ");
-        tekst(wlasciciel);
 
         czypracuje = new JLabel("Czy elektrownia pracuje: ");
         tekst(czypracuje);

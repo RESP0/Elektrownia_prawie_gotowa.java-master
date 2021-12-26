@@ -44,9 +44,6 @@ public class ElektrowniaGazowaOkno extends ElektrowniaOknoAbstract {
         dostawca_gazu = new JLabel("Dostawca gazu: ");
         tekst(dostawca_gazu);
 
-        wlasciciel = new JLabel("Wlasciciel elektrowni: ");
-        tekst(wlasciciel);
-
         czypracuje = new JLabel("Czy elektrownia pracuje: ");
         tekst(czypracuje);
 

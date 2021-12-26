@@ -44,8 +44,6 @@ public class ElektrowniaFotowoltaicznaOkno extends ElektrowniaOknoAbstract {
         zuzycie_paneli = new JLabel("Procent zuzycia paneli: ");
         tekst(zuzycie_paneli);
 
-        wlasciciel = new JLabel("Wlasciciel elektrowni: ");
-        tekst(wlasciciel);
 
         czypracuje = new JLabel("Czy elektrownia pracuje: ");
         tekst(czypracuje);
