@@ -2,8 +2,10 @@ package com.company.GUI.ElektrownieOkno;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-abstract public class ElektrowniaOknoAbstract extends JFrame{
+abstract public class ElektrowniaOknoAbstract extends JFrame implements ActionListener{
 //do usuniecia
     JLabel nazwa;
     JLabel miasto;
@@ -13,14 +15,26 @@ abstract public class ElektrowniaOknoAbstract extends JFrame{
     JLabel czypracuje;
     JLabel dystrybutor;
     JPanel wlasciciel;
+    JLabel ilosc_wegla;// tyle
 
+    //akcje
     JPanel podstawoweAkcje;
+    JPanel wegiel;
+    JPanel pracownicy;
+    JPanel sprzedaj;
+    JPanel dostawca;
+    JButton sprzedajButton;
+
+    //wybory
     JPanel wybory;
-    JPanel skroty;
     JPanel reakcjaNaAtak;
     JPanel reakcjaNaAwarie;
     JPanel moc;
     JPanel kiedyDokupicWegiel;
+
+    //skroty
+    JPanel skroty;
+    JButton zapiszIZamknij;
 
     public ElektrowniaOknoAbstract() {
         this.setResizable(false);
@@ -46,6 +60,55 @@ abstract public class ElektrowniaOknoAbstract extends JFrame{
         skroty.setLayout(new BoxLayout(skroty, BoxLayout.Y_AXIS));
         this.add(skroty, new GridBagConstraints());
 
+        //------------- PODSTAWOWE AKCJE -------------
+
+        wegiel = new JPanel();
+        pracownicy = new JPanel();
+        sprzedaj = new JPanel();
+        dostawca = new JPanel();
+
+        wegiel.setBackground(new Color(60, 100, 160));
+        wegiel.setLayout(new CardLayout());
+        podstawoweAkcje.add(wegiel, new GridBagConstraints());
+
+        JLabel iloscWeglaLabel = new JLabel("ILOSC WEGLA W MAGAZYNIE", SwingConstants.CENTER);
+        iloscWeglaLabel.setVerticalAlignment(SwingConstants.TOP);
+        tekst(iloscWeglaLabel);
+        wegiel.add(iloscWeglaLabel);
+
+        pracownicy.setBackground(new Color(50, 110, 150));
+        pracownicy.setLayout(new CardLayout());
+        podstawoweAkcje.add(pracownicy, new GridBagConstraints());
+
+        JLabel pracownicyLabel = new JLabel("ZWOLNIJ/ZATRUDNIJ PRACOWNIKOW", SwingConstants.CENTER);
+        pracownicyLabel.setVerticalAlignment(SwingConstants.TOP);
+        tekst(pracownicyLabel);
+        pracownicy.add(pracownicyLabel);
+
+        dostawca.setBackground(Color.gray);
+        dostawca.setLayout(new CardLayout());
+        podstawoweAkcje.add(dostawca, new GridBagConstraints());
+
+        JLabel dostawcaLabel = new JLabel("ZMIEN DOSTAWCE", SwingConstants.CENTER);
+        dostawcaLabel.setVerticalAlignment(SwingConstants.TOP);
+        tekst(dostawcaLabel);
+        dostawca.add(dostawcaLabel);
+
+        sprzedaj.setBackground(new Color(50, 110, 150));
+        sprzedaj.setLayout(new CardLayout());
+        podstawoweAkcje.add(sprzedaj, new GridBagConstraints());
+
+        JLabel sprzedajLabel = new JLabel("SPRZEDAJ ELEKTROWNIE", SwingConstants.CENTER);
+        sprzedajLabel.setVerticalAlignment(SwingConstants.TOP);
+        tekst(sprzedajLabel);
+        sprzedaj.add(sprzedajLabel);
+
+        //nie dodaje sie przycisk
+        sprzedajButton = new JButton("SPRZEDAJ");
+        sprzedajButton.setFont(new Font("Arial black", Font.BOLD, 22));
+        sprzedajButton.setForeground(Color.red);
+        sprzedajButton.addActionListener(this);
+        sprzedaj.add(sprzedajButton);
 
         //------------- WYBORY -------------
 
@@ -64,7 +127,7 @@ abstract public class ElektrowniaOknoAbstract extends JFrame{
         tekst(reakcjaNaAtakLabel);
         reakcjaNaAtak.add(reakcjaNaAtakLabel);
 
-
+        //to tez nie dziala xd
         JButton b=new JButton("Click Me..");
         b.setBounds(10,10,50, 50);
         reakcjaNaAtak.add(b);
@@ -101,11 +164,48 @@ abstract public class ElektrowniaOknoAbstract extends JFrame{
         kiedyDokupicLabel.setVerticalAlignment(SwingConstants.TOP);
         tekst(kiedyDokupicLabel);
         kiedyDokupicWegiel.add(kiedyDokupicLabel);
+
+        //------------- SKROTY -------------
+
+        skroty.setLayout(new FlowLayout());
+
+        moc_chwilowa = new JLabel("Moc chwilowa elektrowni: ");
+        tekst(moc_chwilowa);
+
+        moc_maksymalna = new JLabel("Moc maksymalna elektrowni: ");
+        tekst(moc_maksymalna);
+
+        liczba_pracowanikow = new JLabel("Liczba pracowników elektrowni: ");
+        tekst(liczba_pracowanikow);
+
+        ilosc_wegla = new JLabel("Ilosc wegla w elektrowni: ");
+        tekst(ilosc_wegla);
+
+        skroty.add(moc_chwilowa);
+        skroty.add(moc_maksymalna);
+        skroty.add(liczba_pracowanikow);
+        skroty.add(ilosc_wegla);
+
+
+        //nie wiem czemu ten glupi guzik nie chce zejsc na dol xdd
+        zapiszIZamknij = new JButton("Zapisz i zamknij");
+        zapiszIZamknij.setFont(new Font("Arial black", Font.BOLD, 22));
+        zapiszIZamknij.setForeground(Color.red);
+        zapiszIZamknij.addActionListener(this);
+        skroty.add(zapiszIZamknij);
     }
 
-
     public void tekst(JLabel tekst){
-        tekst.setFont(new Font("Arial black", Font.BOLD, 20));
+        tekst.setFont(new Font("Arial black", Font.BOLD, 15));
         tekst.setForeground(Color.white);
+    }
+
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == zapiszIZamknij){
+            System.out.println("Stan zostal zapisany");
+            this.dispose();
+        }
+        this.revalidate();
+        this.repaint();
     }
 }
