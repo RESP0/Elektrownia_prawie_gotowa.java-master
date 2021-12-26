@@ -7,6 +7,7 @@ import com.company.Wytwarzanie.RozszczepPierwiastkowPromieniotworczych;
 import com.company.uslugodawcy.DystrybutorPradu;
 import com.company.uslugodawcy.OdbiorcaOdpadow;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class ElektrowniaAtomowa extends Elektrownia {
@@ -15,6 +16,16 @@ public class ElektrowniaAtomowa extends Elektrownia {
     private float ZuzycieWody;
     private float IloscOdpadow;
     private com.company.uslugodawcy.OdbiorcaOdpadow[] OdbiorcaOdpadow;
+    private ArrayList<String> listaMiastAtom = new ArrayList<>(){
+        {
+            add("Miasto1");
+            add("Miasto2");
+            add("Miasto3");
+            add("Miasto4");
+            add("Miasto5");
+
+        }
+    };
 
     public ElektrowniaAtomowa(){
         super();

@@ -5,6 +5,7 @@ import com.company.GUI.ElektrownieOkno.ElektrowniaFotowoltaicznaOkno;
 import com.company.GUI.ElektrownieOkno.ElektrowniaGazowaOkno;
 import com.company.GUI.ElektrownieOkno.ElektrowniaWeglowaOkno;
 import com.company.Head.Gracz;
+import com.company.Elektrownie.ListyElektrowni;
 
 import javax.swing.*;
 import java.awt.*;
@@ -17,6 +18,7 @@ public class GamePanel extends JPanel implements ActionListener {
     Gracz gracz;
     Menue menu;
     Gra gra;
+    ListyElektrowni listyElektrowni;
     ListaEle listaAtom;
     ListaEle listaWegiel;
     ListaEle listaGaz;
@@ -24,10 +26,11 @@ public class GamePanel extends JPanel implements ActionListener {
 
     public GamePanel(){
         this.setPreferredSize(new Dimension(width,height));
+        listyElektrowni = new ListyElektrowni();
         gracz = new Gracz();
         menu = new Menue(width,height);
         gra = new Gra(width,height);
-        listaAtom = new ListaEle(gracz, new ElektrowniaAtomowa());
+        listaAtom = new ListaEle(width,height,gracz, new ElektrowniaAtomowa(), listyElektrowni.elektrownieAtomowe);
 
         menu.nowaGra.addActionListener(this);
         menu.wczytajGre.addActionListener(this);
@@ -65,8 +68,8 @@ public class GamePanel extends JPanel implements ActionListener {
         else if(e.getSource()==gra.atomowa){
             System.out.println("Wybrano elektrownie atomowa...");
             //uruchomienie panelu
-            new ElektrowniaAtomowaOkno();
-            System.out.println(gracz.getListaElektrowni());
+            this.remove(gra);
+            this.add(listaAtom, BorderLayout.CENTER);
         }
         else if(e.getSource()==gra.weglowa){
             System.out.println("Wybrano elektrownie weglowa...");
