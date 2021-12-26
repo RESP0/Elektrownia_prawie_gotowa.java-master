@@ -1,11 +1,10 @@
 package com.company.GUI;
-import com.company.Elektrownie.ElektrowniaAtomowa;
+import com.company.Elektrownie.*;
 import com.company.GUI.ElektrownieOkno.ElektrowniaAtomowaOkno;
 import com.company.GUI.ElektrownieOkno.ElektrowniaFotowoltaicznaOkno;
 import com.company.GUI.ElektrownieOkno.ElektrowniaGazowaOkno;
 import com.company.GUI.ElektrownieOkno.ElektrowniaWeglowaOkno;
 import com.company.Head.Gracz;
-import com.company.Elektrownie.ListyElektrowni;
 
 import javax.swing.*;
 import java.awt.*;
@@ -31,6 +30,9 @@ public class GamePanel extends JPanel implements ActionListener {
         menu = new Menue(width,height);
         gra = new Gra(width,height);
         listaAtom = new ListaEle(width,height,"atomowych",gracz, new ElektrowniaAtomowa(), listyElektrowni.elektrownieAtomowe);
+        listaWegiel = new ListaEle(width,height,"weglowych",gracz, new ElektrowniaWeglowa(), listyElektrowni.elektrownieWeglowe);
+        listaGaz = new ListaEle(width,height,"gazowych",gracz, new ElektrowniaGazowa(), listyElektrowni.elektrownieGazowe);
+        listaFoto = new ListaEle(width,height,"fotowoltaicnych",gracz, new ElektrowniaFotowoltaiczna(), listyElektrowni.elektrownieFotowoltaiczne);
 
         menu.nowaGra.addActionListener(this);
         menu.wczytajGre.addActionListener(this);
@@ -43,6 +45,9 @@ public class GamePanel extends JPanel implements ActionListener {
         gra.nastepnyDzien.addActionListener(this);
         //this.add(gra);
         listaAtom.powrot.addActionListener(this);
+        listaWegiel.powrot.addActionListener(this);
+        listaGaz.powrot.addActionListener(this);
+        listaFoto.powrot.addActionListener(this);
     }
 
 
@@ -68,24 +73,27 @@ public class GamePanel extends JPanel implements ActionListener {
         }
         else if(e.getSource()==gra.atomowa){
             System.out.println("Wybrano elektrownie atomowa...");
-            //uruchomienie panelu
+            //rozszerzenie elektrowni atomowej
             this.remove(gra);
             this.add(listaAtom, BorderLayout.CENTER);
         }
         else if(e.getSource()==gra.weglowa){
             System.out.println("Wybrano elektrownie weglowa...");
-            //uruchomienie panelu
-            new ElektrowniaWeglowaOkno();
+            ////rozszerzenie elektrowni weglowej
+            this.remove(gra);
+            this.add(listaWegiel, BorderLayout.CENTER);
         }
         else if(e.getSource()==gra.gazowa){
             System.out.println("Wybrano elektrownie gazowa...");
-            //uruchomienie panelu
-            new ElektrowniaGazowaOkno();
+            //rozszerzenie elektrowni gazowej
+            this.remove(gra);
+            this.add(listaGaz, BorderLayout.CENTER);
         }
         else if(e.getSource()==gra.fotowoltaiczna){
             System.out.println("Wybrano elektrownie fotowoltaiczna...");
-            //uruchomienie panelu
-            new ElektrowniaFotowoltaicznaOkno();
+            //rozszerzenie elektrowni fotowoltaicznej
+            this.remove(gra);
+            this.add(listaFoto, BorderLayout.CENTER);
         }
         else if(e.getSource()==gra.nastepnyDzien){
             System.out.println("Nastepny dzien...");
@@ -93,6 +101,18 @@ public class GamePanel extends JPanel implements ActionListener {
         }
         else if(e.getSource() == listaAtom.powrot){
             this.remove(listaAtom);
+            add(gra,BorderLayout.CENTER);
+        }
+        else if(e.getSource() == listaGaz.powrot){
+            this.remove(listaGaz);
+            add(gra,BorderLayout.CENTER);
+        }
+        else if(e.getSource() == listaWegiel.powrot){
+            this.remove(listaWegiel);
+            add(gra,BorderLayout.CENTER);
+        }
+        else if(e.getSource() == listaFoto.powrot){
+            this.remove(listaFoto);
             add(gra,BorderLayout.CENTER);
         }
         this.revalidate();

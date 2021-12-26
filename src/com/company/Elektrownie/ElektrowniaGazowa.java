@@ -3,9 +3,11 @@ package com.company.Elektrownie;
 import com.company.AtakTerro.Sposob2ReakcjaNaAtakTerrorystyczny;
 import com.company.Awarie.Sposob2ReakcjaNaAwarieZasilania;
 import com.company.Dochod.DochodKopalniana;
+import com.company.Head.Pracownicy;
 import com.company.Head.Wlasciciel;
 import com.company.Wytwarzanie.SpalaniePaliwKopalnych;
 import com.company.uslugodawcy.DostawcaGazu;
+import com.company.uslugodawcy.DostawcaWegla;
 import com.company.uslugodawcy.DystrybutorPradu;
 
 public class ElektrowniaGazowa extends ElektrowniaNaPaliwoStale  {
@@ -13,6 +15,12 @@ public class ElektrowniaGazowa extends ElektrowniaNaPaliwoStale  {
 	private float IloscGazuWMagazynie;
 	private com.company.uslugodawcy.DostawcaGazu DostawcaGazu;
 	private float MaxPojemnoscMagazynu;
+
+	public ElektrowniaGazowa() {
+		super();
+		DostawcaGazu = new DostawcaGazu();
+		IloscGazuWMagazynie = 100;
+	}
 
 	public ElektrowniaGazowa(String Nazwa, String Miasto, int MocChwilowa, int MocMaksymalna, int LiczbaPracownikow, Wlasciciel wlasciciel, boolean czyPracuje, String RodzajPaliwa, float ZuzyciePaliwa, int LiczbaBlokow, DystrybutorPradu Dystrubutor, float IloscGazuWMagazynie, DostawcaGazu DostawcaGazu, float MaxPojemnoscMagazynu) {
 		super(Nazwa, Miasto, MocChwilowa, MocMaksymalna, LiczbaPracownikow, wlasciciel, czyPracuje, RodzajPaliwa, ZuzyciePaliwa, LiczbaBlokow, Dystrubutor);
