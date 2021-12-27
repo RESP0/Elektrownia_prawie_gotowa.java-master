@@ -25,7 +25,7 @@ public class ElektrowniaFotowoltaicznaOkno extends ElektrowniaOknoAbstract {
 
         Gracz gracz= new Gracz();
         gracz.getListaElektrowni();
-
+/*
         nazwa = new JLabel("Nazwa elektrowni: ");
         tekst(nazwa);
 
@@ -50,6 +50,8 @@ public class ElektrowniaFotowoltaicznaOkno extends ElektrowniaOknoAbstract {
 
         dystrybutor = new JLabel("Dystrybutor pradu: ");
         tekst(dystrybutor);
+
+ */
 
         panel.add(nazwa);
         panel.add(miasto);

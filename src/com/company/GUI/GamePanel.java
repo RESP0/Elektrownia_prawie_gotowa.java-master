@@ -24,6 +24,7 @@ public class GamePanel extends JPanel implements ActionListener {
     ListaEle listaFoto;
 
     public GamePanel(){
+
         this.setPreferredSize(new Dimension(width,height));
         listyElektrowni = new ListyElektrowni();
         gracz = new Gracz();

@@ -22,7 +22,7 @@ public class ElektrowniaGazowaOkno extends ElektrowniaOknoAbstract {
         panel.setBackground(Color.black);
         panel.setLayout(new BoxLayout(panel,BoxLayout.Y_AXIS));
         this.add(panel, new GridBagConstraints());
-
+/*
         nazwa = new JLabel("Nazwa elektrowni: ");
         tekst(nazwa);
 
@@ -49,7 +49,7 @@ public class ElektrowniaGazowaOkno extends ElektrowniaOknoAbstract {
 
         dystrybutor = new JLabel("Dystrybutor pradu: ");
         tekst(dystrybutor);
-
+        */
         panel.add(nazwa);
         panel.add(miasto);
         panel.add(moc_chwilowa);

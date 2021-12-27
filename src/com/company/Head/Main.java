@@ -6,6 +6,7 @@ import com.company.AtakTerro.ReakcjeNaAtakTerrorystyczny;
 import com.company.Awarie.ReakcjaNaAwarieZasilania;
 import com.company.Dochod.DochodAtomowa;
 import com.company.Elektrownie.ElektrowniaAtomowa;
+import com.company.GUI.ElektrownieOkno.ElektrowniaAtomowaOkno;
 import com.company.GUI.GamePanel;
 import com.company.uslugodawcy.DystrybutorPradu;
 import com.company.uslugodawcy.OdbiorcaOdpadow;
@@ -17,6 +18,7 @@ import static com.company.Head.Symulator.*;
 public class Main {
 
     public static void main(String[] args) {
+        //new ElektrowniaAtomowaOkno();
         new MyFrame();
         GamePanel gamepanel = new GamePanel();
         Gracz gracz = null;

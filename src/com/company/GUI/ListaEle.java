@@ -89,21 +89,21 @@ public class ListaEle extends JPanel implements ActionListener {
             przyciski.get(i).addActionListener(this);
             panelPrzyciskow.add(przyciski.get(i));
         }
-
         this.add(panelPrzyciskow);
         this.add(Box.createRigidArea(new Dimension(0,200)));
 
+        //DOLNY PANEL
         dol = new JPanel();
         dol.setLayout(null);
-        dol.setPreferredSize(new Dimension(szer,60));
+        dol.setBackground(Color.gray);
+        dol.setPreferredSize(new Dimension(szer,80));
 
-
+        //PRZYCISK POWROTU
         powrot = new JButton("Powrot");
         powrot.setBounds(szer-150,5,130,60);
         powrot.setFont(new Font("Arial black", Font.BOLD, 18));
         powrot.addActionListener(this);
         dol.add(powrot);
-        //dol.setAlignmentX(RIGHT_ALIGNMENT);
         this.add(dol);
 
         for (Elektrownia elektrownia : gracz.getListaElektrowni()){
