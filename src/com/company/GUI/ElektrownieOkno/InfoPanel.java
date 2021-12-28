@@ -1,4 +1,13 @@
 package com.company.GUI.ElektrownieOkno;
 
-public class InfoPanel {
+import javax.swing.*;
+import java.awt.*;
+
+public class InfoPanel extends JFrame {
+    public InfoPanel(){
+        this.setTitle("Informacje");
+        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        this.setResizable(false);
+        this.setVisible(true);
+    }
 }

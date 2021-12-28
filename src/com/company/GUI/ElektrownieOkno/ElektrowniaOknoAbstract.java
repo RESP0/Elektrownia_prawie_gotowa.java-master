@@ -334,22 +334,22 @@ abstract public class ElektrowniaOknoAbstract extends JFrame implements ActionLi
     }
     public void mouseClicked(MouseEvent e){
         if (e.getSource() == infoBloki){
-            System.out.println("dupa");
+            new InfoPanel();
         }
         else if(e.getSource() == infoPracownicy){
-            System.out.println("kupa");
+            new InfoPanel();
         }
         else if(e.getSource() == infoAtak){
-            System.out.println("sraka");
+            new InfoPanel();
         }
         else if(e.getSource() == infoAwarie){
-            System.out.println("maka");
+            new InfoPanel();
         }
         else if(e.getSource() == infoMoc){
-            System.out.println("faka");
+            new InfoPanel();
         }
         else if(e.getSource() == infoKiedy){
-            System.out.println("fą");
+            new InfoPanel();
         }
 
     }
