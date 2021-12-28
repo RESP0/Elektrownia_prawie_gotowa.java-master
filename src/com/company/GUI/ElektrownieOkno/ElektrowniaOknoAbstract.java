@@ -60,7 +60,7 @@ abstract public class ElektrowniaOknoAbstract extends JFrame implements ActionLi
         this.setLayout(new GridLayout());
         this.setVisible(true);
         this.getContentPane().setBackground(Color.black);
-        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        this.setDefaultCloseOperation(EXIT_ON_CLOSE);    //do usuniecia w finalnej wesji
         mainPanel = new JPanel();
         mainPanel.setPreferredSize(new Dimension(900,600));
         mainPanel.setLayout(new GridLayout(1,3));

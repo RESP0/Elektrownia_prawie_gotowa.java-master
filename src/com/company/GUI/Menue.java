@@ -37,7 +37,7 @@ public class Menue extends JPanel {
         przycisk(wczytajGre);
 
         //PRZYCISK ZAKONCZ
-        zakoncz = new JButton("Zapisz i zamknij");
+        zakoncz = new JButton("Zamknij");
         przycisk(zakoncz);
 
     }
