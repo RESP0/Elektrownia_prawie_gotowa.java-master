@@ -85,11 +85,11 @@ abstract public class ElektrowniaOknoAbstract extends JFrame implements ActionLi
         //------------- PODSTAWOWE AKCJE -------------
         //PANEL DOSTAWCA
         bloki = new JPanel();
-        kafelek(bloki,Color.blue,"ZMIEN DOSTAWCE",podstawoweAkcje);
+        kafelek(bloki,Color.blue,"ROZBUDUJ ELEKTROWNIE",podstawoweAkcje);
         
         //PRZYCISK DOKUP BLOKI
         kupBloki = new JButton();
-        pojedynczyPrzycisk(kupBloki, "Kub Bloki",bloki );
+        pojedynczyPrzycisk(kupBloki, "Kup Bloki",bloki , Color.green);
 
         //PANEL PRACOWNIKA
         pracownicy = new JPanel();
@@ -118,7 +118,7 @@ abstract public class ElektrowniaOknoAbstract extends JFrame implements ActionLi
         kafelek(wegiel,Color.blue,"ILOSC WEGLA W MAGAZYNIE",podstawoweAkcje);
         //DOKUP BUTTON
         dokupButton = new JButton();
-        pojedynczyPrzycisk(dokupButton,"DOKUP",wegiel);
+        pojedynczyPrzycisk(dokupButton,"DOKUP",wegiel, Color.green);
 
         //PANEL SPRZEDAJ
         sprzedaj = new JPanel();
@@ -126,7 +126,7 @@ abstract public class ElektrowniaOknoAbstract extends JFrame implements ActionLi
 
         //SPRZEDAJ BUTTON
         sprzedajButton = new JButton();
-        pojedynczyPrzycisk(sprzedajButton,"SPRZEDAJ",sprzedaj);
+        pojedynczyPrzycisk(sprzedajButton,"SPRZEDAJ",sprzedaj, Color.red);
 
         //------------- WYBORY -------------
         //PANEL REAKCJI NA ATAK
@@ -197,11 +197,11 @@ abstract public class ElektrowniaOknoAbstract extends JFrame implements ActionLi
         panel.add(label);
         parent.add(panel);
     }
-    public void pojedynczyPrzycisk(JButton przycisk,String tekst, JPanel panel){
+    public void pojedynczyPrzycisk(JButton przycisk,String tekst, JPanel panel, Color color){
         panel.add(Box.createRigidArea(new Dimension(0,50)));
         przycisk.setText(tekst);
         przycisk.setFont(new Font("Arial black", Font.BOLD, 22));
-        przycisk.setForeground(Color.red);
+        przycisk.setForeground(color);
         przycisk.setFocusable(false);
         panel.add(przycisk);
     }
@@ -245,12 +245,6 @@ abstract public class ElektrowniaOknoAbstract extends JFrame implements ActionLi
         label.setForeground(Color.white);
         label.setAlignmentX(Component.CENTER_ALIGNMENT);
         parent.add(label);
-    }
-    public void dodawanieWkolejnosci(JPanel panel1,JPanel panel2,JPanel panel3,JPanel panel4,JPanel parent){
-        parent.add(panel1);
-        parent.add(panel2);
-        parent.add(panel3);
-        parent.add(panel4);
     }
 
     public void actionPerformed(ActionEvent e) {
