@@ -31,9 +31,9 @@ public class GamePanel extends JPanel implements ActionListener {
         menu = new Menue(width,height);
         gra = new Gra(width,height);
         listaAtom = new ListaEle(width,height,"atomowych",gracz, new ElektrowniaAtomowa(), listyElektrowni.elektrownieAtomowe);
+        listaFoto = new ListaEle(width,height,"fotowoltaicnych",gracz, new ElektrowniaFotowoltaiczna(), listyElektrowni.elektrownieFotowoltaiczne);
         listaWegiel = new ListaEle(width,height,"weglowych",gracz, new ElektrowniaWeglowa(), listyElektrowni.elektrownieWeglowe);
         listaGaz = new ListaEle(width,height,"gazowych",gracz, new ElektrowniaGazowa(), listyElektrowni.elektrownieGazowe);
-        listaFoto = new ListaEle(width,height,"fotowoltaicnych",gracz, new ElektrowniaFotowoltaiczna(), listyElektrowni.elektrownieFotowoltaiczne);
 
         menu.nowaGra.addActionListener(this);
         menu.wczytajGre.addActionListener(this);

@@ -204,11 +204,10 @@ abstract public class ElektrowniaOknoAbstract extends JFrame implements ActionLi
         informacje = new JPanel();
         zamknij = new JPanel();
 
-        skroty.setLayout(new FlowLayout());
+        //skroty.setLayout(new FlowLayout());
         informacje.setLayout(new BoxLayout(informacje,BoxLayout.Y_AXIS));
 
         skroty.setBackground(new Color(110, 120, 125));
-        skroty.add(Box.createRigidArea(new Dimension(0,500)));
         //informacje.setBackground(Color.black);
         //zamknij.setBackground(Color.black);
         informacje.setBackground(new Color(110, 120, 125));
@@ -220,9 +219,11 @@ abstract public class ElektrowniaOknoAbstract extends JFrame implements ActionLi
         skrot("Moc chwilowa elektrowni","dane1",informacje);
         skrot("Moc maksymalna elektrowni","dane1",informacje);
         skrot("Liczba pracowników elektrowni","dane1",informacje);
+        skroty.add(informacje);
         //skrot("Stan magazynu","dane1",skroty);
 
         //PRZYCISK ZAPISZ I ZAMKNIJ
+        skroty.add(Box.createRigidArea(new Dimension(0,100)));
         zapiszIZamknij = new JButton("Zapisz i zamknij");
         zapiszIZamknij.setFont(new Font("Arial black", Font.BOLD, 22));
         zapiszIZamknij.setForeground(Color.red);
@@ -230,8 +231,8 @@ abstract public class ElektrowniaOknoAbstract extends JFrame implements ActionLi
         zapiszIZamknij.addActionListener(this);
         zamknij.add(zapiszIZamknij);
 
-        skroty.setLocation(100, 100);
-        skroty.add(informacje);
+        //skroty.setLocation(100, 100);
+
         skroty.add(zamknij);
 
     }

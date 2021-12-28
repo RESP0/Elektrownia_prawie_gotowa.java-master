@@ -21,25 +21,25 @@ public class Gracz implements Serializable {
     public Gracz() {
         balans = 6000f;
         listaElektrowni = new ArrayList<>(){
-            {
+            {   //Atom
                 add(null);
                 add(null);
                 add(null);
                 add(null);
                 add(null);
-                //-------------------
+                //Fotowoltaika-------------------
                 add(null);
                 add(null);
                 add(null);
                 add(null);
                 add(null);
-                //-------------------
+                //Weglowa-------------------
                 add(null);
                 add(null);
                 add(null);
                 add(null);
                 add(null);
-                //-------------------
+                //Gazowa-------------------
                 add(null);
                 add(null);
                 add(null);
@@ -47,12 +47,10 @@ public class Gracz implements Serializable {
                 add(null);
             }
         };
-        listaElektrowni.add(new ElektrowniaAtomowa());
     }
 
     public void zakupElektrowni() {
-        ListyElektrowni listyelektrowni = new ListyElektrowni();
-        listaElektrowni.add(listyelektrowni.elektrownieAtomowe.get(0));
+
     }
 
     public float getBalans() {

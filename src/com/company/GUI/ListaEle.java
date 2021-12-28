@@ -14,7 +14,6 @@ import java.time.Year;
 import java.util.ArrayList;
 
 //DODAC ZABEZPIECZENIE ZE NIE MOZNA KUPIC JAK MA SIĘ ZA MAŁO PIENIĘDZY
-//LUB GDY LICZBA ELE JEST ROWNA 5
 
 //oPCJONaLNIE DO KAŻDEGO BUTTONA DOADAĆ INNĄ ICONE ZEBY ŁADNIE WYGLĄDAŁO
 public class ListaEle extends JPanel implements ActionListener {
@@ -41,8 +40,10 @@ public class ListaEle extends JPanel implements ActionListener {
     JButton kup4;
     JButton kup5;
     ArrayList<JButton> kup;
+    Gracz gracz;
 
-    ListaEle(int szer, int wys,String title, Gracz gracz, Elektrownia e, ArrayList<Elektrownia> lista){
+    ListaEle(int szer, int wys,String title, Gracz g, Elektrownia e, ArrayList<Elektrownia> lista){
+        gracz = g;
         //USTAWIENIA PANELU
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         this.setPreferredSize(new Dimension(szer,wys));
@@ -132,7 +133,7 @@ public class ListaEle extends JPanel implements ActionListener {
             panelPrzyciskow.add(przyciski.get(i));
         }
         this.add(panelPrzyciskow);
-        this.add(Box.createRigidArea(new Dimension(0,150)));
+        this.add(Box.createRigidArea(new Dimension(0,120)));
 
         //DOLNY PANEL
         dol = new JPanel();
@@ -164,6 +165,7 @@ public class ListaEle extends JPanel implements ActionListener {
             kup1.setVisible(false);
             cena.setVisible(false);    //nie wiem dlaczego ale nie dziala
             button1.setEnabled(true);
+            gracz.zakupElektrowni();
         }
 
         if (e.getSource() == kup2){
