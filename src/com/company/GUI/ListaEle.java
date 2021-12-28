@@ -99,7 +99,7 @@ public class ListaEle extends JPanel implements ActionListener {
 
             kup.get(i).setFont(font);
             kup.get(i).setFocusable(false);
-            kup.get(i).setForeground(Color.white);
+            kup.get(i).setForeground(Color.black);
             kup.get(i).setBackground(Color.red);
             kup.get(i).setAlignmentX(CENTER_ALIGNMENT);
 
