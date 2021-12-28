@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Elektrownia_prawie_idealna.java-master:jar">
+    <output-path>$USER_HOME$/Desktop</output-path>
+    <root id="archive" name="Elektrownia_prawie_idealna.java-master.jar">
+      <element id="module-output" name="Elektrownia_prawie_idealna.java-master" />
+    </root>
+  </artifact>
+</component>

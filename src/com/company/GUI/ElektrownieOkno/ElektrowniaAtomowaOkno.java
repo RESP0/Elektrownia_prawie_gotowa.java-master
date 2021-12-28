@@ -1,6 +1,7 @@
 package com.company.GUI.ElektrownieOkno;
 
 import com.company.Elektrownie.Elektrownia;
+import com.company.Elektrownie.ListyElektrowni;
 
 
 import javax.swing.*;
@@ -11,7 +12,7 @@ public class ElektrowniaAtomowaOkno extends ElektrowniaOknoAbstract {
     public ElektrowniaAtomowaOkno(Elektrownia e){
         super(e);
         this.setTitle("Elektrownia atomowa");
-        skrot("Twoja stara", "test",skroty);
+        skrot("Aktualna liczba pracownikow", "",informacje);
     }
 
 }

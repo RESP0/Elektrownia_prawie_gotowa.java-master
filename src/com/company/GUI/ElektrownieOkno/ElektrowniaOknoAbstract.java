@@ -1,6 +1,7 @@
 package com.company.GUI.ElektrownieOkno;
 
 import com.company.Elektrownie.Elektrownia;
+import com.company.GUI.ListaEle;
 
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
@@ -64,6 +65,8 @@ abstract public class ElektrowniaOknoAbstract extends JFrame implements ActionLi
     //skroty
     JPanel skroty;
     JButton zapiszIZamknij;
+    JPanel informacje;
+    JPanel zamknij;
 
     //info icon
     ImageIcon info;
@@ -76,7 +79,6 @@ abstract public class ElektrowniaOknoAbstract extends JFrame implements ActionLi
         this.setLayout(new GridLayout());
         this.setVisible(true);
         this.getContentPane().setBackground(Color.black);
-        this.setDefaultCloseOperation(EXIT_ON_CLOSE);    //do usuniecia w finalnej wesji
         mainPanel = new JPanel();
         mainPanel.setPreferredSize(new Dimension(900,600));
         mainPanel.setLayout(new GridLayout(1,3));
@@ -106,7 +108,7 @@ abstract public class ElektrowniaOknoAbstract extends JFrame implements ActionLi
         //PANEL DOKUP BLOKI
         bloki = new JPanel();
         infoBloki = new JLabel(newInfo);
-        kafelekInfo(bloki,Color.blue,"ROZBUDUJ ELEKTROWNIE",infoBloki,podstawoweAkcje);
+        kafelekInfo(bloki,new Color(80, 90, 100),"ROZBUDUJ ELEKTROWNIE",infoBloki,podstawoweAkcje);
         
         //PRZYCISK DOKUP BLOKI
         kupBloki = new JButton();
@@ -115,7 +117,7 @@ abstract public class ElektrowniaOknoAbstract extends JFrame implements ActionLi
         //PANEL PRACOWNIKA
         pracownicy = new JPanel();
         infoPracownicy = new JLabel(newInfo);
-        kafelekInfo(pracownicy,new Color(50, 110, 150),"<html>ZWOLNIJ / ZATRUDNIJ<br>PRACOWNIKÓW</html>",infoPracownicy,podstawoweAkcje);
+        kafelekInfo(pracownicy,new Color(100, 100, 100),"<html>ZWOLNIJ / ZATRUDNIJ<br>PRACOWNIKÓW</html>",infoPracownicy,podstawoweAkcje);
 
         //PRZYCISKI ZWOLNIJ ZATRUDNIJ PRACOWNIKA
         pracownicy.add(Box.createRigidArea(new Dimension(0,80)));
@@ -139,12 +141,13 @@ abstract public class ElektrowniaOknoAbstract extends JFrame implements ActionLi
         magazyn = new JPanel();
         kafelek(magazyn,Color.blue,"STAN MAGAZYNU",podstawoweAkcje);
         //DOKUP BUTTON
+        magazyn.setBackground(new Color(80, 90, 100));
         dokupButton = new JButton();
         pojedynczyPrzycisk(dokupButton,"DOKUP", magazyn, Color.green);
 
         //PANEL SPRZEDAJ
         sprzedaj = new JPanel();
-        kafelek(sprzedaj,new Color(50, 110, 150),"SPRZEDAJ ELEKTROWNIE",podstawoweAkcje);
+        kafelek(sprzedaj,new Color(100, 100, 100),"SPRZEDAJ ELEKTROWNIE",podstawoweAkcje);
 
         //SPRZEDAJ BUTTON
         sprzedajButton = new JButton();
@@ -197,13 +200,27 @@ abstract public class ElektrowniaOknoAbstract extends JFrame implements ActionLi
         slider(kiedySlider,kiedyLabel,kiedyDokupic);
 
         //------------- SKROTY -------------
-        skroty.setLayout(new BoxLayout(skroty,BoxLayout.Y_AXIS));
-        //skroty.add(test);
-        skrot("Moc chwilowa elektrowni","dane1",skroty);
-        skrot("Moc maksymalna elektrowni","dane1",skroty);
-        skrot("Liczba pracowników elektrowni","dane1",skroty);
+
+        informacje = new JPanel();
+        zamknij = new JPanel();
+
+        skroty.setLayout(new FlowLayout());
+        informacje.setLayout(new BoxLayout(informacje,BoxLayout.Y_AXIS));
+
+        skroty.setBackground(new Color(110, 120, 125));
+        skroty.add(Box.createRigidArea(new Dimension(0,500)));
+        //informacje.setBackground(Color.black);
+        //zamknij.setBackground(Color.black);
+        informacje.setBackground(new Color(110, 120, 125));
+        zamknij.setBackground(new Color(110, 120, 125));
+
+        skrot("Moc chwilowa elektrowni",String.valueOf(10),informacje);
+        skrot("Moc maksymalna elektrowni","dane1",informacje);
+        skrot("Liczba pracowników elektrowni","dane1",informacje);
+        skrot("Moc chwilowa elektrowni","dane1",informacje);
+        skrot("Moc maksymalna elektrowni","dane1",informacje);
+        skrot("Liczba pracowników elektrowni","dane1",informacje);
         //skrot("Stan magazynu","dane1",skroty);
-        skroty.add(Box.createRigidArea(new Dimension(0,250)));
 
         //PRZYCISK ZAPISZ I ZAMKNIJ
         zapiszIZamknij = new JButton("Zapisz i zamknij");
@@ -211,7 +228,11 @@ abstract public class ElektrowniaOknoAbstract extends JFrame implements ActionLi
         zapiszIZamknij.setForeground(Color.red);
         zapiszIZamknij.setAlignmentX(Component.CENTER_ALIGNMENT);
         zapiszIZamknij.addActionListener(this);
-        skroty.add(zapiszIZamknij);
+        zamknij.add(zapiszIZamknij);
+
+        skroty.setLocation(100, 100);
+        skroty.add(informacje);
+        skroty.add(zamknij);
 
     }
     Font font = new Font("Arial black", Font.BOLD, 17);

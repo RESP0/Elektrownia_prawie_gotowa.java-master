@@ -21,8 +21,10 @@ public class ListaEle extends JPanel implements ActionListener {
 
     private int liczbaEle = 0;
     JLabel tytul;
+    JLabel stanKonta;
     JLabel nazwa;
     JLabel miasto;
+    JLabel cena;
     JButton button1;
     JButton button2;
     JButton button3;
@@ -54,10 +56,17 @@ public class ListaEle extends JPanel implements ActionListener {
         tytul.setAlignmentX(CENTER_ALIGNMENT);
         this.add(tytul);
 
+        //STAN KONTA GRACZA
+        stanKonta = new JLabel("Stan konta: " + "Nie dziala stan konta");
+        stanKonta.setFont(new Font("Ink Free",Font.BOLD,20));
+        stanKonta.setForeground(Color.white);
+        stanKonta.setAlignmentX(CENTER_ALIGNMENT);
+        this.add(stanKonta);
+
         //USTAWIENIA PANELU Z PRZYCISKAMI
         panelPrzyciskow = new JPanel();
-        this.add(Box.createRigidArea(new Dimension(0,120)));
-        panelPrzyciskow.setPreferredSize(new Dimension(szer,150));
+        this.add(Box.createRigidArea(new Dimension(0,130)));
+        panelPrzyciskow.setPreferredSize(new Dimension(szer,160));
 
 
         panelPrzyciskow.setLayout(new GridLayout());
@@ -102,16 +111,23 @@ public class ListaEle extends JPanel implements ActionListener {
             kup.get(i).setForeground(Color.black);
             kup.get(i).setBackground(Color.red);
             kup.get(i).setAlignmentX(CENTER_ALIGNMENT);
+            kup.get(i).addActionListener(this);
+
+            cena = new JLabel(String.valueOf(lista.get(i).getCenaZakupu()));
+            cena.setFont(font);
+            cena.setAlignmentX(CENTER_ALIGNMENT);
+            cena.setAlignmentY(CENTER_ALIGNMENT);
 
             przyciski.get(i).setLayout(new BoxLayout(przyciski.get(i), BoxLayout.Y_AXIS));
-            przyciski.get(i).add(Box.createRigidArea(new Dimension(0,20)));
+            przyciski.get(i).add(Box.createRigidArea(new Dimension(0,10)));
             przyciski.get(i).add(nazwa);
             przyciski.get(i).add(miasto);
-            przyciski.get(i).add(Box.createRigidArea(new Dimension(0,20)));
+            przyciski.get(i).add(Box.createRigidArea(new Dimension(0,10)));
             przyciski.get(i).add(kup.get(i));
+            przyciski.get(i).add(cena);
 
 
-            przyciski.get(i).setEnabled(true);
+            przyciski.get(i).setEnabled(false);
             przyciski.get(i).addActionListener(this);
             panelPrzyciskow.add(przyciski.get(i));
         }
@@ -126,7 +142,7 @@ public class ListaEle extends JPanel implements ActionListener {
 
         //PRZYCISK POWROTU
         powrot = new JButton("Powrot");
-        powrot.setBounds(szer-150,5,130,60);
+        powrot.setBounds(szer-150,0,130,60);
         powrot.setFont(new Font("Arial black", Font.BOLD, 18));
         powrot.addActionListener(this);
         dol.add(powrot);
@@ -143,8 +159,54 @@ public class ListaEle extends JPanel implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == przyciski.get(0)){
-            System.out.println("Oiweram nowa elektrownie");
+        if (e.getSource() == kup1){
+            System.out.println("Zakupiles nowa elektrownie");
+            kup1.setVisible(false);
+            cena.setVisible(false);    //nie wiem dlaczego ale nie dziala
+            button1.setEnabled(true);
+        }
+
+        if (e.getSource() == kup2){
+            kup2.setVisible(false);
+            button2.setEnabled(true);
+        }
+
+        if (e.getSource() == kup3){
+            kup3.setVisible(false);
+            button3.setEnabled(true);
+        }
+
+        if (e.getSource() == kup4){
+            kup4.setVisible(false);
+            button4.setEnabled(true);
+        }
+
+        if (e.getSource() == kup5){
+            kup5.setVisible(false);
+            button5.setEnabled(true);
+        }
+
+        if (e.getSource() == button1){
+            System.out.println("Otwieram nowa elektrownie");
+            new ElektrowniaAtomowaOkno(null);
+        }
+
+        if (e.getSource() == button2){
+            System.out.println("Otwieram nowa elektrownie");
+            new ElektrowniaAtomowaOkno(null);
+        }
+        if (e.getSource() == button3){
+            System.out.println("Otwieram nowa elektrownie");
+            new ElektrowniaAtomowaOkno(null);
+        }
+
+        if (e.getSource() == button4){
+            System.out.println("Otwieram nowa elektrownie");
+            new ElektrowniaAtomowaOkno(null);
+        }
+
+        if (e.getSource() == button5){
+            System.out.println("Otwieram nowa elektrownie");
             new ElektrowniaAtomowaOkno(null);
         }
 

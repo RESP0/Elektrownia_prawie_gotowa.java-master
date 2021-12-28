@@ -26,6 +26,8 @@ public abstract class Elektrownia implements Serializable, ObliczDochodElektrown
 	private DystrybutorPradu Dystrybutor;
 	private int sposobNaReakcjeNaAwarie;
 	private int sposobNaReakcjeNaAtak;
+	private int cenaZakupu;
+	private int cenaSprzedazy;
 
 
 	protected ReakcjaNaAwarieZasilania reakcjaNaAwarieZasilania;
@@ -67,9 +69,11 @@ public abstract class Elektrownia implements Serializable, ObliczDochodElektrown
 		Dystrybutor = new DystrybutorPradu();
 		sposobNaReakcjeNaAwarie = 0;
 		sposobNaReakcjeNaAtak = 0;
+		cenaZakupu = 0;
+		cenaSprzedazy = 0;
 	}
 	
-	public Elektrownia(String nazwa, String miasto, int MocChwilowa, int MocMaksymalna, int LiczbaPracownikow, boolean czyPracuje, Wlasciciel wlasciciel, DystrybutorPradu Dystrybutor)
+	public Elektrownia(String nazwa, String miasto, int MocChwilowa, int MocMaksymalna, int LiczbaPracownikow, boolean czyPracuje, Wlasciciel wlasciciel, DystrybutorPradu Dystrybutor, int cenaZakupu, int cenaSprzedazy)
 	{
 		this.nazwa = nazwa;
 		this.miasto = miasto;
@@ -82,6 +86,8 @@ public abstract class Elektrownia implements Serializable, ObliczDochodElektrown
 		this.Dystrybutor = Dystrybutor;
 		this.sposobNaReakcjeNaAwarie = 0;
 		this.sposobNaReakcjeNaAtak = 0;
+		this.cenaZakupu = cenaZakupu;
+		this.cenaSprzedazy = cenaSprzedazy;
 
 		for(int i = 0; i<pracownicy.length;i++){
 			pracownicy[i] = new Pracownicy();
@@ -168,6 +174,14 @@ public abstract class Elektrownia implements Serializable, ObliczDochodElektrown
 	public int getSposobNaReakcjeNaAtak() { return sposobNaReakcjeNaAtak; }
 
 	public void setSposobNaReakcjeNaAtak(int sposobNaReakcjeNaAtak) { this.sposobNaReakcjeNaAtak = sposobNaReakcjeNaAtak; }
+
+	public int getCenaZakupu() { return cenaZakupu; }
+
+	public void setCenaZakupu(int cenaZakupu) { this.cenaZakupu = cenaZakupu; }
+
+	public int getCenaSprzedazy() { return cenaSprzedazy; }
+
+	public void setCenaSprzedazy(int cenaSprzedazy) { this.cenaSprzedazy = cenaSprzedazy; }
 
 	public String toString()
 	{
