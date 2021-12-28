@@ -24,6 +24,8 @@ public abstract class Elektrownia implements Serializable, ObliczDochodElektrown
 	private boolean czyPracuje;
 	private Pracownicy pracownicy[];
 	private DystrybutorPradu Dystrybutor;
+	private int sposobNaReakcjeNaAwarie;
+	private int sposobNaReakcjeNaAtak;
 
 
 	protected ReakcjaNaAwarieZasilania reakcjaNaAwarieZasilania;
@@ -63,6 +65,8 @@ public abstract class Elektrownia implements Serializable, ObliczDochodElektrown
 		czyPracuje = false;
 		wlasciciel = new Wlasciciel();
 		Dystrybutor = new DystrybutorPradu();
+		sposobNaReakcjeNaAwarie = 0;
+		sposobNaReakcjeNaAtak = 0;
 	}
 	
 	public Elektrownia(String nazwa, String miasto, int MocChwilowa, int MocMaksymalna, int LiczbaPracownikow, boolean czyPracuje, Wlasciciel wlasciciel, DystrybutorPradu Dystrybutor)
@@ -76,6 +80,8 @@ public abstract class Elektrownia implements Serializable, ObliczDochodElektrown
 		this.czyPracuje = czyPracuje;
 		this.pracownicy = new Pracownicy[getLiczbaPracownikow()];
 		this.Dystrybutor = Dystrybutor;
+		this.sposobNaReakcjeNaAwarie = 0;
+		this.sposobNaReakcjeNaAtak = 0;
 
 		for(int i = 0; i<pracownicy.length;i++){
 			pracownicy[i] = new Pracownicy();
@@ -154,6 +160,14 @@ public abstract class Elektrownia implements Serializable, ObliczDochodElektrown
 	public void setNazwa(String nazwa) {
 		this.nazwa = nazwa;
 	}
+
+	public int getSposobNaReakcjeNaAwarie() { return sposobNaReakcjeNaAwarie; }
+
+	public void setSposobNaReakcjeNaAwarie(int sposobNaReakcjeNaAwarie) { this.sposobNaReakcjeNaAwarie = sposobNaReakcjeNaAwarie; }
+
+	public int getSposobNaReakcjeNaAtak() { return sposobNaReakcjeNaAtak; }
+
+	public void setSposobNaReakcjeNaAtak(int sposobNaReakcjeNaAtak) { this.sposobNaReakcjeNaAtak = sposobNaReakcjeNaAtak; }
 
 	public String toString()
 	{

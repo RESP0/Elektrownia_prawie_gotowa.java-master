@@ -92,7 +92,6 @@ public class Main {
                                 gracz.SprzedajElektrownie();
                                 break;
                             case 5:
-                                gracz.show();
                                 break;
                             case 6:
                                 System.out.println(gracz.getBalans());

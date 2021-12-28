@@ -154,7 +154,7 @@ abstract public class ElektrowniaOknoAbstract extends JFrame implements ActionLi
         kafelek(moc,new Color(100, 100, 100),"MOC CHWILOWA",wybory);
 
         //MOC SLIDER
-        mocSlider = new JSlider(0,100,20);
+        mocSlider = new JSlider(0,100,50);
         mocLabel = new JLabel();
         slider(mocSlider,mocLabel,moc);
 
@@ -163,7 +163,7 @@ abstract public class ElektrowniaOknoAbstract extends JFrame implements ActionLi
         kafelek(kiedyDokupic,new Color(80, 90, 100),"KIEDY DOKUPIC",wybory);
 
         //SLIDER KIEDY KUPIC
-        kiedySlider = new JSlider(0,100,20);
+        kiedySlider = new JSlider(0,100,0);
         kiedyLabel = new JLabel();
         slider(kiedySlider,kiedyLabel,kiedyDokupic);
 

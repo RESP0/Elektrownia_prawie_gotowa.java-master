@@ -89,7 +89,6 @@ public class Symulator {
 
         }
         public static Elektrownia WyborElektrowni(Gracz gracz) {
-            gracz.show();
             System.out.println("Wybierz numer elektrownii");
             a = scan.nextInt();
             return gracz.getListaElektrowni().get(a);

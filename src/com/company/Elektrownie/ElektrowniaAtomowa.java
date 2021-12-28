@@ -15,6 +15,7 @@ public class ElektrowniaAtomowa extends Elektrownia {
     private int LiczbaReaktorow;
     private float ZuzycieWody;
     private float IloscOdpadow;
+    private int kiedyDokupic;
     private com.company.uslugodawcy.OdbiorcaOdpadow[] OdbiorcaOdpadow;
     private ArrayList<String> listaMiastAtom = new ArrayList<>(){
         {
@@ -40,6 +41,7 @@ public class ElektrowniaAtomowa extends Elektrownia {
         this.ZuzycieWody = ZuzycieWody;
         this.IloscOdpadow = IloscOdpadow;
         this.OdbiorcaOdpadow = OdbiorcaOdpadow;
+        this.kiedyDokupic = 0;
 
         reakcjaNaAwarieZasilania = new Sposob1ReakcjaNaAwarieZasilania();
         reakcjeNaAtakTerrorystyczny = new Sposob2ReakcjaNaAtakTerrorystyczny();
@@ -101,6 +103,10 @@ public class ElektrowniaAtomowa extends Elektrownia {
     public void setOdbiorcaOdpadow(OdbiorcaOdpadow odbiorcaOdpadow, int x) {
         OdbiorcaOdpadow[x] = odbiorcaOdpadow;
     }
+
+    public int getKiedyDokupic() { return kiedyDokupic; }
+
+    public void setKiedyDokupic(int kiedyDokupic) { this.kiedyDokupic = kiedyDokupic; }
 
     @Override
     public String toString() {
