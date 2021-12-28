@@ -20,7 +20,33 @@ public class Gracz implements Serializable {
 
     public Gracz() {
         balans = 6000f;
-        listaElektrowni = new ArrayList<>();
+        listaElektrowni = new ArrayList<>(){
+            {
+                add(null);
+                add(null);
+                add(null);
+                add(null);
+                add(null);
+                //-------------------
+                add(null);
+                add(null);
+                add(null);
+                add(null);
+                add(null);
+                //-------------------
+                add(null);
+                add(null);
+                add(null);
+                add(null);
+                add(null);
+                //-------------------
+                add(null);
+                add(null);
+                add(null);
+                add(null);
+                add(null);
+            }
+        };
         listaElektrowni.add(new ElektrowniaAtomowa());
     }
 

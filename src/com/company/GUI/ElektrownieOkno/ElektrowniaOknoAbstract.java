@@ -1,5 +1,7 @@
 package com.company.GUI.ElektrownieOkno;
 
+import com.company.Elektrownie.Elektrownia;
+
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
@@ -67,7 +69,7 @@ abstract public class ElektrowniaOknoAbstract extends JFrame implements ActionLi
     ImageIcon info;
     ImageIcon newInfo;
 
-    public ElektrowniaOknoAbstract() {
+    public ElektrowniaOknoAbstract(Elektrownia elektrownia) {
 
         //USTAWIENIA RAMKI
         this.setResizable(false);
@@ -171,6 +173,7 @@ abstract public class ElektrowniaOknoAbstract extends JFrame implements ActionLi
         awaria1 = new JRadioButton("Sposób1");
         awaria2 = new JRadioButton("Sposób2");
         grupaAwaria = new ButtonGroup();
+        awariaBrak.setSelected(true);
         radia(awariaBrak,awaria1,awaria2,grupaAwaria,reakcjaNaAwarie);
 
         //PANEL MOCY

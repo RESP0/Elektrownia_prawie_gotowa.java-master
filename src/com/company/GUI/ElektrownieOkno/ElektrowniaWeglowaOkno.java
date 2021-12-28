@@ -1,5 +1,7 @@
 package com.company.GUI.ElektrownieOkno;
 
+import com.company.Elektrownie.Elektrownia;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -8,7 +10,8 @@ public class ElektrowniaWeglowaOkno extends ElektrowniaOknoAbstract{
     JLabel dostawca_wegla;
     JLabel ilosc_wegla;
 
-    public ElektrowniaWeglowaOkno(){
+    public ElektrowniaWeglowaOkno(Elektrownia elektrownia){
+        super(elektrownia);
         this.setTitle("Elektrownia weglowa");
         this.setResizable(false);
         this.setLayout(null);

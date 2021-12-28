@@ -33,6 +33,13 @@ public class ListaEle extends JPanel implements ActionListener {
     JButton powrot;
     JPanel dol;
 
+    JButton kup1;
+    JButton kup2;
+    JButton kup3;
+    JButton kup4;
+    JButton kup5;
+    ArrayList<JButton> kup;
+
     ListaEle(int szer, int wys,String title, Gracz gracz, Elektrownia e, ArrayList<Elektrownia> lista){
         //USTAWIENIA PANELU
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
@@ -50,7 +57,7 @@ public class ListaEle extends JPanel implements ActionListener {
         //USTAWIENIA PANELU Z PRZYCISKAMI
         panelPrzyciskow = new JPanel();
         this.add(Box.createRigidArea(new Dimension(0,120)));
-        panelPrzyciskow.setPreferredSize(new Dimension(szer,120));
+        panelPrzyciskow.setPreferredSize(new Dimension(szer,150));
 
 
         panelPrzyciskow.setLayout(new GridLayout());
@@ -63,6 +70,16 @@ public class ListaEle extends JPanel implements ActionListener {
                 add(button3 = new JButton());
                 add(button4 = new JButton());
                 add(button5 = new JButton());
+            }
+        };
+
+        kup = new ArrayList<>(){
+            {
+                add(kup1 = new JButton("KUP"));
+                add(kup2 = new JButton("KUP"));
+                add(kup3 = new JButton("KUP"));
+                add(kup4 = new JButton("KUP"));
+                add(kup5 = new JButton("KUP"));
             }
         };
 
@@ -80,17 +97,26 @@ public class ListaEle extends JPanel implements ActionListener {
             miasto.setAlignmentX(CENTER_ALIGNMENT);
             miasto.setAlignmentY(CENTER_ALIGNMENT);
 
+            kup.get(i).setFont(font);
+            kup.get(i).setFocusable(false);
+            kup.get(i).setForeground(Color.white);
+            kup.get(i).setBackground(Color.red);
+            kup.get(i).setAlignmentX(CENTER_ALIGNMENT);
+
             przyciski.get(i).setLayout(new BoxLayout(przyciski.get(i), BoxLayout.Y_AXIS));
             przyciski.get(i).add(Box.createRigidArea(new Dimension(0,20)));
             przyciski.get(i).add(nazwa);
             przyciski.get(i).add(miasto);
+            przyciski.get(i).add(Box.createRigidArea(new Dimension(0,20)));
+            przyciski.get(i).add(kup.get(i));
+
 
             przyciski.get(i).setEnabled(true);
             przyciski.get(i).addActionListener(this);
             panelPrzyciskow.add(przyciski.get(i));
         }
         this.add(panelPrzyciskow);
-        this.add(Box.createRigidArea(new Dimension(0,200)));
+        this.add(Box.createRigidArea(new Dimension(0,150)));
 
         //DOLNY PANEL
         dol = new JPanel();
@@ -105,19 +131,21 @@ public class ListaEle extends JPanel implements ActionListener {
         powrot.addActionListener(this);
         dol.add(powrot);
         this.add(dol);
-
+        /*
         for (Elektrownia elektrownia : gracz.getListaElektrowni()){
             if (elektrownia.getClass() == e.getClass()){
                 liczbaEle +=1;
             }
         }
+
+         */
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == przyciski.get(0)){
             System.out.println("Oiweram nowa elektrownie");
-            new ElektrowniaAtomowaOkno();
+            new ElektrowniaAtomowaOkno(null);
         }
 
         this.revalidate();

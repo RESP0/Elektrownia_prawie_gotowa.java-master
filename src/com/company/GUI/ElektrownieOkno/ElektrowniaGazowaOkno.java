@@ -1,5 +1,7 @@
 package com.company.GUI.ElektrownieOkno;
 
+import com.company.Elektrownie.Elektrownia;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -8,7 +10,8 @@ public class ElektrowniaGazowaOkno extends ElektrowniaOknoAbstract {
     JLabel dostawca_gazu;
     JLabel ilosc_gazu;
 
-    public ElektrowniaGazowaOkno(){
+    public ElektrowniaGazowaOkno(Elektrownia elektrownia){
+        super(elektrownia);
         this.setTitle("Elektrownia gazowa");
         this.setResizable(false);
         this.setLayout(null);
