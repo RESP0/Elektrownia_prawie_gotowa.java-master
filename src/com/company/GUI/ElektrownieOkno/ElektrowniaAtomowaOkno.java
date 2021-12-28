@@ -7,6 +7,7 @@ public class ElektrowniaAtomowaOkno extends ElektrowniaOknoAbstract {
 
     public ElektrowniaAtomowaOkno(){
         this.setTitle("Elektrownia atomowa");
+        skrot("Twoja stara", "test",skroty);
     }
 
 }
