@@ -89,7 +89,6 @@ public class Main {
                                 WyborElektrowni(gracz).ustawReakcjeNaAtak(reakcjaAtak);
                                 break;
                             case 4:
-                                gracz.SprzedajElektrownie();
                                 break;
                             case 5:
                                 break;

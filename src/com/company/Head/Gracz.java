@@ -55,12 +55,6 @@ public class Gracz implements Serializable {
         listaElektrowni.add(listyelektrowni.elektrownieAtomowe.get(0));
     }
 
-    public void SprzedajElektrownie() {
-        int a = 0;
-        listaElektrowni.remove(a);
-        balans+=1000;
-    }
-
     public float getBalans() {
         return balans;
     }
