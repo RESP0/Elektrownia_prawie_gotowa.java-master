@@ -47,6 +47,10 @@ public class GamePanel extends JPanel implements ActionListener {
         //this.add(gra);
         listaAtom.powrot.addActionListener(this);
         listaAtom.kup1.addActionListener(this);
+        listaAtom.kup2.addActionListener(this);
+        listaAtom.kup3.addActionListener(this);
+        listaAtom.kup4.addActionListener(this);
+        listaAtom.kup5.addActionListener(this);
         listaAtom.button1.addActionListener(this);
         listaAtom.button2.addActionListener(this);
         listaAtom.button3.addActionListener(this);
@@ -55,7 +59,10 @@ public class GamePanel extends JPanel implements ActionListener {
         //---------------------------------------------------------
         listaFoto.powrot.addActionListener(this);
         listaFoto.kup1.addActionListener(this);
-
+        listaFoto.kup2.addActionListener(this);
+        listaFoto.kup3.addActionListener(this);
+        listaFoto.kup4.addActionListener(this);
+        listaFoto.kup5.addActionListener(this);
         listaFoto.button1.addActionListener(this);
         listaFoto.button2.addActionListener(this);
         listaFoto.button3.addActionListener(this);
@@ -63,6 +70,11 @@ public class GamePanel extends JPanel implements ActionListener {
         listaFoto.button5.addActionListener(this);
         //---------------------------------------------------------
         listaWegiel.powrot.addActionListener(this);
+        listaWegiel.kup1.addActionListener(this);
+        listaWegiel.kup2.addActionListener(this);
+        listaWegiel.kup3.addActionListener(this);
+        listaWegiel.kup4.addActionListener(this);
+        listaWegiel.kup5.addActionListener(this);
         listaWegiel.button1.addActionListener(this);
         listaWegiel.button2.addActionListener(this);
         listaWegiel.button3.addActionListener(this);
@@ -70,12 +82,16 @@ public class GamePanel extends JPanel implements ActionListener {
         listaWegiel.button5.addActionListener(this);
         //--------------------------------------------------------
         listaGaz.powrot.addActionListener(this);
+        listaGaz.kup1.addActionListener(this);
+        listaGaz.kup2.addActionListener(this);
+        listaGaz.kup3.addActionListener(this);
+        listaGaz.kup4.addActionListener(this);
+        listaGaz.kup5.addActionListener(this);
         listaGaz.button1.addActionListener(this);
         listaGaz.button2.addActionListener(this);
         listaGaz.button3.addActionListener(this);
         listaGaz.button4.addActionListener(this);
         listaGaz.button5.addActionListener(this);
-
     }
 
 
@@ -132,14 +148,131 @@ public class GamePanel extends JPanel implements ActionListener {
             this.remove(listaAtom);
             add(gra,BorderLayout.CENTER);
         }
-        else if (e.getSource() == listaAtom.kup1){
+        //-------- Atomowa -------------------------
+        else if (e.getSource() == listaAtom.kup1 && gracz.getBalans() > listaAtom.getElektrownie().get(0).getCenaZakupu()){
             gracz.zakupElektrowni(listaAtom.getNrEle(),0,listaAtom.getElektrownie().get(0));
             gracz.odejmijBalans(listaAtom.getElektrownie().get(0).getCenaZakupu());
-            listaAtom.stanKonta.setText("Stan konta: " + gracz.getBalans());
-            listaWegiel.stanKonta.setText("Stan konta: " + gracz.getBalans());
-            listaGaz.stanKonta.setText("Stan konta: " + gracz.getBalans());
-            listaFoto.stanKonta.setText("Stan konta: " + gracz.getBalans());
-            gra.stan_konta.setText("Aktualny stan konta: " + gracz.getBalans());
+            zaktualizujStanKonta();
+        }
+
+        else if (e.getSource() == listaAtom.kup2 && gracz.getBalans() > listaAtom.getElektrownie().get(1).getCenaZakupu()){
+            gracz.zakupElektrowni(listaAtom.getNrEle(),1,listaAtom.getElektrownie().get(1));
+            gracz.odejmijBalans(listaAtom.getElektrownie().get(1).getCenaZakupu());
+            zaktualizujStanKonta();
+        }
+
+        else if (e.getSource() == listaAtom.kup3 && gracz.getBalans() > listaAtom.getElektrownie().get(2).getCenaZakupu()){
+            gracz.zakupElektrowni(listaAtom.getNrEle(),2,listaAtom.getElektrownie().get(2));
+            gracz.odejmijBalans(listaAtom.getElektrownie().get(2).getCenaZakupu());
+            zaktualizujStanKonta();
+        }
+
+        else if (e.getSource() == listaAtom.kup4 && gracz.getBalans() > listaAtom.getElektrownie().get(3).getCenaZakupu()){
+            gracz.zakupElektrowni(listaAtom.getNrEle(),3,listaAtom.getElektrownie().get(3));
+            gracz.odejmijBalans(listaAtom.getElektrownie().get(3).getCenaZakupu());
+            zaktualizujStanKonta();
+        }
+
+        else if (e.getSource() == listaAtom.kup5 && gracz.getBalans() > listaAtom.getElektrownie().get(4).getCenaZakupu()){
+            gracz.zakupElektrowni(listaAtom.getNrEle(),4,listaAtom.getElektrownie().get(4));
+            gracz.odejmijBalans(listaAtom.getElektrownie().get(4).getCenaZakupu());
+            zaktualizujStanKonta();
+        }
+
+        //-------- Gazowa -------------------------
+
+        else if (e.getSource() == listaGaz.kup1 && gracz.getBalans() > listaGaz.getElektrownie().get(0).getCenaZakupu()){
+            gracz.zakupElektrowni(listaGaz.getNrEle(),0,listaGaz.getElektrownie().get(0));
+            gracz.odejmijBalans(listaGaz.getElektrownie().get(0).getCenaZakupu());
+            zaktualizujStanKonta();
+        }
+
+        else if (e.getSource() == listaGaz.kup2 && gracz.getBalans() > listaGaz.getElektrownie().get(1).getCenaZakupu()){
+            gracz.zakupElektrowni(listaGaz.getNrEle(),1,listaGaz.getElektrownie().get(1));
+            gracz.odejmijBalans(listaGaz.getElektrownie().get(1).getCenaZakupu());
+            zaktualizujStanKonta();
+        }
+
+        else if (e.getSource() == listaGaz.kup3 && gracz.getBalans() > listaGaz.getElektrownie().get(2).getCenaZakupu()){
+            gracz.zakupElektrowni(listaGaz.getNrEle(),2,listaGaz.getElektrownie().get(2));
+            gracz.odejmijBalans(listaGaz.getElektrownie().get(2).getCenaZakupu());
+            zaktualizujStanKonta();
+        }
+
+        else if (e.getSource() == listaGaz.kup4 && gracz.getBalans() > listaGaz.getElektrownie().get(3).getCenaZakupu()){
+            gracz.zakupElektrowni(listaGaz.getNrEle(),3,listaGaz.getElektrownie().get(3));
+            gracz.odejmijBalans(listaGaz.getElektrownie().get(3).getCenaZakupu());
+            zaktualizujStanKonta();
+        }
+
+        else if (e.getSource() == listaGaz.kup5 && gracz.getBalans() > listaGaz.getElektrownie().get(4).getCenaZakupu()){
+            gracz.zakupElektrowni(listaGaz.getNrEle(),4,listaGaz.getElektrownie().get(4));
+            gracz.odejmijBalans(listaGaz.getElektrownie().get(4).getCenaZakupu());
+            zaktualizujStanKonta();
+        }
+
+        //-------- Weglowa -------------------------
+
+        else if (e.getSource() == listaWegiel.kup1 && gracz.getBalans() > listaWegiel.getElektrownie().get(0).getCenaZakupu()){
+            gracz.zakupElektrowni(listaWegiel.getNrEle(),0,listaWegiel.getElektrownie().get(0));
+            gracz.odejmijBalans(listaWegiel.getElektrownie().get(0).getCenaZakupu());
+            zaktualizujStanKonta();
+        }
+
+        else if (e.getSource() == listaWegiel.kup2 && gracz.getBalans() > listaWegiel.getElektrownie().get(1).getCenaZakupu()){
+            gracz.zakupElektrowni(listaWegiel.getNrEle(),1,listaWegiel.getElektrownie().get(1));
+            gracz.odejmijBalans(listaWegiel.getElektrownie().get(1).getCenaZakupu());
+            zaktualizujStanKonta();
+        }
+
+        else if (e.getSource() == listaWegiel.kup3 && gracz.getBalans() > listaWegiel.getElektrownie().get(2).getCenaZakupu()){
+            gracz.zakupElektrowni(listaWegiel.getNrEle(),2,listaWegiel.getElektrownie().get(2));
+            gracz.odejmijBalans(listaWegiel.getElektrownie().get(2).getCenaZakupu());
+            zaktualizujStanKonta();
+        }
+
+        else if (e.getSource() == listaWegiel.kup4 && gracz.getBalans() > listaWegiel.getElektrownie().get(3).getCenaZakupu()){
+            gracz.zakupElektrowni(listaWegiel.getNrEle(),3,listaWegiel.getElektrownie().get(3));
+            gracz.odejmijBalans(listaWegiel.getElektrownie().get(3).getCenaZakupu());
+            zaktualizujStanKonta();
+        }
+
+        else if (e.getSource() == listaWegiel.kup5 && gracz.getBalans() > listaWegiel.getElektrownie().get(4).getCenaZakupu()){
+            gracz.zakupElektrowni(listaWegiel.getNrEle(),4,listaWegiel.getElektrownie().get(4));
+            gracz.odejmijBalans(listaWegiel.getElektrownie().get(4).getCenaZakupu());
+            zaktualizujStanKonta();
+        }
+
+        //-------- Fotowoltaiczna -------------------------
+
+        else if (e.getSource() == listaFoto.kup1 && gracz.getBalans() > listaFoto.getElektrownie().get(0).getCenaZakupu()){
+            gracz.zakupElektrowni(listaFoto.getNrEle(),0,listaFoto.getElektrownie().get(0));
+            gracz.odejmijBalans(listaFoto.getElektrownie().get(0).getCenaZakupu());
+            zaktualizujStanKonta();
+        }
+
+        else if (e.getSource() == listaFoto.kup2 && gracz.getBalans() > listaFoto.getElektrownie().get(1).getCenaZakupu()){
+            gracz.zakupElektrowni(listaFoto.getNrEle(),1,listaFoto.getElektrownie().get(1));
+            gracz.odejmijBalans(listaFoto.getElektrownie().get(1).getCenaZakupu());
+            zaktualizujStanKonta();
+        }
+
+        else if (e.getSource() == listaFoto.kup3 && gracz.getBalans() > listaFoto.getElektrownie().get(2).getCenaZakupu()){
+            gracz.zakupElektrowni(listaFoto.getNrEle(),2,listaFoto.getElektrownie().get(2));
+            gracz.odejmijBalans(listaFoto.getElektrownie().get(2).getCenaZakupu());
+            zaktualizujStanKonta();
+        }
+
+        else if (e.getSource() == listaFoto.kup4 && gracz.getBalans() > listaFoto.getElektrownie().get(3).getCenaZakupu()){
+            gracz.zakupElektrowni(listaFoto.getNrEle(),3,listaFoto.getElektrownie().get(3));
+            gracz.odejmijBalans(listaFoto.getElektrownie().get(3).getCenaZakupu());
+            zaktualizujStanKonta();
+        }
+
+        else if (e.getSource() == listaFoto.kup5 && gracz.getBalans() > listaFoto.getElektrownie().get(4).getCenaZakupu()){
+            gracz.zakupElektrowni(listaFoto.getNrEle(),4,listaFoto.getElektrownie().get(4));
+            gracz.odejmijBalans(listaFoto.getElektrownie().get(4).getCenaZakupu());
+            zaktualizujStanKonta();
         }
 
         else if(e.getSource() == listaAtom.button1){
@@ -227,6 +360,14 @@ public class GamePanel extends JPanel implements ActionListener {
         }
         this.revalidate();
         this.repaint();
+    }
+
+    public void zaktualizujStanKonta(){
+        listaAtom.stanKonta.setText("Stan konta: " + gracz.getBalans());
+        listaWegiel.stanKonta.setText("Stan konta: " + gracz.getBalans());
+        listaGaz.stanKonta.setText("Stan konta: " + gracz.getBalans());
+        listaFoto.stanKonta.setText("Stan konta: " + gracz.getBalans());
+        gra.stan_konta.setText("Aktualny stan konta: " + gracz.getBalans());
     }
 
     private int wybor;

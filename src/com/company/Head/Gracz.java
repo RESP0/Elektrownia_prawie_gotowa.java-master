@@ -20,7 +20,7 @@ public class Gracz implements Serializable {
     ListyElektrowni listyElektrowni = new ListyElektrowni();
 
     public Gracz() {
-        balans = 600000f;
+        balans = 200000f;
         listaElektrowni = new ArrayList<>(){
             {   //Atom
                 add(null);
@@ -48,12 +48,14 @@ public class Gracz implements Serializable {
                 add(null);
             }
         };
-        listaElektrowni.set(1,listyElektrowni.elektrownieAtomowe.get(1));
     }
 
     public void zakupElektrowni(int nrEle,int indeks,Elektrownia e) {
-        listaElektrowni.set(nrEle*5+indeks,e);
+        listaElektrowni.set(nrEle*5+indeks, e);
+    }
 
+    public void sprzedazElektrowni(int nrEle,int indeks,Elektrownia e) {
+        listaElektrowni.set(nrEle*5+indeks, null);
     }
 
     public float getBalans() {

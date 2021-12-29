@@ -219,58 +219,31 @@ public class ListaEle extends JPanel implements ActionListener {
             kup1.setVisible(false);
             cena1.setVisible(false);
             button1.setEnabled(true);
-
         }
 
-        if (e.getSource() == kup2){
+        if (e.getSource() == kup2 && gracz.getBalans() > elektrownie.get(1).getCenaZakupu()){
             kup2.setVisible(false);
             button2.setEnabled(true);
             cena2.setVisible(false);
         }
 
-        if (e.getSource() == kup3){
+        if (e.getSource() == kup3 && gracz.getBalans() > elektrownie.get(2).getCenaZakupu()){
             kup3.setVisible(false);
             button3.setEnabled(true);
             cena3.setVisible(false);
         }
 
-        if (e.getSource() == kup4){
+        if (e.getSource() == kup4 && gracz.getBalans() > elektrownie.get(3).getCenaZakupu()){
             kup4.setVisible(false);
             button4.setEnabled(true);
             cena4.setVisible(false);
         }
 
-        if (e.getSource() == kup5){
+        if (e.getSource() == kup5 && gracz.getBalans() > elektrownie.get(4).getCenaZakupu()){
             kup5.setVisible(false);
             button5.setEnabled(true);
             cena5.setVisible(false);
         }
-        /*
-        if (e.getSource() == button1){
-            System.out.println("Otwieram nowa elektrownie");
-            new ElektrowniaAtomowaOkno(null);
-        }
-
-        if (e.getSource() == button2){
-            System.out.println("Otwieram nowa elektrownie");
-            new ElektrowniaAtomowaOkno(null);
-        }
-        if (e.getSource() == button3){
-            System.out.println("Otwieram nowa elektrownie");
-            new ElektrowniaAtomowaOkno(null);
-        }
-
-        if (e.getSource() == button4){
-            System.out.println("Otwieram nowa elektrownie");
-            new ElektrowniaAtomowaOkno(null);
-        }
-
-        if (e.getSource() == button5){
-            System.out.println("Otwieram nowa elektrownie");
-            new ElektrowniaAtomowaOkno(null);
-        }
-
-         */
 
         this.revalidate();
         this.repaint();

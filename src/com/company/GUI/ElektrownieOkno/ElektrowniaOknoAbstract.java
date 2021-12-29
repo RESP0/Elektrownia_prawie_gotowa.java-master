@@ -14,16 +14,6 @@ import java.awt.event.MouseListener;
 
 abstract public class ElektrowniaOknoAbstract extends JFrame implements ActionListener, ChangeListener {
     JPanel mainPanel;
-//do usuniecia
-    JLabel nazwa;
-    JLabel miasto;
-    JLabel moc_chwilowa;
-    JLabel moc_maksymalna;
-    JLabel liczba_pracowanikow;
-    JLabel czypracuje;
-    JLabel dystrybutor;
-    JPanel wlasciciel;
-    JLabel ilosc_wegla;// tyle
 
     //akcje
     JPanel podstawoweAkcje;
@@ -223,16 +213,14 @@ abstract public class ElektrowniaOknoAbstract extends JFrame implements ActionLi
 
         //PRZYCISK ZAPISZ I ZAMKNIJ
         skroty.add(Box.createRigidArea(new Dimension(0,100)));
-        zapiszIZamknij = new JButton("Zapisz i zamknij");
+        zapiszIZamknij = new JButton("ZAPISZ I ZAMKNIJ");
         zapiszIZamknij.setFont(new Font("Arial black", Font.BOLD, 22));
         zapiszIZamknij.setForeground(Color.red);
         zapiszIZamknij.setAlignmentX(Component.CENTER_ALIGNMENT);
         zapiszIZamknij.addActionListener(this);
         zamknij.add(zapiszIZamknij);
 
-
         skroty.add(zamknij);
-
     }
     Font font = new Font("Arial black", Font.BOLD, 17);
     public void kafelek(JPanel panel, Color kolor,String tekst, JPanel parent){
@@ -265,6 +253,7 @@ abstract public class ElektrowniaOknoAbstract extends JFrame implements ActionLi
         przycisk.setFont(new Font("Arial black", Font.BOLD, 22));
         przycisk.setForeground(color);
         przycisk.setFocusable(false);
+        przycisk.addActionListener(this);
         panel.add(przycisk);
     }
     public void radia(JRadioButton brak,JRadioButton przycisk1,JRadioButton przycisk2, ButtonGroup grupa, JPanel panel) {
@@ -315,7 +304,9 @@ abstract public class ElektrowniaOknoAbstract extends JFrame implements ActionLi
 
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == zapiszIZamknij){
-            System.out.println("Stan zostal zapisany");
+            this.dispose();
+        }
+        if (e.getSource() == sprzedajButton){
             this.dispose();
         }
         this.revalidate();
