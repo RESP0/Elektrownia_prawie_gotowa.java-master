@@ -74,6 +74,7 @@ abstract public class ElektrowniaOknoAbstract extends JFrame implements ActionLi
         mainPanel.setLayout(new GridLayout(1,3));
         this.add(mainPanel);
         this.pack();
+
         //PODZIAŁ NA 3 PANELE
         podstawoweAkcje = new JPanel();
         podstawoweAkcje.setBackground(Color.black);
@@ -81,15 +82,13 @@ abstract public class ElektrowniaOknoAbstract extends JFrame implements ActionLi
         mainPanel.add(podstawoweAkcje);
 
         //INFO ICONA
-         info = new ImageIcon("info.jpg");
-         newInfo = new ImageIcon(info.getImage().getScaledInstance(28,28,Image.SCALE_DEFAULT));
+        info = new ImageIcon("info.jpg");
+        newInfo = new ImageIcon(info.getImage().getScaledInstance(28,28,Image.SCALE_DEFAULT));
 
-         //ToolTip
-
+        //ToolTip
         UIManager.put("ToolTip.background", Color.ORANGE);
         UIManager.put("ToolTip.foreground", Color.BLACK);
         UIManager.put("ToolTip.font", new Font("Arial", Font.BOLD, 30));
-
 
 
         wybory = new JPanel();
@@ -189,7 +188,7 @@ abstract public class ElektrowniaOknoAbstract extends JFrame implements ActionLi
         //SLIDER KIEDY KUPIC
         kiedySlider = new JSlider(0,100,0);
         kiedyLabel = new JLabel();
-        slider(kiedySlider,kiedyLabel,kiedyDokupic);
+        slider(kiedySlider, kiedyLabel, kiedyDokupic);
 
         //------------- SKROTY -------------
 
