@@ -12,7 +12,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
-abstract public class ElektrowniaOknoAbstract extends JFrame implements ActionListener, ChangeListener, MouseListener {
+abstract public class ElektrowniaOknoAbstract extends JFrame implements ActionListener, ChangeListener {
     JPanel mainPanel;
 //do usuniecia
     JLabel nazwa;
@@ -329,6 +329,7 @@ abstract public class ElektrowniaOknoAbstract extends JFrame implements ActionLi
             kiedyLabel.setText(kiedySlider.getValue() + " %");
         }
     }
+    /*
     public void mouseEntered(MouseEvent e){
 
     }
@@ -362,4 +363,6 @@ abstract public class ElektrowniaOknoAbstract extends JFrame implements ActionLi
     public void mouseExited(MouseEvent e){
 
     }
+
+     */
 }

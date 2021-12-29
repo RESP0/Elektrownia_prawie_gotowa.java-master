@@ -31,7 +31,6 @@ public class ElektrowniaGazowa extends ElektrowniaNaPaliwoStale  {
 
 		reakcjaNaAwarieZasilania = new Sposob2ReakcjaNaAwarieZasilania();
 		reakcjeNaAtakTerrorystyczny = new Sposob2ReakcjaNaAtakTerrorystyczny();
-		wytwarzanieEnergiiElektrycznej = new SpalaniePaliwKopalnych();
 		obliczDochodElektrowni = new DochodKopalniana();
 	}
 

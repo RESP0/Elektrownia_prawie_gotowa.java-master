@@ -17,7 +17,7 @@ public class Gracz implements Serializable {
     private float balans;
     private List <Elektrownia> listaElektrowni;
     private static final long serialVersionUID = 1L;
-    //ListyElektrowni listyElektrowni = new ListyElektrowni();
+    ListyElektrowni listyElektrowni = new ListyElektrowni();
 
     public Gracz() {
         balans = 600000f;
@@ -48,10 +48,11 @@ public class Gracz implements Serializable {
                 add(null);
             }
         };
-        //listaElektrowni.set(1,listyElektrowni.elektrownieAtomowe.get(1));
+        listaElektrowni.set(1,listyElektrowni.elektrownieAtomowe.get(1));
     }
 
-    public void zakupElektrowni() {
+    public void zakupElektrowni(int nrEle,int indeks,Elektrownia e) {
+        listaElektrowni.set(nrEle*5+indeks,e);
 
     }
 

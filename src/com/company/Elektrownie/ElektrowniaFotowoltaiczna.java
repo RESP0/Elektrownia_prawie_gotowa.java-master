@@ -29,7 +29,6 @@ public class ElektrowniaFotowoltaiczna extends Elektrownia {
 
 		reakcjaNaAwarieZasilania = new Sposob1ReakcjaNaAwarieZasilania();
 		reakcjeNaAtakTerrorystyczny = new Sposob1ReakcjaNaAtakTerrorystyczny();
-		wytwarzanieEnergiiElektrycznej = new ZamianaEnegiiPromieniowaniaSlonecznego();
 		obliczDochodElektrowni = new DochodFotowoltaiczna();
 	}
 

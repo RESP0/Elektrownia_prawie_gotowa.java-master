@@ -57,7 +57,7 @@ public class Main {
                         numer = scan.nextInt();
                         switch (numer) {
                             case 1:
-                                gracz.zakupElektrowni();
+                                //gracz.zakupElektrowni();
                                 break;
                             case 2:
                                 System.out.println(gracz.getBalans());
@@ -78,7 +78,7 @@ public class Main {
                         numer = scan.nextInt();
                         switch (numer) {
                             case 1:
-                                gracz.zakupElektrowni();
+                                //gracz.zakupElektrowni();
                                 break;
                             case 2:
                                 ReakcjaNaAwarieZasilania reakcjaAwaria = zmienRekacjeAwaria();

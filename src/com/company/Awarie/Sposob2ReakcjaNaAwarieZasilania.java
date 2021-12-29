@@ -11,8 +11,6 @@ public class Sposob2ReakcjaNaAwarieZasilania implements ReakcjaNaAwarieZasilania
     @Override
     public void ReakcjeNaAwarieZasilania(Elektrownia e) {
 
-        e.setMocMaksymalna(80);
-
         e.setMocChwilowa(50);
 
         System.out.println("Z powodu awarii elektrownia obnizyla swoja moc maksymalna do 80% oraz moc chwilowa do 50%");

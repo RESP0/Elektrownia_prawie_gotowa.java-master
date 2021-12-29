@@ -31,7 +31,6 @@ public class ElektrowniaWeglowa extends ElektrowniaNaPaliwoStale  {
 
         reakcjaNaAwarieZasilania = new Sposob1ReakcjaNaAwarieZasilania();
         reakcjeNaAtakTerrorystyczny = new Sposob1ReakcjaNaAtakTerrorystyczny();
-        wytwarzanieEnergiiElektrycznej = new SpalaniePaliwKopalnych();
 
     }
 

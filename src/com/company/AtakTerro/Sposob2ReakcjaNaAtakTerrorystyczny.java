@@ -5,7 +5,7 @@ import com.company.Head.Gracz;
 
 import java.io.Serializable;
 
-public class Sposob2ReakcjaNaAtakTerrorystyczny extends Gracz implements ReakcjeNaAtakTerrorystyczny, Serializable {
+public class Sposob2ReakcjaNaAtakTerrorystyczny implements ReakcjeNaAtakTerrorystyczny, Serializable {
 
     private static final long serialVersionUID = 1234670990255712290L;
 
@@ -15,7 +15,7 @@ public class Sposob2ReakcjaNaAtakTerrorystyczny extends Gracz implements Reakcje
 
         System.out.println("Z powodu ataku elektrownia zmniejsza swoja moc chwilowa o 50%!");
 
-        odejmijBalans(500);
+        //odejmijBalans(500);
 
     }
 }

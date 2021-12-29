@@ -13,6 +13,6 @@ public class ElektrowniaFotowoltaicznaOkno extends ElektrowniaOknoAbstract {
     public ElektrowniaFotowoltaicznaOkno(Elektrownia elektrownia) {
         super(elektrownia);
         this.setTitle("Elektrownia fotowoltaiczna");
-
+        magazyn.removeAll();
     }
 }

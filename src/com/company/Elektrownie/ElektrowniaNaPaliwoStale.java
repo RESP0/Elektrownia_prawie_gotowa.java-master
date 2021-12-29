@@ -11,7 +11,14 @@ public abstract class ElektrowniaNaPaliwoStale extends Elektrownia  {
 	private float ZuzyciePaliwa;
 	private int LiczbaBlokow;
 	private int kiedyDokupic;
-	
+
+	public ElektrowniaNaPaliwoStale() {
+		super();
+		this.RodzajPaliwa = RodzajPaliwa;
+		this.ZuzyciePaliwa = ZuzyciePaliwa;
+		this.LiczbaBlokow = LiczbaBlokow;
+		this.kiedyDokupic = 0;
+	}
 
 	public ElektrowniaNaPaliwoStale(String Nazwa, String miasto, int MocChwilowa, int MocMaksymalna, int LiczbaPracownikow, Wlasciciel wlasciciel, boolean czyPracuje, String RodzajPaliwa, float ZuzyciePaliwa, int LiczbaBlokow, DystrybutorPradu Dystrybutor, int cenaZakupu, int cenaSprzedazy)
 	{
@@ -22,9 +29,7 @@ public abstract class ElektrowniaNaPaliwoStale extends Elektrownia  {
 		this.kiedyDokupic = 0;
 	}
 
-	public ElektrowniaNaPaliwoStale() {
-		wytwarzanieEnergiiElektrycznej = new SpalaniePaliwKopalnych();
-	}
+
 
 	public String getRodzajPaliwa() {
 		return RodzajPaliwa;

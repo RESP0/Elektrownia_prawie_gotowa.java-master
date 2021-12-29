@@ -43,10 +43,9 @@ public class ElektrowniaAtomowa extends Elektrownia {
         this.OdbiorcaOdpadow = OdbiorcaOdpadow;
         this.kiedyDokupic = 0;
 
-        reakcjaNaAwarieZasilania = new Sposob1ReakcjaNaAwarieZasilania();
-        reakcjeNaAtakTerrorystyczny = new Sposob2ReakcjaNaAtakTerrorystyczny();
-        wytwarzanieEnergiiElektrycznej = new RozszczepPierwiastkowPromieniotworczych();
-        obliczDochodElektrowni = new DochodAtomowa();
+        this.reakcjaNaAwarieZasilania = new Sposob1ReakcjaNaAwarieZasilania();
+        this.reakcjeNaAtakTerrorystyczny = new Sposob2ReakcjaNaAtakTerrorystyczny();
+        this.obliczDochodElektrowni = new DochodAtomowa();
     }
 
     public void ZwiekszMoc() {

@@ -2,7 +2,7 @@ package com.company.GUI;
 
 import javax.swing.*;
 
-import com.company.Elektrownie.Elektrownia;
+import com.company.Elektrownie.*;
 import com.company.Elektrownie.ElektrowniaAtomowa;
 import com.company.GUI.ElektrownieOkno.ElektrowniaAtomowaOkno;
 import com.company.Head.Gracz;
@@ -49,10 +49,12 @@ public class ListaEle extends JPanel implements ActionListener {
 
     Gracz gracz;
     ArrayList<Elektrownia> elektrownie;
+    int nrEle;
 
     ListaEle(int szer, int wys,String title, Gracz g, int indeks, ArrayList<Elektrownia> lista){
         gracz = g;
         elektrownie = lista;
+        nrEle = indeks;
         //USTAWIENIA PANELU
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         this.setPreferredSize(new Dimension(szer,wys));
@@ -65,6 +67,14 @@ public class ListaEle extends JPanel implements ActionListener {
         tytul.setForeground(Color.white);
         tytul.setAlignmentX(CENTER_ALIGNMENT);
         this.add(tytul);
+        /*
+        //USTALANIE INDEKSU
+        Elektrownia tym = lista.get(0);
+        if (tym instanceof ElektrowniaAtomowa){
+
+        }
+
+         */
 
         //STAN KONTA GRACZA
         stanKonta = new JLabel("Stan konta: " + gracz.getBalans());
@@ -184,7 +194,7 @@ public class ListaEle extends JPanel implements ActionListener {
             kup1.setVisible(false);
             cena1.setVisible(false);    //nie wiem dlaczego ale nie dziala
             button1.setEnabled(true);
-            //gracz.zakupElektrowni();
+            gracz.zakupElektrowni(nrEle,0,elektrownie.get(0));
         }
 
         if (e.getSource() == kup2){

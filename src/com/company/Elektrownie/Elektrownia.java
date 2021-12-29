@@ -29,13 +29,9 @@ public abstract class Elektrownia implements Serializable, ObliczDochodElektrown
 	private int cenaZakupu;
 	private int cenaSprzedazy;
 
-
 	protected ReakcjaNaAwarieZasilania reakcjaNaAwarieZasilania;
 	protected ReakcjeNaAtakTerrorystyczny reakcjeNaAtakTerrorystyczny;
-	protected WytwarzanieEnergiiElektrycznej wytwarzanieEnergiiElektrycznej;
 	protected ObliczDochodElektrowni obliczDochodElektrowni;
-
-
 
 	public void wykonajReakcjaNaAwarieZasilania() {
 		reakcjaNaAwarieZasilania.ReakcjeNaAwarieZasilania(this);
@@ -43,10 +39,6 @@ public abstract class Elektrownia implements Serializable, ObliczDochodElektrown
 
 	public void wykonajReakcjaNaAtakTerrorystyczny() {
 		reakcjeNaAtakTerrorystyczny.ReakcjaNaAtakTerrorystyczny(this);
-	}
-
-	public void wykonajWytwarzanieEnergiiElektrycznej() {
-		wytwarzanieEnergiiElektrycznej.SposobNaWytworzenieEnergiiElektrycznej();
 	}
 
 	public void ustawReakcjeNaAwarie(ReakcjaNaAwarieZasilania reakcjaAwaria) {
