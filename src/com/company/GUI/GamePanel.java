@@ -155,9 +155,6 @@ public class GamePanel extends JPanel implements ActionListener {
             gracz.odejmijBalans(listaAtom.getElektrownie().get(0).getCenaZakupu());
             zaktualizujStanKonta();
         }
-        else if (e.getSource() == listaAtom.kup1){
-            System.out.println("Twoja stara");
-        }
 
         else if (e.getSource() == listaAtom.kup2 && gracz.getBalans() > listaAtom.getElektrownie().get(1).getCenaZakupu()){
             listaAtom.actionPerformed(e);

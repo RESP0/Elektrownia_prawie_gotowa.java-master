@@ -220,31 +220,43 @@ public class ListaEle extends JPanel implements ActionListener {
             cena1.setVisible(false);
             button1.setEnabled(true);
         }
+        else if (e.getSource() == kup1){
+            System.out.println("Twoj stary");
+        }
 
-        if (e.getSource() == kup2 && gracz.getBalans() > elektrownie.get(1).getCenaZakupu()){
+         if (e.getSource() == kup2 && gracz.getBalans() > elektrownie.get(1).getCenaZakupu()){
             kup2.setVisible(false);
             button2.setEnabled(true);
             cena2.setVisible(false);
         }
+        else if (e.getSource() == kup2){
+            System.out.println("Twoj stary");
+        }
 
-        if (e.getSource() == kup3 && gracz.getBalans() > elektrownie.get(2).getCenaZakupu()){
+         if (e.getSource() == kup3 && gracz.getBalans() > elektrownie.get(2).getCenaZakupu()){
             kup3.setVisible(false);
             button3.setEnabled(true);
             cena3.setVisible(false);
         }
+         else if (e.getSource() == kup3){
+             System.out.println("Twoj stary");
+         }
 
         if (e.getSource() == kup4 && gracz.getBalans() > elektrownie.get(3).getCenaZakupu()){
             kup4.setVisible(false);
             button4.setEnabled(true);
             cena4.setVisible(false);
+        }else if (e.getSource() == kup4){
+            System.out.println("Twoj stary");
         }
 
-        if (e.getSource() == kup5 && gracz.getBalans() > elektrownie.get(4).getCenaZakupu()){
-            System.out.println("Twoja stara");
+         if (e.getSource() == kup5 && gracz.getBalans() > elektrownie.get(4).getCenaZakupu()){
             kup5.setVisible(false);
             button5.setEnabled(true);
             cena5.setVisible(false);
-        }
+        }else if (e.getSource() == kup5){
+             System.out.println("Twoj stary");
+         }
         this.revalidate();
         this.repaint();
     }
