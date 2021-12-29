@@ -1,9 +1,6 @@
 package com.company.GUI;
 import com.company.Elektrownie.*;
-import com.company.GUI.ElektrownieOkno.ElektrowniaAtomowaOkno;
-import com.company.GUI.ElektrownieOkno.ElektrowniaFotowoltaicznaOkno;
-import com.company.GUI.ElektrownieOkno.ElektrowniaGazowaOkno;
-import com.company.GUI.ElektrownieOkno.ElektrowniaWeglowaOkno;
+import com.company.GUI.ElektrownieOkno.*;
 import com.company.Head.Gracz;
 
 import javax.swing.*;
@@ -99,7 +96,6 @@ public class GamePanel extends JPanel implements ActionListener {
     public void actionPerformed(ActionEvent e) {
 
         if(e.getSource()==menu.nowaGra){
-            System.out.println("Otwieram nowa gre...");
             this.remove(menu);
             setWybor(1);
             this.add(gra, BorderLayout.CENTER);
@@ -112,30 +108,21 @@ public class GamePanel extends JPanel implements ActionListener {
             this.add(gra, BorderLayout.CENTER);
         }
         else if(e.getSource()==menu.zakoncz){
-            System.out.println("Zamykam...");
             System.exit(0);
         }
         else if(e.getSource()==gra.atomowa){
-            System.out.println("Wybrano elektrownie atomowa...");
-            //rozszerzenie elektrowni atomowej
             this.remove(gra);
             this.add(listaAtom, BorderLayout.CENTER);
         }
         else if(e.getSource()==gra.weglowa){
-            System.out.println("Wybrano elektrownie weglowa...");
-            ////rozszerzenie elektrowni weglowej
             this.remove(gra);
             this.add(listaWegiel, BorderLayout.CENTER);
         }
         else if(e.getSource()==gra.gazowa){
-            System.out.println("Wybrano elektrownie gazowa...");
-            //rozszerzenie elektrowni gazowej
             this.remove(gra);
             this.add(listaGaz, BorderLayout.CENTER);
         }
         else if(e.getSource()==gra.fotowoltaiczna){
-            System.out.println("Wybrano elektrownie fotowoltaiczna...");
-            //rozszerzenie elektrowni fotowoltaicznej
             this.remove(gra);
             this.add(listaFoto, BorderLayout.CENTER);
         }

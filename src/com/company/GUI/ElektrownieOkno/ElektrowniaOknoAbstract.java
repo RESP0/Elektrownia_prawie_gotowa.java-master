@@ -222,6 +222,7 @@ abstract public class ElektrowniaOknoAbstract extends JFrame implements ActionLi
         skroty.add(zamknij);
     }
     Font font = new Font("Arial black", Font.BOLD, 17);
+
     public void kafelek(JPanel panel, Color kolor,String tekst, JPanel parent){
         panel.setBackground(kolor);
         panel.setLayout(new FlowLayout());
@@ -305,9 +306,10 @@ abstract public class ElektrowniaOknoAbstract extends JFrame implements ActionLi
         if (e.getSource() == zapiszIZamknij){
             this.dispose();
         }
-        if (e.getSource() == sprzedajButton){
+        else if (e.getSource() == sprzedajButton){
             this.dispose();
         }
+
         this.revalidate();
         this.repaint();
     }
