@@ -219,7 +219,7 @@ public class ListaEle extends JPanel implements ActionListener {
             kup1.setVisible(false);
             cena1.setVisible(false);
             button1.setEnabled(true);
-            //stanKonta.setText("Stan konta: " + gracz.getBalans());
+
         }
 
         if (e.getSource() == kup2){
