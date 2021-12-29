@@ -77,7 +77,8 @@ public class ListaEle extends JPanel implements ActionListener {
          */
 
         //STAN KONTA GRACZA
-        stanKonta = new JLabel("Stan konta: " + gracz.getBalans());
+        stanKonta = new JLabel();
+        stanKonta.setText("Stan konta: " + g.getBalans());
         stanKonta.setFont(new Font("Ink Free",Font.BOLD,20));
         stanKonta.setForeground(Color.white);
         stanKonta.setAlignmentX(CENTER_ALIGNMENT);
@@ -179,7 +180,7 @@ public class ListaEle extends JPanel implements ActionListener {
         this.add(dol);
 
         for(int i = indeks*5;i<(indeks*5)+5;i++){
-            if(gracz.getListaElektrowni().get(i) != null){
+            if(g.getListaElektrowni().get(i) != null){
                 kup.get(i%5).setVisible(false);
                 cena.get(i%5).setVisible(false);
                 przyciski.get(i%5).setEnabled(true);
@@ -187,14 +188,38 @@ public class ListaEle extends JPanel implements ActionListener {
         }
     }
 
+    public int getLiczbaEle() {
+        return liczbaEle;
+    }
+
+    public void setLiczbaEle(int liczbaEle) {
+        this.liczbaEle = liczbaEle;
+    }
+
+    public ArrayList<Elektrownia> getElektrownie() {
+        return elektrownie;
+    }
+
+    public void setElektrownie(ArrayList<Elektrownia> elektrownie) {
+        this.elektrownie = elektrownie;
+    }
+
+    public int getNrEle() {
+        return nrEle;
+    }
+
+    public void setNrEle(int nrEle) {
+        this.nrEle = nrEle;
+    }
+
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == kup1 && gracz.getBalans() > elektrownie.get(0).getCenaZakupu()){
             System.out.println("Zakupiles nowa elektrownie");
             kup1.setVisible(false);
-            cena1.setVisible(false);    //nie wiem dlaczego ale nie dziala
+            cena1.setVisible(false);
             button1.setEnabled(true);
-            gracz.zakupElektrowni(nrEle,0,elektrownie.get(0));
+            //stanKonta.setText("Stan konta: " + gracz.getBalans());
         }
 
         if (e.getSource() == kup2){

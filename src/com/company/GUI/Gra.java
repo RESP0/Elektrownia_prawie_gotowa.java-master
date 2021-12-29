@@ -15,15 +15,15 @@ public class Gra extends JPanel{
     JButton fotowoltaiczna;
     JButton nastepnyDzien;
 
-    Gra(int szer, int wys){
+    Gra(int szer, int wys, Gracz gracz){
         this.setPreferredSize(new Dimension(szer,wys));
         plansza = new ImageIcon("plansza.jpg");
         tlo = new JLabel();
         tlo.setIcon(plansza);
         this.add(tlo);
 
-        stan_konta = new JLabel("Aktualny stan konta: " + "nie dziala stan konta");
-        stan_konta.setBounds(350, 5, 300, 30);
+        stan_konta = new JLabel("Aktualny stan konta: " + gracz.getBalans());
+        stan_konta.setBounds(300, 5, 500, 30);
         stan_konta.setFont(new Font("Arial black", Font.BOLD, 20));
 
 

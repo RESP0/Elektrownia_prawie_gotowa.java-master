@@ -29,7 +29,7 @@ public class GamePanel extends JPanel implements ActionListener {
         listyElektrowni = new ListyElektrowni();
         gracz = new Gracz();
         menu = new Menue(width,height);
-        gra = new Gra(width,height);
+        gra = new Gra(width,height,gracz);
         listaAtom = new ListaEle(width,height,"atomowych",gracz, 0, listyElektrowni.elektrownieAtomowe);
         listaFoto = new ListaEle(width,height,"fotowoltaicnych",gracz, 1, listyElektrowni.elektrownieFotowoltaiczne);
         listaWegiel = new ListaEle(width,height,"weglowych",gracz, 2, listyElektrowni.elektrownieWeglowe);
@@ -46,6 +46,7 @@ public class GamePanel extends JPanel implements ActionListener {
         gra.nastepnyDzien.addActionListener(this);
         //this.add(gra);
         listaAtom.powrot.addActionListener(this);
+        listaAtom.kup1.addActionListener(this);
         listaAtom.button1.addActionListener(this);
         listaAtom.button2.addActionListener(this);
         listaAtom.button3.addActionListener(this);
@@ -53,6 +54,8 @@ public class GamePanel extends JPanel implements ActionListener {
         listaAtom.button5.addActionListener(this);
         //---------------------------------------------------------
         listaFoto.powrot.addActionListener(this);
+        listaFoto.kup1.addActionListener(this);
+
         listaFoto.button1.addActionListener(this);
         listaFoto.button2.addActionListener(this);
         listaFoto.button3.addActionListener(this);
@@ -129,6 +132,16 @@ public class GamePanel extends JPanel implements ActionListener {
             this.remove(listaAtom);
             add(gra,BorderLayout.CENTER);
         }
+        else if (e.getSource() == listaAtom.kup1){
+            gracz.zakupElektrowni(listaAtom.getNrEle(),0,listaAtom.getElektrownie().get(0));
+            gracz.odejmijBalans(listaAtom.getElektrownie().get(0).getCenaZakupu());
+            listaAtom.stanKonta.setText("Stan konta: " + gracz.getBalans());
+            listaWegiel.stanKonta.setText("Stan konta: " + gracz.getBalans());
+            listaGaz.stanKonta.setText("Stan konta: " + gracz.getBalans());
+            listaFoto.stanKonta.setText("Stan konta: " + gracz.getBalans());
+            gra.stan_konta.setText("Aktualny stan konta: " + gracz.getBalans());
+        }
+
         else if(e.getSource() == listaAtom.button1){
             new ElektrowniaAtomowaOkno(gracz.getListaElektrowni().get(0));
         }
@@ -149,6 +162,13 @@ public class GamePanel extends JPanel implements ActionListener {
         else if(e.getSource() == listaFoto.powrot){
             this.remove(listaFoto);
             add(gra,BorderLayout.CENTER);
+        }
+        else if (e.getSource() == listaFoto.kup1){
+            gracz.zakupElektrowni(listaFoto.getNrEle(),0,listaFoto.getElektrownie().get(0));
+            gracz.odejmijBalans(listaFoto.getElektrownie().get(0).getCenaZakupu());
+            listaAtom.stanKonta = new JLabel("Stan konta: " + gracz.getBalans());
+
+            System.out.println(gracz.getBalans());
         }
         else if(e.getSource() == listaFoto.button1){
             new ElektrowniaFotowoltaicznaOkno(gracz.getListaElektrowni().get(5));

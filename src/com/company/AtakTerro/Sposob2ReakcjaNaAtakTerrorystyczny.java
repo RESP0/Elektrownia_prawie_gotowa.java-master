@@ -1,6 +1,7 @@
 package com.company.AtakTerro;
 
 import com.company.Elektrownie.Elektrownia;
+import com.company.GUI.Gra;
 import com.company.Head.Gracz;
 
 import java.io.Serializable;
