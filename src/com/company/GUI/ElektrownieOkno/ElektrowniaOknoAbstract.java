@@ -2,6 +2,7 @@ package com.company.GUI.ElektrownieOkno;
 
 import com.company.Elektrownie.Elektrownia;
 import com.company.GUI.ListaEle;
+import com.company.Head.Gracz;
 
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
@@ -62,7 +63,7 @@ abstract public class ElektrowniaOknoAbstract extends JFrame implements ActionLi
     ImageIcon info;
     ImageIcon newInfo;
 
-    public ElektrowniaOknoAbstract(Elektrownia elektrownia) {
+    public ElektrowniaOknoAbstract(Elektrownia elektrownia, Gracz gracz) {
 
         //USTAWIENIA RAMKI
         this.setResizable(false);
@@ -307,7 +308,7 @@ abstract public class ElektrowniaOknoAbstract extends JFrame implements ActionLi
             this.dispose();
         }
         else if (e.getSource() == sprzedajButton){
-            //this.dispose();
+            this.dispose();
         }
 
         this.revalidate();
