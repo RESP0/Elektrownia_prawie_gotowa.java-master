@@ -23,7 +23,6 @@ public class ListaEle extends JPanel implements ActionListener {
     JLabel stanKonta;
     JLabel nazwa;
     JLabel miasto;
-    JLabel cena;
     JButton button1;
     JButton button2;
     JButton button3;
@@ -40,10 +39,20 @@ public class ListaEle extends JPanel implements ActionListener {
     JButton kup4;
     JButton kup5;
     ArrayList<JButton> kup;
-    Gracz gracz;
 
-    ListaEle(int szer, int wys,String title, Gracz g, Elektrownia e, ArrayList<Elektrownia> lista){
+    JLabel cena1;
+    JLabel cena2;
+    JLabel cena3;
+    JLabel cena4;
+    JLabel cena5;
+    ArrayList<JLabel> cena;
+
+    Gracz gracz;
+    ArrayList<Elektrownia> elektrownie;
+
+    ListaEle(int szer, int wys,String title, Gracz g, int indeks, ArrayList<Elektrownia> lista){
         gracz = g;
+        elektrownie = lista;
         //USTAWIENIA PANELU
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         this.setPreferredSize(new Dimension(szer,wys));
@@ -58,7 +67,7 @@ public class ListaEle extends JPanel implements ActionListener {
         this.add(tytul);
 
         //STAN KONTA GRACZA
-        stanKonta = new JLabel("Stan konta: " + "Nie dziala stan konta");
+        stanKonta = new JLabel("Stan konta: " + gracz.getBalans());
         stanKonta.setFont(new Font("Ink Free",Font.BOLD,20));
         stanKonta.setForeground(Color.white);
         stanKonta.setAlignmentX(CENTER_ALIGNMENT);
@@ -92,6 +101,17 @@ public class ListaEle extends JPanel implements ActionListener {
                 add(kup5 = new JButton("KUP"));
             }
         };
+        //CENY KUPNA
+        cena = new ArrayList<>(){
+            {
+                add(cena1 = new JLabel());
+                add(cena2 = new JLabel());
+                add(cena3 = new JLabel());
+                add(cena4 = new JLabel());
+                add(cena5 = new JLabel());
+            }
+        };
+
 
         //DODAWANIE NAPISÓW DO PRZYCISKÓW
 
@@ -114,10 +134,9 @@ public class ListaEle extends JPanel implements ActionListener {
             kup.get(i).setAlignmentX(CENTER_ALIGNMENT);
             kup.get(i).addActionListener(this);
 
-            cena = new JLabel(String.valueOf(lista.get(i).getCenaZakupu()));
-            cena.setFont(font);
-            cena.setAlignmentX(CENTER_ALIGNMENT);
-            cena.setAlignmentY(CENTER_ALIGNMENT);
+            cena.get(i).setText(String.valueOf(lista.get(i).getCenaZakupu()));
+            cena.get(i).setFont(font);
+            cena.get(i).setAlignmentX(CENTER_ALIGNMENT);
 
             przyciski.get(i).setLayout(new BoxLayout(przyciski.get(i), BoxLayout.Y_AXIS));
             przyciski.get(i).add(Box.createRigidArea(new Dimension(0,10)));
@@ -125,7 +144,7 @@ public class ListaEle extends JPanel implements ActionListener {
             przyciski.get(i).add(miasto);
             przyciski.get(i).add(Box.createRigidArea(new Dimension(0,10)));
             przyciski.get(i).add(kup.get(i));
-            przyciski.get(i).add(cena);
+            przyciski.get(i).add(cena.get(i));
 
 
             przyciski.get(i).setEnabled(false);
@@ -148,46 +167,50 @@ public class ListaEle extends JPanel implements ActionListener {
         powrot.addActionListener(this);
         dol.add(powrot);
         this.add(dol);
-        /*
-        for (Elektrownia elektrownia : gracz.getListaElektrowni()){
-            if (elektrownia.getClass() == e.getClass()){
-                liczbaEle +=1;
+
+        for(int i = indeks*5;i<(indeks*5)+5;i++){
+            if(gracz.getListaElektrowni().get(i) != null){
+                kup.get(i%5).setVisible(false);
+                cena.get(i%5).setVisible(false);
+                przyciski.get(i%5).setEnabled(true);
             }
         }
-
-         */
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == kup1){
+        if (e.getSource() == kup1 && gracz.getBalans() > elektrownie.get(0).getCenaZakupu()){
             System.out.println("Zakupiles nowa elektrownie");
             kup1.setVisible(false);
-            cena.setVisible(false);    //nie wiem dlaczego ale nie dziala
+            cena1.setVisible(false);    //nie wiem dlaczego ale nie dziala
             button1.setEnabled(true);
-            gracz.zakupElektrowni();
+            //gracz.zakupElektrowni();
         }
 
         if (e.getSource() == kup2){
             kup2.setVisible(false);
             button2.setEnabled(true);
+            cena2.setVisible(false);
         }
 
         if (e.getSource() == kup3){
             kup3.setVisible(false);
             button3.setEnabled(true);
+            cena3.setVisible(false);
         }
 
         if (e.getSource() == kup4){
             kup4.setVisible(false);
             button4.setEnabled(true);
+            cena4.setVisible(false);
         }
 
         if (e.getSource() == kup5){
             kup5.setVisible(false);
             button5.setEnabled(true);
+            cena5.setVisible(false);
         }
-
+        /*
         if (e.getSource() == button1){
             System.out.println("Otwieram nowa elektrownie");
             new ElektrowniaAtomowaOkno(null);
@@ -211,6 +234,8 @@ public class ListaEle extends JPanel implements ActionListener {
             System.out.println("Otwieram nowa elektrownie");
             new ElektrowniaAtomowaOkno(null);
         }
+
+         */
 
         this.revalidate();
         this.repaint();

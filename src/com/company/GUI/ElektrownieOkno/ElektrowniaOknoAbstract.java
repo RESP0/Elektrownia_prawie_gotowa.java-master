@@ -94,6 +94,14 @@ abstract public class ElektrowniaOknoAbstract extends JFrame implements ActionLi
          info = new ImageIcon("info.jpg");
          newInfo = new ImageIcon(info.getImage().getScaledInstance(28,28,Image.SCALE_DEFAULT));
 
+         //ToolTip
+
+        UIManager.put("ToolTip.background", Color.ORANGE);
+        UIManager.put("ToolTip.foreground", Color.BLACK);
+        UIManager.put("ToolTip.font", new Font("Arial", Font.BOLD, 30));
+
+
+
         wybory = new JPanel();
         wybory.setBackground(Color.red);
         wybory.setLayout(new GridLayout(4,1));
@@ -107,8 +115,7 @@ abstract public class ElektrowniaOknoAbstract extends JFrame implements ActionLi
         //------------- PODSTAWOWE AKCJE ---------------------------------------------------------------------------------------------------------------------------
         //PANEL DOKUP BLOKI
         bloki = new JPanel();
-        infoBloki = new JLabel(newInfo);
-        kafelekInfo(bloki,new Color(80, 90, 100),"ROZBUDUJ ELEKTROWNIE",infoBloki,podstawoweAkcje);
+        kafelekInfo(bloki,new Color(80, 90, 100),"ROZBUDUJ ELEKTROWNIE",infoBloki,"<html>TwOj Stary możemy <br>tu napisać co chcemy<html>",podstawoweAkcje);
         
         //PRZYCISK DOKUP BLOKI
         kupBloki = new JButton();
@@ -116,8 +123,7 @@ abstract public class ElektrowniaOknoAbstract extends JFrame implements ActionLi
 
         //PANEL PRACOWNIKA
         pracownicy = new JPanel();
-        infoPracownicy = new JLabel(newInfo);
-        kafelekInfo(pracownicy,new Color(100, 100, 100),"<html>ZWOLNIJ / ZATRUDNIJ<br>PRACOWNIKÓW</html>",infoPracownicy,podstawoweAkcje);
+        kafelekInfo(pracownicy,new Color(100, 100, 100),"<html>ZWOLNIJ / ZATRUDNIJ<br>PRACOWNIKÓW</html>",infoPracownicy,"Ale zabawa",podstawoweAkcje);
 
         //PRZYCISKI ZWOLNIJ ZATRUDNIJ PRACOWNIKA
         pracownicy.add(Box.createRigidArea(new Dimension(0,80)));
@@ -156,8 +162,7 @@ abstract public class ElektrowniaOknoAbstract extends JFrame implements ActionLi
         //------------- WYBORY -------------------------------------------------------------------------------------------------------------------------------------
         //PANEL REAKCJI NA ATAK
         reakcjaNaAtak = new JPanel();
-        infoAtak = new JLabel(newInfo);
-        kafelekInfo(reakcjaNaAtak,new Color(100, 100, 100),"REAKCJA NA ATAK",infoAtak,wybory);
+        kafelekInfo(reakcjaNaAtak,new Color(100, 100, 100),"REAKCJA NA ATAK",infoAtak,"Jestem zajebisty",wybory);
 
         //RADIO BUTTONY ATAKU\
         atakBrak = new JRadioButton("Brak reakcji");
@@ -168,16 +173,7 @@ abstract public class ElektrowniaOknoAbstract extends JFrame implements ActionLi
 
         //PANEL REAKCJI NA AWARIĘ
         reakcjaNaAwarie = new JPanel();
-        infoAwarie = new JLabel(newInfo);
-        JToolTip tip = new JToolTip();
-        //tip.add(infoAwarie);
-        tip.setToolTipText("huu");
-        tip.setFont(font);
-        tip.setSize(new Dimension(100,100));
-        tip.setComponent(infoAwarie);
-        //infoAwarie.setToolTipText("Twoja stara chyba żertujesz");
-        //infoAwarie.createToolTip();
-        kafelekInfo(reakcjaNaAwarie,new Color(80, 90, 100),"REAKCJA NA AWARIE",infoAwarie,wybory);
+        kafelekInfo(reakcjaNaAwarie,new Color(80, 90, 100),"REAKCJA NA AWARIE",infoAwarie,"Tutaj jest jakieś info",wybory);
 
         //RADIO BUTTONY AWARII
         awariaBrak = new JRadioButton("Brak reakcji");
@@ -189,8 +185,7 @@ abstract public class ElektrowniaOknoAbstract extends JFrame implements ActionLi
 
         //PANEL MOCY
         moc = new JPanel();
-        infoMoc = new JLabel(newInfo);
-        kafelekInfo(moc,new Color(100, 100, 100),"MOC CHWILOWA",infoMoc,wybory);
+        kafelekInfo(moc,new Color(100, 100, 100),"MOC CHWILOWA",infoMoc,"Jak chcesz zrobic enter to html tu działa",wybory);
 
         //MOC SLIDER
         mocSlider = new JSlider(0,100,50);
@@ -199,8 +194,7 @@ abstract public class ElektrowniaOknoAbstract extends JFrame implements ActionLi
 
         //PANEL KIEDY DOKUPIC
         kiedyDokupic = new JPanel();
-        infoKiedy = new JLabel(newInfo);
-        kafelekInfo(kiedyDokupic,new Color(80, 90, 100),"KIEDY DOKUPIC",infoKiedy,wybory);
+        kafelekInfo(kiedyDokupic,new Color(80, 90, 100),"KIEDY DOKUPIC",infoKiedy,"Twoj staru",wybory);
 
         //SLIDER KIEDY KUPIC
         kiedySlider = new JSlider(0,100,0);
@@ -212,12 +206,10 @@ abstract public class ElektrowniaOknoAbstract extends JFrame implements ActionLi
         informacje = new JPanel();
         zamknij = new JPanel();
 
-        //skroty.setLayout(new FlowLayout());
+
         informacje.setLayout(new BoxLayout(informacje,BoxLayout.Y_AXIS));
 
         skroty.setBackground(new Color(110, 120, 125));
-        //informacje.setBackground(Color.black);
-        //zamknij.setBackground(Color.black);
         informacje.setBackground(new Color(110, 120, 125));
         zamknij.setBackground(new Color(110, 120, 125));
 
@@ -228,7 +220,6 @@ abstract public class ElektrowniaOknoAbstract extends JFrame implements ActionLi
         skrot("Moc maksymalna elektrowni","dane1",informacje);
         skrot("Liczba pracowników elektrowni","dane1",informacje);
         skroty.add(informacje);
-        //skrot("Stan magazynu","dane1",skroty);
 
         //PRZYCISK ZAPISZ I ZAMKNIJ
         skroty.add(Box.createRigidArea(new Dimension(0,100)));
@@ -239,7 +230,6 @@ abstract public class ElektrowniaOknoAbstract extends JFrame implements ActionLi
         zapiszIZamknij.addActionListener(this);
         zamknij.add(zapiszIZamknij);
 
-        //skroty.setLocation(100, 100);
 
         skroty.add(zamknij);
 
@@ -256,7 +246,7 @@ abstract public class ElektrowniaOknoAbstract extends JFrame implements ActionLi
         panel.add(label);
         parent.add(panel);
     }
-    public void kafelekInfo(JPanel panel, Color kolor,String tekst,JLabel ikona, JPanel parent){
+    public void kafelekInfo(JPanel panel, Color kolor,String tekst,JLabel ikona,String Informacja, JPanel parent){
         panel.setBackground(kolor);
         panel.setLayout(new FlowLayout());
         panel.add(Box.createRigidArea(new Dimension(0,50)));
@@ -264,7 +254,8 @@ abstract public class ElektrowniaOknoAbstract extends JFrame implements ActionLi
         label.setFont(font);
         label.setForeground(Color.white);
         panel.add(label);
-        ikona.addMouseListener(this);
+        ikona = new JLabel(newInfo);
+        ikona.setToolTipText(Informacja);
         panel.add(ikona);
         parent.add(panel);
     }
