@@ -169,6 +169,14 @@ abstract public class ElektrowniaOknoAbstract extends JFrame implements ActionLi
         //PANEL REAKCJI NA AWARIĘ
         reakcjaNaAwarie = new JPanel();
         infoAwarie = new JLabel(newInfo);
+        JToolTip tip = new JToolTip();
+        //tip.add(infoAwarie);
+        tip.setToolTipText("huu");
+        tip.setFont(font);
+        tip.setSize(new Dimension(100,100));
+        tip.setComponent(infoAwarie);
+        //infoAwarie.setToolTipText("Twoja stara chyba żertujesz");
+        //infoAwarie.createToolTip();
         kafelekInfo(reakcjaNaAwarie,new Color(80, 90, 100),"REAKCJA NA AWARIE",infoAwarie,wybory);
 
         //RADIO BUTTONY AWARII
