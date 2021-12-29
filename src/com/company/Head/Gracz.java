@@ -20,7 +20,7 @@ public class Gracz implements Serializable {
     ListyElektrowni listyElektrowni = new ListyElektrowni();
 
     public Gracz() {
-        balans = 200000f;
+        balans = 10000f;
         listaElektrowni = new ArrayList<>(){
             {   //Atom
                 add(null);

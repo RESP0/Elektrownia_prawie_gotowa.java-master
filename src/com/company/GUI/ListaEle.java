@@ -240,11 +240,11 @@ public class ListaEle extends JPanel implements ActionListener {
         }
 
         if (e.getSource() == kup5 && gracz.getBalans() > elektrownie.get(4).getCenaZakupu()){
+            System.out.println("Twoja stara");
             kup5.setVisible(false);
             button5.setEnabled(true);
             cena5.setVisible(false);
         }
-
         this.revalidate();
         this.repaint();
     }
