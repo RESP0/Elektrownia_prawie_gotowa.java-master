@@ -27,7 +27,7 @@ abstract public class ElektrowniaOknoAbstract extends JFrame implements ActionLi
     JButton zatrudnijPracownika;
     JButton zwolnijPracownika;
     JButton kupBloki;
-    JButton sprzedajButton;
+    public JButton sprzedajButton;
 
     //wybory
     JPanel wybory;
@@ -307,7 +307,7 @@ abstract public class ElektrowniaOknoAbstract extends JFrame implements ActionLi
             this.dispose();
         }
         else if (e.getSource() == sprzedajButton){
-            this.dispose();
+            //this.dispose();
         }
 
         this.revalidate();

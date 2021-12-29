@@ -20,6 +20,9 @@ public class GamePanel extends JPanel implements ActionListener {
     ListaEle listaGaz;
     ListaEle listaFoto;
 
+    ElektrowniaOknoAbstract test;
+    Boolean testSpr = false;
+
     public GamePanel(){
 
         this.setPreferredSize(new Dimension(width,height));
@@ -89,6 +92,10 @@ public class GamePanel extends JPanel implements ActionListener {
         listaGaz.button3.addActionListener(this);
         listaGaz.button4.addActionListener(this);
         listaGaz.button5.addActionListener(this);
+
+        if(testSpr) {
+            test.sprzedajButton.addActionListener(this);
+        }
     }
 
 
@@ -284,7 +291,13 @@ public class GamePanel extends JPanel implements ActionListener {
         }
 
         else if(e.getSource() == listaAtom.button1){
-            new ElektrowniaAtomowaOkno(gracz.getListaElektrowni().get(0));
+            test = new ElektrowniaAtomowaOkno(gracz.getListaElektrowni().get(0));
+            test.sprzedajButton.addActionListener(this);
+        }
+
+        else if(e.getSource() == test.sprzedajButton){
+            System.out.println("Twoja Stara");
+
         }
         else if(e.getSource() == listaAtom.button2){
             new ElektrowniaAtomowaOkno(gracz.getListaElektrowni().get(1));
