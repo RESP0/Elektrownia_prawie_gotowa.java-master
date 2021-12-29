@@ -215,7 +215,6 @@ public class ListaEle extends JPanel implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == kup1 && gracz.getBalans() > elektrownie.get(0).getCenaZakupu()){
-            System.out.println("Zakupiles nowa elektrownie");
             kup1.setVisible(false);
             cena1.setVisible(false);
             button1.setEnabled(true);
