@@ -15,12 +15,12 @@ import java.util.Scanner;
 
 public class Gracz implements Serializable {
     private float balans;
-    private List <Elektrownia> listaElektrowni;
+    private ArrayList <Elektrownia> listaElektrowni;
     private static final long serialVersionUID = 1L;
     ListyElektrowni listyElektrowni = new ListyElektrowni();
 
     public Gracz() {
-        balans = 100000f;
+        balans = 1000000f;
         listaElektrowni = new ArrayList<>(){
             {   //Atom
                 add(null);
@@ -66,7 +66,7 @@ public class Gracz implements Serializable {
         this.balans = balans;
     }
 
-    public void setListaElektrowni(List<Elektrownia> listaElektrowni) {
+    public void setListaElektrowni(ArrayList<Elektrownia> listaElektrowni) {
         this.listaElektrowni = listaElektrowni;
     }
 

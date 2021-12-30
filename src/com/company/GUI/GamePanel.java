@@ -9,6 +9,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.Serializable;
+import java.util.ArrayList;
 
 import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 
@@ -179,9 +180,13 @@ public class GamePanel extends JPanel implements ActionListener{
         else if(e.getSource()==menu.wczytajGre){
             System.out.println("Otwieram zapisana gre...");
             this.remove(menu);
-            setWybor(2);
+
             gracz.setListaElektrowni(serializacje.odczyt());
             gracz.setBalans(serializacje.odczytStanuKonta());
+            listaAtom.uzupelnijKupione(0,gracz);
+            listaFoto.uzupelnijKupione(1,gracz);
+            listaWegiel.uzupelnijKupione(2,gracz);
+            listaGaz.uzupelnijKupione(3,gracz);
             //otorz zapisana
             this.add(gra, BorderLayout.CENTER);
             zaktualizujStanKonta();
@@ -208,7 +213,7 @@ public class GamePanel extends JPanel implements ActionListener{
         else if(e.getSource()==gra.nastepnyDzien){
             System.out.println("Nastepny dzien...");
             //nastepny dzien + serializacja
-            serializacje.zapis(gracz.getListaElektrowni());
+            serializacje.zapis((ArrayList<Elektrownia>) gracz.getListaElektrowni());
             serializacje.zapisStanuKonta(gracz.getBalans());
         }
         //--------------------------------------------------------------------------
@@ -567,7 +572,7 @@ public class GamePanel extends JPanel implements ActionListener{
             }
         }
         if(e.getSource() == listaGaz.button5){
-            elektrowniaGazowa5 = new ElektrowniaGazowaOkno(gracz.getListaElektrowni().get(18),gracz);
+            elektrowniaGazowa5 = new ElektrowniaGazowaOkno(gracz.getListaElektrowni().get(19),gracz);
             walidacjaOkna(elektrowniaGazowa5);
             g5 = true;
         }

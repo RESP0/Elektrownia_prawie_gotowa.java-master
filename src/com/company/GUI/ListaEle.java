@@ -179,13 +179,8 @@ public class ListaEle extends JPanel implements ActionListener {
         dol.add(powrot);
         this.add(dol);
 
-        for(int i = indeks*5;i<(indeks*5)+5;i++){
-            if(g.getListaElektrowni().get(i) != null){
-                kup.get(i%5).setVisible(false);
-                cena.get(i%5).setVisible(false);
-                przyciski.get(i%5).setEnabled(true);
-            }
-        }
+        uzupelnijKupione(indeks,g);
+
     }
 
     public int getLiczbaEle() {
@@ -210,6 +205,17 @@ public class ListaEle extends JPanel implements ActionListener {
 
     public void setNrEle(int nrEle) {
         this.nrEle = nrEle;
+    }
+
+    public void uzupelnijKupione(int indeks, Gracz g){
+        for(int i = indeks*5;i<(indeks*5)+5;i++){
+            System.out.println(g.getListaElektrowni().get(i));
+            if(g.getListaElektrowni().get(i) != null){
+                kup.get(i%5).setVisible(false);
+                cena.get(i%5).setVisible(false);
+                przyciski.get(i%5).setEnabled(true);
+            }
+        }
     }
 
     @Override
