@@ -10,6 +10,6 @@ public class ElektrowniaGazowaOkno extends ElektrowniaOknoAbstract {
 
     public ElektrowniaGazowaOkno(Elektrownia elektrownia, Gracz gracz) {
         super(elektrownia, gracz);
-        this.setTitle("Elektrownia gazowa");
+        //this.setTitle("Elektrownia gazowa");
     }
 }

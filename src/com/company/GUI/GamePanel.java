@@ -7,7 +7,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.ComponentListener;
+
+import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 
 public class GamePanel extends JPanel implements ActionListener {
     final int width = 942;
@@ -20,6 +21,10 @@ public class GamePanel extends JPanel implements ActionListener {
     ListaEle listaWegiel;
     ListaEle listaGaz;
     ListaEle listaFoto;
+
+    JFrame frame;
+
+
     ElektrowniaAtomowaOkno elektrowniaAtomowa1;
     ElektrowniaAtomowaOkno elektrowniaAtomowa2;
     ElektrowniaAtomowaOkno elektrowniaAtomowa3;
@@ -44,10 +49,16 @@ public class GamePanel extends JPanel implements ActionListener {
     ElektrowniaFotowoltaicznaOkno elektrowniaFotowoltaiczna4;
     ElektrowniaFotowoltaicznaOkno elektrowniaFotowoltaiczna5;
 
+    boolean a1 , a2, a3, a4, a5;
+    boolean f1 , f2, f3, f4, f5;
+    boolean w1 , w2, w3, w4, w5;
+    boolean g1 , g2, g3, g4, g5;
 
+
+    JPanel tym;
 
     public GamePanel(){
-
+        frame = new JFrame("test");
         this.setPreferredSize(new Dimension(width,height));
         listyElektrowni = new ListyElektrowni();
         gracz = new Gracz();
@@ -116,29 +127,41 @@ public class GamePanel extends JPanel implements ActionListener {
         listaGaz.button4.addActionListener(this);
         listaGaz.button5.addActionListener(this);
 
-       elektrowniaAtomowa1 = new ElektrowniaAtomowaOkno(gracz.getListaElektrowni().get(0),gracz );
-       elektrowniaAtomowa2 = new ElektrowniaAtomowaOkno(gracz.getListaElektrowni().get(1),gracz );
-       elektrowniaAtomowa3 = new ElektrowniaAtomowaOkno(gracz.getListaElektrowni().get(2),gracz );
-       elektrowniaAtomowa4 = new ElektrowniaAtomowaOkno(gracz.getListaElektrowni().get(3),gracz );
-       elektrowniaAtomowa5 = new ElektrowniaAtomowaOkno(gracz.getListaElektrowni().get(4),gracz );
 
-        elektrowniaFotowoltaiczna1 = new ElektrowniaFotowoltaicznaOkno(gracz.getListaElektrowni().get(5),gracz );
-        elektrowniaFotowoltaiczna2 = new ElektrowniaFotowoltaicznaOkno(gracz.getListaElektrowni().get(6),gracz );
-        elektrowniaFotowoltaiczna3 = new ElektrowniaFotowoltaicznaOkno(gracz.getListaElektrowni().get(7),gracz );
-        elektrowniaFotowoltaiczna4 = new ElektrowniaFotowoltaicznaOkno(gracz.getListaElektrowni().get(8),gracz );
-        elektrowniaFotowoltaiczna5 = new ElektrowniaFotowoltaicznaOkno(gracz.getListaElektrowni().get(9),gracz );
 
-        elektrowniaWeglowa1 = new ElektrowniaWeglowaOkno(gracz.getListaElektrowni().get(10),gracz );
-        elektrowniaWeglowa2 = new ElektrowniaWeglowaOkno(gracz.getListaElektrowni().get(11),gracz );
-        elektrowniaWeglowa3 = new ElektrowniaWeglowaOkno(gracz.getListaElektrowni().get(12),gracz );
-        elektrowniaWeglowa4 = new ElektrowniaWeglowaOkno(gracz.getListaElektrowni().get(13),gracz );
-        elektrowniaWeglowa5 = new ElektrowniaWeglowaOkno(gracz.getListaElektrowni().get(14),gracz );
+        frame.setTitle("Okno elektrowni");
+        tym = new JPanel();
+        tym.setPreferredSize(new Dimension(900,600));
+        frame.setLayout(new GridLayout());
+        frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        frame.setResizable(false);
+        frame.setVisible(false);
+        frame.add(tym);
+        frame.pack();
 
-        elektrowniaGazowa1 = new ElektrowniaGazowaOkno(gracz.getListaElektrowni().get(10),gracz );
-        elektrowniaGazowa2 = new ElektrowniaGazowaOkno(gracz.getListaElektrowni().get(11),gracz );
-        elektrowniaGazowa3 = new ElektrowniaGazowaOkno(gracz.getListaElektrowni().get(12),gracz );
-        elektrowniaGazowa4 = new ElektrowniaGazowaOkno(gracz.getListaElektrowni().get(13),gracz );
-        elektrowniaGazowa5 = new ElektrowniaGazowaOkno(gracz.getListaElektrowni().get(14),gracz );
+        a1 = false;
+        a2 = false;
+        a3 = false;
+        a4 = false;
+        a5 = false;
+
+        f1 = false;
+        f2 = false;
+        f3 = false;
+        f4 = false;
+        f5 = false;
+
+        w1 = false;
+        w2 = false;
+        w3 = false;
+        w4 = false;
+        w5 = false;
+
+        g1 = false;
+        g2 = false;
+        g3 = false;
+        g4 = false;
+        g5 = false;
 
     }
 
@@ -333,60 +356,222 @@ public class GamePanel extends JPanel implements ActionListener {
             gracz.odejmijBalans(listaFoto.getElektrownie().get(4).getCenaZakupu());
             zaktualizujStanKonta();
         }
+//-----------------------------------------------------eleAtom
+       if(e.getSource() == listaAtom.button1){
+            elektrowniaAtomowa1 = new ElektrowniaAtomowaOkno(gracz.getListaElektrowni().get(0),gracz);
+            walidacjaOkna(elektrowniaAtomowa1);
+            a1 = true;
 
-        else if(e.getSource() == listaAtom.button1 && !elektrowniaAtomowa1.isVisible()){
-            elektrowniaAtomowa1.setVisible(true);
         }
-        /*
-        else if(e.getSource() == elektrowniaAtomowa1.sprzedajButton){
-            gracz.dodajBalans(listaAtom.getElektrownie().get(0).getCenaSprzedazy());
-            zaktualizujStanKonta();
-        }
-
-        else if(e.getSource() == listaAtom.button2){
-            elektrowniaAtomowa2 = new ElektrowniaAtomowaOkno(gracz.getListaElektrowni().get(1), gracz);
-            elektrowniaAtomowa2.sprzedajButton.addActionListener(this);
-        }
-
-        else if(e.getSource() == elektrowniaAtomowa2.sprzedajButton){
-            gracz.dodajBalans(listaAtom.getElektrownie().get(1).getCenaSprzedazy());
-            zaktualizujStanKonta();
+        if (a1){
+            if(e.getSource() == elektrowniaAtomowa1.sprzedajButton){
+                gracz.dodajBalans(listaAtom.getElektrownie().get(0).getCenaSprzedazy());
+                zaktualizujStanKonta();
+                System.out.println("tste");
         }
 
-        else if(e.getSource() == listaAtom.button3){
-            elektrowniaAtomowa3 = new ElektrowniaAtomowaOkno(gracz.getListaElektrowni().get(2), gracz);
-            elektrowniaAtomowa3.sprzedajButton.addActionListener(this);
         }
 
-        else if(e.getSource() == elektrowniaAtomowa3.sprzedajButton){
-            gracz.dodajBalans(listaAtom.getElektrownie().get(2).getCenaSprzedazy());
-            zaktualizujStanKonta();
-        }
 
-        else if(e.getSource() == listaAtom.button4){
-            elektrowniaAtomowa4 = new ElektrowniaAtomowaOkno(gracz.getListaElektrowni().get(3), gracz);
-            elektrowniaAtomowa4.sprzedajButton.addActionListener(this);
+        if(e.getSource() == listaAtom.button2){
+            elektrowniaAtomowa2 = new ElektrowniaAtomowaOkno(gracz.getListaElektrowni().get(1),gracz);
+            walidacjaOkna(elektrowniaAtomowa2);
+            a2 = true;
         }
+        if (a2){
+            if (e.getSource() == elektrowniaAtomowa2.sprzedajButton){
+                System.out.println("Prosze działaj");
+            }
 
-        else if(e.getSource() == elektrowniaAtomowa4.sprzedajButton){
-            gracz.dodajBalans(listaAtom.getElektrownie().get(3).getCenaSprzedazy());
-            zaktualizujStanKonta();
         }
-
-        else if(e.getSource() == listaAtom.button5){
-            elektrowniaAtomowa5 = new ElektrowniaAtomowaOkno(gracz.getListaElektrowni().get(4), gracz);
-            elektrowniaAtomowa5.sprzedajButton.addActionListener(this);
+        if(e.getSource() == listaAtom.button3){
+            elektrowniaAtomowa3 = new ElektrowniaAtomowaOkno(gracz.getListaElektrowni().get(2),gracz);
+            walidacjaOkna(elektrowniaAtomowa3);
+            a3 = true;
         }
+        if (a3){
+            if (e.getSource() == elektrowniaAtomowa3.sprzedajButton){
+                System.out.println("Dużo kodu");
+            }
 
-        else if(e.getSource() == elektrowniaAtomowa5.sprzedajButton){
-            gracz.dodajBalans(listaAtom.getElektrownie().get(4).getCenaSprzedazy());
-            zaktualizujStanKonta();
         }
+        if(e.getSource() == listaAtom.button4){
+            elektrowniaAtomowa4 = new ElektrowniaAtomowaOkno(gracz.getListaElektrowni().get(3),gracz);
+            walidacjaOkna(elektrowniaAtomowa4);
+            a4 = true;
+        }
+        if (a4){
+            if (e.getSource() == elektrowniaAtomowa4.sprzedajButton){
+                System.out.println("Inaczej nie potrafię");
+            }
 
-         */
+        }
+        if(e.getSource() == listaAtom.button5){
+            elektrowniaAtomowa5 = new ElektrowniaAtomowaOkno(gracz.getListaElektrowni().get(4),gracz);
+            walidacjaOkna(elektrowniaAtomowa5);
+            a5 = true;
+        }
+        if (a5){
+            if (e.getSource() == elektrowniaAtomowa5.sprzedajButton){
+                System.out.println("dqsagqsdgvq");
+            }
+        }
+        //-----
+        if(e.getSource() == listaFoto.button1){
+            elektrowniaFotowoltaiczna1 = new ElektrowniaFotowoltaicznaOkno(gracz.getListaElektrowni().get(5),gracz);
+            walidacjaOkna(elektrowniaFotowoltaiczna1);
+            f1 = true;
+        }
+        if (f1){
+            if (e.getSource() == elektrowniaFotowoltaiczna1.sprzedajButton){
+                System.out.println("dqsagqsdgvq");
+            }
+        }
+        if(e.getSource() == listaFoto.button2){
+            elektrowniaFotowoltaiczna2 = new ElektrowniaFotowoltaicznaOkno(gracz.getListaElektrowni().get(6),gracz);
+            walidacjaOkna(elektrowniaFotowoltaiczna2);
+            f2 = true;
+        }
+        if (f2){
+            if (e.getSource() == elektrowniaFotowoltaiczna2.sprzedajButton){
+                System.out.println("dqsagqsdgvq");
+            }
+        }
+        if(e.getSource() == listaFoto.button3){
+            elektrowniaFotowoltaiczna3 = new ElektrowniaFotowoltaicznaOkno(gracz.getListaElektrowni().get(7),gracz);
+            walidacjaOkna(elektrowniaFotowoltaiczna3);
+            f3 = true;
+        }
+        if (f3){
+            if (e.getSource() == elektrowniaFotowoltaiczna3.sprzedajButton){
+                System.out.println("dqsagqsdgvq");
+            }
+        }
+        if(e.getSource() == listaFoto.button4){
+            elektrowniaFotowoltaiczna4 = new ElektrowniaFotowoltaicznaOkno(gracz.getListaElektrowni().get(8),gracz);
+            walidacjaOkna(elektrowniaFotowoltaiczna4);
+            f4 = true;
+        }
+        if (f4){
+            if (e.getSource() == elektrowniaFotowoltaiczna4.sprzedajButton){
+                System.out.println("dqsagqsdgvq");
+            }
+        }
+        if(e.getSource() == listaFoto.button5){
+            elektrowniaFotowoltaiczna5 = new ElektrowniaFotowoltaicznaOkno(gracz.getListaElektrowni().get(9),gracz);
+            walidacjaOkna(elektrowniaFotowoltaiczna5);
+            f5 = true;
+        }
+        if (f5){
+            if (e.getSource() == elektrowniaFotowoltaiczna5.sprzedajButton){
+                System.out.println("dqsagqsdgvq");
+            }
+        }
+        //-------------
+        if(e.getSource() == listaWegiel.button1){
+            elektrowniaWeglowa1 = new ElektrowniaWeglowaOkno(gracz.getListaElektrowni().get(10),gracz);
+            walidacjaOkna(elektrowniaWeglowa1);
+            w1 = true;
+        }
+        if (w1){
+            if (e.getSource() == elektrowniaWeglowa1.sprzedajButton){
+                System.out.println("dqsagqsdgvq");
+            }
+        }
+        if(e.getSource() == listaWegiel.button2){
+            elektrowniaWeglowa2 = new ElektrowniaWeglowaOkno(gracz.getListaElektrowni().get(11),gracz);
+            walidacjaOkna(elektrowniaWeglowa2);
+            w2 = true;
+        }
+        if (w2){
+            if (e.getSource() == elektrowniaWeglowa2.sprzedajButton){
+                System.out.println("dqsagqsdgvq");
+            }
+        }
+        if(e.getSource() == listaWegiel.button3){
+            elektrowniaWeglowa3 = new ElektrowniaWeglowaOkno(gracz.getListaElektrowni().get(12),gracz);
+            walidacjaOkna(elektrowniaWeglowa3);
+            w3 = true;
+        }
+        if (w3){
+            if (e.getSource() == elektrowniaWeglowa3.sprzedajButton){
+                System.out.println("dqsagqsdgvq");
+            }
+        }
+        if(e.getSource() == listaWegiel.button4){
+            elektrowniaWeglowa4 = new ElektrowniaWeglowaOkno(gracz.getListaElektrowni().get(13),gracz);
+            walidacjaOkna(elektrowniaWeglowa4);
+            w4 = true;
+        }
+        if (w4){
+            if (e.getSource() == elektrowniaWeglowa4.sprzedajButton){
+                System.out.println("dqsagqsdgvq");
+            }
+        }
+        if(e.getSource() == listaWegiel.button5){
+            elektrowniaWeglowa5 = new ElektrowniaWeglowaOkno(gracz.getListaElektrowni().get(14),gracz);
+            walidacjaOkna(elektrowniaWeglowa5);
+            w5 = true;
+        }
+        if (w5){
+            if (e.getSource() == elektrowniaWeglowa5.sprzedajButton){
+                System.out.println("dqsagqsdgvq");
+            }
+        }
+        //---------------
+        if(e.getSource() == listaGaz.button1){
+            elektrowniaGazowa1 = new ElektrowniaGazowaOkno(gracz.getListaElektrowni().get(15),gracz);
+            walidacjaOkna(elektrowniaGazowa1);
+            g1 = true;
+        }
+        if (g1){
+            if (e.getSource() == elektrowniaGazowa1.sprzedajButton){
+                System.out.println("dqsagqsdgvq");
+            }
+        }
+        if(e.getSource() == listaGaz.button2){
+            elektrowniaGazowa2 = new ElektrowniaGazowaOkno(gracz.getListaElektrowni().get(16),gracz);
+            walidacjaOkna(elektrowniaGazowa2);
+            g2 = true;
+        }
+        if (g2){
+            if (e.getSource() == elektrowniaGazowa2.sprzedajButton){
+                System.out.println("dqsagqsdgvq");
+            }
+        }
+        if(e.getSource() == listaGaz.button3){
+            elektrowniaGazowa3 = new ElektrowniaGazowaOkno(gracz.getListaElektrowni().get(17),gracz);
+            walidacjaOkna(elektrowniaGazowa3);
+            g3 = true;
+        }
+        if (g3){
+            if (e.getSource() == elektrowniaGazowa3.sprzedajButton){
+                System.out.println("dqsagqsdgvq");
+            }
+        }
+        if(e.getSource() == listaGaz.button4){
+            elektrowniaGazowa4 = new ElektrowniaGazowaOkno(gracz.getListaElektrowni().get(18),gracz);
+            walidacjaOkna(elektrowniaGazowa4);
+            g4 = true;
+        }
+        if (g4){
+            if (e.getSource() == elektrowniaGazowa4.sprzedajButton){
+                System.out.println("dqsagqsdgvq");
+            }
+        }
+        if(e.getSource() == listaGaz.button5){
+            elektrowniaGazowa5 = new ElektrowniaGazowaOkno(gracz.getListaElektrowni().get(18),gracz);
+            walidacjaOkna(elektrowniaGazowa5);
+            g5 = true;
+        }
+        if (g5){
+            if (e.getSource() == elektrowniaGazowa5.sprzedajButton){
+                System.out.println("dqsagqsdgvq");
+            }
+        }
 
         //-------------------------------------------------------------------------
-        else if(e.getSource() == listaFoto.powrot){
+        if(e.getSource() == listaFoto.powrot){
             this.remove(listaFoto);
             add(gra,BorderLayout.CENTER);
         }
@@ -447,6 +632,8 @@ public class GamePanel extends JPanel implements ActionListener {
         }
         this.revalidate();
         this.repaint();
+        frame.revalidate();
+        frame.repaint();
     }
 
     public void zaktualizujStanKonta(){
@@ -455,6 +642,19 @@ public class GamePanel extends JPanel implements ActionListener {
         listaGaz.stanKonta.setText("Stan konta: " + gracz.getBalans());
         listaFoto.stanKonta.setText("Stan konta: " + gracz.getBalans());
         gra.stan_konta.setText("Aktualny stan konta: " + gracz.getBalans());
+    }
+    public void walidacjaOkna(ElektrowniaOknoAbstract okno){
+        okno.dokupButton.addActionListener(this);
+        okno.zatrudnijPracownika.addActionListener(this);
+        okno.zwolnijPracownika.addActionListener(this);
+        okno.kupBloki.addActionListener(this);
+        okno.sprzedajButton.addActionListener(this);
+        tym.removeAll();
+        tym.add(okno);
+        tym.revalidate();
+        tym.repaint();
+
+        frame.setVisible(true);
     }
 
     private int wybor;

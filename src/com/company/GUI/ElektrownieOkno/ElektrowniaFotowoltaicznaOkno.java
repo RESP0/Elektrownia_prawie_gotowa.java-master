@@ -12,7 +12,7 @@ public class ElektrowniaFotowoltaicznaOkno extends ElektrowniaOknoAbstract {
 
     public ElektrowniaFotowoltaicznaOkno(Elektrownia elektrownia, Gracz gracz) {
         super(elektrownia, gracz);
-        this.setTitle("Elektrownia fotowoltaiczna");
+        //this.setTitle("Elektrownia fotowoltaiczna");
         magazyn.removeAll();
     }
 }

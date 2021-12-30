@@ -13,7 +13,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
-abstract public class ElektrowniaOknoAbstract extends JFrame implements ActionListener, ChangeListener {
+abstract public class ElektrowniaOknoAbstract extends JPanel implements ActionListener, ChangeListener {
     JPanel mainPanel;
 
     //akcje
@@ -24,10 +24,10 @@ abstract public class ElektrowniaOknoAbstract extends JFrame implements ActionLi
     JPanel sprzedaj;
     JPanel bloki;
     JLabel infoBloki;
-    JButton dokupButton;
-    JButton zatrudnijPracownika;
-    JButton zwolnijPracownika;
-    JButton kupBloki;
+    public JButton dokupButton;
+    public JButton zatrudnijPracownika;
+    public JButton zwolnijPracownika;
+    public JButton kupBloki;
     public JButton sprzedajButton;
 
     //wybory
@@ -66,16 +66,15 @@ abstract public class ElektrowniaOknoAbstract extends JFrame implements ActionLi
     public ElektrowniaOknoAbstract(Elektrownia elektrownia, Gracz gracz) {
 
         //USTAWIENIA RAMKI
-        this.setVisible(false);
-        this.setResizable(false);
+        //this.setVisible(false);
+        this.setPreferredSize(new Dimension(900,600));
         this.setLayout(new GridLayout());
 
-        this.getContentPane().setBackground(Color.black);
         mainPanel = new JPanel();
         mainPanel.setPreferredSize(new Dimension(900,600));
         mainPanel.setLayout(new GridLayout(1,3));
-        this.add(mainPanel);
-        this.pack();
+
+        //this.pack();
 
         //PODZIAŁ NA 3 PANELE
         podstawoweAkcje = new JPanel();
@@ -210,6 +209,7 @@ abstract public class ElektrowniaOknoAbstract extends JFrame implements ActionLi
         skrot("Moc chwilowa elektrowni","dane1",informacje);
         skrot("Moc maksymalna elektrowni","dane1",informacje);
         skrot("Liczba pracowników elektrowni","dane1",informacje);
+        skrot("test",elektrownia.getNazwa(),informacje);
         skroty.add(informacje);
 
         //PRZYCISK ZAPISZ I ZAMKNIJ
@@ -222,6 +222,7 @@ abstract public class ElektrowniaOknoAbstract extends JFrame implements ActionLi
         zamknij.add(zapiszIZamknij);
 
         skroty.add(zamknij);
+        this.add(mainPanel);
     }
     Font font = new Font("Arial black", Font.BOLD, 17);
 
@@ -306,10 +307,10 @@ abstract public class ElektrowniaOknoAbstract extends JFrame implements ActionLi
 
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == zapiszIZamknij){
-            this.dispose();
+            //this.dispose();
         }
         else if (e.getSource() == sprzedajButton){
-            this.dispose();
+            //this.dispose();
         }
 
         this.revalidate();
