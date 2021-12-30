@@ -184,6 +184,7 @@ public class GamePanel extends JPanel implements ActionListener{
             gracz.setBalans(serializacje.odczytStanuKonta());
             //otorz zapisana
             this.add(gra, BorderLayout.CENTER);
+            zaktualizujStanKonta();
         }
         else if(e.getSource()==menu.zakoncz){
             System.exit(0);
