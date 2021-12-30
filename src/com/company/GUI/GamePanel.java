@@ -334,7 +334,7 @@ public class GamePanel extends JPanel implements ActionListener {
             zaktualizujStanKonta();
         }
 
-        else if(e.getSource() == listaAtom.button1){
+        else if(e.getSource() == listaAtom.button1 && !elektrowniaAtomowa1.isVisible()){
             elektrowniaAtomowa1.setVisible(true);
         }
         /*

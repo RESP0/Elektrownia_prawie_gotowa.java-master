@@ -9,9 +9,10 @@ import com.company.uslugodawcy.OdbiorcaOdpadow;
 import java.util.ArrayList;
 
 public class ListyElektrowni {
+    ListyDystrybutorzy dystrybutorzy = new ListyDystrybutorzy();
     public ArrayList<Elektrownia> elektrownieAtomowe = new ArrayList<>(){
         {
-            add(new ElektrowniaAtomowa("Nazwa1","Miasto1", 100, 42000, 3, new Wlasciciel(), false, 86, 897, new DystrybutorPradu(), 345, new OdbiorcaOdpadow[]{new OdbiorcaOdpadow(),new OdbiorcaOdpadow()}, 20000, 10000));
+            add(new ElektrowniaAtomowa("Nazwa1","Miasto1", 100, 42000, 3, new Wlasciciel(), false, 86, 897, dystrybutorzy.getDystrybutorzyPradu().get(0), 345, new OdbiorcaOdpadow[]{new OdbiorcaOdpadow(),new OdbiorcaOdpadow()}, 20000, 10000));
             add(new ElektrowniaAtomowa("Nazwa2","Miasto2", 100, 42000, 3, new Wlasciciel(), false, 86, 897, new DystrybutorPradu(), 345, new OdbiorcaOdpadow[]{new OdbiorcaOdpadow(),new OdbiorcaOdpadow()}, 22000, 12000));
             add(new ElektrowniaAtomowa("Nazwa3","Miasto3", 100, 42000, 3, new Wlasciciel(), false, 86, 897, new DystrybutorPradu(), 345, new OdbiorcaOdpadow[]{new OdbiorcaOdpadow(),new OdbiorcaOdpadow()}, 24000, 14000));
             add(new ElektrowniaAtomowa("Nazwa4","Miasto4", 100, 42000, 3, new Wlasciciel(), false, 86, 897, new DystrybutorPradu(), 345, new OdbiorcaOdpadow[]{new OdbiorcaOdpadow(),new OdbiorcaOdpadow()}, 26000, 16000));
