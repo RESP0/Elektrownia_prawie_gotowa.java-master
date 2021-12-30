@@ -66,9 +66,10 @@ abstract public class ElektrowniaOknoAbstract extends JFrame implements ActionLi
     public ElektrowniaOknoAbstract(Elektrownia elektrownia, Gracz gracz) {
 
         //USTAWIENIA RAMKI
+        this.setVisible(false);
         this.setResizable(false);
         this.setLayout(new GridLayout());
-        this.setVisible(true);
+
         this.getContentPane().setBackground(Color.black);
         mainPanel = new JPanel();
         mainPanel.setPreferredSize(new Dimension(900,600));

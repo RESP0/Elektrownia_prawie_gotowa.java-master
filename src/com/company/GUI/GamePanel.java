@@ -115,6 +115,31 @@ public class GamePanel extends JPanel implements ActionListener {
         listaGaz.button3.addActionListener(this);
         listaGaz.button4.addActionListener(this);
         listaGaz.button5.addActionListener(this);
+
+       elektrowniaAtomowa1 = new ElektrowniaAtomowaOkno(gracz.getListaElektrowni().get(0),gracz );
+       elektrowniaAtomowa2 = new ElektrowniaAtomowaOkno(gracz.getListaElektrowni().get(1),gracz );
+       elektrowniaAtomowa3 = new ElektrowniaAtomowaOkno(gracz.getListaElektrowni().get(2),gracz );
+       elektrowniaAtomowa4 = new ElektrowniaAtomowaOkno(gracz.getListaElektrowni().get(3),gracz );
+       elektrowniaAtomowa5 = new ElektrowniaAtomowaOkno(gracz.getListaElektrowni().get(4),gracz );
+
+        elektrowniaFotowoltaiczna1 = new ElektrowniaFotowoltaicznaOkno(gracz.getListaElektrowni().get(5),gracz );
+        elektrowniaFotowoltaiczna2 = new ElektrowniaFotowoltaicznaOkno(gracz.getListaElektrowni().get(6),gracz );
+        elektrowniaFotowoltaiczna3 = new ElektrowniaFotowoltaicznaOkno(gracz.getListaElektrowni().get(7),gracz );
+        elektrowniaFotowoltaiczna4 = new ElektrowniaFotowoltaicznaOkno(gracz.getListaElektrowni().get(8),gracz );
+        elektrowniaFotowoltaiczna5 = new ElektrowniaFotowoltaicznaOkno(gracz.getListaElektrowni().get(9),gracz );
+
+        elektrowniaWeglowa1 = new ElektrowniaWeglowaOkno(gracz.getListaElektrowni().get(10),gracz );
+        elektrowniaWeglowa2 = new ElektrowniaWeglowaOkno(gracz.getListaElektrowni().get(11),gracz );
+        elektrowniaWeglowa3 = new ElektrowniaWeglowaOkno(gracz.getListaElektrowni().get(12),gracz );
+        elektrowniaWeglowa4 = new ElektrowniaWeglowaOkno(gracz.getListaElektrowni().get(13),gracz );
+        elektrowniaWeglowa5 = new ElektrowniaWeglowaOkno(gracz.getListaElektrowni().get(14),gracz );
+
+        elektrowniaGazowa1 = new ElektrowniaGazowaOkno(gracz.getListaElektrowni().get(10),gracz );
+        elektrowniaGazowa2 = new ElektrowniaGazowaOkno(gracz.getListaElektrowni().get(11),gracz );
+        elektrowniaGazowa3 = new ElektrowniaGazowaOkno(gracz.getListaElektrowni().get(12),gracz );
+        elektrowniaGazowa4 = new ElektrowniaGazowaOkno(gracz.getListaElektrowni().get(13),gracz );
+        elektrowniaGazowa5 = new ElektrowniaGazowaOkno(gracz.getListaElektrowni().get(14),gracz );
+
     }
 
 
@@ -310,10 +335,9 @@ public class GamePanel extends JPanel implements ActionListener {
         }
 
         else if(e.getSource() == listaAtom.button1){
-            elektrowniaAtomowa1 = new ElektrowniaAtomowaOkno(gracz.getListaElektrowni().get(0), gracz);
-            elektrowniaAtomowa1.sprzedajButton.addActionListener(this);
+            elektrowniaAtomowa1.setVisible(true);
         }
-
+        /*
         else if(e.getSource() == elektrowniaAtomowa1.sprzedajButton){
             gracz.dodajBalans(listaAtom.getElektrownie().get(0).getCenaSprzedazy());
             zaktualizujStanKonta();
@@ -358,6 +382,8 @@ public class GamePanel extends JPanel implements ActionListener {
             gracz.dodajBalans(listaAtom.getElektrownie().get(4).getCenaSprzedazy());
             zaktualizujStanKonta();
         }
+
+         */
 
         //-------------------------------------------------------------------------
         else if(e.getSource() == listaFoto.powrot){
