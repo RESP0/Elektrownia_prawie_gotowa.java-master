@@ -1,9 +1,11 @@
 package com.company.Elektrownie;
 
 import com.company.uslugodawcy.DystrybutorPradu;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class ListyDystrybutorzy {
+public class ListyDystrybutorzy implements Serializable {
 
     public ArrayList<DystrybutorPradu> dystrybutorzyPradu = new ArrayList<>(){
         {

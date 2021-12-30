@@ -4,9 +4,10 @@ import com.company.uslugodawcy.DostawcaGazu;
 import com.company.uslugodawcy.DostawcaWegla;
 import com.company.uslugodawcy.OdbiorcaOdpadow;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class ListyDostawcy {
+public class ListyDostawcy implements Serializable {
 
     public ArrayList <DostawcaWegla> dostawcyWegla = new ArrayList<>(){
         {

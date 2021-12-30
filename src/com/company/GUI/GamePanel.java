@@ -2,15 +2,17 @@ package com.company.GUI;
 import com.company.Elektrownie.*;
 import com.company.GUI.ElektrownieOkno.*;
 import com.company.Head.Gracz;
+import com.company.Head.Serializacja;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.Serializable;
 
 import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 
-public class GamePanel extends JPanel implements ActionListener {
+public class GamePanel extends JPanel implements ActionListener{
     final int width = 942;
     final int height = 628;
     Gracz gracz;
@@ -168,7 +170,7 @@ public class GamePanel extends JPanel implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-
+        Serializacja serializacje = new Serializacja();
         if(e.getSource()==menu.nowaGra){
             this.remove(menu);
             setWybor(1);
@@ -178,6 +180,8 @@ public class GamePanel extends JPanel implements ActionListener {
             System.out.println("Otwieram zapisana gre...");
             this.remove(menu);
             setWybor(2);
+            gracz.setListaElektrowni(serializacje.odczyt());
+            gracz.setBalans(serializacje.odczytStanuKonta());
             //otorz zapisana
             this.add(gra, BorderLayout.CENTER);
         }
@@ -203,6 +207,8 @@ public class GamePanel extends JPanel implements ActionListener {
         else if(e.getSource()==gra.nastepnyDzien){
             System.out.println("Nastepny dzien...");
             //nastepny dzien + serializacja
+            serializacje.zapis(gracz.getListaElektrowni());
+            serializacje.zapisStanuKonta(gracz.getBalans());
         }
         //--------------------------------------------------------------------------
         else if(e.getSource() == listaAtom.powrot){

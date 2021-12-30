@@ -1,9 +1,11 @@
 package com.company.Elektrownie;
 
 import com.company.Head.Wlasciciel;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class ListyWlasciciele {
+public class ListyWlasciciele  implements Serializable {
 
     public ArrayList<Wlasciciel> wlasciciele = new ArrayList<>(){
         {

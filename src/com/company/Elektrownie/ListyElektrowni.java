@@ -6,9 +6,10 @@ import com.company.uslugodawcy.DostawcaWegla;
 import com.company.uslugodawcy.DystrybutorPradu;
 import com.company.uslugodawcy.OdbiorcaOdpadow;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class ListyElektrowni {
+public class ListyElektrowni implements Serializable {
     ListyDystrybutorzy dystrybutorzy = new ListyDystrybutorzy();
     ListyWlasciciele wlasciciele = new ListyWlasciciele();
     ListyDostawcy dostawcy = new ListyDostawcy();
