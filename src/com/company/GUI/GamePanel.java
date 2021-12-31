@@ -375,14 +375,14 @@ public class GamePanel extends JPanel implements ActionListener{
             a1 = true;
 
         }
-        if (a1){
+       if (a1){
             if(e.getSource() == elektrowniaAtomowa1.sprzedajButton){
-                gracz.dodajBalans(listaAtom.getElektrownie().get(0).getCenaSprzedazy());
+                gracz.dodajBalans(listyElektrowni.getElektrownieAtomowe().get(0).getCenaSprzedazy());
                 zaktualizujStanKonta();
-                System.out.println("tste");
-        }
-
-        }
+                frame.dispose();
+                listaAtom.uzupelnijKupione(0, gracz);
+            }
+       }
 
 
         if(e.getSource() == listaAtom.button2){
@@ -392,7 +392,10 @@ public class GamePanel extends JPanel implements ActionListener{
         }
         if (a2){
             if (e.getSource() == elektrowniaAtomowa2.sprzedajButton){
-                System.out.println("Prosze działaj");
+                gracz.dodajBalans(listyElektrowni.getElektrownieAtomowe().get(1).getCenaSprzedazy());
+                zaktualizujStanKonta();
+                frame.dispose();
+                listaAtom.uzupelnijKupione(1, gracz);
             }
 
         }
@@ -403,7 +406,10 @@ public class GamePanel extends JPanel implements ActionListener{
         }
         if (a3){
             if (e.getSource() == elektrowniaAtomowa3.sprzedajButton){
-                System.out.println("Dużo kodu");
+                gracz.dodajBalans(listyElektrowni.getElektrownieAtomowe().get(2).getCenaSprzedazy());
+                zaktualizujStanKonta();
+                frame.dispose();
+                listaAtom.uzupelnijKupione(2, gracz);
             }
 
         }
@@ -414,7 +420,10 @@ public class GamePanel extends JPanel implements ActionListener{
         }
         if (a4){
             if (e.getSource() == elektrowniaAtomowa4.sprzedajButton){
-                System.out.println("Inaczej nie potrafię");
+                gracz.dodajBalans(listyElektrowni.getElektrownieAtomowe().get(3).getCenaSprzedazy());
+                zaktualizujStanKonta();
+                frame.dispose();
+                listaAtom.uzupelnijKupione(3, gracz);
             }
 
         }
@@ -425,7 +434,10 @@ public class GamePanel extends JPanel implements ActionListener{
         }
         if (a5){
             if (e.getSource() == elektrowniaAtomowa5.sprzedajButton){
-                System.out.println("dqsagqsdgvq");
+                gracz.dodajBalans(listyElektrowni.getElektrownieAtomowe().get(4).getCenaSprzedazy());
+                zaktualizujStanKonta();
+                frame.dispose();
+                listaAtom.uzupelnijKupione(4, gracz);
             }
         }
         //-----
@@ -436,7 +448,10 @@ public class GamePanel extends JPanel implements ActionListener{
         }
         if (f1){
             if (e.getSource() == elektrowniaFotowoltaiczna1.sprzedajButton){
-                System.out.println("dqsagqsdgvq");
+                gracz.dodajBalans(listyElektrowni.getElektrownieFotowoltaiczne().get(0).getCenaSprzedazy());
+                zaktualizujStanKonta();
+                frame.dispose();
+                listaFoto.uzupelnijKupione(0, gracz);
             }
         }
         if(e.getSource() == listaFoto.button2){
@@ -446,7 +461,10 @@ public class GamePanel extends JPanel implements ActionListener{
         }
         if (f2){
             if (e.getSource() == elektrowniaFotowoltaiczna2.sprzedajButton){
-                System.out.println("dqsagqsdgvq");
+                gracz.dodajBalans(listyElektrowni.getElektrownieFotowoltaiczne().get(1).getCenaSprzedazy());
+                zaktualizujStanKonta();
+                frame.dispose();
+                listaFoto.uzupelnijKupione(1, gracz);
             }
         }
         if(e.getSource() == listaFoto.button3){
@@ -456,7 +474,10 @@ public class GamePanel extends JPanel implements ActionListener{
         }
         if (f3){
             if (e.getSource() == elektrowniaFotowoltaiczna3.sprzedajButton){
-                System.out.println("dqsagqsdgvq");
+                gracz.dodajBalans(listyElektrowni.getElektrownieFotowoltaiczne().get(2).getCenaSprzedazy());
+                zaktualizujStanKonta();
+                frame.dispose();
+                listaFoto.uzupelnijKupione(2, gracz);
             }
         }
         if(e.getSource() == listaFoto.button4){
@@ -466,7 +487,10 @@ public class GamePanel extends JPanel implements ActionListener{
         }
         if (f4){
             if (e.getSource() == elektrowniaFotowoltaiczna4.sprzedajButton){
-                System.out.println("dqsagqsdgvq");
+                gracz.dodajBalans(listyElektrowni.getElektrownieFotowoltaiczne().get(3).getCenaSprzedazy());
+                zaktualizujStanKonta();
+                frame.dispose();
+                listaFoto.uzupelnijKupione(3, gracz);
             }
         }
         if(e.getSource() == listaFoto.button5){
@@ -476,7 +500,10 @@ public class GamePanel extends JPanel implements ActionListener{
         }
         if (f5){
             if (e.getSource() == elektrowniaFotowoltaiczna5.sprzedajButton){
-                System.out.println("dqsagqsdgvq");
+                gracz.dodajBalans(listyElektrowni.getElektrownieFotowoltaiczne().get(4).getCenaSprzedazy());
+                zaktualizujStanKonta();
+                frame.dispose();
+                listaFoto.uzupelnijKupione(4, gracz);
             }
         }
         //-------------
@@ -487,7 +514,10 @@ public class GamePanel extends JPanel implements ActionListener{
         }
         if (w1){
             if (e.getSource() == elektrowniaWeglowa1.sprzedajButton){
-                System.out.println("dqsagqsdgvq");
+                gracz.dodajBalans(listyElektrowni.getElektrownieWeglowe().get(0).getCenaSprzedazy());
+                zaktualizujStanKonta();
+                frame.dispose();
+                listaWegiel.uzupelnijKupione(0, gracz);
             }
         }
         if(e.getSource() == listaWegiel.button2){
@@ -497,7 +527,10 @@ public class GamePanel extends JPanel implements ActionListener{
         }
         if (w2){
             if (e.getSource() == elektrowniaWeglowa2.sprzedajButton){
-                System.out.println("dqsagqsdgvq");
+                gracz.dodajBalans(listyElektrowni.getElektrownieWeglowe().get(1).getCenaSprzedazy());
+                zaktualizujStanKonta();
+                frame.dispose();
+                listaWegiel.uzupelnijKupione(1, gracz);
             }
         }
         if(e.getSource() == listaWegiel.button3){
@@ -507,7 +540,10 @@ public class GamePanel extends JPanel implements ActionListener{
         }
         if (w3){
             if (e.getSource() == elektrowniaWeglowa3.sprzedajButton){
-                System.out.println("dqsagqsdgvq");
+                gracz.dodajBalans(listyElektrowni.getElektrownieWeglowe().get(2).getCenaSprzedazy());
+                zaktualizujStanKonta();
+                frame.dispose();
+                listaWegiel.uzupelnijKupione(2, gracz);
             }
         }
         if(e.getSource() == listaWegiel.button4){
@@ -517,7 +553,10 @@ public class GamePanel extends JPanel implements ActionListener{
         }
         if (w4){
             if (e.getSource() == elektrowniaWeglowa4.sprzedajButton){
-                System.out.println("dqsagqsdgvq");
+                gracz.dodajBalans(listyElektrowni.getElektrownieWeglowe().get(3).getCenaSprzedazy());
+                zaktualizujStanKonta();
+                frame.dispose();
+                listaWegiel.uzupelnijKupione(3, gracz);
             }
         }
         if(e.getSource() == listaWegiel.button5){
@@ -527,7 +566,10 @@ public class GamePanel extends JPanel implements ActionListener{
         }
         if (w5){
             if (e.getSource() == elektrowniaWeglowa5.sprzedajButton){
-                System.out.println("dqsagqsdgvq");
+                gracz.dodajBalans(listyElektrowni.getElektrownieWeglowe().get(4).getCenaSprzedazy());
+                zaktualizujStanKonta();
+                frame.dispose();
+                listaWegiel.uzupelnijKupione(4, gracz);
             }
         }
         //---------------
@@ -538,7 +580,10 @@ public class GamePanel extends JPanel implements ActionListener{
         }
         if (g1){
             if (e.getSource() == elektrowniaGazowa1.sprzedajButton){
-                System.out.println("dqsagqsdgvq");
+                gracz.dodajBalans(listyElektrowni.getElektrownieGazowe().get(0).getCenaSprzedazy());
+                zaktualizujStanKonta();
+                frame.dispose();
+                listaGaz.uzupelnijKupione(0, gracz);
             }
         }
         if(e.getSource() == listaGaz.button2){
@@ -548,7 +593,10 @@ public class GamePanel extends JPanel implements ActionListener{
         }
         if (g2){
             if (e.getSource() == elektrowniaGazowa2.sprzedajButton){
-                System.out.println("dqsagqsdgvq");
+                gracz.dodajBalans(listyElektrowni.getElektrownieGazowe().get(1).getCenaSprzedazy());
+                zaktualizujStanKonta();
+                frame.dispose();
+                listaGaz.uzupelnijKupione(1, gracz);
             }
         }
         if(e.getSource() == listaGaz.button3){
@@ -558,7 +606,10 @@ public class GamePanel extends JPanel implements ActionListener{
         }
         if (g3){
             if (e.getSource() == elektrowniaGazowa3.sprzedajButton){
-                System.out.println("dqsagqsdgvq");
+                gracz.dodajBalans(listyElektrowni.getElektrownieGazowe().get(2).getCenaSprzedazy());
+                zaktualizujStanKonta();
+                frame.dispose();
+                listaGaz.uzupelnijKupione(2, gracz);
             }
         }
         if(e.getSource() == listaGaz.button4){
@@ -568,7 +619,10 @@ public class GamePanel extends JPanel implements ActionListener{
         }
         if (g4){
             if (e.getSource() == elektrowniaGazowa4.sprzedajButton){
-                System.out.println("dqsagqsdgvq");
+                gracz.dodajBalans(listyElektrowni.getElektrownieGazowe().get(3).getCenaSprzedazy());
+                zaktualizujStanKonta();
+                frame.dispose();
+                listaGaz.uzupelnijKupione(3, gracz);
             }
         }
         if(e.getSource() == listaGaz.button5){
@@ -578,7 +632,10 @@ public class GamePanel extends JPanel implements ActionListener{
         }
         if (g5){
             if (e.getSource() == elektrowniaGazowa5.sprzedajButton){
-                System.out.println("dqsagqsdgvq");
+                gracz.dodajBalans(listyElektrowni.getElektrownieGazowe().get(4).getCenaSprzedazy());
+                zaktualizujStanKonta();
+                frame.dispose();
+                listaGaz.uzupelnijKupione(4, gracz);
             }
         }
 
