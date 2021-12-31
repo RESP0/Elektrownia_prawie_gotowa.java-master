@@ -209,13 +209,28 @@ public class ListaEle extends JPanel implements ActionListener {
 
     public void uzupelnijKupione(int indeks, Gracz g){
         for(int i = indeks*5;i<(indeks*5)+5;i++){
-            System.out.println(g.getListaElektrowni().get(i));
-            if(g.getListaElektrowni().get(i) != null){
+            if(g.getListaElektrowni().get(i) != null){ /////wywala sie dla 5 elektrowni, gdzies wychodzi za indeks
                 kup.get(i%5).setVisible(false);
                 cena.get(i%5).setVisible(false);
                 przyciski.get(i%5).setEnabled(true);
             }
         }
+    }
+
+    public void uzupelnienieMagazynu(int indeks){
+        //
+    }
+
+    public void nowyBlok(int indeks){
+        elektrownie.get(indeks).setLiczbaBlokow(elektrownie.get(indeks).getLiczbaBlokow() + 1);
+    }
+
+    public void dodatkowyPracownik(int indeks){
+        elektrownie.get(indeks).setLiczbaPracownikow(elektrownie.get(indeks).getLiczbaPracownikow() + 1);
+    }
+
+    public void zolnionyPracownik(int indeks){
+        elektrownie.get(indeks).setLiczbaPracownikow(elektrownie.get(indeks).getLiczbaPracownikow() - 1);
     }
 
     @Override

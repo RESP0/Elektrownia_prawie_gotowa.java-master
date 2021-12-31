@@ -34,9 +34,9 @@ public class ElektrowniaAtomowa extends Elektrownia {
     }
 
 
-    public ElektrowniaAtomowa(String nazwa, String miasto, int MocChwilowa, int MocMaksymalna, int LiczbaPracownikow, Wlasciciel wlasciciel, boolean czyPracuje, int LiczbaReaktorow, float ZuzycieWody, DystrybutorPradu Dystrybutor, float IloscOdpadow, OdbiorcaOdpadow[] OdbiorcaOdpadow, int cenaZakupu, int cenaSprzedazy){
+    public ElektrowniaAtomowa(String nazwa, String miasto, int MocChwilowa, int MocMaksymalna,int liczbaBlokow, int LiczbaPracownikow, Wlasciciel wlasciciel, boolean czyPracuje, int LiczbaReaktorow, float ZuzycieWody, DystrybutorPradu Dystrybutor, float IloscOdpadow, OdbiorcaOdpadow[] OdbiorcaOdpadow, int cenaZakupu, int cenaSprzedazy, int cenaBloku){
 
-        super(nazwa, miasto, MocChwilowa, MocMaksymalna, LiczbaPracownikow, czyPracuje, wlasciciel, Dystrybutor, cenaZakupu, cenaSprzedazy);
+        super(nazwa, miasto, MocChwilowa, MocMaksymalna, liczbaBlokow, LiczbaPracownikow, czyPracuje, wlasciciel, Dystrybutor, cenaZakupu, cenaSprzedazy, cenaBloku);
         this.LiczbaReaktorow = LiczbaReaktorow;
         this.ZuzycieWody = ZuzycieWody;
         this.IloscOdpadow = IloscOdpadow;

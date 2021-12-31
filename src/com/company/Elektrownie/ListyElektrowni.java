@@ -15,40 +15,40 @@ public class ListyElektrowni implements Serializable {
     ListyDostawcy dostawcy = new ListyDostawcy();
     public ArrayList<Elektrownia> elektrownieAtomowe = new ArrayList<>(){
         {
-            add(new ElektrowniaAtomowa("Nazwa1","Miasto1", 100, 42000, 3, wlasciciele.getWlasciciele().get(0), false, 86, 897, dystrybutorzy.getDystrybutorzyPradu().get(0), 345, new OdbiorcaOdpadow[]{dostawcy.odbiocyOdpadow.get(0),dostawcy.odbiocyOdpadow.get(1)}, 20000, 10000));
-            add(new ElektrowniaAtomowa("Nazwa2","Miasto2", 100, 42000, 3, wlasciciele.getWlasciciele().get(0), false, 86, 897, dystrybutorzy.getDystrybutorzyPradu().get(0), 345, new OdbiorcaOdpadow[]{dostawcy.odbiocyOdpadow.get(0),dostawcy.odbiocyOdpadow.get(1)}, 22000, 12000));
-            add(new ElektrowniaAtomowa("Nazwa3","Miasto3", 100, 42000, 3, wlasciciele.getWlasciciele().get(0), false, 86, 897, dystrybutorzy.getDystrybutorzyPradu().get(0), 345, new OdbiorcaOdpadow[]{dostawcy.odbiocyOdpadow.get(0),dostawcy.odbiocyOdpadow.get(1)}, 24000, 14000));
-            add(new ElektrowniaAtomowa("Nazwa4","Miasto4", 100, 42000, 3, wlasciciele.getWlasciciele().get(0), false, 86, 897, dystrybutorzy.getDystrybutorzyPradu().get(0), 345, new OdbiorcaOdpadow[]{dostawcy.odbiocyOdpadow.get(0),dostawcy.odbiocyOdpadow.get(1)}, 26000, 16000));
-            add(new ElektrowniaAtomowa("Nazwa5","Miasto5", 100, 42000, 3, wlasciciele.getWlasciciele().get(0), false, 86, 897, dystrybutorzy.getDystrybutorzyPradu().get(0), 345, new OdbiorcaOdpadow[]{dostawcy.odbiocyOdpadow.get(0),dostawcy.odbiocyOdpadow.get(1)}, 28000, 18000));
+            add(new ElektrowniaAtomowa("Nazwa1","Miasto1", 100, 42000, 3, 4, wlasciciele.getWlasciciele().get(0), false, 86, 897, dystrybutorzy.getDystrybutorzyPradu().get(0), 345, new OdbiorcaOdpadow[]{dostawcy.odbiocyOdpadow.get(0),dostawcy.odbiocyOdpadow.get(1)}, 20000, 10000, 500));
+            add(new ElektrowniaAtomowa("Nazwa2","Miasto2", 100, 42000, 3, 4, wlasciciele.getWlasciciele().get(0), false, 86, 897, dystrybutorzy.getDystrybutorzyPradu().get(0), 345, new OdbiorcaOdpadow[]{dostawcy.odbiocyOdpadow.get(0),dostawcy.odbiocyOdpadow.get(1)}, 22000, 12000, 700));
+            add(new ElektrowniaAtomowa("Nazwa3","Miasto3", 100, 42000, 3, 4, wlasciciele.getWlasciciele().get(0), false, 86, 897, dystrybutorzy.getDystrybutorzyPradu().get(0), 345, new OdbiorcaOdpadow[]{dostawcy.odbiocyOdpadow.get(0),dostawcy.odbiocyOdpadow.get(1)}, 24000, 14000, 900));
+            add(new ElektrowniaAtomowa("Nazwa4","Miasto4", 100, 42000, 3, 4, wlasciciele.getWlasciciele().get(0), false, 86, 897, dystrybutorzy.getDystrybutorzyPradu().get(0), 345, new OdbiorcaOdpadow[]{dostawcy.odbiocyOdpadow.get(0),dostawcy.odbiocyOdpadow.get(1)}, 26000, 16000, 1100));
+            add(new ElektrowniaAtomowa("Nazwa5","Miasto5", 100, 42000, 3, 4, wlasciciele.getWlasciciele().get(0), false, 86, 897, dystrybutorzy.getDystrybutorzyPradu().get(0), 345, new OdbiorcaOdpadow[]{dostawcy.odbiocyOdpadow.get(0),dostawcy.odbiocyOdpadow.get(1)}, 28000, 18000, 1300));
         }
     };
 
     public ArrayList<Elektrownia> elektrownieFotowoltaiczne = new ArrayList<>(){
         {
-            add(new ElektrowniaFotowoltaiczna("Nazwa1", "Miasto1", 100, 300, 1, wlasciciele.getWlasciciele().get(0), false, 10, dystrybutorzy.getDystrybutorzyPradu().get(0), 4000, 1000));
-            add(new ElektrowniaFotowoltaiczna("Nazwa2", "Miasto2", 100, 300, 1, wlasciciele.getWlasciciele().get(0), false, 10, dystrybutorzy.getDystrybutorzyPradu().get(0), 5000, 2000));
-            add(new ElektrowniaFotowoltaiczna("Nazwa3", "Miasto3", 100, 300, 1, wlasciciele.getWlasciciele().get(0), false, 10, dystrybutorzy.getDystrybutorzyPradu().get(0), 6000, 3000));
-            add(new ElektrowniaFotowoltaiczna("Nazwa4", "Miasto4", 100, 300, 1, wlasciciele.getWlasciciele().get(0), false, 10, dystrybutorzy.getDystrybutorzyPradu().get(0), 7000, 4000));
-            add(new ElektrowniaFotowoltaiczna("Nazwa5", "Miasto5", 100, 300, 1, wlasciciele.getWlasciciele().get(0), false, 10, dystrybutorzy.getDystrybutorzyPradu().get(0), 8000, 5000));
+            add(new ElektrowniaFotowoltaiczna("Nazwa1", "Miasto1", 100, 300, 1, 4, wlasciciele.getWlasciciele().get(0), false, 10, dystrybutorzy.getDystrybutorzyPradu().get(0), 4000, 1000, 200));
+            add(new ElektrowniaFotowoltaiczna("Nazwa2", "Miasto2", 100, 300, 1, 4, wlasciciele.getWlasciciele().get(0), false, 10, dystrybutorzy.getDystrybutorzyPradu().get(0), 5000, 2000, 300));
+            add(new ElektrowniaFotowoltaiczna("Nazwa3", "Miasto3", 100, 300, 1, 4, wlasciciele.getWlasciciele().get(0), false, 10, dystrybutorzy.getDystrybutorzyPradu().get(0), 6000, 3000, 400));
+            add(new ElektrowniaFotowoltaiczna("Nazwa4", "Miasto4", 100, 300, 1, 4, wlasciciele.getWlasciciele().get(0), false, 10, dystrybutorzy.getDystrybutorzyPradu().get(0), 7000, 4000, 500));
+            add(new ElektrowniaFotowoltaiczna("Nazwa5", "Miasto5", 100, 300, 1, 4, wlasciciele.getWlasciciele().get(0), false, 10, dystrybutorzy.getDystrybutorzyPradu().get(0), 8000, 5000, 600));
         }
     };
 
     public ArrayList<Elektrownia> elektrownieWeglowe = new ArrayList<>(){
         {
-            add(new ElektrowniaWeglowa("Nazwa1", "Miasto1",100,690,15, wlasciciele.getWlasciciele().get(0), false, "roksana wegiel", 109f, 25, dystrybutorzy.getDystrybutorzyPradu().get(0), 103.5f, dostawcy.dostawcyWegla.get(0), 190f, 8000, 4000));
-            add(new ElektrowniaWeglowa("Nazwa2", "Miasto2",100,690,15, wlasciciele.getWlasciciele().get(0), false, "roksana wegiel", 109f, 25, dystrybutorzy.getDystrybutorzyPradu().get(0), 103.5f, dostawcy.dostawcyWegla.get(0), 190f, 10000, 6000));
-            add(new ElektrowniaWeglowa("Nazwa3", "Miasto3",100,690,15, wlasciciele.getWlasciciele().get(0), false, "roksana wegiel", 109f, 25, dystrybutorzy.getDystrybutorzyPradu().get(0), 103.5f, dostawcy.dostawcyWegla.get(0), 190f,  12000, 8000));
-            add(new ElektrowniaWeglowa("Nazwa4", "Miasto4",100,690,15, wlasciciele.getWlasciciele().get(0), false, "roksana wegiel", 109f, 25, dystrybutorzy.getDystrybutorzyPradu().get(0), 103.5f, dostawcy.dostawcyWegla.get(0), 190f, 14000, 10000));
-            add(new ElektrowniaWeglowa("Nazwa5", "Miasto5",100,690,15, wlasciciele.getWlasciciele().get(0), false, "roksana wegiel", 109f, 25, dystrybutorzy.getDystrybutorzyPradu().get(0), 103.5f, dostawcy.dostawcyWegla.get(0), 190f, 16000, 12000));
+            add(new ElektrowniaWeglowa("Nazwa1", "Miasto1",100,690, 4,15, wlasciciele.getWlasciciele().get(0), false, "roksana wegiel", 109f, 25, dystrybutorzy.getDystrybutorzyPradu().get(0), 103.5f, dostawcy.dostawcyWegla.get(0), 190f, 8000, 4000, 400));
+            add(new ElektrowniaWeglowa("Nazwa2", "Miasto2",100,690, 4, 15, wlasciciele.getWlasciciele().get(0), false, "roksana wegiel", 109f, 25, dystrybutorzy.getDystrybutorzyPradu().get(0), 103.5f, dostawcy.dostawcyWegla.get(0), 190f, 10000, 6000, 500));
+            add(new ElektrowniaWeglowa("Nazwa3", "Miasto3",100,690, 4, 15, wlasciciele.getWlasciciele().get(0), false, "roksana wegiel", 109f, 25, dystrybutorzy.getDystrybutorzyPradu().get(0), 103.5f, dostawcy.dostawcyWegla.get(0), 190f,  12000, 8000, 600));
+            add(new ElektrowniaWeglowa("Nazwa4", "Miasto4",100,690, 4,15, wlasciciele.getWlasciciele().get(0), false, "roksana wegiel", 109f, 25, dystrybutorzy.getDystrybutorzyPradu().get(0), 103.5f, dostawcy.dostawcyWegla.get(0), 190f, 14000, 10000, 700));
+            add(new ElektrowniaWeglowa("Nazwa5", "Miasto5",100,690, 4,15, wlasciciele.getWlasciciele().get(0), false, "roksana wegiel", 109f, 25, dystrybutorzy.getDystrybutorzyPradu().get(0), 103.5f, dostawcy.dostawcyWegla.get(0), 190f, 16000, 12000, 800));
         }
     };
     public ArrayList<Elektrownia> elektrownieGazowe = new ArrayList<>(){
         {
-            add(new ElektrowniaGazowa("Nazwa1", "Miasto1",100,420,5, wlasciciele.getWlasciciele().get(0), false, "gaz", 89f, 15, dystrybutorzy.getDystrybutorzyPradu().get(0), 123f, dostawcy.dostawcyGazu.get(0), 200f, 9000, 5000));
-            add(new ElektrowniaGazowa("Nazwa2", "Miasto2",100,420,5, wlasciciele.getWlasciciele().get(0), false, "gaz", 89f, 15, dystrybutorzy.getDystrybutorzyPradu().get(0), 123f, dostawcy.dostawcyGazu.get(0), 200f, 11000, 7000));
-            add(new ElektrowniaGazowa("Nazwa3", "Miasto3",100,420,5, wlasciciele.getWlasciciele().get(0), false, "gaz", 89f, 15, dystrybutorzy.getDystrybutorzyPradu().get(0), 123f, dostawcy.dostawcyGazu.get(0), 200f, 13000, 9000));
-            add(new ElektrowniaGazowa("Nazwa4", "Miasto4",100,420,5, wlasciciele.getWlasciciele().get(0), false, "gaz", 89f, 15, dystrybutorzy.getDystrybutorzyPradu().get(0), 123f, dostawcy.dostawcyGazu.get(0), 200f, 15000, 11000));
-            add(new ElektrowniaGazowa("Nazwa5", "Miasto5",100,420,5, wlasciciele.getWlasciciele().get(0), false, "gaz", 89f, 15, dystrybutorzy.getDystrybutorzyPradu().get(0), 123f, dostawcy.dostawcyGazu.get(0), 200f, 17000, 13000));
+            add(new ElektrowniaGazowa("Nazwa1", "Miasto1",100,420,5, 4, wlasciciele.getWlasciciele().get(0), false, "gaz", 89f, 15, dystrybutorzy.getDystrybutorzyPradu().get(0), 123f, dostawcy.dostawcyGazu.get(0), 200f, 9000, 5000, 300));
+            add(new ElektrowniaGazowa("Nazwa2", "Miasto2",100,420,5, 4, wlasciciele.getWlasciciele().get(0), false, "gaz", 89f, 15, dystrybutorzy.getDystrybutorzyPradu().get(0), 123f, dostawcy.dostawcyGazu.get(0), 200f, 11000, 7000, 400));
+            add(new ElektrowniaGazowa("Nazwa3", "Miasto3",100,420,5, 4, wlasciciele.getWlasciciele().get(0), false, "gaz", 89f, 15, dystrybutorzy.getDystrybutorzyPradu().get(0), 123f, dostawcy.dostawcyGazu.get(0), 200f, 13000, 9000, 500));
+            add(new ElektrowniaGazowa("Nazwa4", "Miasto4",100,420,5, 4, wlasciciele.getWlasciciele().get(0), false, "gaz", 89f, 15, dystrybutorzy.getDystrybutorzyPradu().get(0), 123f, dostawcy.dostawcyGazu.get(0), 200f, 15000, 11000, 600));
+            add(new ElektrowniaGazowa("Nazwa5", "Miasto5",100,420,5, 4, wlasciciele.getWlasciciele().get(0), false, "gaz", 89f, 15, dystrybutorzy.getDystrybutorzyPradu().get(0), 123f, dostawcy.dostawcyGazu.get(0), 200f, 17000, 13000, 700));
         }
     };
 

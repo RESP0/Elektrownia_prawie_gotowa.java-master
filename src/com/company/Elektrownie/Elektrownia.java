@@ -19,6 +19,7 @@ public abstract class Elektrownia implements Serializable, ObliczDochodElektrown
 	private String miasto;
 	private int MocChwilowa;
 	private int MocMaksymalna;
+	private int liczbaBlokow;
 	private int LiczbaPracownikow;
 	private Wlasciciel wlasciciel;
 	private boolean czyPracuje;
@@ -28,6 +29,8 @@ public abstract class Elektrownia implements Serializable, ObliczDochodElektrown
 	private int sposobNaReakcjeNaAtak;
 	private int cenaZakupu;
 	private int cenaSprzedazy;
+	private int cenaBloku;
+
 
 	protected ReakcjaNaAwarieZasilania reakcjaNaAwarieZasilania;
 	protected ReakcjeNaAtakTerrorystyczny reakcjeNaAtakTerrorystyczny;
@@ -63,14 +66,16 @@ public abstract class Elektrownia implements Serializable, ObliczDochodElektrown
 		sposobNaReakcjeNaAtak = 0;
 		cenaZakupu = 0;
 		cenaSprzedazy = 0;
+		cenaBloku = 0;
 	}
 	
-	public Elektrownia(String nazwa, String miasto, int MocChwilowa, int MocMaksymalna, int LiczbaPracownikow, boolean czyPracuje, Wlasciciel wlasciciel, DystrybutorPradu Dystrybutor, int cenaZakupu, int cenaSprzedazy)
+	public Elektrownia(String nazwa, String miasto, int MocChwilowa, int MocMaksymalna, int liczbaBlokow, int LiczbaPracownikow, boolean czyPracuje, Wlasciciel wlasciciel, DystrybutorPradu Dystrybutor, int cenaZakupu, int cenaSprzedazy, int cenaBloku)
 	{
 		this.nazwa = nazwa;
 		this.miasto = miasto;
 		this.MocChwilowa = MocChwilowa;
 		this.MocMaksymalna = MocMaksymalna;
+		this.liczbaBlokow = liczbaBlokow;
 		this.LiczbaPracownikow = LiczbaPracownikow;
 		this.wlasciciel = wlasciciel;
 		this.czyPracuje = czyPracuje;
@@ -80,13 +85,17 @@ public abstract class Elektrownia implements Serializable, ObliczDochodElektrown
 		this.sposobNaReakcjeNaAtak = 0;
 		this.cenaZakupu = cenaZakupu;
 		this.cenaSprzedazy = cenaSprzedazy;
+		this.cenaBloku = cenaBloku;
 
 		for(int i = 0; i<pracownicy.length;i++){
 			pracownicy[i] = new Pracownicy();
 		}
 	}
 
-	
+	public int getLiczbaBlokow() { return liczbaBlokow; }
+
+	public void setLiczbaBlokow(int liczbaBlokow) { this.liczbaBlokow = liczbaBlokow; }
+
 	public Wlasciciel getWlasciciel(){
 		return wlasciciel;
 	}
@@ -174,6 +183,10 @@ public abstract class Elektrownia implements Serializable, ObliczDochodElektrown
 	public int getCenaSprzedazy() { return cenaSprzedazy; }
 
 	public void setCenaSprzedazy(int cenaSprzedazy) { this.cenaSprzedazy = cenaSprzedazy; }
+
+	public int getCenaBloku() { return cenaBloku; }
+
+	public void setCenaBloku(int cenaBloku) { this.cenaBloku = cenaBloku; }
 
 	public String toString()
 	{
