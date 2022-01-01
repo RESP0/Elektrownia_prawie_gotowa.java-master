@@ -29,8 +29,7 @@ public class ElektrowniaWeglowa extends ElektrowniaNaPaliwoStale  {
         this.IloscWeglaWMagazynie = IloscWeglaWMagazynie;
         this.MaxPojemnoscMagazynu = MaxPojemnoscMagazynu;
 
-        reakcjaNaAwarieZasilania = new Sposob1ReakcjaNaAwarieZasilania();
-        reakcjeNaAtakTerrorystyczny = new Sposob1ReakcjaNaAtakTerrorystyczny();
+
 
     }
 

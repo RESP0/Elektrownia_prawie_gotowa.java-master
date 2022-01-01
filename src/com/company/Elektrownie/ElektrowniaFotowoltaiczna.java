@@ -27,8 +27,6 @@ public class ElektrowniaFotowoltaiczna extends Elektrownia {
 		
 		this.ZuzyciePaneli = ZuzyciePaneli;
 
-		reakcjaNaAwarieZasilania = new Sposob1ReakcjaNaAwarieZasilania();
-		reakcjeNaAtakTerrorystyczny = new Sposob1ReakcjaNaAtakTerrorystyczny();
 		obliczDochodElektrowni = new DochodFotowoltaiczna();
 	}
 

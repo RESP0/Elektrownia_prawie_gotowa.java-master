@@ -187,7 +187,7 @@ public class GamePanel extends JPanel implements ActionListener{
             listaFoto.uzupelnijKupione(1,gracz);
             listaWegiel.uzupelnijKupione(2,gracz);
             listaGaz.uzupelnijKupione(3,gracz);
-            //otorz zapisana
+            //otworz zapisana
             this.add(gra, BorderLayout.CENTER);
             zaktualizujStanKonta();
         }
