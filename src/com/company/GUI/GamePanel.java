@@ -857,6 +857,7 @@ public class GamePanel extends JPanel implements ActionListener{
                 gracz.odejmijBalans(listyElektrowni.getElektrownieWeglowe().get(3).getCenaBloku());
                 listaWegiel.nowyBlok(3);
                 zaktualizujStanKonta();
+
             }
             if(e.getSource() == elektrowniaWeglowa4.zatrudnijPracownika){
                 gracz.odejmijBalans(cenaZatrudnieniaPracownika);

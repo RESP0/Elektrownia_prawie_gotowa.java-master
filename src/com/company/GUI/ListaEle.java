@@ -3,20 +3,14 @@ package com.company.GUI;
 import javax.swing.*;
 
 import com.company.Elektrownie.*;
-import com.company.Elektrownie.ElektrowniaAtomowa;
-import com.company.GUI.ElektrownieOkno.ElektrowniaAtomowaOkno;
-import com.company.GUI.ElektrownieOkno.ElektrowniaOknoAbstract;
 import com.company.Head.Gracz;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.time.Year;
 import java.util.ArrayList;
 
-//DODAC ZABEZPIECZENIE ZE NIE MOZNA KUPIC JAK MA SIĘ ZA MAŁO PIENIĘDZY
 
-//oPCJONaLNIE DO KAŻDEGO BUTTONA DOADAĆ INNĄ ICONE ZEBY ŁADNIE WYGLĄDAŁO
 public class ListaEle extends JPanel implements ActionListener {
 
     private int liczbaEle = 0;
