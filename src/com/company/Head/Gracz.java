@@ -1,16 +1,10 @@
 package com.company.Head;
 
-import com.company.Dochod.DochodAtomowa;
 import com.company.Elektrownie.*;
-import com.company.uslugodawcy.DostawcaGazu;
-import com.company.uslugodawcy.DostawcaWegla;
-import com.company.uslugodawcy.DystrybutorPradu;
-import com.company.uslugodawcy.OdbiorcaOdpadow;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 
 public class Gracz implements Serializable {

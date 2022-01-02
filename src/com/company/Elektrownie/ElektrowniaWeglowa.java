@@ -2,6 +2,8 @@ package com.company.Elektrownie;
 
 import com.company.AtakTerro.Sposob1ReakcjaNaAtakTerrorystyczny;
 import com.company.Awarie.Sposob1ReakcjaNaAwarieZasilania;
+import com.company.Dochod.DochodGazowa;
+import com.company.Dochod.DochodWeglowa;
 import com.company.Head.Pracownicy;
 import com.company.Head.Wlasciciel;
 import com.company.Wytwarzanie.SpalaniePaliwKopalnych;
@@ -31,7 +33,7 @@ public class ElektrowniaWeglowa extends ElektrowniaNaPaliwoStale  {
 
         reakcjaNaAwarieZasilania = new Sposob1ReakcjaNaAwarieZasilania();
         reakcjeNaAtakTerrorystyczny = new Sposob1ReakcjaNaAtakTerrorystyczny();
-
+        obliczDochodElektrowni = new DochodWeglowa();
     }
 
     public DostawcaWegla getDostawcaWegla() {

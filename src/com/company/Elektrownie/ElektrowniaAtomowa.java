@@ -3,7 +3,6 @@ import com.company.AtakTerro.Sposob2ReakcjaNaAtakTerrorystyczny;
 import com.company.Awarie.Sposob1ReakcjaNaAwarieZasilania;
 import com.company.Dochod.DochodAtomowa;
 import com.company.Head.Wlasciciel;
-import com.company.Wytwarzanie.RozszczepPierwiastkowPromieniotworczych;
 import com.company.uslugodawcy.DystrybutorPradu;
 import com.company.uslugodawcy.OdbiorcaOdpadow;
 
@@ -16,7 +15,7 @@ public class ElektrowniaAtomowa extends Elektrownia {
     private float ZuzycieWody;
     private float IloscOdpadow;
     private int kiedyDokupic;
-    private com.company.uslugodawcy.OdbiorcaOdpadow[] OdbiorcaOdpadow;
+    private com.company.uslugodawcy.OdbiorcaOdpadow OdbiorcaOdpadow;
     private ArrayList<String> listaMiastAtom = new ArrayList<>(){
         {
             add("Miasto1");
@@ -34,7 +33,7 @@ public class ElektrowniaAtomowa extends Elektrownia {
     }
 
 
-    public ElektrowniaAtomowa(String nazwa, String miasto, int MocChwilowa, int MocMaksymalna,int liczbaBlokow, int LiczbaPracownikow, Wlasciciel wlasciciel, boolean czyPracuje, int LiczbaReaktorow, float ZuzycieWody, DystrybutorPradu Dystrybutor, float IloscOdpadow, OdbiorcaOdpadow[] OdbiorcaOdpadow, int cenaZakupu, int cenaSprzedazy, int cenaBloku){
+    public ElektrowniaAtomowa(String nazwa, String miasto, int MocChwilowa, int MocMaksymalna,int liczbaBlokow, int LiczbaPracownikow, Wlasciciel wlasciciel, boolean czyPracuje, int LiczbaReaktorow, float ZuzycieWody, DystrybutorPradu Dystrybutor, float IloscOdpadow, OdbiorcaOdpadow OdbiorcaOdpadow, int cenaZakupu, int cenaSprzedazy, int cenaBloku){
 
         super(nazwa, miasto, MocChwilowa, MocMaksymalna, liczbaBlokow, LiczbaPracownikow, czyPracuje, wlasciciel, Dystrybutor, cenaZakupu, cenaSprzedazy, cenaBloku);
         this.LiczbaReaktorow = LiczbaReaktorow;
@@ -63,9 +62,9 @@ public class ElektrowniaAtomowa extends Elektrownia {
         }
     }
 
-    public void WywozOdpadow(int x) {
+    public void WywozOdpadow() {
         if (IloscOdpadow > 0)
-            OdbiorcaOdpadow[x].WywiezOdpady(this);
+            OdbiorcaOdpadow.WywiezOdpady(this);
     }
 
 
@@ -95,12 +94,12 @@ public class ElektrowniaAtomowa extends Elektrownia {
         IloscOdpadow = iloscOdpadow;
     }
 
-    public OdbiorcaOdpadow[] getOdbiorcaOdpadow() {
+    public com.company.uslugodawcy.OdbiorcaOdpadow getOdbiorcaOdpadow() {
         return OdbiorcaOdpadow;
     }
 
-    public void setOdbiorcaOdpadow(OdbiorcaOdpadow odbiorcaOdpadow, int x) {
-        OdbiorcaOdpadow[x] = odbiorcaOdpadow;
+    public void setOdbiorcaOdpadow(com.company.uslugodawcy.OdbiorcaOdpadow odbiorcaOdpadow) {
+        OdbiorcaOdpadow = odbiorcaOdpadow;
     }
 
     public int getKiedyDokupic() { return kiedyDokupic; }
@@ -113,7 +112,7 @@ public class ElektrowniaAtomowa extends Elektrownia {
                 "\nLiczbaReaktorow: " + LiczbaReaktorow +
                 "\nZuzycieWody: " + ZuzycieWody +
                 "\nIloscOdpadow: " + IloscOdpadow +
-                "\nOdbiorcaOdpadow: " + Arrays.toString(OdbiorcaOdpadow);
+                "\nOdbiorcaOdpadow: " + OdbiorcaOdpadow;
     }
 
     @Override
