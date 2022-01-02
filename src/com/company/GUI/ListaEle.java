@@ -5,6 +5,7 @@ import javax.swing.*;
 import com.company.Elektrownie.*;
 import com.company.Elektrownie.ElektrowniaAtomowa;
 import com.company.GUI.ElektrownieOkno.ElektrowniaAtomowaOkno;
+import com.company.GUI.ElektrownieOkno.ElektrowniaOknoAbstract;
 import com.company.Head.Gracz;
 
 import java.awt.*;

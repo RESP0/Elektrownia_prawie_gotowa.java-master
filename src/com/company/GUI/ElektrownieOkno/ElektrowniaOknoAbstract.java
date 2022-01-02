@@ -55,7 +55,7 @@ abstract public class ElektrowniaOknoAbstract extends JPanel implements ActionLi
 
     //skroty
     JPanel skroty;
-    JButton zapiszIZamknij;
+    public JButton zapiszIZamknij;
     JPanel informacje;
     JPanel zamknij;
 
@@ -66,7 +66,6 @@ abstract public class ElektrowniaOknoAbstract extends JPanel implements ActionLi
     public ElektrowniaOknoAbstract(Elektrownia elektrownia, Gracz gracz) {
 
         //USTAWIENIA RAMKI
-        //this.setVisible(false);
         this.setPreferredSize(new Dimension(900,600));
         this.setLayout(new GridLayout());
 
@@ -306,10 +305,7 @@ abstract public class ElektrowniaOknoAbstract extends JPanel implements ActionLi
     }
 
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == zapiszIZamknij){
-            //this.dispose();
-        }
-        else if (e.getSource() == sprzedajButton){
+        if (e.getSource() == sprzedajButton){
             //this.dispose();
         }
 
