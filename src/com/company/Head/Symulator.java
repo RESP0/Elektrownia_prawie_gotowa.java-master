@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
-
+/*
 public class Symulator {
     private static int a = 0;
     private static Scanner scan = new Scanner(System.in);
@@ -95,4 +95,6 @@ public class Symulator {
         }
 
 }
+
+ */
 

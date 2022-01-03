@@ -2,8 +2,10 @@ package com.company.Elektrownie;
 
 import com.company.AtakTerro.ReakcjeNaAtakTerrorystyczny;
 import com.company.AtakTerro.Sposob1ReakcjaNaAtakTerrorystyczny;
+import com.company.AtakTerro.Sposob2ReakcjaNaAtakTerrorystyczny;
 import com.company.Awarie.ReakcjaNaAwarieZasilania;
 import com.company.Awarie.Sposob1ReakcjaNaAwarieZasilania;
+import com.company.Awarie.Sposob2ReakcjaNaAwarieZasilania;
 import com.company.Head.Pracownicy;
 import com.company.Head.Wlasciciel;
 import com.company.Wytwarzanie.WytwarzanieEnergiiElektrycznej;
@@ -38,22 +40,6 @@ public abstract class Elektrownia implements Serializable, ObliczDochodElektrown
 	protected ReakcjaNaAwarieZasilania reakcjaNaAwarieZasilania;
 	protected ReakcjeNaAtakTerrorystyczny reakcjeNaAtakTerrorystyczny;
 	protected ObliczDochodElektrowni obliczDochodElektrowni;
-
-	public void wykonajReakcjaNaAwarieZasilania() {
-		reakcjaNaAwarieZasilania.ReakcjeNaAwarieZasilania(this);
-	}
-
-	public void wykonajReakcjaNaAtakTerrorystyczny() {
-		reakcjeNaAtakTerrorystyczny.ReakcjaNaAtakTerrorystyczny(this);
-	}
-
-	public void ustawReakcjeNaAwarie(ReakcjaNaAwarieZasilania reakcjaAwaria) {
-		this.reakcjaNaAwarieZasilania = reakcjaAwaria;
-	}
-
-	public void ustawReakcjeNaAtak(ReakcjeNaAtakTerrorystyczny reakcjaAtak) {
-		this.reakcjeNaAtakTerrorystyczny = reakcjaAtak;
-	}
 
 	public Elektrownia()
 	{
@@ -91,8 +77,23 @@ public abstract class Elektrownia implements Serializable, ObliczDochodElektrown
 		this.cenaSprzedazy = cenaSprzedazy;
 		this.cenaBloku = cenaBloku;
 
-		reakcjaNaAwarieZasilania = new Sposob1ReakcjaNaAwarieZasilania();
-		reakcjeNaAtakTerrorystyczny = new Sposob1ReakcjaNaAtakTerrorystyczny();
+		if (sposobNaReakcjeNaAwarie == 0){
+			reakcjaNaAwarieZasilania = new Sposob1ReakcjaNaAwarieZasilania();
+		}else if (sposobNaReakcjeNaAwarie == 1){
+			reakcjaNaAwarieZasilania = new Sposob1ReakcjaNaAwarieZasilania();
+		}else {
+			reakcjaNaAwarieZasilania = new Sposob2ReakcjaNaAwarieZasilania();
+		}
+
+		if(sposobNaReakcjeNaAtak == 0){
+			reakcjeNaAtakTerrorystyczny = new Sposob1ReakcjaNaAtakTerrorystyczny();
+		}else if(sposobNaReakcjeNaAtak == 1){
+			reakcjeNaAtakTerrorystyczny = new Sposob1ReakcjaNaAtakTerrorystyczny();
+		}else {
+			reakcjeNaAtakTerrorystyczny = new Sposob2ReakcjaNaAtakTerrorystyczny();
+		}
+
+
 
 		for(int i = 0; i<pracownicy.length;i++){
 			pracownicy[i] = new Pracownicy();
