@@ -301,7 +301,7 @@ abstract public class ElektrowniaOknoAbstract extends JPanel implements ActionLi
     }
 
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == kupBloki){
+        if (e.getSource() == sprzedajButton){
 
         }
         this.revalidate();
@@ -315,42 +315,7 @@ abstract public class ElektrowniaOknoAbstract extends JPanel implements ActionLi
             kiedyLabel.setText(kiedySlider.getValue() + " %");
         }
     }
-    /*
-    public void mouseEntered(MouseEvent e){
 
-    }
-    public void mouseClicked(MouseEvent e){
-        if (e.getSource() == infoBloki){
-            new InfoFrame();
-        }
-        else if(e.getSource() == infoPracownicy){
-            new InfoFrame();
-        }
-        else if(e.getSource() == infoAtak){
-            new InfoFrame();
-        }
-        else if(e.getSource() == infoAwarie){
-            new InfoFrame();
-        }
-        else if(e.getSource() == infoMoc){
-            new InfoFrame();
-        }
-        else if(e.getSource() == infoKiedy){
-            new InfoFrame();
-        }
-
-    }
-    public void mousePressed(MouseEvent e){
-
-    }
-    public void mouseReleased(MouseEvent e){
-
-    }
-    public void mouseExited(MouseEvent e){
-
-    }
-
-     */
     public void dane(Elektrownia elektrownia){
         skrot("Cena nowego bloku", String.valueOf(elektrownia.getCenaBloku()),informacje);
         skrot("Cena sprzedaży elektrowni", String.valueOf(elektrownia.getCenaSprzedazy()),informacje);
