@@ -25,11 +25,11 @@ public class ListyElektrowni implements Serializable {
 
     public ArrayList<Elektrownia> elektrownieFotowoltaiczne = new ArrayList<>(){
         {
-            add(new ElektrowniaFotowoltaiczna("Farma Boba Energetyka", "Wilkowo", 100, 550, 10, 10, wlasciciele.getWlasciciele().get(3), false, 0, dystrybutorzy.getDystrybutorzyPradu().get(0), 4000, 1000, 200,0,0,10));
-            add(new ElektrowniaFotowoltaiczna("Datong Solar Power", "Shanxi", 100, 845, 10, 10, wlasciciele.getWlasciciele().get(3), false, 0, dystrybutorzy.getDystrybutorzyPradu().get(1), 5000, 2000, 300,0,0,10));
-            add(new ElektrowniaFotowoltaiczna("Kurnool Ultra Mega Solar Park", "Panyam", 100, 1125, 10, 10, wlasciciele.getWlasciciele().get(3), false, 0, dystrybutorzy.getDystrybutorzyPradu().get(2), 6000, 3000, 400,0,0,10));
-            add(new ElektrowniaFotowoltaiczna("Benban Solar Park", "Benban", 100, 1500, 10, 10, wlasciciele.getWlasciciele().get(3), false, 0, dystrybutorzy.getDystrybutorzyPradu().get(3), 7000, 4000, 500,0,0,10));
-            add(new ElektrowniaFotowoltaiczna("Bhadla Solar Park", "Bhadla", 100, 2000, 10, 10, wlasciciele.getWlasciciele().get(3), false, 0, dystrybutorzy.getDystrybutorzyPradu().get(4), 8000, 5000, 600,0,0,10));
+            add(new ElektrowniaFotowoltaiczna("Esoleo", "Brudzew", 0, 550, 10, 10, wlasciciele.getWlasciciele().get(3), false, 0, dystrybutorzy.getDystrybutorzyPradu().get(0), 30000, 15000, 15000,0,0,10));
+            add(new ElektrowniaFotowoltaiczna("Cez", "Chwaletice", 0, 550, 10, 10, wlasciciele.getWlasciciele().get(3), false, 0, dystrybutorzy.getDystrybutorzyPradu().get(1), 56250, 25000, 18750,0,0,10));
+            add(new ElektrowniaFotowoltaiczna("OrskSolarPark", "Orsk", 0, 550, 10, 10, wlasciciele.getWlasciciele().get(3), false, 0, dystrybutorzy.getDystrybutorzyPradu().get(2), 90000, 45000, 22500,0,0,10));
+            add(new ElektrowniaFotowoltaiczna("ENBW", "Werneuchen", 0, 550, 10, 10, wlasciciele.getWlasciciele().get(3), false, 0, dystrybutorzy.getDystrybutorzyPradu().get(3), 131250, 65000, 26250,0,0,10));
+            add(new ElektrowniaFotowoltaiczna("FranceSolar", " Toul-Rosieres", 0, 550, 10, 10, wlasciciele.getWlasciciele().get(3), false, 0, dystrybutorzy.getDystrybutorzyPradu().get(4), 180000, 90000, 30000,0,0,10));
         }
     };
 
@@ -44,11 +44,11 @@ public class ListyElektrowni implements Serializable {
     };
     public ArrayList<Elektrownia> elektrownieGazowe = new ArrayList<>(){
         {
-            add(new ElektrowniaGazowa("Nazwa1", "Miasto1",100,420,5, 4, wlasciciele.getWlasciciele().get(0), false, "gaz", 89f, 15, dystrybutorzy.getDystrybutorzyPradu().get(0), 123f, dostawcy.dostawcyGazu.get(0), 200f, 9000, 5000, 300,0,0,10));
-            add(new ElektrowniaGazowa("Nazwa2", "Miasto2",100,420,5, 4, wlasciciele.getWlasciciele().get(0), false, "gaz", 89f, 15, dystrybutorzy.getDystrybutorzyPradu().get(0), 123f, dostawcy.dostawcyGazu.get(0), 200f, 11000, 7000, 400,0,0,10));
-            add(new ElektrowniaGazowa("Nazwa3", "Miasto3",100,420,5, 4, wlasciciele.getWlasciciele().get(0), false, "gaz", 89f, 15, dystrybutorzy.getDystrybutorzyPradu().get(0), 123f, dostawcy.dostawcyGazu.get(0), 200f, 13000, 9000, 500,0,0,10));
-            add(new ElektrowniaGazowa("Nazwa4", "Miasto4",100,420,5, 4, wlasciciele.getWlasciciele().get(0), false, "gaz", 89f, 15, dystrybutorzy.getDystrybutorzyPradu().get(0), 123f, dostawcy.dostawcyGazu.get(0), 200f, 15000, 11000, 600,0,0,10));
-            add(new ElektrowniaGazowa("Nazwa5", "Miasto5",100,420,5, 4, wlasciciele.getWlasciciele().get(0), false, "gaz", 89f, 15, dystrybutorzy.getDystrybutorzyPradu().get(0), 123f, dostawcy.dostawcyGazu.get(0), 200f, 17000, 13000, 700,0,0,10));
+            add(new ElektrowniaGazowa("Polgazprom", "Dolna Odra",0,800,10, 10, wlasciciele.getWlasciciele().get(0), false, "gaz", 4.75f, 10, dystrybutorzy.getDystrybutorzyPradu().get(0), 123f, dostawcy.dostawcyGazu.get(0), 200f, 60000, 30000, 30000,0,0,10));
+            add(new ElektrowniaGazowa("MelnikGaz", "Pepikovice",0,800,10, 10, wlasciciele.getWlasciciele().get(0), false, "gaz", 4.75f, 10, dystrybutorzy.getDystrybutorzyPradu().get(1), 123f, dostawcy.dostawcyGazu.get(1), 200f, 112500, 55000, 37500,0,0,10));
+            add(new ElektrowniaGazowa("Gazprom", "Kacapowo",0,800,10, 10, wlasciciele.getWlasciciele().get(0), false, "gaz", 4.75f, 10, dystrybutorzy.getDystrybutorzyPradu().get(2), 123f, dostawcy.dostawcyGazu.get(2), 200f, 180000, 90000, 45000,0,0,10));
+            add(new ElektrowniaGazowa("ENBW", "Helmutsdorf",0,800,10, 10, wlasciciele.getWlasciciele().get(0), false, "gaz", 4.75f, 10, dystrybutorzy.getDystrybutorzyPradu().get(3), 123f, dostawcy.dostawcyGazu.get(3), 200f, 225000, 112000, 52500,0,0,10));
+            add(new ElektrowniaGazowa("Centrale a gaz", "Reno-Pari",0,800,10, 10, wlasciciele.getWlasciciele().get(0), false, "gaz", 4.75f, 10, dystrybutorzy.getDystrybutorzyPradu().get(4), 123f, dostawcy.dostawcyGazu.get(4), 200f, 270000, 135000, 60000,0,0,10));
         }
     };
 

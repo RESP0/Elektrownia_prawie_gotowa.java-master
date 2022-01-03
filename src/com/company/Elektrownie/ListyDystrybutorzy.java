@@ -11,10 +11,10 @@ public class ListyDystrybutorzy implements Serializable {
     public ArrayList<DystrybutorPradu> dystrybutorzyPradu = new ArrayList<>(){
         {
             add( new DystrybutorPradu(1,new Wlasciciel()));
-            add( new DystrybutorPradu(1.25f,new Wlasciciel()));
-            add( new DystrybutorPradu());
-            add( new DystrybutorPradu());
-            add( new DystrybutorPradu());
+            add( new DystrybutorPradu(1.11f,new Wlasciciel()));
+            add( new DystrybutorPradu(1.227f,new Wlasciciel()));
+            add( new DystrybutorPradu(1.34f,new Wlasciciel()));
+            add( new DystrybutorPradu(1.45f,new Wlasciciel()));
         }
     };
 

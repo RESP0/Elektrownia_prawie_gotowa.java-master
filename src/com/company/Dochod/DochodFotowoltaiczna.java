@@ -19,7 +19,7 @@ public class DochodFotowoltaiczna implements ObliczDochodElektrowni, Serializabl
         while (((ElektrowniaFotowoltaiczna) e).getZuzyciePaneli() < 100) {
             return
                     //przychod
-                    e.getMocChwilowa() * e.getDystrybutor().getCenaSkupu() * 12  //6600
+                    e.getMocChwilowa() * e.getDystrybutor().getCenaSkupu() * 12  //6600  //7260
                             //wydatki
                             - e.getLiczbaPracownikow() * StawkaGodzinowa * 12; //3600
         }
