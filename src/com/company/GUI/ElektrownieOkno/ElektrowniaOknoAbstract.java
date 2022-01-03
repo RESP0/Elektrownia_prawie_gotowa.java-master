@@ -48,11 +48,11 @@ abstract public class ElektrowniaOknoAbstract extends JPanel implements ActionLi
     ButtonGroup grupaAwaria;
     JPanel moc;
     JLabel infoMoc;
-    JSlider mocSlider;
+    public JSlider mocSlider;
     JLabel mocLabel;
     JPanel kiedyDokupic;
     JLabel infoKiedy;
-    JSlider kiedySlider;
+    public JSlider kiedySlider;
     JLabel kiedyLabel;
 
     //skroty
@@ -192,7 +192,7 @@ abstract public class ElektrowniaOknoAbstract extends JPanel implements ActionLi
         kafelekInfo(moc,new Color(100, 100, 100),"MOC CHWILOWA",infoMoc,"Jak chcesz zrobic enter to html tu działa",wybory);
 
         //MOC SLIDER
-        mocSlider = new JSlider(0,100,50);
+        mocSlider = new JSlider(0,100,(elektrownia.getMocChwilowa()*100/elektrownia.getMocMaksymalna()));
         mocLabel = new JLabel();
         slider(mocSlider,mocLabel,moc);
 
@@ -201,7 +201,7 @@ abstract public class ElektrowniaOknoAbstract extends JPanel implements ActionLi
         kafelekInfo(kiedyDokupic,new Color(80, 90, 100),"KIEDY DOKUPIC",infoKiedy,"Twoj staru",wybory);
 
         //SLIDER KIEDY KUPIC
-        kiedySlider = new JSlider(0,100,0);
+        kiedySlider = new JSlider(0,100,elektrownia.getKiedyDokupic());
         kiedyLabel = new JLabel();
         slider(kiedySlider, kiedyLabel, kiedyDokupic);
 

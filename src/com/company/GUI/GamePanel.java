@@ -5,6 +5,8 @@ import com.company.Head.Gracz;
 import com.company.Head.Serializacja;
 
 import javax.swing.*;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -13,9 +15,10 @@ import java.util.ArrayList;
 
 import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 
-public class GamePanel extends JPanel implements ActionListener{
+public class GamePanel extends JPanel implements ActionListener, ChangeListener {
     final int width = 942;
     final int height = 628;
+    Serializacja serializacje;
     Gracz gracz;
     Menue menu;
     Gra gra;
@@ -170,7 +173,7 @@ public class GamePanel extends JPanel implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        Serializacja serializacje = new Serializacja();
+        serializacje = new Serializacja();
         if(e.getSource()==menu.nowaGra){
             this.remove(menu);
             setWybor(1);
@@ -374,6 +377,7 @@ public class GamePanel extends JPanel implements ActionListener{
             a1 = true;
         }
        if (a1){
+           /*
             if(e.getSource() == elektrowniaAtomowa1.sprzedajButton){
                 gracz.dodajBalans(listyElektrowni.getElektrownieAtomowe().get(0).getCenaSprzedazy());
                 zaktualizujStanKonta();
@@ -406,6 +410,9 @@ public class GamePanel extends JPanel implements ActionListener{
                frame.dispose();
            }
            reakcjaAtakRadia(elektrowniaAtomowa1,gracz,0,e);
+
+            */
+           przypisButtonów(elektrowniaAtomowa1,frame,0,listyElektrowni.elektrownieAtomowe,listaAtom,gracz,a1,e);
        }
 
 
@@ -1142,60 +1149,13 @@ public class GamePanel extends JPanel implements ActionListener{
             this.remove(listaFoto);
             add(gra,BorderLayout.CENTER);
         }
-        else if(e.getSource() == listaFoto.button1){
-            new ElektrowniaFotowoltaicznaOkno(gracz.getListaElektrowni().get(5), gracz);
-        }
-        else if(e.getSource() == listaFoto.button2){
-            new ElektrowniaFotowoltaicznaOkno(gracz.getListaElektrowni().get(6), gracz);
-        }
-        else if(e.getSource() == listaFoto.button3){
-            new ElektrowniaFotowoltaicznaOkno(gracz.getListaElektrowni().get(7), gracz);
-        }
-        else if(e.getSource() == listaFoto.button4){
-            new ElektrowniaFotowoltaicznaOkno(gracz.getListaElektrowni().get(8), gracz);
-        }
-        else if(e.getSource() == listaFoto.button5){
-            new ElektrowniaFotowoltaicznaOkno(gracz.getListaElektrowni().get(9), gracz);
-        }
-        //------------------------------------------------------------------------------
         else if(e.getSource() == listaWegiel.powrot){
             this.remove(listaWegiel);
             add(gra,BorderLayout.CENTER);
         }
-        else if(e.getSource() == listaWegiel.button1){
-            new ElektrowniaWeglowaOkno(gracz.getListaElektrowni().get(10), gracz);
-        }
-        else if(e.getSource() == listaWegiel.button2){
-            new ElektrowniaWeglowaOkno(gracz.getListaElektrowni().get(11), gracz);
-        }
-        else if(e.getSource() == listaWegiel.button3){
-            new ElektrowniaWeglowaOkno(gracz.getListaElektrowni().get(12), gracz);
-        }
-        else if(e.getSource() == listaWegiel.button4){
-            new ElektrowniaWeglowaOkno(gracz.getListaElektrowni().get(13), gracz);
-        }
-        else if(e.getSource() == listaWegiel.button5){
-            new ElektrowniaWeglowaOkno(gracz.getListaElektrowni().get(14), gracz);
-        }
-        //------------------------------------------------------------------------------
         else if(e.getSource() == listaGaz.powrot){
             this.remove(listaGaz);
             add(gra,BorderLayout.CENTER);
-        }
-        else if(e.getSource() == listaGaz.button1){
-            new ElektrowniaGazowaOkno(gracz.getListaElektrowni().get(15), gracz);
-        }
-        else if(e.getSource() == listaGaz.button2){
-            new ElektrowniaGazowaOkno(gracz.getListaElektrowni().get(16), gracz);
-        }
-        else if(e.getSource() == listaGaz.button3){
-            new ElektrowniaGazowaOkno(gracz.getListaElektrowni().get(17), gracz);
-        }
-        else if(e.getSource() == listaGaz.button4){
-            new ElektrowniaGazowaOkno(gracz.getListaElektrowni().get(18), gracz);
-        }
-        else if(e.getSource() == listaGaz.button5){
-            new ElektrowniaGazowaOkno(gracz.getListaElektrowni().get(19), gracz);
         }
         this.revalidate();
         this.repaint();
@@ -1223,6 +1183,8 @@ public class GamePanel extends JPanel implements ActionListener{
         okno.awariaBrak.addActionListener(this);
         okno.awaria1.addActionListener(this);
         okno.awaria2.addActionListener(this);
+        okno.mocSlider.addChangeListener(this);
+        okno.kiedySlider.addChangeListener(this);
         tym.removeAll();
         tym.add(okno);
         tym.revalidate();
@@ -1239,6 +1201,50 @@ public class GamePanel extends JPanel implements ActionListener{
             gracz.getListaElektrowni().get(indeksElektrowni).setSposobNaReakcjeNaAtak(2);
         }
     }
+    public void reakcjaAwariaRadia(ElektrowniaOknoAbstract okno, Gracz gracz,int indeksElektrowni,ActionEvent e){
+        if (e.getSource() == okno.awariaBrak){
+            gracz.getListaElektrowni().get(indeksElektrowni).setSposobNaReakcjeNaAwarie(0);
+        }else if (e.getSource() == okno.awaria1){
+            gracz.getListaElektrowni().get(indeksElektrowni).setSposobNaReakcjeNaAwarie(1);
+        }else if (e.getSource() == okno.awaria2){
+            gracz.getListaElektrowni().get(indeksElektrowni).setSposobNaReakcjeNaAwarie(2);
+        }
+    }
+    public void przypisButtonów(ElektrowniaOknoAbstract panel, JFrame okno,int indeksEle,ArrayList<Elektrownia> lista,ListaEle rodzaj,Gracz gracz,boolean bool,ActionEvent e){
+        if (e.getSource() == panel.sprzedajButton){
+            gracz.dodajBalans(lista.get(indeksEle).getCenaSprzedazy());
+            zaktualizujStanKonta();
+            gracz.getListaElektrowni().set(indeksEle,null);
+            bool = false;
+            okno.dispose();
+            rodzaj.uzupelnijKupione(3, gracz);
+        }
+        if(e.getSource() == panel.kupBloki){
+            gracz.odejmijBalans(lista.get(indeksEle).getCenaBloku());
+            rodzaj.nowyBlok(indeksEle%5);
+            zaktualizujStanKonta();
+        }
+        if(e.getSource() == panel.zatrudnijPracownika){
+            gracz.odejmijBalans(cenaZatrudnieniaPracownika);
+            rodzaj.dodatkowyPracownik(indeksEle%5);
+            zaktualizujStanKonta();
+        }
+        if(e.getSource() == panel.zwolnijPracownika){
+            rodzaj.zolnionyPracownik(indeksEle%5);
+        }
+        if(e.getSource() == panel.dokupButton){
+            gracz.odejmijBalans(420);
+            rodzaj.uzupelnienieMagazynu(indeksEle%5);
+            zaktualizujStanKonta();
+        }
+        if(e.getSource() == panel.zapiszIZamknij){
+            serializacje.zapis((ArrayList<Elektrownia>) gracz.getListaElektrowni());
+            serializacje.zapisStanuKonta(gracz.getBalans());
+            okno.dispose();
+        }
+        reakcjaAtakRadia(panel,gracz,indeksEle,e);
+        reakcjaAwariaRadia(panel,gracz,indeksEle,e);
+    }
 
     private int wybor;
     public void setWybor(int x){
@@ -1246,5 +1252,19 @@ public class GamePanel extends JPanel implements ActionListener{
     }
     public int getWybor(){
         return wybor;
+    }
+
+    @Override
+    public void stateChanged(ChangeEvent e) {
+        slidery(elektrowniaAtomowa1,0,gracz,e);
+    }
+    public void slidery(ElektrowniaOknoAbstract okno,int indeksele,Gracz gracz,ChangeEvent e){
+        if (e.getSource() == okno.mocSlider){
+            gracz.getListaElektrowni().get(indeksele).setMocChwilowa(okno.mocSlider.getValue()*gracz.getListaElektrowni().get(indeksele).getMocMaksymalna()/100);
+        }
+        if (e.getSource() == okno.kiedySlider){
+            gracz.getListaElektrowni().get(indeksele).setKiedyDokupic(okno.kiedySlider.getValue());
+        }
+        okno.stateChanged(e);
     }
 }
