@@ -1,5 +1,6 @@
 package com.company.Elektrownie;
 
+import com.company.Head.Wlasciciel;
 import com.company.uslugodawcy.DostawcaGazu;
 import com.company.uslugodawcy.DostawcaWegla;
 import com.company.uslugodawcy.OdbiorcaOdpadow;
@@ -21,11 +22,11 @@ public class ListyDostawcy implements Serializable {
 
     public ArrayList <DostawcaGazu> dostawcyGazu = new ArrayList<>(){
         {
-            add( new DostawcaGazu());
-            add( new DostawcaGazu());
-            add( new DostawcaGazu());
-            add( new DostawcaGazu());
-            add( new DostawcaGazu());
+            add( new DostawcaGazu(1,new Wlasciciel()));
+            add( new DostawcaGazu(1.16f,new Wlasciciel()));
+            add( new DostawcaGazu(1.357f,new Wlasciciel()));
+            add( new DostawcaGazu(1.53f,new Wlasciciel()));
+            add( new DostawcaGazu(1.69f,new Wlasciciel()));
         }
     };
 
