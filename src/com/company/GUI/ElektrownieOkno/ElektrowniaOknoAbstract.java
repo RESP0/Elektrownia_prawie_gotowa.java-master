@@ -60,6 +60,15 @@ abstract public class ElektrowniaOknoAbstract extends JPanel implements ActionLi
     public JButton zapiszIZamknij;
     JPanel informacje;
     JPanel zamknij;
+    public JLabel cenaBlokuLabel;
+    public JLabel cenaSprzedazyLabel;
+    public JLabel mocMaksymalnaLabel;
+    public JLabel liczbaPracownikowLabel;
+    public JLabel liczbaBlokowLabel;
+    public JLabel zadowoleniePracownikowLabel;
+    public JLabel stanMagazynuLabel;
+    public JLabel uzupelnianieLabel;
+
 
     //info icon
     ImageIcon info;
@@ -217,6 +226,15 @@ abstract public class ElektrowniaOknoAbstract extends JPanel implements ActionLi
         informacje.setBackground(new Color(110, 120, 125));
         zamknij.setBackground(new Color(110, 120, 125));
 
+        cenaBlokuLabel = new JLabel();
+        cenaSprzedazyLabel = new JLabel();
+        mocMaksymalnaLabel = new JLabel();
+        liczbaPracownikowLabel = new JLabel();
+        liczbaBlokowLabel = new JLabel();
+        zadowoleniePracownikowLabel = new JLabel();
+        stanMagazynuLabel = new JLabel();
+        uzupelnianieLabel = new JLabel();
+
         dane(elektrownia);
         skroty.add(informacje);
 
@@ -305,8 +323,10 @@ abstract public class ElektrowniaOknoAbstract extends JPanel implements ActionLi
         label.setFont(new Font("Arial black", Font.BOLD, 15));
         panel.add(label);
     }
-    public void skrot(String tekst, String dane, JPanel parent){
-        JLabel label = new JLabel("<html><div style='text-align: center;'>"+tekst + ":<br> " + dane+"<html>", SwingConstants.CENTER);
+    public void skrot(JLabel label, String tekst, String dane, JPanel parent){
+        label.setText("<html><div style='text-align: center;'>"+tekst + ":<br> " + dane+"<html>");
+        label.setHorizontalAlignment(SwingConstants.CENTER);
+        label.setVerticalAlignment(SwingConstants.CENTER);
         label.setFont(font);
         label.setForeground(Color.white);
         label.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -331,10 +351,11 @@ abstract public class ElektrowniaOknoAbstract extends JPanel implements ActionLi
     }
 
     public void dane(Elektrownia elektrownia){
-        skrot("Cena nowego bloku", String.valueOf(elektrownia.getCenaBloku()),informacje);
-        skrot("Cena sprzedaży elektrowni", String.valueOf(elektrownia.getCenaSprzedazy()),informacje);
-        skrot("Moc maksymalna elektrowni", String.valueOf(elektrownia.getMocMaksymalna()),informacje);
-        skrot("Liczba pracowników elektrowni", String.valueOf(elektrownia.getLiczbaPracownikow()),informacje);
-        skrot("Liczba blokow elektrowni", String.valueOf(elektrownia.getLiczbaBlokow()),informacje);
+        skrot(cenaBlokuLabel, "Cena nowego bloku", String.valueOf(elektrownia.getCenaBloku()),informacje);
+        skrot(cenaSprzedazyLabel, "Cena sprzedaży elektrowni", String.valueOf(elektrownia.getCenaSprzedazy()),informacje);
+        skrot(mocMaksymalnaLabel, "Moc maksymalna elektrowni", String.valueOf(elektrownia.getMocMaksymalna()),informacje);
+        skrot(liczbaPracownikowLabel, "Liczba pracowników elektrowni", String.valueOf(elektrownia.getLiczbaPracownikow()),informacje);
+        skrot(liczbaBlokowLabel, "Liczba blokow elektrowni", String.valueOf(elektrownia.getLiczbaBlokow()),informacje);
+        skrot(zadowoleniePracownikowLabel, "Zadowolenie pracownikow", String.valueOf("nieznane"),informacje);
     }
 }

@@ -10,6 +10,7 @@ public class ElektrowniaGazowaOkno extends ElektrowniaOknoAbstract {
 
     public ElektrowniaGazowaOkno(Elektrownia elektrownia, Gracz gracz) {
         super(elektrownia, gracz);
-        skrot("Cena uzupelnienia magazynu", "420",informacje);
+        skrot(stanMagazynuLabel, "Stan magazynu", "nieznany",informacje);
+        skrot(uzupelnianieLabel, "Cena uzupelnienia magazynu", "420",informacje);
     }
 }
