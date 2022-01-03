@@ -1,6 +1,5 @@
 package com.company.Elektrownie;
 
-import com.company.Dochod.DochodKopalniana;
 import com.company.Dochod.ObliczDochodElektrowni;
 import com.company.Head.Wlasciciel;
 import com.company.Wytwarzanie.SpalaniePaliwKopalnych;
@@ -30,7 +29,6 @@ public abstract class ElektrowniaNaPaliwoStale extends Elektrownia  {
 		this.LiczbaBlokow = LiczbaBlokow;
 		this.kiedyDokupic = 0;
 
-		obliczDochodElektrowni = new DochodKopalniana();
 	}
 
 

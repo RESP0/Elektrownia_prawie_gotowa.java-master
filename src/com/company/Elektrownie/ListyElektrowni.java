@@ -25,11 +25,11 @@ public class ListyElektrowni implements Serializable {
 
     public ArrayList<Elektrownia> elektrownieFotowoltaiczne = new ArrayList<>(){
         {
-            add(new ElektrowniaFotowoltaiczna("Nazwa1", "Miasto1", 100, 300, 1, 4, wlasciciele.getWlasciciele().get(0), false, 10, dystrybutorzy.getDystrybutorzyPradu().get(0), 4000, 1000, 200));
-            add(new ElektrowniaFotowoltaiczna("Nazwa2", "Miasto2", 100, 300, 1, 4, wlasciciele.getWlasciciele().get(0), false, 10, dystrybutorzy.getDystrybutorzyPradu().get(0), 5000, 2000, 300));
-            add(new ElektrowniaFotowoltaiczna("Nazwa3", "Miasto3", 100, 300, 1, 4, wlasciciele.getWlasciciele().get(0), false, 10, dystrybutorzy.getDystrybutorzyPradu().get(0), 6000, 3000, 400));
-            add(new ElektrowniaFotowoltaiczna("Nazwa4", "Miasto4", 100, 300, 1, 4, wlasciciele.getWlasciciele().get(0), false, 10, dystrybutorzy.getDystrybutorzyPradu().get(0), 7000, 4000, 500));
-            add(new ElektrowniaFotowoltaiczna("Nazwa5", "Miasto5", 100, 300, 1, 4, wlasciciele.getWlasciciele().get(0), false, 10, dystrybutorzy.getDystrybutorzyPradu().get(0), 8000, 5000, 600));
+            add(new ElektrowniaFotowoltaiczna("Farma Boba Energetyka", "Wilkowo", 100, 300, 1, 4, wlasciciele.getWlasciciele().get(3), false, 10, dystrybutorzy.getDystrybutorzyPradu().get(0), 4000, 1000, 200));
+            add(new ElektrowniaFotowoltaiczna("Datong Solar Power", "Shanxi", 100, 300, 1, 4, wlasciciele.getWlasciciele().get(3), false, 10, dystrybutorzy.getDystrybutorzyPradu().get(0), 5000, 2000, 300));
+            add(new ElektrowniaFotowoltaiczna("Kurnool Ultra Mega Solar Park", "Panyam", 100, 300, 1, 4, wlasciciele.getWlasciciele().get(3), false, 10, dystrybutorzy.getDystrybutorzyPradu().get(0), 6000, 3000, 400));
+            add(new ElektrowniaFotowoltaiczna("Benban Solar Park", "Benban", 100, 300, 1, 4, wlasciciele.getWlasciciele().get(3), false, 10, dystrybutorzy.getDystrybutorzyPradu().get(0), 7000, 4000, 500));
+            add(new ElektrowniaFotowoltaiczna("Bhadla Solar Park", "Bhadla", 100, 300, 1, 4, wlasciciele.getWlasciciele().get(3), false, 10, dystrybutorzy.getDystrybutorzyPradu().get(0), 8000, 5000, 600));
         }
     };
 
