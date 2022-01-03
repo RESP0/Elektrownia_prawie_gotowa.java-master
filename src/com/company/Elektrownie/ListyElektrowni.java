@@ -35,20 +35,20 @@ public class ListyElektrowni implements Serializable {
 
     public ArrayList<Elektrownia> elektrownieWeglowe = new ArrayList<>(){
         {
-            add(new ElektrowniaWeglowa("Nazwa1", "Miasto1",100,690, 4,15, wlasciciele.getWlasciciele().get(0), false, "roksana wegiel", 109f, 25, dystrybutorzy.getDystrybutorzyPradu().get(0), 103.5f, dostawcy.dostawcyWegla.get(0), 190f, 8000, 4000, 400));
-            add(new ElektrowniaWeglowa("Nazwa2", "Miasto2",100,690, 4, 15, wlasciciele.getWlasciciele().get(0), false, "roksana wegiel", 109f, 25, dystrybutorzy.getDystrybutorzyPradu().get(0), 103.5f, dostawcy.dostawcyWegla.get(0), 190f, 10000, 6000, 500));
-            add(new ElektrowniaWeglowa("Nazwa3", "Miasto3",100,690, 4, 15, wlasciciele.getWlasciciele().get(0), false, "roksana wegiel", 109f, 25, dystrybutorzy.getDystrybutorzyPradu().get(0), 103.5f, dostawcy.dostawcyWegla.get(0), 190f,  12000, 8000, 600));
-            add(new ElektrowniaWeglowa("Nazwa4", "Miasto4",100,690, 4,15, wlasciciele.getWlasciciele().get(0), false, "roksana wegiel", 109f, 25, dystrybutorzy.getDystrybutorzyPradu().get(0), 103.5f, dostawcy.dostawcyWegla.get(0), 190f, 14000, 10000, 700));
-            add(new ElektrowniaWeglowa("Nazwa5", "Miasto5",100,690, 4,15, wlasciciele.getWlasciciele().get(0), false, "roksana wegiel", 109f, 25, dystrybutorzy.getDystrybutorzyPradu().get(0), 103.5f, dostawcy.dostawcyWegla.get(0), 190f, 16000, 12000, 800));
+            add(new ElektrowniaWeglowa("Nazwa1", "Miasto1",100,690, 4,15, wlasciciele.getWlasciciele().get(0), false, "roksana wegiel", 109f, 25, dystrybutorzy.getDystrybutorzyPradu().get(0), 103.5f, dostawcy.dostawcyWegla.get(0), 190f, 8000, 4000, 400,0,0,10));
+            add(new ElektrowniaWeglowa("Nazwa2", "Miasto2",100,690, 4, 15, wlasciciele.getWlasciciele().get(0), false, "roksana wegiel", 109f, 25, dystrybutorzy.getDystrybutorzyPradu().get(0), 103.5f, dostawcy.dostawcyWegla.get(0), 190f, 10000, 6000, 500,0,0,10));
+            add(new ElektrowniaWeglowa("Nazwa3", "Miasto3",100,690, 4, 15, wlasciciele.getWlasciciele().get(0), false, "roksana wegiel", 109f, 25, dystrybutorzy.getDystrybutorzyPradu().get(0), 103.5f, dostawcy.dostawcyWegla.get(0), 190f,  12000, 8000, 600,0,0,10));
+            add(new ElektrowniaWeglowa("Nazwa4", "Miasto4",100,690, 4,15, wlasciciele.getWlasciciele().get(0), false, "roksana wegiel", 109f, 25, dystrybutorzy.getDystrybutorzyPradu().get(0), 103.5f, dostawcy.dostawcyWegla.get(0), 190f, 14000, 10000, 700,0,0,10));
+            add(new ElektrowniaWeglowa("Nazwa5", "Miasto5",100,690, 4,15, wlasciciele.getWlasciciele().get(0), false, "roksana wegiel", 109f, 25, dystrybutorzy.getDystrybutorzyPradu().get(0), 103.5f, dostawcy.dostawcyWegla.get(0), 190f, 16000, 12000, 800,0,0,10));
         }
     };
     public ArrayList<Elektrownia> elektrownieGazowe = new ArrayList<>(){
         {
-            add(new ElektrowniaGazowa("Nazwa1", "Miasto1",100,420,5, 4, wlasciciele.getWlasciciele().get(0), false, "gaz", 89f, 15, dystrybutorzy.getDystrybutorzyPradu().get(0), 123f, dostawcy.dostawcyGazu.get(0), 200f, 9000, 5000, 300));
-            add(new ElektrowniaGazowa("Nazwa2", "Miasto2",100,420,5, 4, wlasciciele.getWlasciciele().get(0), false, "gaz", 89f, 15, dystrybutorzy.getDystrybutorzyPradu().get(0), 123f, dostawcy.dostawcyGazu.get(0), 200f, 11000, 7000, 400));
-            add(new ElektrowniaGazowa("Nazwa3", "Miasto3",100,420,5, 4, wlasciciele.getWlasciciele().get(0), false, "gaz", 89f, 15, dystrybutorzy.getDystrybutorzyPradu().get(0), 123f, dostawcy.dostawcyGazu.get(0), 200f, 13000, 9000, 500));
-            add(new ElektrowniaGazowa("Nazwa4", "Miasto4",100,420,5, 4, wlasciciele.getWlasciciele().get(0), false, "gaz", 89f, 15, dystrybutorzy.getDystrybutorzyPradu().get(0), 123f, dostawcy.dostawcyGazu.get(0), 200f, 15000, 11000, 600));
-            add(new ElektrowniaGazowa("Nazwa5", "Miasto5",100,420,5, 4, wlasciciele.getWlasciciele().get(0), false, "gaz", 89f, 15, dystrybutorzy.getDystrybutorzyPradu().get(0), 123f, dostawcy.dostawcyGazu.get(0), 200f, 17000, 13000, 700));
+            add(new ElektrowniaGazowa("Nazwa1", "Miasto1",100,420,5, 4, wlasciciele.getWlasciciele().get(0), false, "gaz", 89f, 15, dystrybutorzy.getDystrybutorzyPradu().get(0), 123f, dostawcy.dostawcyGazu.get(0), 200f, 9000, 5000, 300,0,0,10));
+            add(new ElektrowniaGazowa("Nazwa2", "Miasto2",100,420,5, 4, wlasciciele.getWlasciciele().get(0), false, "gaz", 89f, 15, dystrybutorzy.getDystrybutorzyPradu().get(0), 123f, dostawcy.dostawcyGazu.get(0), 200f, 11000, 7000, 400,0,0,10));
+            add(new ElektrowniaGazowa("Nazwa3", "Miasto3",100,420,5, 4, wlasciciele.getWlasciciele().get(0), false, "gaz", 89f, 15, dystrybutorzy.getDystrybutorzyPradu().get(0), 123f, dostawcy.dostawcyGazu.get(0), 200f, 13000, 9000, 500,0,0,10));
+            add(new ElektrowniaGazowa("Nazwa4", "Miasto4",100,420,5, 4, wlasciciele.getWlasciciele().get(0), false, "gaz", 89f, 15, dystrybutorzy.getDystrybutorzyPradu().get(0), 123f, dostawcy.dostawcyGazu.get(0), 200f, 15000, 11000, 600,0,0,10));
+            add(new ElektrowniaGazowa("Nazwa5", "Miasto5",100,420,5, 4, wlasciciele.getWlasciciele().get(0), false, "gaz", 89f, 15, dystrybutorzy.getDystrybutorzyPradu().get(0), 123f, dostawcy.dostawcyGazu.get(0), 200f, 17000, 13000, 700,0,0,10));
         }
     };
 
