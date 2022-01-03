@@ -15,11 +15,11 @@ public class ListyElektrowni implements Serializable {
     ListyDostawcy dostawcy = new ListyDostawcy();
     public ArrayList<Elektrownia> elektrownieAtomowe = new ArrayList<>(){
         {
-            add(new ElektrowniaAtomowa("Nazwa1","Miasto1", 100, 42000, 3, 4, wlasciciele.getWlasciciele().get(0), false, 86, 897, dystrybutorzy.getDystrybutorzyPradu().get(0), 345, new OdbiorcaOdpadow[]{dostawcy.odbiocyOdpadow.get(0),dostawcy.odbiocyOdpadow.get(1)}, 20000, 10000, 500));
-            add(new ElektrowniaAtomowa("Nazwa2","Miasto2", 100, 42000, 3, 4, wlasciciele.getWlasciciele().get(0), false, 86, 897, dystrybutorzy.getDystrybutorzyPradu().get(0), 345, new OdbiorcaOdpadow[]{dostawcy.odbiocyOdpadow.get(0),dostawcy.odbiocyOdpadow.get(1)}, 22000, 12000, 700));
-            add(new ElektrowniaAtomowa("Nazwa3","Miasto3", 100, 42000, 3, 4, wlasciciele.getWlasciciele().get(0), false, 86, 897, dystrybutorzy.getDystrybutorzyPradu().get(0), 345, new OdbiorcaOdpadow[]{dostawcy.odbiocyOdpadow.get(0),dostawcy.odbiocyOdpadow.get(1)}, 24000, 14000, 900));
-            add(new ElektrowniaAtomowa("Nazwa4","Miasto4", 100, 42000, 3, 4, wlasciciele.getWlasciciele().get(0), false, 86, 897, dystrybutorzy.getDystrybutorzyPradu().get(0), 345, new OdbiorcaOdpadow[]{dostawcy.odbiocyOdpadow.get(0),dostawcy.odbiocyOdpadow.get(1)}, 26000, 16000, 1100));
-            add(new ElektrowniaAtomowa("Nazwa5","Miasto5", 100, 42000, 3, 4, wlasciciele.getWlasciciele().get(0), false, 86, 897, dystrybutorzy.getDystrybutorzyPradu().get(0), 345, new OdbiorcaOdpadow[]{dostawcy.odbiocyOdpadow.get(0),dostawcy.odbiocyOdpadow.get(1)}, 28000, 18000, 1300));
+            add(new ElektrowniaAtomowa("Nazwa1","Miasto1", 100, 42000, 3, 4, wlasciciele.getWlasciciele().get(0), false, 86, 897, dystrybutorzy.getDystrybutorzyPradu().get(0), 345,dostawcy.odbiocyOdpadow.get(1), 20000, 10000, 500));
+            add(new ElektrowniaAtomowa("Nazwa2","Miasto2", 100, 42000, 3, 4, wlasciciele.getWlasciciele().get(0), false, 86, 897, dystrybutorzy.getDystrybutorzyPradu().get(0), 345, dostawcy.odbiocyOdpadow.get(1), 22000, 12000, 700));
+            add(new ElektrowniaAtomowa("Nazwa3","Miasto3", 100, 42000, 3, 4, wlasciciele.getWlasciciele().get(0), false, 86, 897, dystrybutorzy.getDystrybutorzyPradu().get(0), 345, dostawcy.odbiocyOdpadow.get(1), 24000, 14000, 900));
+            add(new ElektrowniaAtomowa("Nazwa4","Miasto4", 100, 42000, 3, 4, wlasciciele.getWlasciciele().get(0), false, 86, 897, dystrybutorzy.getDystrybutorzyPradu().get(0), 345, dostawcy.odbiocyOdpadow.get(1), 26000, 16000, 1100));
+            add(new ElektrowniaAtomowa("Nazwa5","Miasto5", 100, 42000, 3, 4, wlasciciele.getWlasciciele().get(0), false, 86, 897, dystrybutorzy.getDystrybutorzyPradu().get(0), 345, dostawcy.odbiocyOdpadow.get(1), 28000, 18000, 1300));
         }
     };
 

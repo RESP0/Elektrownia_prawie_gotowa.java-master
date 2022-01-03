@@ -2,12 +2,9 @@ package com.company.Elektrownie;
 
 import com.company.AtakTerro.Sposob2ReakcjaNaAtakTerrorystyczny;
 import com.company.Awarie.Sposob2ReakcjaNaAwarieZasilania;
-import com.company.Dochod.DochodKopalniana;
-import com.company.Head.Pracownicy;
+import com.company.Dochod.DochodGazowa;
 import com.company.Head.Wlasciciel;
-import com.company.Wytwarzanie.SpalaniePaliwKopalnych;
 import com.company.uslugodawcy.DostawcaGazu;
-import com.company.uslugodawcy.DostawcaWegla;
 import com.company.uslugodawcy.DystrybutorPradu;
 
 public class ElektrowniaGazowa extends ElektrowniaNaPaliwoStale  {
@@ -31,7 +28,7 @@ public class ElektrowniaGazowa extends ElektrowniaNaPaliwoStale  {
 
 		reakcjaNaAwarieZasilania = new Sposob2ReakcjaNaAwarieZasilania();
 		reakcjeNaAtakTerrorystyczny = new Sposob2ReakcjaNaAtakTerrorystyczny();
-		obliczDochodElektrowni = new DochodKopalniana();
+		obliczDochodElektrowni = new DochodGazowa();
 	}
 
 

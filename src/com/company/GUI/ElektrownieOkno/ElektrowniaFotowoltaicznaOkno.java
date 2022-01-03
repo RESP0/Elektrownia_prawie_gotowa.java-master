@@ -8,11 +8,9 @@ import com.company.Head.*;
 
 public class ElektrowniaFotowoltaicznaOkno extends ElektrowniaOknoAbstract {
 
-    JLabel zuzycie_paneli;
-
     public ElektrowniaFotowoltaicznaOkno(Elektrownia elektrownia, Gracz gracz) {
         super(elektrownia, gracz);
-        //this.setTitle("Elektrownia fotowoltaiczna");
+        //skrot("Zuzycie paneli", "0%",informacje);
         magazyn.removeAll();
     }
 }

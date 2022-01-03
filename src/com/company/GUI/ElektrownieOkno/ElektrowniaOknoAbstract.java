@@ -13,6 +13,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
+//NIE DZIALA AKTUALIZOWANIE SIE DANYCH PO NACISNIECIU PRZYCISKOW KUP/SPRZEDAJ ITD
+
 abstract public class ElektrowniaOknoAbstract extends JPanel implements ActionListener, ChangeListener {
     JPanel mainPanel;
 
@@ -55,7 +57,7 @@ abstract public class ElektrowniaOknoAbstract extends JPanel implements ActionLi
 
     //skroty
     JPanel skroty;
-    JButton zapiszIZamknij;
+    public JButton zapiszIZamknij;
     JPanel informacje;
     JPanel zamknij;
 
@@ -66,7 +68,6 @@ abstract public class ElektrowniaOknoAbstract extends JPanel implements ActionLi
     public ElektrowniaOknoAbstract(Elektrownia elektrownia, Gracz gracz) {
 
         //USTAWIENIA RAMKI
-        //this.setVisible(false);
         this.setPreferredSize(new Dimension(900,600));
         this.setLayout(new GridLayout());
 
@@ -113,7 +114,7 @@ abstract public class ElektrowniaOknoAbstract extends JPanel implements ActionLi
 
         //PANEL PRACOWNIKA
         pracownicy = new JPanel();
-        kafelekInfo(pracownicy,new Color(100, 100, 100),"<html>ZWOLNIJ / ZATRUDNIJ<br>PRACOWNIKÓW</html>",infoPracownicy,"Ale zabawa",podstawoweAkcje);
+        kafelekInfo(pracownicy,new Color(100, 100, 100),"<html><div style='text-align: center;'>ZWOLNIJ / ZATRUDNIJ<br>PRACOWNIKÓW</html>",infoPracownicy,"Ale zabawa",podstawoweAkcje);
 
         //PRZYCISKI ZWOLNIJ ZATRUDNIJ PRACOWNIKA
         pracownicy.add(Box.createRigidArea(new Dimension(0,80)));
@@ -203,13 +204,7 @@ abstract public class ElektrowniaOknoAbstract extends JPanel implements ActionLi
         informacje.setBackground(new Color(110, 120, 125));
         zamknij.setBackground(new Color(110, 120, 125));
 
-        skrot("Moc chwilowa elektrowni",String.valueOf(10),informacje);
-        skrot("Moc maksymalna elektrowni","dane1",informacje);
-        skrot("Liczba pracowników elektrowni","dane1",informacje);
-        skrot("Moc chwilowa elektrowni","dane1",informacje);
-        skrot("Moc maksymalna elektrowni","dane1",informacje);
-        skrot("Liczba pracowników elektrowni","dane1",informacje);
-        skrot("test",elektrownia.getNazwa(),informacje);
+        dane(elektrownia);
         skroty.add(informacje);
 
         //PRZYCISK ZAPISZ I ZAMKNIJ
@@ -298,7 +293,7 @@ abstract public class ElektrowniaOknoAbstract extends JPanel implements ActionLi
         panel.add(label);
     }
     public void skrot(String tekst, String dane, JPanel parent){
-        JLabel label = new JLabel("<html>-"+tekst + ":<br> " + dane+"<html>");
+        JLabel label = new JLabel("<html><div style='text-align: center;'>"+tekst + ":<br> " + dane+"<html>", SwingConstants.CENTER);
         label.setFont(font);
         label.setForeground(Color.white);
         label.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -306,13 +301,9 @@ abstract public class ElektrowniaOknoAbstract extends JPanel implements ActionLi
     }
 
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == zapiszIZamknij){
-            //this.dispose();
-        }
-        else if (e.getSource() == sprzedajButton){
-            //this.dispose();
-        }
+        if (e.getSource() == kupBloki){
 
+        }
         this.revalidate();
         this.repaint();
     }
@@ -360,4 +351,11 @@ abstract public class ElektrowniaOknoAbstract extends JPanel implements ActionLi
     }
 
      */
+    public void dane(Elektrownia elektrownia){
+        skrot("Cena nowego bloku", String.valueOf(elektrownia.getCenaBloku()),informacje);
+        skrot("Cena sprzedaży elektrowni", String.valueOf(elektrownia.getCenaSprzedazy()),informacje);
+        skrot("Moc maksymalna elektrowni", String.valueOf(elektrownia.getMocMaksymalna()),informacje);
+        skrot("Liczba pracowników elektrowni", String.valueOf(elektrownia.getLiczbaPracownikow()),informacje);
+        skrot("Liczba blokow elektrowni", String.valueOf(elektrownia.getLiczbaBlokow()),informacje);
+    }
 }
