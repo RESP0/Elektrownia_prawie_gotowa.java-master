@@ -195,6 +195,38 @@ public abstract class Elektrownia implements Serializable, ObliczDochodElektrown
 
 	public void setCenaBloku(int cenaBloku) { this.cenaBloku = cenaBloku; }
 
+	public int getKiedyDokupic() {
+		return kiedyDokupic;
+	}
+
+	public void setKiedyDokupic(int kiedyDokupic) {
+		this.kiedyDokupic = kiedyDokupic;
+	}
+
+	public ReakcjaNaAwarieZasilania getReakcjaNaAwarieZasilania() {
+		return reakcjaNaAwarieZasilania;
+	}
+
+	public void setReakcjaNaAwarieZasilania(ReakcjaNaAwarieZasilania reakcjaNaAwarieZasilania) {
+		this.reakcjaNaAwarieZasilania = reakcjaNaAwarieZasilania;
+	}
+
+	public ReakcjeNaAtakTerrorystyczny getReakcjeNaAtakTerrorystyczny() {
+		return reakcjeNaAtakTerrorystyczny;
+	}
+
+	public void setReakcjeNaAtakTerrorystyczny(ReakcjeNaAtakTerrorystyczny reakcjeNaAtakTerrorystyczny) {
+		this.reakcjeNaAtakTerrorystyczny = reakcjeNaAtakTerrorystyczny;
+	}
+
+	public ObliczDochodElektrowni getObliczDochodElektrowni() {
+		return obliczDochodElektrowni;
+	}
+
+	public void setObliczDochodElektrowni(ObliczDochodElektrowni obliczDochodElektrowni) {
+		this.obliczDochodElektrowni = obliczDochodElektrowni;
+	}
+
 	public String toString()
 	{
 		 return "\nNazwa: " + nazwa +"\nMiasto: " + miasto + "\nmoc chwilowa: " + MocChwilowa + "\nmoc maksymalna: " + MocMaksymalna + "\nliczba pracownikow: " + LiczbaPracownikow + "\nczy pracuje: " + czyPracuje + " \nwlasciciel elektrowni:\t\t" + wlasciciel  + "\npracownicy: " + Arrays.toString(pracownicy) + "\nDystrybutor: " + Dystrybutor.toString();

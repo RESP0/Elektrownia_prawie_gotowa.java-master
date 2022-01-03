@@ -405,6 +405,7 @@ public class GamePanel extends JPanel implements ActionListener{
                serializacje.zapisStanuKonta(gracz.getBalans());
                frame.dispose();
            }
+           reakcjaAtakRadia(elektrowniaAtomowa1,gracz,0,e);
        }
 
 
@@ -1216,12 +1217,27 @@ public class GamePanel extends JPanel implements ActionListener{
         okno.kupBloki.addActionListener(this);
         okno.sprzedajButton.addActionListener(this);
         okno.zapiszIZamknij.addActionListener(this);
+        okno.atakBrak.addActionListener(this);
+        okno.atak1.addActionListener(this);
+        okno.atak2.addActionListener(this);
+        okno.awariaBrak.addActionListener(this);
+        okno.awaria1.addActionListener(this);
+        okno.awaria2.addActionListener(this);
         tym.removeAll();
         tym.add(okno);
         tym.revalidate();
         tym.repaint();
 
         frame.setVisible(true);
+    }
+    public void reakcjaAtakRadia(ElektrowniaOknoAbstract okno, Gracz gracz,int indeksElektrowni,ActionEvent e){
+        if (e.getSource() == okno.atakBrak){
+            gracz.getListaElektrowni().get(indeksElektrowni).setSposobNaReakcjeNaAtak(0);
+        }else if (e.getSource() == okno.atak1){
+            gracz.getListaElektrowni().get(indeksElektrowni).setSposobNaReakcjeNaAtak(1);
+        }else if (e.getSource() == okno.atak2){
+            gracz.getListaElektrowni().get(indeksElektrowni).setSposobNaReakcjeNaAtak(2);
+        }
     }
 
     private int wybor;

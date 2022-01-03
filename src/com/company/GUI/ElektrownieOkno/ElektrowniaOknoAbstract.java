@@ -36,15 +36,15 @@ abstract public class ElektrowniaOknoAbstract extends JPanel implements ActionLi
     JPanel wybory;
     JPanel reakcjaNaAtak;
     JLabel infoAtak;
-    JRadioButton atakBrak;
-    JRadioButton atak1;
-    JRadioButton atak2;
+    public JRadioButton atakBrak;
+    public JRadioButton atak1;
+    public JRadioButton atak2;
     ButtonGroup grupaAtak;
     JPanel reakcjaNaAwarie;
     JLabel infoAwarie;
-    JRadioButton awariaBrak;
-    JRadioButton awaria1;
-    JRadioButton awaria2;
+    public JRadioButton awariaBrak;
+    public JRadioButton awaria1;
+    public JRadioButton awaria2;
     ButtonGroup grupaAwaria;
     JPanel moc;
     JLabel infoMoc;
@@ -160,6 +160,13 @@ abstract public class ElektrowniaOknoAbstract extends JPanel implements ActionLi
         atak1 = new JRadioButton("Sposób1");
         atak2 = new JRadioButton("Sposób2");
         grupaAtak = new ButtonGroup();
+        if (elektrownia.getSposobNaReakcjeNaAtak() == 0){
+            atakBrak.setSelected(true);
+        }else if (elektrownia.getSposobNaReakcjeNaAtak() == 1){
+            atak1.setSelected(true);
+        }else {
+            atak2.setSelected(true);
+        }
         radia(atakBrak,atak1,atak2,grupaAtak,reakcjaNaAtak);
 
         //PANEL REAKCJI NA AWARIĘ
@@ -171,7 +178,13 @@ abstract public class ElektrowniaOknoAbstract extends JPanel implements ActionLi
         awaria1 = new JRadioButton("Sposób1");
         awaria2 = new JRadioButton("Sposób2");
         grupaAwaria = new ButtonGroup();
-        awariaBrak.setSelected(true);
+        if (elektrownia.getSposobNaReakcjeNaAwarie() == 0){
+            awariaBrak.setSelected(true);
+        }else if (elektrownia.getSposobNaReakcjeNaAwarie() == 1){
+            awaria1.setSelected(true);
+        }else {
+            awaria2.setSelected(true);
+        }
         radia(awariaBrak,awaria1,awaria2,grupaAwaria,reakcjaNaAwarie);
 
         //PANEL MOCY
