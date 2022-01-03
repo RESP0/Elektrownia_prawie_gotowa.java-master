@@ -204,10 +204,14 @@ public class ListaEle extends JPanel implements ActionListener {
 
     public void uzupelnijKupione(int indeks, Gracz g){
         for(int i = indeks*5;i<(indeks*5)+5;i++){
-            if(g.getListaElektrowni().get(i) != null){ /////wywala sie dla 5 elektrowni, gdzies wychodzi za indeks
+            if(g.getListaElektrowni().get(i) != null){
                 kup.get(i%5).setVisible(false);
                 cena.get(i%5).setVisible(false);
                 przyciski.get(i%5).setEnabled(true);
+            }else{
+                przyciski.get(i%5).setEnabled(false);
+                kup.get(i%5).setVisible(true);
+                cena.get(i%5).setVisible(true);
             }
         }
     }
