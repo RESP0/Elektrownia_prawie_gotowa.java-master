@@ -1,5 +1,6 @@
 package com.company.Elektrownie;
 
+import com.company.Head.Wlasciciel;
 import com.company.uslugodawcy.DystrybutorPradu;
 
 import java.io.Serializable;
@@ -9,8 +10,8 @@ public class ListyDystrybutorzy implements Serializable {
 
     public ArrayList<DystrybutorPradu> dystrybutorzyPradu = new ArrayList<>(){
         {
-            add( new DystrybutorPradu());
-            add( new DystrybutorPradu());
+            add( new DystrybutorPradu(1,new Wlasciciel()));
+            add( new DystrybutorPradu(1.25f,new Wlasciciel()));
             add( new DystrybutorPradu());
             add( new DystrybutorPradu());
             add( new DystrybutorPradu());
