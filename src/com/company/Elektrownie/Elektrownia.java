@@ -29,6 +29,7 @@ public abstract class Elektrownia implements Serializable, ObliczDochodElektrown
 	private DystrybutorPradu Dystrybutor;
 	private int sposobNaReakcjeNaAwarie;
 	private int sposobNaReakcjeNaAtak;
+	private int kiedyDokupic;
 	private int cenaZakupu;
 	private int cenaSprzedazy;
 	private int cenaBloku;
@@ -71,7 +72,7 @@ public abstract class Elektrownia implements Serializable, ObliczDochodElektrown
 		cenaBloku = 0;
 	}
 	
-	public Elektrownia(String nazwa, String miasto, int MocChwilowa, int MocMaksymalna, int liczbaBlokow, int LiczbaPracownikow, boolean czyPracuje, Wlasciciel wlasciciel, DystrybutorPradu Dystrybutor, int cenaZakupu, int cenaSprzedazy, int cenaBloku)
+	public Elektrownia(String nazwa, String miasto, int MocChwilowa, int MocMaksymalna, int liczbaBlokow, int LiczbaPracownikow, boolean czyPracuje, Wlasciciel wlasciciel, DystrybutorPradu Dystrybutor, int cenaZakupu, int cenaSprzedazy, int cenaBloku,int sposobNaReakcjeNaAwarie,int sposobNaReakcjeNaAtak,int kiedyDokupic)
 	{
 		this.nazwa = nazwa;
 		this.miasto = miasto;
@@ -83,8 +84,9 @@ public abstract class Elektrownia implements Serializable, ObliczDochodElektrown
 		this.czyPracuje = czyPracuje;
 		this.pracownicy = new Pracownicy[getLiczbaPracownikow()];
 		this.Dystrybutor = Dystrybutor;
-		this.sposobNaReakcjeNaAwarie = 0;
-		this.sposobNaReakcjeNaAtak = 0;
+		this.sposobNaReakcjeNaAwarie = sposobNaReakcjeNaAwarie;
+		this.sposobNaReakcjeNaAtak = sposobNaReakcjeNaAtak;
+		this.kiedyDokupic = kiedyDokupic;
 		this.cenaZakupu = cenaZakupu;
 		this.cenaSprzedazy = cenaSprzedazy;
 		this.cenaBloku = cenaBloku;

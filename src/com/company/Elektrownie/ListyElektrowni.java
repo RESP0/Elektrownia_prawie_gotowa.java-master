@@ -15,21 +15,21 @@ public class ListyElektrowni implements Serializable {
     ListyDostawcy dostawcy = new ListyDostawcy();
     public ArrayList<Elektrownia> elektrownieAtomowe = new ArrayList<>(){
         {
-            add(new ElektrowniaAtomowa("Nazwa1","Miasto1", 100, 42000, 3, 4, wlasciciele.getWlasciciele().get(0), false, 86, 897, dystrybutorzy.getDystrybutorzyPradu().get(0), 345,dostawcy.odbiocyOdpadow.get(1), 20000, 10000, 500));
-            add(new ElektrowniaAtomowa("Nazwa2","Miasto2", 100, 42000, 3, 4, wlasciciele.getWlasciciele().get(0), false, 86, 897, dystrybutorzy.getDystrybutorzyPradu().get(0), 345, dostawcy.odbiocyOdpadow.get(1), 22000, 12000, 700));
-            add(new ElektrowniaAtomowa("Nazwa3","Miasto3", 100, 42000, 3, 4, wlasciciele.getWlasciciele().get(0), false, 86, 897, dystrybutorzy.getDystrybutorzyPradu().get(0), 345, dostawcy.odbiocyOdpadow.get(1), 24000, 14000, 900));
-            add(new ElektrowniaAtomowa("Nazwa4","Miasto4", 100, 42000, 3, 4, wlasciciele.getWlasciciele().get(0), false, 86, 897, dystrybutorzy.getDystrybutorzyPradu().get(0), 345, dostawcy.odbiocyOdpadow.get(1), 26000, 16000, 1100));
-            add(new ElektrowniaAtomowa("Nazwa5","Miasto5", 100, 42000, 3, 4, wlasciciele.getWlasciciele().get(0), false, 86, 897, dystrybutorzy.getDystrybutorzyPradu().get(0), 345, dostawcy.odbiocyOdpadow.get(1), 28000, 18000, 1300));
+            add(new ElektrowniaAtomowa("Nazwa1","Miasto1", 100, 42000, 3, 4, wlasciciele.getWlasciciele().get(0), false, 86, 897, dystrybutorzy.getDystrybutorzyPradu().get(0), 345,dostawcy.odbiocyOdpadow.get(1), 20000, 10000, 500,0,0,10));
+            add(new ElektrowniaAtomowa("Nazwa2","Miasto2", 100, 42000, 3, 4, wlasciciele.getWlasciciele().get(0), false, 86, 897, dystrybutorzy.getDystrybutorzyPradu().get(0), 345, dostawcy.odbiocyOdpadow.get(1), 22000, 12000, 700,0,0,10));
+            add(new ElektrowniaAtomowa("Nazwa3","Miasto3", 100, 42000, 3, 4, wlasciciele.getWlasciciele().get(0), false, 86, 897, dystrybutorzy.getDystrybutorzyPradu().get(0), 345, dostawcy.odbiocyOdpadow.get(1), 24000, 14000, 900,0,0,10));
+            add(new ElektrowniaAtomowa("Nazwa4","Miasto4", 100, 42000, 3, 4, wlasciciele.getWlasciciele().get(0), false, 86, 897, dystrybutorzy.getDystrybutorzyPradu().get(0), 345, dostawcy.odbiocyOdpadow.get(1), 26000, 16000, 1100,0,0,10));
+            add(new ElektrowniaAtomowa("Nazwa5","Miasto5", 100, 42000, 3, 4, wlasciciele.getWlasciciele().get(0), false, 86, 897, dystrybutorzy.getDystrybutorzyPradu().get(0), 345, dostawcy.odbiocyOdpadow.get(1), 28000, 18000, 1300,0,0,10));
         }
     };
 
     public ArrayList<Elektrownia> elektrownieFotowoltaiczne = new ArrayList<>(){
         {
-            add(new ElektrowniaFotowoltaiczna("Farma Boba Energetyka", "Wilkowo", 100, 300, 1, 4, wlasciciele.getWlasciciele().get(3), false, 10, dystrybutorzy.getDystrybutorzyPradu().get(0), 4000, 1000, 200));
-            add(new ElektrowniaFotowoltaiczna("Datong Solar Power", "Shanxi", 100, 300, 1, 4, wlasciciele.getWlasciciele().get(3), false, 10, dystrybutorzy.getDystrybutorzyPradu().get(0), 5000, 2000, 300));
-            add(new ElektrowniaFotowoltaiczna("Kurnool Ultra Mega Solar Park", "Panyam", 100, 300, 1, 4, wlasciciele.getWlasciciele().get(3), false, 10, dystrybutorzy.getDystrybutorzyPradu().get(0), 6000, 3000, 400));
-            add(new ElektrowniaFotowoltaiczna("Benban Solar Park", "Benban", 100, 300, 1, 4, wlasciciele.getWlasciciele().get(3), false, 10, dystrybutorzy.getDystrybutorzyPradu().get(0), 7000, 4000, 500));
-            add(new ElektrowniaFotowoltaiczna("Bhadla Solar Park", "Bhadla", 100, 300, 1, 4, wlasciciele.getWlasciciele().get(3), false, 10, dystrybutorzy.getDystrybutorzyPradu().get(0), 8000, 5000, 600));
+            add(new ElektrowniaFotowoltaiczna("Farma Boba Energetyka", "Wilkowo", 100, 300, 1, 4, wlasciciele.getWlasciciele().get(3), false, 10, dystrybutorzy.getDystrybutorzyPradu().get(0), 4000, 1000, 200,0,0,10));
+            add(new ElektrowniaFotowoltaiczna("Datong Solar Power", "Shanxi", 100, 300, 1, 4, wlasciciele.getWlasciciele().get(3), false, 10, dystrybutorzy.getDystrybutorzyPradu().get(0), 5000, 2000, 300,0,0,10));
+            add(new ElektrowniaFotowoltaiczna("Kurnool Ultra Mega Solar Park", "Panyam", 100, 300, 1, 4, wlasciciele.getWlasciciele().get(3), false, 10, dystrybutorzy.getDystrybutorzyPradu().get(0), 6000, 3000, 400,0,0,10));
+            add(new ElektrowniaFotowoltaiczna("Benban Solar Park", "Benban", 100, 300, 1, 4, wlasciciele.getWlasciciele().get(3), false, 10, dystrybutorzy.getDystrybutorzyPradu().get(0), 7000, 4000, 500,0,0,10));
+            add(new ElektrowniaFotowoltaiczna("Bhadla Solar Park", "Bhadla", 100, 300, 1, 4, wlasciciele.getWlasciciele().get(3), false, 10, dystrybutorzy.getDystrybutorzyPradu().get(0), 8000, 5000, 600,0,0,10));
         }
     };
 
