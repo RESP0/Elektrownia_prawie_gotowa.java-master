@@ -49,7 +49,7 @@ abstract public class ElektrowniaOknoAbstract extends JPanel implements ActionLi
     JPanel moc;
     JLabel infoMoc;
     public JSlider mocSlider;
-    JLabel mocLabel;
+    public JLabel mocLabel;
     JPanel kiedyDokupic;
     JLabel infoKiedy;
     public JSlider kiedySlider;
@@ -326,6 +326,7 @@ abstract public class ElektrowniaOknoAbstract extends JPanel implements ActionLi
         }
         else if (e.getSource() == kiedySlider) {
             kiedyLabel.setText(kiedySlider.getValue() + " %");
+
         }
     }
 

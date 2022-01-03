@@ -1,4 +1,8 @@
 package com.company.GUI;
+import com.company.AtakTerro.Sposob1ReakcjaNaAtakTerrorystyczny;
+import com.company.AtakTerro.Sposob2ReakcjaNaAtakTerrorystyczny;
+import com.company.Awarie.Sposob1ReakcjaNaAwarieZasilania;
+import com.company.Awarie.Sposob2ReakcjaNaAwarieZasilania;
 import com.company.Elektrownie.*;
 import com.company.GUI.ElektrownieOkno.*;
 import com.company.Head.Gracz;
@@ -1197,8 +1201,10 @@ public class GamePanel extends JPanel implements ActionListener, ChangeListener 
             gracz.getListaElektrowni().get(indeksElektrowni).setSposobNaReakcjeNaAtak(0);
         }else if (e.getSource() == okno.atak1){
             gracz.getListaElektrowni().get(indeksElektrowni).setSposobNaReakcjeNaAtak(1);
+            gracz.getListaElektrowni().get(indeksElektrowni).setReakcjeNaAtakTerrorystyczny(new Sposob1ReakcjaNaAtakTerrorystyczny());
         }else if (e.getSource() == okno.atak2){
             gracz.getListaElektrowni().get(indeksElektrowni).setSposobNaReakcjeNaAtak(2);
+            gracz.getListaElektrowni().get(indeksElektrowni).setReakcjeNaAtakTerrorystyczny(new Sposob2ReakcjaNaAtakTerrorystyczny());
         }
     }
     public void reakcjaAwariaRadia(ElektrowniaOknoAbstract okno, Gracz gracz,int indeksElektrowni,ActionEvent e){
@@ -1206,8 +1212,11 @@ public class GamePanel extends JPanel implements ActionListener, ChangeListener 
             gracz.getListaElektrowni().get(indeksElektrowni).setSposobNaReakcjeNaAwarie(0);
         }else if (e.getSource() == okno.awaria1){
             gracz.getListaElektrowni().get(indeksElektrowni).setSposobNaReakcjeNaAwarie(1);
+            gracz.getListaElektrowni().get(indeksElektrowni).setReakcjaNaAwarieZasilania(new Sposob1ReakcjaNaAwarieZasilania());
         }else if (e.getSource() == okno.awaria2){
             gracz.getListaElektrowni().get(indeksElektrowni).setSposobNaReakcjeNaAwarie(2);
+            gracz.getListaElektrowni().get(indeksElektrowni).setReakcjaNaAwarieZasilania(new Sposob2ReakcjaNaAwarieZasilania());
+
         }
     }
     public void przypisButtonów(ElektrowniaOknoAbstract panel, JFrame okno,int indeksEle,ArrayList<Elektrownia> lista,ListaEle rodzaj,Gracz gracz,boolean bool,ActionEvent e){
@@ -1261,6 +1270,16 @@ public class GamePanel extends JPanel implements ActionListener, ChangeListener 
     public void slidery(ElektrowniaOknoAbstract okno,int indeksele,Gracz gracz,ChangeEvent e){
         if (e.getSource() == okno.mocSlider){
             gracz.getListaElektrowni().get(indeksele).setMocChwilowa(okno.mocSlider.getValue()*gracz.getListaElektrowni().get(indeksele).getMocMaksymalna()/100);
+            int tym = gracz.getListaElektrowni().get(indeksele).getLiczbaPracownikow()*100/gracz.getListaElektrowni().get(indeksele).getLiczbaBlokow();
+            if (okno.mocSlider.getValue() > tym){
+                okno.mocSlider.setValue(tym);
+                okno.mocLabel.setForeground(Color.red);
+            }else if (okno.mocSlider.getValue() == tym){
+                okno.mocLabel.setForeground(Color.red);
+
+            }else {
+                okno.mocLabel.setForeground(Color.white);
+            }
         }
         if (e.getSource() == okno.kiedySlider){
             gracz.getListaElektrowni().get(indeksele).setKiedyDokupic(okno.kiedySlider.getValue());
