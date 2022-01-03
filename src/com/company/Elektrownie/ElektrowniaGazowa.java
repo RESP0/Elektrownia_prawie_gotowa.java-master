@@ -26,8 +26,6 @@ public class ElektrowniaGazowa extends ElektrowniaNaPaliwoStale  {
 		this.DostawcaGazu = DostawcaGazu;
 		this.MaxPojemnoscMagazynu = MaxPojemnoscMagazynu;
 
-		reakcjaNaAwarieZasilania = new Sposob2ReakcjaNaAwarieZasilania();
-		reakcjeNaAtakTerrorystyczny = new Sposob2ReakcjaNaAtakTerrorystyczny();
 		obliczDochodElektrowni = new DochodGazowa();
 	}
 
