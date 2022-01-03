@@ -1253,6 +1253,7 @@ public class GamePanel extends JPanel implements ActionListener, ChangeListener 
         }
         reakcjaAtakRadia(panel,gracz,indeksEle,e);
         reakcjaAwariaRadia(panel,gracz,indeksEle,e);
+
     }
 
     private int wybor;
@@ -1273,10 +1274,8 @@ public class GamePanel extends JPanel implements ActionListener, ChangeListener 
             int tym = gracz.getListaElektrowni().get(indeksele).getLiczbaPracownikow()*100/gracz.getListaElektrowni().get(indeksele).getLiczbaBlokow();
             if (okno.mocSlider.getValue() > tym){
                 okno.mocSlider.setValue(tym);
-                okno.mocLabel.setForeground(Color.red);
             }else if (okno.mocSlider.getValue() == tym){
                 okno.mocLabel.setForeground(Color.red);
-
             }else {
                 okno.mocLabel.setForeground(Color.white);
             }
