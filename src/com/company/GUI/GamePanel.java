@@ -225,7 +225,7 @@ public class GamePanel extends JPanel implements ActionListener, ChangeListener 
                 int tym = random.nextInt(0,100);
                 if (ele != null){
                     if (tym == 13){
-                        ele.ReakcjaNaAtakTerrorystyczny(ele);
+                        ele.ReakcjaNaAtakTerrorystyczny(ele, gracz);
                     }
                     if (tym < 10){
                         ele.ReakcjeNaAwarieZasilania(ele);

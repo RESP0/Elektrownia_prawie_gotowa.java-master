@@ -6,6 +6,7 @@ import com.company.AtakTerro.Sposob2ReakcjaNaAtakTerrorystyczny;
 import com.company.Awarie.ReakcjaNaAwarieZasilania;
 import com.company.Awarie.Sposob1ReakcjaNaAwarieZasilania;
 import com.company.Awarie.Sposob2ReakcjaNaAwarieZasilania;
+import com.company.Head.Gracz;
 import com.company.Head.Pracownicy;
 import com.company.Head.Wlasciciel;
 import com.company.Wytwarzanie.WytwarzanieEnergiiElektrycznej;
@@ -223,8 +224,8 @@ public abstract class Elektrownia implements Serializable, ObliczDochodElektrown
 	public ObliczDochodElektrowni getObliczDochodElektrowni() {
 		return obliczDochodElektrowni;
 	}
-	public void ReakcjaNaAtakTerrorystyczny(Elektrownia e){
-		reakcjeNaAtakTerrorystyczny.ReakcjaNaAtakTerrorystyczny(e);
+	public void ReakcjaNaAtakTerrorystyczny(Elektrownia e, Gracz g){
+		reakcjeNaAtakTerrorystyczny.ReakcjaNaAtakTerrorystyczny(e, g);
 	}
 
 	public void ReakcjeNaAwarieZasilania(Elektrownia e){
