@@ -9,9 +9,9 @@ public class ListyWlasciciele  implements Serializable {
 
     public ArrayList<Wlasciciel> wlasciciele = new ArrayList<>(){
         {
+            add( new Wlasciciel("FirmaGracza","123456789","PodajNick"));
             add( new Wlasciciel("NajtanszyOdbiorSmieci", "PL83762346", "Karol Wiśnia"));
             add( new Wlasciciel("Promyk", "PL46372837", "Kamil Glik"));
-            add( new Wlasciciel("FirmaGracza","123456789","PodajNick"));
             add( new Wlasciciel("Wiatr","brak","Thor"));
             add( new Wlasciciel("Xiong","56754","Xiao Shen"));
             add( new Wlasciciel("Continental","3465734","Pavel"));
