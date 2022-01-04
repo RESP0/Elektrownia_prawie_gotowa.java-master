@@ -219,9 +219,15 @@ public class GamePanel extends JPanel implements ActionListener, ChangeListener 
         }
         else if(e.getSource()==gra.nastepnyDzien){
             System.out.println("Nastepny dzien...");
-            //nastepny dzien + serializacja
+            for (Elektrownia ele : gracz.getListaElektrowni()){
+                if (ele != null){
+                    gracz.dodajBalans(ele.ObliczDochod(ele));
+                }
+            }
+
             serializacje.zapis((ArrayList<Elektrownia>) gracz.getListaElektrowni());
             serializacje.zapisStanuKonta(gracz.getBalans());
+            zaktualizujStanKonta();
         }
         //--------------------------------------------------------------------------
         else if(e.getSource() == listaAtom.powrot){
@@ -627,12 +633,12 @@ public class GamePanel extends JPanel implements ActionListener, ChangeListener 
             liczbaKlikniec = 0;
         }
         if(e.getSource() == panel.kupBloki){
-            gracz.odejmijBalans(lista.get(indeksEle).getCenaBloku());
+            gracz.odejmijBalans(lista.get(indeksEle%5).getCenaBloku());
             rodzaj.nowyBlok(indeksEle%5);
             zaktualizujStanKonta();
             liczbaKlikniec++;
-            panel.mocMaksymalnaLabel.setText("<html><div style='text-align: center;'> Moc maksymalna elektrowni: <br> " + String.valueOf(Integer.valueOf(lista.get(indeksEle).getMocMaksymalna())+(100*liczbaKlikniec)) +"<html>");
-            panel.liczbaBlokowLabel.setText("<html><div style='text-align: center;'> Liczba blokow elektrowni: <br> " + lista.get(indeksEle).getLiczbaBlokow() +"<html>");
+            panel.mocMaksymalnaLabel.setText("<html><div style='text-align: center;'> Moc maksymalna elektrowni: <br> " + String.valueOf(Integer.valueOf(lista.get(indeksEle%5).getMocMaksymalna())+(100*liczbaKlikniec)) +"<html>");
+            panel.liczbaBlokowLabel.setText("<html><div style='text-align: center;'> Liczba blokow elektrowni: <br> " + lista.get(indeksEle%5).getLiczbaBlokow() +"<html>");
         }
         if(e.getSource() == panel.zatrudnijPracownika){
             gracz.odejmijBalans(cenaZatrudnieniaPracownika);
