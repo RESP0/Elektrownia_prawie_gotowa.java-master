@@ -51,7 +51,7 @@ public class Gra extends JPanel{
         fotowoltaiczna.setBounds(480, 510, 320, 85);
 
         nastepnyDzien = new JButton("Nastepny dzien");
-        nastepnyDzien.setBounds(787, 5, 150, 50);
+        nastepnyDzien.setBounds(767, 5, 170, 50);
         nastepnyDzien.setBackground(Color.cyan);
         nastepnyDzien.setFocusable(false);
         nastepnyDzien.setFont(new Font("Arial black", Font.BOLD, 15));
