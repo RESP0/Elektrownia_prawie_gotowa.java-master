@@ -644,11 +644,11 @@ public class GamePanel extends JPanel implements ActionListener, ChangeListener 
             gracz.odejmijBalans(cenaZatrudnieniaPracownika);
             rodzaj.dodatkowyPracownik(indeksEle%5);
             zaktualizujStanKonta();
-            panel.liczbaPracownikowLabel.setText("<html><div style='text-align: center;'> Liczba pracowników elektrowni: <br> " + lista.get(indeksEle).getLiczbaPracownikow() +"<html>");
+            panel.liczbaPracownikowLabel.setText("<html><div style='text-align: center;'> Liczba pracowników elektrowni: <br> " + lista.get(indeksEle%5).getLiczbaPracownikow() +"<html>");
         }
         if(e.getSource() == panel.zwolnijPracownika){
             rodzaj.zolnionyPracownik(indeksEle%5);
-            panel.liczbaPracownikowLabel.setText("<html><div style='text-align: center;'> Liczba pracowników elektrowni: <br> " + lista.get(indeksEle).getLiczbaPracownikow() +"<html>");
+            panel.liczbaPracownikowLabel.setText("<html><div style='text-align: center;'> Liczba pracowników elektrowni: <br> " + lista.get(indeksEle%5).getLiczbaPracownikow() +"<html>");
         }
         if(e.getSource() == panel.dokupButton){
             gracz.odejmijBalans(420);
