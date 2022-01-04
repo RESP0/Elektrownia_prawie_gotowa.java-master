@@ -227,7 +227,7 @@ public class GamePanel extends JPanel implements ActionListener, ChangeListener 
                         ele.ReakcjaNaAtakTerrorystyczny(ele, gracz);
                         atakNotification(ele.getMiasto());
                     }
-                    if (tym < 10){
+                    if (tym < 8){
                         ele.ReakcjeNaAwarieZasilania(ele);
                         awariaNotification(ele.getMiasto());
                     }
@@ -748,6 +748,8 @@ public class GamePanel extends JPanel implements ActionListener, ChangeListener 
         } else {
             panel.mocLabel.setForeground(Color.white);
         }
+        gracz.getListaElektrowni().get(indeksEle).setMocChwilowa(panel.mocSlider.getValue() * gracz.getListaElektrowni().get(indeksEle).getMocMaksymalna() / 100);
+
     }
 
     public void awariaNotification(String miasto){
