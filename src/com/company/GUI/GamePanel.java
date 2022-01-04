@@ -225,11 +225,11 @@ public class GamePanel extends JPanel implements ActionListener, ChangeListener 
                 if (ele != null){
                     if (tym == 13){
                         ele.ReakcjaNaAtakTerrorystyczny(ele, gracz);
-                        atakNotification();
+                        atakNotification(ele.getMiasto());
                     }
                     if (tym < 10){
                         ele.ReakcjeNaAwarieZasilania(ele);
-                        awariaNotification();
+                        awariaNotification(ele.getMiasto());
                     }
                     gracz.dodajBalans(ele.ObliczDochod(ele));
                 }
@@ -750,12 +750,12 @@ public class GamePanel extends JPanel implements ActionListener, ChangeListener 
         }
     }
 
-    public void awariaNotification(){
-        JOptionPane.showMessageDialog(null,"Doszło do awarii w jednej z toich elektrowni!","Komunikat",JOptionPane.INFORMATION_MESSAGE);
+    public void awariaNotification(String miasto){
+        JOptionPane.showMessageDialog(null,"Doszło do awarii elektrowni w " + miasto + "!","Komunikat",JOptionPane.INFORMATION_MESSAGE);
     }
 
-    public void atakNotification(){
-        JOptionPane.showMessageDialog(null,"Doszło do ataku terrorystycznego w jednej z toich elektrowni!","Komunikat",JOptionPane.INFORMATION_MESSAGE);
+    public void atakNotification(String miasto){
+        JOptionPane.showMessageDialog(null,"Doszło do ataku terrorystycznego na elektrownie w " + miasto + "!","Komunikat",JOptionPane.INFORMATION_MESSAGE);
     }
 
 
