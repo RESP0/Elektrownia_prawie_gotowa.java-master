@@ -23,25 +23,18 @@ public class Sposob2ReakcjaNaAtakTerrorystyczny implements ReakcjeNaAtakTerrorys
         
         	case 1:    
         		
-        		int mocC = generator.nextInt(35)+55;
-        		int mocM = generator.nextInt(20)+80;
-        		e.setMocChwilowa(mocC);
-        		e.setMocMaksymalna(mocM);
-        		System.out.println("Z powodu ataku elektrownia zmienia moc chwilowa na: " +mocC +" oraz moc maksymalna na: " +mocM);
+        		int mocC = generator.nextInt(55,85);
+        		e.setMocChwilowa(mocC*e.getMocMaksymalna()/100);
+        		System.out.println("Z powodu ataku elektrownia zmienia moc chwilowa na: " +mocC +" %");
 
         		
         		break;
         	case 2:
-            
-        		e.setCzyPracuje (false);
-        		System.out.println("Z powodu ataku elektrownia zostaje zamknieta!");
-            
-        		break;
         	case 3:
         	case 4:
             
-        		int strata = generator.nextInt(2500)+1000;
-        		e.setMocChwilowa(80);
+        		int strata = generator.nextInt(1000,3500);
+        		e.setMocChwilowa(80*e.getMocMaksymalna()/100);
         		g.odejmijBalans(strata);
         		System.out.println("Z powodu ataku elektrownia zostaje okradziona i traci: " +strata +" oraz zmienia moc chwilowa na 80%");
             
