@@ -114,7 +114,7 @@ abstract public class ElektrowniaOknoAbstract extends JPanel implements ActionLi
         //------------- PODSTAWOWE AKCJE ---------------------------------------------------------------------------------------------------------------------------
         //PANEL DOKUP BLOKI
         bloki = new JPanel();
-        kafelekInfo(bloki,new Color(80, 90, 100),"ROZBUDUJ ELEKTROWNIE",infoBloki,"<html>TwOj Stary możemy <br>tu napisać co chcemy<html>",podstawoweAkcje);
+        kafelekInfo(bloki,new Color(80, 90, 100),"ROZBUDUJ ELEKTROWNIE",infoBloki,"<html> <div style='text-align: center;'> Kazdy zakup dodaje 1 blok do elektrowni,<br> zwiekszajac jej moc maksymalna<html>",podstawoweAkcje);
         
         //PRZYCISK DOKUP BLOKI
         kupBloki = new JButton();
@@ -122,7 +122,7 @@ abstract public class ElektrowniaOknoAbstract extends JPanel implements ActionLi
 
         //PANEL PRACOWNIKA
         pracownicy = new JPanel();
-        kafelekInfo(pracownicy,new Color(100, 100, 100),"<html><div style='text-align: center;'>ZWOLNIJ / ZATRUDNIJ<br>PRACOWNIKÓW</html>",infoPracownicy,"Ale zabawa",podstawoweAkcje);
+        kafelekInfo(pracownicy,new Color(100, 100, 100),"<html><div style='text-align: center;'>ZWOLNIJ / ZATRUDNIJ<br>PRACOWNIKÓW</html>",infoPracownicy,"<html> <div style='text-align: center;'>Zatrudnia lub zwalnia pracownikow,<br> pozwalajac uzyskac wieksza moc chwilowa elektrowni<html>",podstawoweAkcje);
 
         //PRZYCISKI ZWOLNIJ ZATRUDNIJ PRACOWNIKA
         pracownicy.add(Box.createRigidArea(new Dimension(0,80)));
@@ -161,7 +161,7 @@ abstract public class ElektrowniaOknoAbstract extends JPanel implements ActionLi
         //------------- WYBORY -------------------------------------------------------------------------------------------------------------------------------------
         //PANEL REAKCJI NA ATAK
         reakcjaNaAtak = new JPanel();
-        kafelekInfo(reakcjaNaAtak,new Color(100, 100, 100),"REAKCJA NA ATAK",infoAtak,"Jestem zajebisty",wybory);
+        kafelekInfo(reakcjaNaAtak,new Color(100, 100, 100),"REAKCJA NA ATAK",infoAtak,"<html><div style='text-align: center;'>Pozwala wybrac reakcje na atak. <br>Reakcja pierwsza zmniejsza moc maksymalna, bla bla bla<html>",wybory);
 
         //RADIO BUTTONY ATAKU\
         atakBrak = new JRadioButton("Brak reakcji");
@@ -179,7 +179,7 @@ abstract public class ElektrowniaOknoAbstract extends JPanel implements ActionLi
 
         //PANEL REAKCJI NA AWARIĘ
         reakcjaNaAwarie = new JPanel();
-        kafelekInfo(reakcjaNaAwarie,new Color(80, 90, 100),"REAKCJA NA AWARIE",infoAwarie,"Tutaj jest jakieś info",wybory);
+        kafelekInfo(reakcjaNaAwarie,new Color(80, 90, 100),"REAKCJA NA AWARIE",infoAwarie,"<html><div style='text-align: center;'>Pozwala wybrac reakcje na awarie. <br>Reakcja pierwsza zmniejsza moc maksymalna, bla bla bla<html>",wybory);
 
         //RADIO BUTTONY AWARII
         awariaBrak = new JRadioButton("Brak reakcji");
@@ -197,7 +197,7 @@ abstract public class ElektrowniaOknoAbstract extends JPanel implements ActionLi
 
         //PANEL MOCY
         moc = new JPanel();
-        kafelekInfo(moc,new Color(100, 100, 100),"MOC CHWILOWA",infoMoc,"Jak chcesz zrobic enter to html tu działa",wybory);
+        kafelekInfo(moc,new Color(100, 100, 100),"MOC CHWILOWA",infoMoc,"<html><div style='text-align: center;'>Pozwala ustawic moc chwilowa elektrowni.<br> Aby uzyskac 100% mocy elektrowni, liczba pracownikow musi byc wieksza<br> lub rowna liczbie blokow.<html>",wybory);
 
         //MOC SLIDER
         mocSlider = new JSlider(0,100,(elektrownia.getMocChwilowa()*100/elektrownia.getMocMaksymalna()));
@@ -206,7 +206,7 @@ abstract public class ElektrowniaOknoAbstract extends JPanel implements ActionLi
 
         //PANEL KIEDY DOKUPIC
         kiedyDokupic = new JPanel();
-        kafelekInfo(kiedyDokupic,new Color(80, 90, 100),"KIEDY DOKUPIC",infoKiedy,"Twoj staru",wybory);
+        kafelekInfo(kiedyDokupic,new Color(80, 90, 100),"KIEDY DOKUPIC",infoKiedy,"<html><div style='text-align: center;'>Pozwala ustawic poziom od ktorego bedzie uzupelniany magazyn.<br> Nie pozwala to zatrzymac dzialania elektrowni z powodu braku surowcow<html>",wybory);
 
         //SLIDER KIEDY KUPIC
         kiedySlider = new JSlider(0,100,elektrownia.getKiedyDokupic());
