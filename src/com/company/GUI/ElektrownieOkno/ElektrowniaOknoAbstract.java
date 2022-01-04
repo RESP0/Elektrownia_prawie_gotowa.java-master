@@ -65,7 +65,6 @@ abstract public class ElektrowniaOknoAbstract extends JPanel implements ActionLi
     public JLabel mocMaksymalnaLabel;
     public JLabel liczbaPracownikowLabel;
     public JLabel liczbaBlokowLabel;
-    public JLabel zadowoleniePracownikowLabel;
     public JLabel stanMagazynuLabel;
     public JLabel uzupelnianieLabel;
 
@@ -231,7 +230,6 @@ abstract public class ElektrowniaOknoAbstract extends JPanel implements ActionLi
         mocMaksymalnaLabel = new JLabel();
         liczbaPracownikowLabel = new JLabel();
         liczbaBlokowLabel = new JLabel();
-        zadowoleniePracownikowLabel = new JLabel();
         stanMagazynuLabel = new JLabel();
         uzupelnianieLabel = new JLabel();
 
@@ -356,6 +354,5 @@ abstract public class ElektrowniaOknoAbstract extends JPanel implements ActionLi
         skrot(mocMaksymalnaLabel, "Moc maksymalna elektrowni", String.valueOf(elektrownia.getMocMaksymalna()),informacje);
         skrot(liczbaPracownikowLabel, "Liczba pracowników elektrowni", String.valueOf(elektrownia.getLiczbaPracownikow()),informacje);
         skrot(liczbaBlokowLabel, "Liczba blokow elektrowni", String.valueOf(elektrownia.getLiczbaBlokow()),informacje);
-        skrot(zadowoleniePracownikowLabel, "Zadowolenie pracownikow", String.valueOf("nieznane"),informacje);
     }
 }
