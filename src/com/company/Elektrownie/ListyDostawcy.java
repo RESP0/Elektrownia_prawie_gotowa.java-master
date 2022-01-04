@@ -12,11 +12,11 @@ public class ListyDostawcy implements Serializable {
 
     public ArrayList <DostawcaWegla> dostawcyWegla = new ArrayList<>(){
         {
-            add( new DostawcaWegla());
-            add( new DostawcaWegla());
-            add( new DostawcaWegla());
-            add( new DostawcaWegla());
-            add( new DostawcaWegla());
+            add( new DostawcaWegla(1.21f,new Wlasciciel()));
+            add( new DostawcaWegla(1,new Wlasciciel()));
+            add( new DostawcaWegla(1,new Wlasciciel()));
+            add( new DostawcaWegla(1,new Wlasciciel()));
+            add( new DostawcaWegla(1,new Wlasciciel()));
         }
     };
 

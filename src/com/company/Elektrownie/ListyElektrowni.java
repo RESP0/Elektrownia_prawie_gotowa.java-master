@@ -17,11 +17,11 @@ public class ListyElektrowni implements Serializable {
 
     public ArrayList<Elektrownia> elektrownieAtomowe = new ArrayList<>(){
         {
-            add(new ElektrowniaAtomowa("Żarnowiec","Żarnowiec", 2000, 4000, 3, 4, wlasciciele.getWlasciciele().get(0), false, 86, 897, dystrybutorzy.getDystrybutorzyPradu().get(0), 345,500,dostawcy.odbiocyOdpadow.get(1), 150000, 75000, 500,0,0,10));
-            add(new ElektrowniaAtomowa("Dukovany","Trebic", 2000, 5000, 3, 4, wlasciciele.getWlasciciele().get(0), false, 86, 897, dystrybutorzy.getDystrybutorzyPradu().get(1), 345,500, dostawcy.odbiocyOdpadow.get(1), 281250, 140625, 7000,0,0,10));
-            add(new ElektrowniaAtomowa("Biełojarsk","Jekateryburg", 2000, 5500, 3, 4, wlasciciele.getWlasciciele().get(0), false, 86, 897, dystrybutorzy.getDystrybutorzyPradu().get(2), 345,500, dostawcy.odbiocyOdpadow.get(1), 450000, 225000, 900,0,0,10));
-            add(new ElektrowniaAtomowa("Emsland","Lingen", 2000, 6500, 3, 4, wlasciciele.getWlasciciele().get(0), false, 86, 897, dystrybutorzy.getDystrybutorzyPradu().get(3), 345, 500, dostawcy.odbiocyOdpadow.get(1), 656250, 328125, 1100,0,0,10));
-            add(new ElektrowniaAtomowa("Belleville","Burgundia", 2000, 8000, 3, 4, wlasciciele.getWlasciciele().get(0), false, 86, 897, dystrybutorzy.getDystrybutorzyPradu().get(4), 345,500, dostawcy.odbiocyOdpadow.get(1), 900000, 450000, 1300,0,0,10));
+            add(new ElektrowniaAtomowa("Żarnowiec","Żarnowiec", 0, 4000, 3, 4, wlasciciele.getWlasciciele().get(0), false, 86, 897, dystrybutorzy.getDystrybutorzyPradu().get(0), 345,500,dostawcy.odbiocyOdpadow.get(1), 150000, 75000, 500,0,0,10));
+            add(new ElektrowniaAtomowa("Dukovany","Trebic", 0, 5000, 3, 4, wlasciciele.getWlasciciele().get(0), false, 86, 897, dystrybutorzy.getDystrybutorzyPradu().get(1), 345,500, dostawcy.odbiocyOdpadow.get(1), 281250, 140625, 7000,0,0,10));
+            add(new ElektrowniaAtomowa("Biełojarsk","Jekateryburg", 0, 5500, 3, 4, wlasciciele.getWlasciciele().get(0), false, 86, 897, dystrybutorzy.getDystrybutorzyPradu().get(2), 345,500, dostawcy.odbiocyOdpadow.get(1), 450000, 225000, 900,0,0,10));
+            add(new ElektrowniaAtomowa("Emsland","Lingen", 0, 6500, 3, 4, wlasciciele.getWlasciciele().get(0), false, 86, 897, dystrybutorzy.getDystrybutorzyPradu().get(3), 345, 500, dostawcy.odbiocyOdpadow.get(1), 656250, 328125, 1100,0,0,10));
+            add(new ElektrowniaAtomowa("Belleville","Burgundia", 0, 8000, 3, 4, wlasciciele.getWlasciciele().get(0), false, 86, 897, dystrybutorzy.getDystrybutorzyPradu().get(4), 345,500, dostawcy.odbiocyOdpadow.get(1), 900000, 450000, 1300,0,0,10));
         }
     };
 
@@ -37,11 +37,11 @@ public class ListyElektrowni implements Serializable {
 
     public ArrayList<Elektrownia> elektrownieWeglowe = new ArrayList<>(){
         {
-            add(new ElektrowniaWeglowa("Turów", "Bogatynia",100,690, 4,15, wlasciciele.getWlasciciele().get(0), false, "roksana wegiel", 109f, 25, dystrybutorzy.getDystrybutorzyPradu().get(0), 103.5f, dostawcy.dostawcyWegla.get(0), 190f, 50000, 25000, 400,0,0,10));
-            add(new ElektrowniaWeglowa("Dziecmorowice", "Dziecmorowice",100,690, 4, 15, wlasciciele.getWlasciciele().get(0), false, "roksana wegiel", 109f, 25, dystrybutorzy.getDystrybutorzyPradu().get(0), 103.5f, dostawcy.dostawcyWegla.get(0), 190f, 91875, 45500, 500,0,0,10));
-            add(new ElektrowniaWeglowa("Berezowska", "Szarypowo",100,690, 4, 15, wlasciciele.getWlasciciele().get(0), false, "roksana wegiel", 109f, 25, dystrybutorzy.getDystrybutorzyPradu().get(0), 103.5f, dostawcy.dostawcyWegla.get(0), 190f,  150000, 75000, 600,0,0,10));
-            add(new ElektrowniaWeglowa("Niederaussem", "Bergheim",100,690, 4,15, wlasciciele.getWlasciciele().get(0), false, "roksana wegiel", 109f, 25, dystrybutorzy.getDystrybutorzyPradu().get(0), 103.5f, dostawcy.dostawcyWegla.get(0), 190f, 218750, 109375, 700,0,0,10));
-            add(new ElektrowniaWeglowa("Belchatow", "Belchatow",100,690, 4,15, wlasciciele.getWlasciciele().get(0), false, "roksana wegiel", 109f, 25, dystrybutorzy.getDystrybutorzyPradu().get(0), 103.5f, dostawcy.dostawcyWegla.get(0), 190f, 300000, 150000, 800,0,0,10));
+            add(new ElektrowniaWeglowa("Turów", "Bogatynia",0,750, 10,10, wlasciciele.getWlasciciele().get(0), false, "roksana wegiel", 3f, 10, dystrybutorzy.getDystrybutorzyPradu().get(0), 103.5f, dostawcy.dostawcyWegla.get(0), 190f, 50000, 25000, 25000,0,0,10));
+            add(new ElektrowniaWeglowa("Dziecmorowice", "Dziecmorowice",0,750, 10, 10, wlasciciele.getWlasciciele().get(0), false, "roksana wegiel", 3f, 10, dystrybutorzy.getDystrybutorzyPradu().get(1), 103.5f, dostawcy.dostawcyWegla.get(1), 190f, 93750, 45500, 31250,0,0,10));
+            add(new ElektrowniaWeglowa("Berezowska", "Szarypowo",0,750, 10, 10, wlasciciele.getWlasciciele().get(0), false, "roksana wegiel", 3f, 10, dystrybutorzy.getDystrybutorzyPradu().get(2), 103.5f, dostawcy.dostawcyWegla.get(2), 190f,  150000, 75000, 37500,0,0,10));
+            add(new ElektrowniaWeglowa("Niederaussem", "Bergheim",0,750, 10,10, wlasciciele.getWlasciciele().get(0), false, "roksana wegiel", 3f, 10, dystrybutorzy.getDystrybutorzyPradu().get(3), 103.5f, dostawcy.dostawcyWegla.get(3), 190f, 218750, 109375, 43750,0,0,10));
+            add(new ElektrowniaWeglowa("Belchatow", "Belchatow",0,750, 10,10, wlasciciele.getWlasciciele().get(0), false, "roksana wegiel", 3f, 10, dystrybutorzy.getDystrybutorzyPradu().get(4), 103.5f, dostawcy.dostawcyWegla.get(4), 190f, 300000, 150000, 50000,0,0,10));
         }
     };
     public ArrayList<Elektrownia> elektrownieGazowe = new ArrayList<>(){
