@@ -10,33 +10,35 @@ import java.util.ArrayList;
 
 public class ListyDostawcy implements Serializable {
 
+    ListyWlasciciele wlasciciele = new ListyWlasciciele();
+
     public ArrayList <DostawcaWegla> dostawcyWegla = new ArrayList<>(){
         {
-            add( new DostawcaWegla());
-            add( new DostawcaWegla());
-            add( new DostawcaWegla());
-            add( new DostawcaWegla());
-            add( new DostawcaWegla());
+            add( new DostawcaWegla(1,wlasciciele.getWlasciciele().get(6)));
+            add( new DostawcaWegla(1,wlasciciele.getWlasciciele().get(5)));
+            add( new DostawcaWegla(1,wlasciciele.getWlasciciele().get(7)));
+            add( new DostawcaWegla(1,wlasciciele.getWlasciciele().get(9)));
+            add( new DostawcaWegla(1,wlasciciele.getWlasciciele().get(8)));
         }
     };
 
     public ArrayList <DostawcaGazu> dostawcyGazu = new ArrayList<>(){
         {
-            add( new DostawcaGazu(1,new Wlasciciel()));
-            add( new DostawcaGazu(1.16f,new Wlasciciel()));
-            add( new DostawcaGazu(1.357f,new Wlasciciel()));
-            add( new DostawcaGazu(1.53f,new Wlasciciel()));
-            add( new DostawcaGazu(1.69f,new Wlasciciel()));
+            add( new DostawcaGazu(1,wlasciciele.getWlasciciele().get(6)));
+            add( new DostawcaGazu(1.16f,wlasciciele.getWlasciciele().get(5)));
+            add( new DostawcaGazu(1.357f,wlasciciele.getWlasciciele().get(7)));
+            add( new DostawcaGazu(1.53f,wlasciciele.getWlasciciele().get(9)));
+            add( new DostawcaGazu(1.69f,wlasciciele.getWlasciciele().get(8)));
         }
     };
 
     public ArrayList <OdbiorcaOdpadow> odbiocyOdpadow = new ArrayList<>(){
         {
-            add( new OdbiorcaOdpadow());
-            add( new OdbiorcaOdpadow());
-            add( new OdbiorcaOdpadow());
-            add( new OdbiorcaOdpadow());
-            add( new OdbiorcaOdpadow());
+            add( new OdbiorcaOdpadow(0,wlasciciele.getWlasciciele().get(3)));
+            add( new OdbiorcaOdpadow(1,wlasciciele.getWlasciciele().get(5)));
+            add( new OdbiorcaOdpadow(1,wlasciciele.getWlasciciele().get(7)));
+            add( new OdbiorcaOdpadow(1,wlasciciele.getWlasciciele().get(9)));
+            add( new OdbiorcaOdpadow(1,wlasciciele.getWlasciciele().get(8)));
         }
     };
 
