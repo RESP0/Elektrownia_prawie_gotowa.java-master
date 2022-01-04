@@ -66,6 +66,6 @@ public class ElektrowniaWeglowa extends ElektrowniaNaPaliwoStale  {
 
     @Override
     public float ObliczDochod(Elektrownia e) {
-        return 0;
+        return obliczDochodElektrowni.ObliczDochod(e);
     }
 }
