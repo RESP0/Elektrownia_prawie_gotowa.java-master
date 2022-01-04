@@ -2,6 +2,7 @@ package com.company.Dochod;
 
 import com.company.Elektrownie.Elektrownia;
 import com.company.Elektrownie.ElektrowniaGazowa;
+import com.company.Elektrownie.ElektrowniaNaPaliwoStale;
 import com.company.Elektrownie.ElektrowniaWeglowa;
 
 import java.io.Serializable;
@@ -17,6 +18,10 @@ public class DochodGazowa implements ObliczDochodElektrowni, Serializable {
     public float ObliczDochod(Elektrownia e){
 
         e.setMocMaksymalna(e.getLiczbaBlokow()*EnergiaProdukowanaPrzezJedenBlok);
+
+        if (((ElektrowniaGazowa) e).getIloscGazuWMagazynie()*100/((ElektrowniaGazowa) e).getMaxPojemnoscMagazynu() < e.getKiedyDokupic()){
+
+        }
 
         return  e.getMocChwilowa()* e.getDystrybutor().getCenaSkupu()*24 //23558
                 - e.getMocChwilowa()*((ElektrowniaGazowa) e).getZuzyciePaliwa()*((ElektrowniaGazowa) e).getDostawcaGazu().getCenaZaM3() //5158

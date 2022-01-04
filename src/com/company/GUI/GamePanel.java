@@ -232,6 +232,11 @@ public class GamePanel extends JPanel implements ActionListener, ChangeListener 
                         awariaNotification(ele.getMiasto());
                     }
                     gracz.dodajBalans(ele.ObliczDochod(ele));
+                    if (ele instanceof ElektrowniaGazowa){
+                        if (((ElektrowniaGazowa) ele).getIloscGazuWMagazynie()*100/((ElektrowniaGazowa) ele).getMaxPojemnoscMagazynu() < ele.getKiedyDokupic()){
+
+                        }
+                    }
                 }
             }
 

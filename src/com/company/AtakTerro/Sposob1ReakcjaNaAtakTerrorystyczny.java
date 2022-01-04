@@ -43,7 +43,7 @@ public class Sposob1ReakcjaNaAtakTerrorystyczny implements ReakcjeNaAtakTerrorys
         	case 5:
             
         		int strata = generator.nextInt(4000)+1000;
-        		e.setMocChwilowa(75);
+        		e.setMocChwilowa(e.getMocMaksymalna()*75/100);
         		g.odejmijBalans(strata);
         		System.out.println("Z powodu ataku elektrownia zostaje okradziona i traci: " +strata +" oraz zmienia moc chwilowa na 75%");
             

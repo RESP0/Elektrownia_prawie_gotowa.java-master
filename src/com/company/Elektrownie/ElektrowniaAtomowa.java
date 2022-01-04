@@ -105,6 +105,14 @@ public class ElektrowniaAtomowa extends Elektrownia {
 
     public void setKiedyDokupic(int kiedyDokupic) { this.kiedyDokupic = kiedyDokupic; }
 
+    public int getPojemnoscMagazynu() {
+        return pojemnoscMagazynu;
+    }
+
+    public void setPojemnoscMagazynu(int pojemnoscMagazynu) {
+        this.pojemnoscMagazynu = pojemnoscMagazynu;
+    }
+
     @Override
     public String toString() {
         return "ElektrowniaAtomowa:" + super.toString() +

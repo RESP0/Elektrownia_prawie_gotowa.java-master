@@ -9,7 +9,6 @@ import com.company.Awarie.Sposob2ReakcjaNaAwarieZasilania;
 import com.company.Head.Gracz;
 import com.company.Head.Pracownicy;
 import com.company.Head.Wlasciciel;
-import com.company.Wytwarzanie.WytwarzanieEnergiiElektrycznej;
 import com.company.uslugodawcy.DystrybutorPradu;
 import com.company.Dochod.ObliczDochodElektrowni;
 

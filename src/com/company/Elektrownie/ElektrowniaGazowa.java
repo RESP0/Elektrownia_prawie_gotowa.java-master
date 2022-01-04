@@ -30,9 +30,13 @@ public class ElektrowniaGazowa extends ElektrowniaNaPaliwoStale  {
 	}
 
 
-	public float getIloscGazuWMagazynie() { return IloscGazuWMagazynie; }
+	public float getIloscGazuWMagazynie() {
+		return IloscGazuWMagazynie;
+	}
 
-	public void setIloscGazuWMagazynie(float iloscGazuWMagazynie)  { IloscGazuWMagazynie = iloscGazuWMagazynie; }
+	public void setIloscGazuWMagazynie(float iloscGazuWMagazynie) {
+		IloscGazuWMagazynie = iloscGazuWMagazynie;
+	}
 
 	public DostawcaGazu getDostawcaGazu() {	return DostawcaGazu; }
 
@@ -45,6 +49,7 @@ public class ElektrowniaGazowa extends ElektrowniaNaPaliwoStale  {
 	public void setMaxPojemnoscMagazynu(float maxPojemnoscMagazynu) {
 		MaxPojemnoscMagazynu = maxPojemnoscMagazynu;
 	}
+
 
 	@Override
 	public String toString() {
