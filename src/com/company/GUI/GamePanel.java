@@ -225,7 +225,7 @@ public class GamePanel extends JPanel implements ActionListener, ChangeListener 
                 int atak = random.nextInt(0,100);
                 int awria = random.nextInt(0,100);
                 if (ele != null){
-                    if (atak == 1){
+                    if (atak == 13){
                         ele.ReakcjaNaAtakTerrorystyczny(ele);
                     }
                     if (awria < 10){
@@ -390,6 +390,9 @@ public class GamePanel extends JPanel implements ActionListener, ChangeListener 
             gracz.zakupElektrowni(listaFoto.getNrEle(),4,listaFoto.getElektrownie().get(4));
             gracz.odejmijBalans(listaFoto.getElektrownie().get(4).getCenaZakupu());
             zaktualizujStanKonta();
+        }
+        else if (e.getSource() == listaFoto.kup5 && (gracz.getBalans() < listaFoto.getElektrownie().get(4).getCenaZakupu())){
+            listaFoto.komunikat();
         }
 //-----------------------------------------------------eleAtom
        if(e.getSource() == listaAtom.button1){
@@ -633,6 +636,7 @@ public class GamePanel extends JPanel implements ActionListener, ChangeListener 
         }
     }
     public void przypisButtonow(ElektrowniaOknoAbstract panel, JFrame okno,int indeksEle,int miejsce,ArrayList<Elektrownia> lista,ListaEle rodzaj,Gracz gracz,boolean bool,ActionEvent e){
+
         if (e.getSource() == panel.sprzedajButton){
             gracz.dodajBalans(lista.get(indeksEle%5).getCenaSprzedazy());
             zaktualizujStanKonta();
@@ -649,16 +653,19 @@ public class GamePanel extends JPanel implements ActionListener, ChangeListener 
             liczbaKlikniec++;
             panel.mocMaksymalnaLabel.setText("<html><div style='text-align: center;'> Moc maksymalna elektrowni: <br> " + String.valueOf(Integer.valueOf(lista.get(indeksEle%5).getMocMaksymalna())+(100*liczbaKlikniec)) +"<html>");
             panel.liczbaBlokowLabel.setText("<html><div style='text-align: center;'> Liczba blokow elektrowni: <br> " + lista.get(indeksEle%5).getLiczbaBlokow() +"<html>");
+            odswierzSlider(panel,indeksEle);
         }
         if(e.getSource() == panel.zatrudnijPracownika){
             gracz.odejmijBalans(cenaZatrudnieniaPracownika);
             rodzaj.dodatkowyPracownik(indeksEle%5);
             zaktualizujStanKonta();
             panel.liczbaPracownikowLabel.setText("<html><div style='text-align: center;'> Liczba pracowników elektrowni: <br> " + lista.get(indeksEle%5).getLiczbaPracownikow() +"<html>");
+            odswierzSlider(panel,indeksEle);
         }
         if(e.getSource() == panel.zwolnijPracownika){
             rodzaj.zolnionyPracownik(indeksEle%5);
             panel.liczbaPracownikowLabel.setText("<html><div style='text-align: center;'> Liczba pracowników elektrowni: <br> " + lista.get(indeksEle%5).getLiczbaPracownikow() +"<html>");
+            odswierzSlider(panel,indeksEle);
         }
         if(e.getSource() == panel.dokupButton){
             gracz.odejmijBalans(420);
@@ -674,6 +681,16 @@ public class GamePanel extends JPanel implements ActionListener, ChangeListener 
         }
         reakcjaAtakRadia(panel,gracz,indeksEle,e);
         reakcjaAwariaRadia(panel,gracz,indeksEle,e);
+    }
+    void odswierzSlider(ElektrowniaOknoAbstract panel, int indeksEle){
+        int tym = gracz.getListaElektrowni().get(indeksEle).getLiczbaPracownikow() * 100 / gracz.getListaElektrowni().get(indeksEle).getLiczbaBlokow();
+        if (panel.mocSlider.getValue() > tym) {
+            panel.mocSlider.setValue(tym);
+        } else if (panel.mocSlider.getValue() == tym) {
+            panel.mocLabel.setForeground(Color.red);
+        } else {
+            panel.mocLabel.setForeground(Color.white);
+        }
     }
 
 
