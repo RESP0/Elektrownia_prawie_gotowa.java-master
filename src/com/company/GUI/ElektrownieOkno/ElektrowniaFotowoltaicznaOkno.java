@@ -12,5 +12,6 @@ public class ElektrowniaFotowoltaicznaOkno extends ElektrowniaOknoAbstract {
         super(elektrownia, gracz);
         //skrot("Zuzycie paneli", "0%",informacje);
         magazyn.removeAll();
+        kiedyDokupic.removeAll();
     }
 }
