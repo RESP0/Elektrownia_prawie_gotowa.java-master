@@ -219,16 +219,17 @@ public class GamePanel extends JPanel implements ActionListener, ChangeListener 
             this.add(listaFoto, BorderLayout.CENTER);
         }
         else if(e.getSource()==gra.nastepnyDzien){
-            System.out.println("Nastepny dzien...");
             Random random = new Random();
             for (Elektrownia ele : gracz.getListaElektrowni()){
                 int tym = random.nextInt(0,100);
                 if (ele != null){
                     if (tym == 13){
                         ele.ReakcjaNaAtakTerrorystyczny(ele, gracz);
+                        atakNotification();
                     }
                     if (tym < 10){
                         ele.ReakcjeNaAwarieZasilania(ele);
+                        awariaNotification();
                     }
                     gracz.dodajBalans(ele.ObliczDochod(ele));
                 }
@@ -747,6 +748,14 @@ public class GamePanel extends JPanel implements ActionListener, ChangeListener 
         } else {
             panel.mocLabel.setForeground(Color.white);
         }
+    }
+
+    public void awariaNotification(){
+        JOptionPane.showMessageDialog(null,"Doszło do awarii w jednej z toich elektrowni!","Komunikat",JOptionPane.INFORMATION_MESSAGE);
+    }
+
+    public void atakNotification(){
+        JOptionPane.showMessageDialog(null,"Doszło do ataku terrorystycznego w jednej z toich elektrowni!","Komunikat",JOptionPane.INFORMATION_MESSAGE);
     }
 
 
