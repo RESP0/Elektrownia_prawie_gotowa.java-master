@@ -15,7 +15,7 @@ import com.company.Dochod.ObliczDochodElektrowni;
 import java.io.Serializable;
 import java.util.Arrays;
 
-public abstract class Elektrownia implements Serializable, ObliczDochodElektrowni{
+public abstract class Elektrownia implements Serializable, ObliczDochodElektrowni, ReakcjeNaAtakTerrorystyczny,ReakcjaNaAwarieZasilania{
 
 	private static final long serialVersionUID = 1234770990255762290L;
 
@@ -222,6 +222,13 @@ public abstract class Elektrownia implements Serializable, ObliczDochodElektrown
 
 	public ObliczDochodElektrowni getObliczDochodElektrowni() {
 		return obliczDochodElektrowni;
+	}
+	public void ReakcjaNaAtakTerrorystyczny(Elektrownia e){
+		reakcjeNaAtakTerrorystyczny.ReakcjaNaAtakTerrorystyczny(e);
+	}
+
+	public void ReakcjeNaAwarieZasilania(Elektrownia e){
+		reakcjaNaAwarieZasilania.ReakcjeNaAwarieZasilania(e);
 	}
 
 	public void setObliczDochodElektrowni(ObliczDochodElektrowni obliczDochodElektrowni) {

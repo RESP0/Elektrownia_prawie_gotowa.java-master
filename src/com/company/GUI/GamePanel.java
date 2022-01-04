@@ -16,6 +16,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Random;
 
 import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 
@@ -219,8 +220,17 @@ public class GamePanel extends JPanel implements ActionListener, ChangeListener 
         }
         else if(e.getSource()==gra.nastepnyDzien){
             System.out.println("Nastepny dzien...");
+            Random random = new Random();
             for (Elektrownia ele : gracz.getListaElektrowni()){
+                int atak = random.nextInt(0,100);
+                int awria = random.nextInt(0,100);
                 if (ele != null){
+                    if (atak == 1){
+                        ele.ReakcjaNaAtakTerrorystyczny(ele);
+                    }
+                    if (awria < 10){
+                        ele.ReakcjeNaAwarieZasilania(ele);
+                    }
                     gracz.dodajBalans(ele.ObliczDochod(ele));
                 }
             }
