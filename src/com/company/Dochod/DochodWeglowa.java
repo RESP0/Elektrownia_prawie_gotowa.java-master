@@ -10,16 +10,19 @@ public class DochodWeglowa implements ObliczDochodElektrowni, Serializable {
 
     int IloscCO2 = 350;
     int OplataEmisyjna = 25;
-    int StawkaGodzinowa =40;
+    int StawkaGodzinowa = 40;
     int EnergiaProdukowanaPrzezJedenBlok = 100;
 
     public float ObliczDochod(Elektrownia e){
 
         e.setMocMaksymalna(e.getLiczbaBlokow()*EnergiaProdukowanaPrzezJedenBlok);
 
-        return  e.getMocChwilowa()* e.getDystrybutor().getCenaSkupu()*24
+        return  e.getMocChwilowa()* e.getDystrybutor().getCenaSkupu()*24  // dochód
+                //wydatki na wegiel
                 - e.getMocChwilowa()*((ElektrowniaWeglowa) e).getZuzyciePaliwa()*((ElektrowniaWeglowa) e).getDostawcaWegla().getCenaZaTone()
+                //wydatki na pracownikow
                 -e.getLiczbaPracownikow()*StawkaGodzinowa*24
+                //wydatki na kary emisyjne
                 -IloscCO2*e.getMocChwilowa()*OplataEmisyjna;
     }
 }
