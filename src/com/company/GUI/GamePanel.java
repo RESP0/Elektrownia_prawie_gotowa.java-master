@@ -66,6 +66,7 @@ public class GamePanel extends JPanel implements ActionListener, ChangeListener 
 
 
     JPanel tym;
+    int liczbaKlikniec = 0;
 
     public GamePanel(){
         frame = new JFrame("test");
@@ -623,11 +624,14 @@ public class GamePanel extends JPanel implements ActionListener, ChangeListener 
             bool = false;
             okno.dispose();
             rodzaj.uzupelnijKupione(indeksEle, gracz);
+            liczbaKlikniec = 0;
         }
         if(e.getSource() == panel.kupBloki){
             gracz.odejmijBalans(lista.get(indeksEle).getCenaBloku());
             rodzaj.nowyBlok(indeksEle%5);
             zaktualizujStanKonta();
+            liczbaKlikniec++;
+            panel.mocMaksymalnaLabel.setText("<html><div style='text-align: center;'> Moc maksymalna elektrowni: <br> " + String.valueOf(Integer.valueOf(lista.get(indeksEle).getMocMaksymalna())+(100*liczbaKlikniec)) +"<html>");
             panel.liczbaBlokowLabel.setText("<html><div style='text-align: center;'> Liczba blokow elektrowni: <br> " + lista.get(indeksEle).getLiczbaBlokow() +"<html>");
         }
         if(e.getSource() == panel.zatrudnijPracownika){
@@ -644,11 +648,13 @@ public class GamePanel extends JPanel implements ActionListener, ChangeListener 
             gracz.odejmijBalans(420);
             rodzaj.uzupelnienieMagazynu(indeksEle%5);
             zaktualizujStanKonta();
+            panel.stanMagazynuLabel.setText("<html><div style='text-align: center;'> Stan magazynu: <br> " + "maks" +"<html>");
         }
         if(e.getSource() == panel.zapiszIZamknij){
             serializacje.zapis((ArrayList<Elektrownia>) gracz.getListaElektrowni());
             serializacje.zapisStanuKonta(gracz.getBalans());
             okno.dispose();
+            liczbaKlikniec = 0;
         }
         reakcjaAtakRadia(panel,gracz,indeksEle,e);
         reakcjaAwariaRadia(panel,gracz,indeksEle,e);
