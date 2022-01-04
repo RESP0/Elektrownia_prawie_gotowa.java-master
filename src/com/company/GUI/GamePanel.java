@@ -671,23 +671,47 @@ public class GamePanel extends JPanel implements ActionListener, ChangeListener 
 
     @Override
     public void stateChanged(ChangeEvent e) {
-        slidery(elektrowniaAtomowa1,0,gracz,e);
+        slidery(elektrowniaAtomowa1,0,gracz,e,a1);
+        slidery(elektrowniaAtomowa2,1,gracz,e,a2);
+        slidery(elektrowniaAtomowa3,2,gracz,e,a3);
+        slidery(elektrowniaAtomowa4,3,gracz,e,a4);
+        slidery(elektrowniaAtomowa5,4,gracz,e,a5);
+
+        slidery(elektrowniaFotowoltaiczna1,5,gracz,e,f1);
+        slidery(elektrowniaFotowoltaiczna2,6,gracz,e,f2);
+        slidery(elektrowniaFotowoltaiczna3,7,gracz,e,f3);
+        slidery(elektrowniaFotowoltaiczna4,8,gracz,e,f4);
+        slidery(elektrowniaFotowoltaiczna5,9,gracz,e,f5);
+
+        slidery(elektrowniaWeglowa1,10,gracz,e,w1);
+        slidery(elektrowniaWeglowa2,11,gracz,e,w2);
+        slidery(elektrowniaWeglowa3,12,gracz,e,w3);
+        slidery(elektrowniaWeglowa4,13,gracz,e,w4);
+        slidery(elektrowniaWeglowa5,14,gracz,e,w5);
+
+        slidery(elektrowniaGazowa1,15,gracz,e,g1);
+        slidery(elektrowniaGazowa2,16,gracz,e,g2);
+        slidery(elektrowniaGazowa3,17,gracz,e,g3);
+        slidery(elektrowniaGazowa4,18,gracz,e,g4);
+        slidery(elektrowniaGazowa5,19,gracz,e,g5);
     }
-    public void slidery(ElektrowniaOknoAbstract okno,int indeksele,Gracz gracz,ChangeEvent e){
-        if (e.getSource() == okno.mocSlider){
-            gracz.getListaElektrowni().get(indeksele).setMocChwilowa(okno.mocSlider.getValue()*gracz.getListaElektrowni().get(indeksele).getMocMaksymalna()/100);
-            int tym = gracz.getListaElektrowni().get(indeksele).getLiczbaPracownikow()*100/gracz.getListaElektrowni().get(indeksele).getLiczbaBlokow();
-            if (okno.mocSlider.getValue() > tym){
-                okno.mocSlider.setValue(tym);
-            }else if (okno.mocSlider.getValue() == tym){
-                okno.mocLabel.setForeground(Color.red);
-            }else {
-                okno.mocLabel.setForeground(Color.white);
+    public void slidery(ElektrowniaOknoAbstract okno,int indeksele,Gracz gracz,ChangeEvent e,boolean warunek) {
+        if (warunek) {
+            if (e.getSource() == okno.mocSlider) {
+                gracz.getListaElektrowni().get(indeksele).setMocChwilowa(okno.mocSlider.getValue() * gracz.getListaElektrowni().get(indeksele).getMocMaksymalna() / 100);
+                int tym = gracz.getListaElektrowni().get(indeksele).getLiczbaPracownikow() * 100 / gracz.getListaElektrowni().get(indeksele).getLiczbaBlokow();
+                if (okno.mocSlider.getValue() > tym) {
+                    okno.mocSlider.setValue(tym);
+                } else if (okno.mocSlider.getValue() == tym) {
+                    okno.mocLabel.setForeground(Color.red);
+                } else {
+                    okno.mocLabel.setForeground(Color.white);
+                }
             }
+            if (e.getSource() == okno.kiedySlider) {
+                gracz.getListaElektrowni().get(indeksele).setKiedyDokupic(okno.kiedySlider.getValue());
+            }
+            okno.stateChanged(e);
         }
-        if (e.getSource() == okno.kiedySlider){
-            gracz.getListaElektrowni().get(indeksele).setKiedyDokupic(okno.kiedySlider.getValue());
-        }
-        okno.stateChanged(e);
     }
 }
