@@ -8,10 +8,10 @@ import java.io.Serializable;
 public class DochodWeglowa implements ObliczDochodElektrowni, Serializable {
     private static final long serialVersionUID = 1223123L;
 
-    int IloscCO2 = 350;
-    int OplataEmisyjna = 25;
-    int StawkaGodzinowa = 40;
-    int EnergiaProdukowanaPrzezJedenBlok = 100;
+    float IloscCO2 = 0.5f;
+    float OplataEmisyjna = 5f;
+    int StawkaGodzinowa = 35;
+    int EnergiaProdukowanaPrzezJedenBlok = 75;
 
     public float ObliczDochod(Elektrownia e){
 
@@ -27,12 +27,12 @@ public class DochodWeglowa implements ObliczDochodElektrowni, Serializable {
                     -IloscCO2*e.getMocChwilowa()*OplataEmisyjna
                     -((ElektrowniaWeglowa) e).getDostawcaWegla().getCenaZaTone()*(((ElektrowniaWeglowa) e).getMaxPojemnoscMagazynu()-((ElektrowniaWeglowa) e).getIloscWeglaWMagazynie());
         }
-        return  e.getMocChwilowa()* e.getDystrybutor().getCenaSkupu()*24  // dochód
+        return  e.getMocChwilowa()* e.getDystrybutor().getCenaSkupu()*24  // dochód //19980
                 //wydatki na wegiel
-                - e.getMocChwilowa()*((ElektrowniaWeglowa) e).getZuzyciePaliwa()*((ElektrowniaWeglowa) e).getDostawcaWegla().getCenaZaTone()
+                - e.getMocChwilowa()*((ElektrowniaWeglowa) e).getZuzyciePaliwa()*((ElektrowniaWeglowa) e).getDostawcaWegla().getCenaZaTone() //
                 //wydatki na pracownikow
-                -e.getLiczbaPracownikow()*StawkaGodzinowa*24
+                -e.getLiczbaPracownikow()*StawkaGodzinowa*24 //8400
                 //wydatki na kary emisyjne
-                -IloscCO2*e.getMocChwilowa()*OplataEmisyjna;
+                -IloscCO2*e.getMocChwilowa()*OplataEmisyjna; //1875
     }
 }
