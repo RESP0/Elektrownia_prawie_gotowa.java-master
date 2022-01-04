@@ -15,6 +15,7 @@ public class DochodAtomowa implements ObliczDochodElektrowni, Serializable {
     public float ObliczDochod(Elektrownia e) {
         e.setMocMaksymalna(e.getLiczbaBlokow()*((ElektrowniaAtomowa) e).getLiczbaReaktorow()*EnegiaProdukowanaPrzezReaktor);
 
+
         return
                 //przychod
                 e.getMocChwilowa()* e.getDystrybutor().getCenaSkupu()*24
