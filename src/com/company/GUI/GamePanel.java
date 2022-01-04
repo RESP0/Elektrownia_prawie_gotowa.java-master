@@ -222,13 +222,12 @@ public class GamePanel extends JPanel implements ActionListener, ChangeListener 
             System.out.println("Nastepny dzien...");
             Random random = new Random();
             for (Elektrownia ele : gracz.getListaElektrowni()){
-                int atak = random.nextInt(0,100);
-                int awria = random.nextInt(0,100);
+                int tym = random.nextInt(0,100);
                 if (ele != null){
-                    if (atak == 13){
+                    if (tym == 13){
                         ele.ReakcjaNaAtakTerrorystyczny(ele);
                     }
-                    if (awria < 10){
+                    if (tym < 10){
                         ele.ReakcjeNaAwarieZasilania(ele);
                     }
                     gracz.dodajBalans(ele.ObliczDochod(ele));
