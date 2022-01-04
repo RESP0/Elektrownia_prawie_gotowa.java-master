@@ -231,6 +231,9 @@ public class ListaEle extends JPanel implements ActionListener {
     public void zolnionyPracownik(int indeks){
         elektrownie.get(indeks).setLiczbaPracownikow(elektrownie.get(indeks).getLiczbaPracownikow() - 1);
     }
+    public void komunikat(){
+        JOptionPane.showMessageDialog(null,"Nie stać cię biedaku!","Komunikat",JOptionPane.INFORMATION_MESSAGE);
+    }
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -239,7 +242,7 @@ public class ListaEle extends JPanel implements ActionListener {
             cena1.setVisible(false);
             button1.setEnabled(true);
         }
-        else if (e.getSource() == kup1){
+        if (e.getSource() == kup1 && gracz.getBalans() < elektrownie.get(0).getCenaZakupu()){
             System.out.println("Twoj stary");
         }
 
@@ -248,7 +251,7 @@ public class ListaEle extends JPanel implements ActionListener {
             button2.setEnabled(true);
             cena2.setVisible(false);
         }
-        else if (e.getSource() == kup2){
+        else if (e.getSource() == kup2 && gracz.getBalans() < elektrownie.get(1).getCenaZakupu()){
             System.out.println("Twoj stary");
         }
 
@@ -257,7 +260,7 @@ public class ListaEle extends JPanel implements ActionListener {
             button3.setEnabled(true);
             cena3.setVisible(false);
         }
-         else if (e.getSource() == kup3){
+         else if (e.getSource() == kup3 && gracz.getBalans() < elektrownie.get(2).getCenaZakupu()){
              System.out.println("Twoj stary");
          }
 
@@ -265,7 +268,7 @@ public class ListaEle extends JPanel implements ActionListener {
             kup4.setVisible(false);
             button4.setEnabled(true);
             cena4.setVisible(false);
-        }else if (e.getSource() == kup4){
+        }else if (e.getSource() == kup4 && gracz.getBalans() < elektrownie.get(3).getCenaZakupu()){
             System.out.println("Twoj stary");
         }
 
@@ -273,7 +276,8 @@ public class ListaEle extends JPanel implements ActionListener {
             kup5.setVisible(false);
             button5.setEnabled(true);
             cena5.setVisible(false);
-        }else if (e.getSource() == kup5){
+        }
+         if (e.getSource() == kup5 && gracz.getBalans() < elektrownie.get(4).getCenaZakupu()){
              System.out.println("Twoj stary");
          }
         this.revalidate();

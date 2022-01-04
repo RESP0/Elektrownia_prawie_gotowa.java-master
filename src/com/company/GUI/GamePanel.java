@@ -382,7 +382,7 @@ public class GamePanel extends JPanel implements ActionListener, ChangeListener 
             a1 = true;
         }
        if (a1){
-           przypisButtonow(elektrowniaAtomowa1, frame,0, listyElektrowni.elektrownieAtomowe, listaAtom, gracz, a1, e);
+           przypisButtonow(elektrowniaAtomowa1, frame,0,0, listyElektrowni.elektrownieAtomowe, listaAtom, gracz, a1, e);
        }
 
 
@@ -392,7 +392,7 @@ public class GamePanel extends JPanel implements ActionListener, ChangeListener 
             a2 = true;
         }
         if (a2){
-            przypisButtonow(elektrowniaAtomowa2, frame,1, listyElektrowni.elektrownieAtomowe, listaAtom, gracz, a2, e);
+            przypisButtonow(elektrowniaAtomowa2, frame,1,0, listyElektrowni.elektrownieAtomowe, listaAtom, gracz, a2, e);
         }
         if(e.getSource() == listaAtom.button3){
             elektrowniaAtomowa3 = new ElektrowniaAtomowaOkno(gracz.getListaElektrowni().get(2),gracz);
@@ -400,7 +400,7 @@ public class GamePanel extends JPanel implements ActionListener, ChangeListener 
             a3 = true;
         }
         if (a3){
-            przypisButtonow(elektrowniaAtomowa3, frame,2, listyElektrowni.elektrownieAtomowe, listaAtom, gracz, a3, e);
+            przypisButtonow(elektrowniaAtomowa3, frame,2,0, listyElektrowni.elektrownieAtomowe, listaAtom, gracz, a3, e);
         }
         if(e.getSource() == listaAtom.button4){
             elektrowniaAtomowa4 = new ElektrowniaAtomowaOkno(gracz.getListaElektrowni().get(3),gracz);
@@ -408,7 +408,7 @@ public class GamePanel extends JPanel implements ActionListener, ChangeListener 
             a4 = true;
         }
         if (a4){
-            przypisButtonow(elektrowniaAtomowa4, frame,3, listyElektrowni.elektrownieAtomowe, listaAtom, gracz, a4, e);
+            przypisButtonow(elektrowniaAtomowa4, frame,3,0, listyElektrowni.elektrownieAtomowe, listaAtom, gracz, a4, e);
         }
         if(e.getSource() == listaAtom.button5){
             elektrowniaAtomowa5 = new ElektrowniaAtomowaOkno(gracz.getListaElektrowni().get(4),gracz);
@@ -416,7 +416,7 @@ public class GamePanel extends JPanel implements ActionListener, ChangeListener 
             a5 = true;
         }
         if (a5){
-            przypisButtonow(elektrowniaAtomowa5, frame,4, listyElektrowni.elektrownieAtomowe, listaAtom, gracz, a5, e);
+            przypisButtonow(elektrowniaAtomowa5, frame,4,0, listyElektrowni.elektrownieAtomowe, listaAtom, gracz, a5, e);
         }
         //--------- FOTOWOLTAICZNA -------
         if(e.getSource() == listaFoto.button1){
@@ -425,7 +425,7 @@ public class GamePanel extends JPanel implements ActionListener, ChangeListener 
             f1 = true;
         }
         if (f1){
-            przypisButtonow(elektrowniaFotowoltaiczna1, frame,0, listyElektrowni.elektrownieFotowoltaiczne, listaFoto, gracz, f1, e);
+            przypisButtonow(elektrowniaFotowoltaiczna1, frame,5,1, listyElektrowni.elektrownieFotowoltaiczne, listaFoto, gracz, f1, e);
         }
         if(e.getSource() == listaFoto.button2){
             elektrowniaFotowoltaiczna2 = new ElektrowniaFotowoltaicznaOkno(gracz.getListaElektrowni().get(6),gracz);
@@ -433,7 +433,7 @@ public class GamePanel extends JPanel implements ActionListener, ChangeListener 
             f2 = true;
         }
         if (f2){
-            przypisButtonow(elektrowniaFotowoltaiczna2, frame,1, listyElektrowni.elektrownieFotowoltaiczne, listaFoto, gracz, f2, e);
+            przypisButtonow(elektrowniaFotowoltaiczna2, frame,6,1, listyElektrowni.elektrownieFotowoltaiczne, listaFoto, gracz, f2, e);
         }
         if(e.getSource() == listaFoto.button3){
             elektrowniaFotowoltaiczna3 = new ElektrowniaFotowoltaicznaOkno(gracz.getListaElektrowni().get(7),gracz);
@@ -441,7 +441,7 @@ public class GamePanel extends JPanel implements ActionListener, ChangeListener 
             f3 = true;
         }
         if (f3){
-            przypisButtonow(elektrowniaFotowoltaiczna3, frame,2, listyElektrowni.elektrownieFotowoltaiczne, listaFoto, gracz, f3, e);
+            przypisButtonow(elektrowniaFotowoltaiczna3, frame,7,1, listyElektrowni.elektrownieFotowoltaiczne, listaFoto, gracz, f3, e);
         }
         if(e.getSource() == listaFoto.button4){
             elektrowniaFotowoltaiczna4 = new ElektrowniaFotowoltaicznaOkno(gracz.getListaElektrowni().get(8),gracz);
@@ -449,7 +449,7 @@ public class GamePanel extends JPanel implements ActionListener, ChangeListener 
             f4 = true;
         }
         if (f4){
-            przypisButtonow(elektrowniaFotowoltaiczna4, frame,3, listyElektrowni.elektrownieFotowoltaiczne, listaFoto, gracz, f4, e);
+            przypisButtonow(elektrowniaFotowoltaiczna4, frame,8,1, listyElektrowni.elektrownieFotowoltaiczne, listaFoto, gracz, f4, e);
         }
         if(e.getSource() == listaFoto.button5){
             elektrowniaFotowoltaiczna5 = new ElektrowniaFotowoltaicznaOkno(gracz.getListaElektrowni().get(9),gracz);
@@ -457,7 +457,7 @@ public class GamePanel extends JPanel implements ActionListener, ChangeListener 
             f5 = true;
         }
         if (f5){
-            przypisButtonow(elektrowniaFotowoltaiczna5, frame,4, listyElektrowni.elektrownieFotowoltaiczne, listaFoto, gracz, f5, e);
+            przypisButtonow(elektrowniaFotowoltaiczna5, frame,9,1, listyElektrowni.elektrownieFotowoltaiczne, listaFoto, gracz, f5, e);
         }
         //-------------
         if(e.getSource() == listaWegiel.button1){
@@ -466,7 +466,7 @@ public class GamePanel extends JPanel implements ActionListener, ChangeListener 
             w1 = true;
         }
         if (w1){
-            przypisButtonow(elektrowniaWeglowa1, frame,0, listyElektrowni.elektrownieWeglowe, listaWegiel, gracz, w1, e);
+            przypisButtonow(elektrowniaWeglowa1, frame,10,2, listyElektrowni.elektrownieWeglowe, listaWegiel, gracz, w1, e);
         }
         if(e.getSource() == listaWegiel.button2){
             elektrowniaWeglowa2 = new ElektrowniaWeglowaOkno(gracz.getListaElektrowni().get(11),gracz);
@@ -474,7 +474,7 @@ public class GamePanel extends JPanel implements ActionListener, ChangeListener 
             w2 = true;
         }
         if (w2){
-            przypisButtonow(elektrowniaWeglowa2, frame,1, listyElektrowni.elektrownieWeglowe, listaWegiel, gracz, w2, e);
+            przypisButtonow(elektrowniaWeglowa2, frame,11,2, listyElektrowni.elektrownieWeglowe, listaWegiel, gracz, w2, e);
         }
         if(e.getSource() == listaWegiel.button3){
             elektrowniaWeglowa3 = new ElektrowniaWeglowaOkno(gracz.getListaElektrowni().get(12),gracz);
@@ -482,7 +482,7 @@ public class GamePanel extends JPanel implements ActionListener, ChangeListener 
             w3 = true;
         }
         if (w3){
-            przypisButtonow(elektrowniaWeglowa3, frame,2, listyElektrowni.elektrownieWeglowe, listaWegiel, gracz, w3, e);
+            przypisButtonow(elektrowniaWeglowa3, frame,12,2, listyElektrowni.elektrownieWeglowe, listaWegiel, gracz, w3, e);
         }
         if(e.getSource() == listaWegiel.button4){
             elektrowniaWeglowa4 = new ElektrowniaWeglowaOkno(gracz.getListaElektrowni().get(13),gracz);
@@ -490,7 +490,7 @@ public class GamePanel extends JPanel implements ActionListener, ChangeListener 
             w4 = true;
         }
         if (w4){
-            przypisButtonow(elektrowniaWeglowa4, frame,3, listyElektrowni.elektrownieWeglowe, listaWegiel, gracz, w4, e);
+            przypisButtonow(elektrowniaWeglowa4, frame,13,2, listyElektrowni.elektrownieWeglowe, listaWegiel, gracz, w4, e);
         }
         if(e.getSource() == listaWegiel.button5){
             elektrowniaWeglowa5 = new ElektrowniaWeglowaOkno(gracz.getListaElektrowni().get(14),gracz);
@@ -498,7 +498,7 @@ public class GamePanel extends JPanel implements ActionListener, ChangeListener 
             w5 = true;
         }
         if (w5){
-            przypisButtonow(elektrowniaWeglowa5, frame,4, listyElektrowni.elektrownieWeglowe, listaWegiel, gracz, w5, e);
+            przypisButtonow(elektrowniaWeglowa5, frame,14,2, listyElektrowni.elektrownieWeglowe, listaWegiel, gracz, w5, e);
         }
         //---------------
         if(e.getSource() == listaGaz.button1){
@@ -507,7 +507,7 @@ public class GamePanel extends JPanel implements ActionListener, ChangeListener 
             g1 = true;
         }
         if (g1){
-            przypisButtonow(elektrowniaGazowa1, frame,0, listyElektrowni.elektrownieGazowe, listaGaz, gracz, g1, e);
+            przypisButtonow(elektrowniaGazowa1, frame,15,3, listyElektrowni.elektrownieGazowe, listaGaz, gracz, g1, e);
         }
         if(e.getSource() == listaGaz.button2){
             elektrowniaGazowa2 = new ElektrowniaGazowaOkno(gracz.getListaElektrowni().get(16),gracz);
@@ -515,7 +515,7 @@ public class GamePanel extends JPanel implements ActionListener, ChangeListener 
             g2 = true;
         }
         if (g2){
-            przypisButtonow(elektrowniaGazowa2, frame,1, listyElektrowni.elektrownieGazowe, listaGaz, gracz, g2, e);
+            przypisButtonow(elektrowniaGazowa2, frame,16,3, listyElektrowni.elektrownieGazowe, listaGaz, gracz, g2, e);
 
         }
         if(e.getSource() == listaGaz.button3){
@@ -524,7 +524,7 @@ public class GamePanel extends JPanel implements ActionListener, ChangeListener 
             g3 = true;
         }
         if (g3){
-            przypisButtonow(elektrowniaGazowa3, frame,2, listyElektrowni.elektrownieGazowe, listaGaz, gracz, g3, e);
+            przypisButtonow(elektrowniaGazowa3, frame,17,3, listyElektrowni.elektrownieGazowe, listaGaz, gracz, g3, e);
 
         }
         if(e.getSource() == listaGaz.button4){
@@ -533,7 +533,7 @@ public class GamePanel extends JPanel implements ActionListener, ChangeListener 
             g4 = true;
         }
         if (g4){
-            przypisButtonow(elektrowniaGazowa4, frame,3, listyElektrowni.elektrownieGazowe, listaGaz, gracz, g4, e);
+            przypisButtonow(elektrowniaGazowa4, frame,18,3, listyElektrowni.elektrownieGazowe, listaGaz, gracz, g4, e);
 
         }
         if(e.getSource() == listaGaz.button5){
@@ -542,7 +542,7 @@ public class GamePanel extends JPanel implements ActionListener, ChangeListener 
             g5 = true;
         }
         if (g5){
-            przypisButtonow(elektrowniaGazowa5, frame,4, listyElektrowni.elektrownieGazowe, listaGaz, gracz, g5, e);
+            przypisButtonow(elektrowniaGazowa5, frame,19,3, listyElektrowni.elektrownieGazowe, listaGaz, gracz, g5, e);
         }
 
         //-------------------------------------------------------------------------
@@ -616,14 +616,14 @@ public class GamePanel extends JPanel implements ActionListener, ChangeListener 
 
         }
     }
-    public void przypisButtonow(ElektrowniaOknoAbstract panel, JFrame okno,int indeksEle,ArrayList<Elektrownia> lista,ListaEle rodzaj,Gracz gracz,boolean bool,ActionEvent e){
+    public void przypisButtonow(ElektrowniaOknoAbstract panel, JFrame okno,int indeksEle,int miejsce,ArrayList<Elektrownia> lista,ListaEle rodzaj,Gracz gracz,boolean bool,ActionEvent e){
         if (e.getSource() == panel.sprzedajButton){
-            gracz.dodajBalans(lista.get(indeksEle).getCenaSprzedazy());
+            gracz.dodajBalans(lista.get(indeksEle%5).getCenaSprzedazy());
             zaktualizujStanKonta();
             gracz.getListaElektrowni().set(indeksEle,null);
             bool = false;
             okno.dispose();
-            rodzaj.uzupelnijKupione(indeksEle, gracz);
+            rodzaj.uzupelnijKupione(miejsce, gracz);
             liczbaKlikniec = 0;
         }
         if(e.getSource() == panel.kupBloki){
