@@ -17,7 +17,7 @@ public class ListyElektrowni implements Serializable {
 
     public ArrayList<Elektrownia> elektrownieAtomowe = new ArrayList<>(){
         {
-            add(new ElektrowniaAtomowa("Żarnowiec","Żarnowiec", 0, 4000, 3, 4, wlasciciele.getWlasciciele().get(0), false, 86, 897, dystrybutorzy.getDystrybutorzyPradu().get(0), 345,500,dostawcy.odbiocyOdpadow.get(1), 150000, 75000, 500,0,0,10));
+            add(new ElektrowniaAtomowa("Żarnowiec","Żarnowiec", 0, 4000, 3, 4, wlasciciele.getWlasciciele().get(0), false, 86, 21, dystrybutorzy.getDystrybutorzyPradu().get(0), 1,500,dostawcy.odbiocyOdpadow.get(1), 150000, 75000, 500,0,0,10));
             add(new ElektrowniaAtomowa("Dukovany","Trebic", 0, 5000, 3, 4, wlasciciele.getWlasciciele().get(0), false, 86, 897, dystrybutorzy.getDystrybutorzyPradu().get(1), 345,500, dostawcy.odbiocyOdpadow.get(1), 281250, 140625, 7000,0,0,10));
             add(new ElektrowniaAtomowa("Biełojarsk","Jekateryburg", 0, 5500, 3, 4, wlasciciele.getWlasciciele().get(0), false, 86, 897, dystrybutorzy.getDystrybutorzyPradu().get(2), 345,500, dostawcy.odbiocyOdpadow.get(1), 450000, 225000, 900,0,0,10));
             add(new ElektrowniaAtomowa("Emsland","Lingen", 0, 6500, 3, 4, wlasciciele.getWlasciciele().get(0), false, 86, 897, dystrybutorzy.getDystrybutorzyPradu().get(3), 345, 500, dostawcy.odbiocyOdpadow.get(1), 656250, 328125, 1100,0,0,10));
