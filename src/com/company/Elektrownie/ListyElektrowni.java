@@ -13,13 +13,15 @@ public class ListyElektrowni implements Serializable {
     ListyDystrybutorzy dystrybutorzy = new ListyDystrybutorzy();
     ListyWlasciciele wlasciciele = new ListyWlasciciele();
     ListyDostawcy dostawcy = new ListyDostawcy();
+
+
     public ArrayList<Elektrownia> elektrownieAtomowe = new ArrayList<>(){
         {
-            add(new ElektrowniaAtomowa("Żarnowiec","Żarnowiec", 2000, 4000, 3, 4, wlasciciele.getWlasciciele().get(0), false, 86, 897, dystrybutorzy.getDystrybutorzyPradu().get(0), 345,dostawcy.odbiocyOdpadow.get(1), 150000, 75000, 500,0,0,10));
-            add(new ElektrowniaAtomowa("Dukovany","Trebic", 2000, 5000, 3, 4, wlasciciele.getWlasciciele().get(0), false, 86, 897, dystrybutorzy.getDystrybutorzyPradu().get(1), 345, dostawcy.odbiocyOdpadow.get(1), 281250, 140625, 7000,0,0,10));
-            add(new ElektrowniaAtomowa("Biełojarsk","Jekateryburg", 2000, 5500, 3, 4, wlasciciele.getWlasciciele().get(0), false, 86, 897, dystrybutorzy.getDystrybutorzyPradu().get(2), 345, dostawcy.odbiocyOdpadow.get(1), 450000, 225000, 900,0,0,10));
-            add(new ElektrowniaAtomowa("Emsland","Lingen", 2000, 6500, 3, 4, wlasciciele.getWlasciciele().get(0), false, 86, 897, dystrybutorzy.getDystrybutorzyPradu().get(3), 345, dostawcy.odbiocyOdpadow.get(1), 656250, 328125, 1100,0,0,10));
-            add(new ElektrowniaAtomowa("Belleville","Burgundia", 2000, 8000, 3, 4, wlasciciele.getWlasciciele().get(0), false, 86, 897, dystrybutorzy.getDystrybutorzyPradu().get(4), 345, dostawcy.odbiocyOdpadow.get(1), 900000, 450000, 1300,0,0,10));
+            add(new ElektrowniaAtomowa("Żarnowiec","Żarnowiec", 2000, 4000, 3, 4, wlasciciele.getWlasciciele().get(0), false, 86, 897, dystrybutorzy.getDystrybutorzyPradu().get(0), 345,500,dostawcy.odbiocyOdpadow.get(1), 150000, 75000, 500,0,0,10));
+            add(new ElektrowniaAtomowa("Dukovany","Trebic", 2000, 5000, 3, 4, wlasciciele.getWlasciciele().get(0), false, 86, 897, dystrybutorzy.getDystrybutorzyPradu().get(1), 345,500, dostawcy.odbiocyOdpadow.get(1), 281250, 140625, 7000,0,0,10));
+            add(new ElektrowniaAtomowa("Biełojarsk","Jekateryburg", 2000, 5500, 3, 4, wlasciciele.getWlasciciele().get(0), false, 86, 897, dystrybutorzy.getDystrybutorzyPradu().get(2), 345,500, dostawcy.odbiocyOdpadow.get(1), 450000, 225000, 900,0,0,10));
+            add(new ElektrowniaAtomowa("Emsland","Lingen", 2000, 6500, 3, 4, wlasciciele.getWlasciciele().get(0), false, 86, 897, dystrybutorzy.getDystrybutorzyPradu().get(3), 345, 500, dostawcy.odbiocyOdpadow.get(1), 656250, 328125, 1100,0,0,10));
+            add(new ElektrowniaAtomowa("Belleville","Burgundia", 2000, 8000, 3, 4, wlasciciele.getWlasciciele().get(0), false, 86, 897, dystrybutorzy.getDystrybutorzyPradu().get(4), 345,500, dostawcy.odbiocyOdpadow.get(1), 900000, 450000, 1300,0,0,10));
         }
     };
 
