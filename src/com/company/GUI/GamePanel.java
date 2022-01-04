@@ -227,7 +227,7 @@ public class GamePanel extends JPanel implements ActionListener, ChangeListener 
                         ele.ReakcjaNaAtakTerrorystyczny(ele, gracz);
                         atakNotification(ele.getMiasto());
                     }
-                    if (tym < 8){
+                    if (tym < 4){
                         ele.ReakcjeNaAwarieZasilania(ele);
                         awariaNotification(ele.getMiasto());
                     }
