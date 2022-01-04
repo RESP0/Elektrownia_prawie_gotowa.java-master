@@ -32,11 +32,11 @@ public class ListyDostawcy implements Serializable {
 
     public ArrayList <OdbiorcaOdpadow> odbiocyOdpadow = new ArrayList<>(){
         {
-            add( new OdbiorcaOdpadow());
-            add( new OdbiorcaOdpadow());
-            add( new OdbiorcaOdpadow());
-            add( new OdbiorcaOdpadow());
-            add( new OdbiorcaOdpadow());
+            add( new OdbiorcaOdpadow(3.3f,new Wlasciciel()));
+            add( new OdbiorcaOdpadow(3.47f,new Wlasciciel()));
+            add( new OdbiorcaOdpadow(3.62f,new Wlasciciel()));
+            add( new OdbiorcaOdpadow(3.73f,new Wlasciciel()));
+            add( new OdbiorcaOdpadow(3.8f,new Wlasciciel()));
         }
     };
 
