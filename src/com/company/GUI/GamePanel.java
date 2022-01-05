@@ -227,16 +227,12 @@ public class GamePanel extends JPanel implements ActionListener, ChangeListener 
                         ele.ReakcjaNaAtakTerrorystyczny(ele, gracz);
                         atakNotification(ele.getMiasto());
                     }
-                    if (tym < 4){
+                    if (tym < 2){
                         ele.ReakcjeNaAwarieZasilania(ele);
                         awariaNotification(ele.getMiasto());
                     }
                     gracz.dodajBalans(ele.ObliczDochod(ele));
-                    if (ele instanceof ElektrowniaGazowa){
-                        if (((ElektrowniaGazowa) ele).getIloscGazuWMagazynie()*100/((ElektrowniaGazowa) ele).getMaxPojemnoscMagazynu() < ele.getKiedyDokupic()){
 
-                        }
-                    }
                 }
             }
 
@@ -677,25 +673,31 @@ public class GamePanel extends JPanel implements ActionListener, ChangeListener 
     public void reakcjaAtakRadia(ElektrowniaOknoAbstract okno, Gracz gracz,int indeksElektrowni,ActionEvent e){
         if (e.getSource() == okno.atakBrak){
             gracz.getListaElektrowni().get(indeksElektrowni).setSposobNaReakcjeNaAtak(0);
+            gracz.getListaElektrowni().get(indeksElektrowni).odswiezReakcje();
         }else if (e.getSource() == okno.atak1){
             gracz.getListaElektrowni().get(indeksElektrowni).setSposobNaReakcjeNaAtak(1);
             gracz.getListaElektrowni().get(indeksElektrowni).setReakcjeNaAtakTerrorystyczny(new Sposob1ReakcjaNaAtakTerrorystyczny());
+            gracz.getListaElektrowni().get(indeksElektrowni).odswiezReakcje();
         }else if (e.getSource() == okno.atak2){
             gracz.getListaElektrowni().get(indeksElektrowni).setSposobNaReakcjeNaAtak(2);
             gracz.getListaElektrowni().get(indeksElektrowni).setReakcjeNaAtakTerrorystyczny(new Sposob2ReakcjaNaAtakTerrorystyczny());
+            gracz.getListaElektrowni().get(indeksElektrowni).odswiezReakcje();
         }
     }
     public void reakcjaAwariaRadia(ElektrowniaOknoAbstract okno, Gracz gracz,int indeksElektrowni,ActionEvent e){
         if (e.getSource() == okno.awariaBrak){
             gracz.getListaElektrowni().get(indeksElektrowni).setSposobNaReakcjeNaAwarie(0);
+            gracz.getListaElektrowni().get(indeksElektrowni).odswiezReakcje();
         }else if (e.getSource() == okno.awaria1){
             gracz.getListaElektrowni().get(indeksElektrowni).setSposobNaReakcjeNaAwarie(1);
             gracz.getListaElektrowni().get(indeksElektrowni).setReakcjaNaAwarieZasilania(new Sposob1ReakcjaNaAwarieZasilania());
+            gracz.getListaElektrowni().get(indeksElektrowni).odswiezReakcje();
         }else if (e.getSource() == okno.awaria2){
             gracz.getListaElektrowni().get(indeksElektrowni).setSposobNaReakcjeNaAwarie(2);
             gracz.getListaElektrowni().get(indeksElektrowni).setReakcjaNaAwarieZasilania(new Sposob2ReakcjaNaAwarieZasilania());
-
+            gracz.getListaElektrowni().get(indeksElektrowni).odswiezReakcje();
         }
+
     }
     public void przypisButtonow(ElektrowniaOknoAbstract panel, JFrame okno,int indeksEle,int miejsce,ArrayList<Elektrownia> lista,ListaEle rodzaj,Gracz gracz,boolean bool,ActionEvent e){
 

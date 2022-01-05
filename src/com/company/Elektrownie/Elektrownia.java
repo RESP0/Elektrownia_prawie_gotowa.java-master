@@ -100,6 +100,25 @@ public abstract class Elektrownia implements Serializable, ObliczDochodElektrown
 		}
 	}
 
+	public void odswiezReakcje(){
+		if (sposobNaReakcjeNaAwarie == 0){
+			reakcjaNaAwarieZasilania = new Sposob1ReakcjaNaAwarieZasilania();
+		}else if (sposobNaReakcjeNaAwarie == 1){
+			reakcjaNaAwarieZasilania = new Sposob1ReakcjaNaAwarieZasilania();
+		}else {
+			reakcjaNaAwarieZasilania = new Sposob2ReakcjaNaAwarieZasilania();
+		}
+
+		if(sposobNaReakcjeNaAtak == 0){
+			reakcjeNaAtakTerrorystyczny = new Sposob1ReakcjaNaAtakTerrorystyczny();
+		}else if(sposobNaReakcjeNaAtak == 1){
+			reakcjeNaAtakTerrorystyczny = new Sposob1ReakcjaNaAtakTerrorystyczny();
+		}else {
+			reakcjeNaAtakTerrorystyczny = new Sposob2ReakcjaNaAtakTerrorystyczny();
+		}
+
+	}
+
 	public int getLiczbaBlokow() { return liczbaBlokow; }
 
 	public void setLiczbaBlokow(int liczbaBlokow) { this.liczbaBlokow = liczbaBlokow; }
