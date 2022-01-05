@@ -6,9 +6,9 @@ import com.company.AtakTerro.Sposob2ReakcjaNaAtakTerrorystyczny;
 import com.company.Awarie.ReakcjaNaAwarieZasilania;
 import com.company.Awarie.Sposob1ReakcjaNaAwarieZasilania;
 import com.company.Awarie.Sposob2ReakcjaNaAwarieZasilania;
+import com.company.Head.Gracz;
 import com.company.Head.Pracownicy;
 import com.company.Head.Wlasciciel;
-import com.company.Wytwarzanie.WytwarzanieEnergiiElektrycznej;
 import com.company.uslugodawcy.DystrybutorPradu;
 import com.company.Dochod.ObliczDochodElektrowni;
 
@@ -98,6 +98,25 @@ public abstract class Elektrownia implements Serializable, ObliczDochodElektrown
 		for(int i = 0; i<pracownicy.length;i++){
 			pracownicy[i] = new Pracownicy();
 		}
+	}
+
+	public void odswiezReakcje(){
+		if (sposobNaReakcjeNaAwarie == 0){
+			reakcjaNaAwarieZasilania = new Sposob1ReakcjaNaAwarieZasilania();
+		}else if (sposobNaReakcjeNaAwarie == 1){
+			reakcjaNaAwarieZasilania = new Sposob1ReakcjaNaAwarieZasilania();
+		}else {
+			reakcjaNaAwarieZasilania = new Sposob2ReakcjaNaAwarieZasilania();
+		}
+
+		if(sposobNaReakcjeNaAtak == 0){
+			reakcjeNaAtakTerrorystyczny = new Sposob1ReakcjaNaAtakTerrorystyczny();
+		}else if(sposobNaReakcjeNaAtak == 1){
+			reakcjeNaAtakTerrorystyczny = new Sposob1ReakcjaNaAtakTerrorystyczny();
+		}else {
+			reakcjeNaAtakTerrorystyczny = new Sposob2ReakcjaNaAtakTerrorystyczny();
+		}
+
 	}
 
 	public int getLiczbaBlokow() { return liczbaBlokow; }
@@ -223,8 +242,8 @@ public abstract class Elektrownia implements Serializable, ObliczDochodElektrown
 	public ObliczDochodElektrowni getObliczDochodElektrowni() {
 		return obliczDochodElektrowni;
 	}
-	public void ReakcjaNaAtakTerrorystyczny(Elektrownia e){
-		reakcjeNaAtakTerrorystyczny.ReakcjaNaAtakTerrorystyczny(e);
+	public void ReakcjaNaAtakTerrorystyczny(Elektrownia e, Gracz g){
+		reakcjeNaAtakTerrorystyczny.ReakcjaNaAtakTerrorystyczny(e, g);
 	}
 
 	public void ReakcjeNaAwarieZasilania(Elektrownia e){

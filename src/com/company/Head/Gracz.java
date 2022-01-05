@@ -14,7 +14,7 @@ public class Gracz implements Serializable {
     ListyElektrowni listyElektrowni = new ListyElektrowni();
 
     public Gracz() {
-        balans = 100f;
+        balans = 100000f;
         listaElektrowni = new ArrayList<>(){
             {   //Atom
                 add(null);

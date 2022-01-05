@@ -14,11 +14,11 @@ public class ListyDostawcy implements Serializable {
 
     public ArrayList <DostawcaWegla> dostawcyWegla = new ArrayList<>(){
         {
-            add( new DostawcaWegla(1,wlasciciele.getWlasciciele().get(6)));
-            add( new DostawcaWegla(1,wlasciciele.getWlasciciele().get(5)));
-            add( new DostawcaWegla(1,wlasciciele.getWlasciciele().get(7)));
-            add( new DostawcaWegla(1,wlasciciele.getWlasciciele().get(9)));
-            add( new DostawcaWegla(1,wlasciciele.getWlasciciele().get(8)));
+            add( new DostawcaWegla(1.21f,new Wlasciciel()));
+            add( new DostawcaWegla(1.54f,new Wlasciciel()));
+            add( new DostawcaWegla(1.91f,new Wlasciciel()));
+            add( new DostawcaWegla(2.264f,new Wlasciciel()));
+            add( new DostawcaWegla(2.59f,new Wlasciciel()));
         }
     };
 
@@ -34,11 +34,11 @@ public class ListyDostawcy implements Serializable {
 
     public ArrayList <OdbiorcaOdpadow> odbiocyOdpadow = new ArrayList<>(){
         {
-            add( new OdbiorcaOdpadow(0,wlasciciele.getWlasciciele().get(3)));
-            add( new OdbiorcaOdpadow(1,wlasciciele.getWlasciciele().get(5)));
-            add( new OdbiorcaOdpadow(1,wlasciciele.getWlasciciele().get(7)));
-            add( new OdbiorcaOdpadow(1,wlasciciele.getWlasciciele().get(9)));
-            add( new OdbiorcaOdpadow(1,wlasciciele.getWlasciciele().get(8)));
+            add( new OdbiorcaOdpadow(3.3f,new Wlasciciel()));
+            add( new OdbiorcaOdpadow(3.47f,new Wlasciciel()));
+            add( new OdbiorcaOdpadow(3.62f,new Wlasciciel()));
+            add( new OdbiorcaOdpadow(3.73f,new Wlasciciel()));
+            add( new OdbiorcaOdpadow(3.8f,new Wlasciciel()));
         }
     };
 

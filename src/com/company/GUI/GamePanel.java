@@ -219,18 +219,20 @@ public class GamePanel extends JPanel implements ActionListener, ChangeListener 
             this.add(listaFoto, BorderLayout.CENTER);
         }
         else if(e.getSource()==gra.nastepnyDzien){
-            System.out.println("Nastepny dzien...");
             Random random = new Random();
             for (Elektrownia ele : gracz.getListaElektrowni()){
                 int tym = random.nextInt(0,100);
                 if (ele != null){
                     if (tym == 13){
-                        ele.ReakcjaNaAtakTerrorystyczny(ele);
+                        ele.ReakcjaNaAtakTerrorystyczny(ele, gracz);
+                        atakNotification(ele.getMiasto());
                     }
-                    if (tym < 10){
+                    if (tym < 2){
                         ele.ReakcjeNaAwarieZasilania(ele);
+                        awariaNotification(ele.getMiasto());
                     }
                     gracz.dodajBalans(ele.ObliczDochod(ele));
+
                 }
             }
 
@@ -250,12 +252,18 @@ public class GamePanel extends JPanel implements ActionListener, ChangeListener 
             gracz.odejmijBalans(listaAtom.getElektrownie().get(0).getCenaZakupu());
             zaktualizujStanKonta();
         }
+        else if (e.getSource() == listaAtom.kup1 && (gracz.getBalans() < listaAtom.getElektrownie().get(0).getCenaZakupu())){
+            listaAtom.komunikat();
+        }
 
         else if (e.getSource() == listaAtom.kup2 && gracz.getBalans() > listaAtom.getElektrownie().get(1).getCenaZakupu()){
             listaAtom.actionPerformed(e);
             gracz.zakupElektrowni(listaAtom.getNrEle(),1,listaAtom.getElektrownie().get(1));
             gracz.odejmijBalans(listaAtom.getElektrownie().get(1).getCenaZakupu());
             zaktualizujStanKonta();
+        }
+        else if (e.getSource() == listaAtom.kup2 && (gracz.getBalans() < listaAtom.getElektrownie().get(1).getCenaZakupu())){
+            listaAtom.komunikat();
         }
 
         else if (e.getSource() == listaAtom.kup3 && gracz.getBalans() > listaAtom.getElektrownie().get(2).getCenaZakupu()){
@@ -264,6 +272,9 @@ public class GamePanel extends JPanel implements ActionListener, ChangeListener 
             gracz.odejmijBalans(listaAtom.getElektrownie().get(2).getCenaZakupu());
             zaktualizujStanKonta();
         }
+        else if (e.getSource() == listaAtom.kup3 && (gracz.getBalans() < listaAtom.getElektrownie().get(2).getCenaZakupu())){
+            listaAtom.komunikat();
+        }
 
         else if (e.getSource() == listaAtom.kup4 && gracz.getBalans() > listaAtom.getElektrownie().get(3).getCenaZakupu()){
             listaAtom.actionPerformed(e);
@@ -271,12 +282,18 @@ public class GamePanel extends JPanel implements ActionListener, ChangeListener 
             gracz.odejmijBalans(listaAtom.getElektrownie().get(3).getCenaZakupu());
             zaktualizujStanKonta();
         }
+        else if (e.getSource() == listaAtom.kup4 && (gracz.getBalans() < listaAtom.getElektrownie().get(3).getCenaZakupu())){
+            listaAtom.komunikat();
+        }
 
         else if (e.getSource() == listaAtom.kup5 && gracz.getBalans() > listaAtom.getElektrownie().get(4).getCenaZakupu()){
             listaAtom.actionPerformed(e);
             gracz.zakupElektrowni(listaAtom.getNrEle(),4,listaAtom.getElektrownie().get(4));
             gracz.odejmijBalans(listaAtom.getElektrownie().get(4).getCenaZakupu());
             zaktualizujStanKonta();
+        }
+        else if (e.getSource() == listaAtom.kup5 && (gracz.getBalans() < listaAtom.getElektrownie().get(4).getCenaZakupu())){
+            listaAtom.komunikat();
         }
 
         //-------- Gazowa -------------------------
@@ -287,12 +304,18 @@ public class GamePanel extends JPanel implements ActionListener, ChangeListener 
             gracz.odejmijBalans(listaGaz.getElektrownie().get(0).getCenaZakupu());
             zaktualizujStanKonta();
         }
+        else if (e.getSource() == listaGaz.kup1 && (gracz.getBalans() < listaGaz.getElektrownie().get(0).getCenaZakupu())){
+            listaGaz.komunikat();
+        }
 
         else if (e.getSource() == listaGaz.kup2 && gracz.getBalans() > listaGaz.getElektrownie().get(1).getCenaZakupu()){
             listaGaz.actionPerformed(e);
             gracz.zakupElektrowni(listaGaz.getNrEle(),1,listaGaz.getElektrownie().get(1));
             gracz.odejmijBalans(listaGaz.getElektrownie().get(1).getCenaZakupu());
             zaktualizujStanKonta();
+        }
+        else if (e.getSource() == listaGaz.kup2 && (gracz.getBalans() < listaGaz.getElektrownie().get(1).getCenaZakupu())){
+            listaGaz.komunikat();
         }
 
         else if (e.getSource() == listaGaz.kup3 && gracz.getBalans() > listaGaz.getElektrownie().get(2).getCenaZakupu()){
@@ -301,6 +324,9 @@ public class GamePanel extends JPanel implements ActionListener, ChangeListener 
             gracz.odejmijBalans(listaGaz.getElektrownie().get(2).getCenaZakupu());
             zaktualizujStanKonta();
         }
+        else if (e.getSource() == listaGaz.kup3 && (gracz.getBalans() < listaGaz.getElektrownie().get(2).getCenaZakupu())){
+            listaGaz.komunikat();
+        }
 
         else if (e.getSource() == listaGaz.kup4 && gracz.getBalans() > listaGaz.getElektrownie().get(3).getCenaZakupu()){
             listaGaz.actionPerformed(e);
@@ -308,12 +334,18 @@ public class GamePanel extends JPanel implements ActionListener, ChangeListener 
             gracz.odejmijBalans(listaGaz.getElektrownie().get(3).getCenaZakupu());
             zaktualizujStanKonta();
         }
+        else if (e.getSource() == listaGaz.kup4 && (gracz.getBalans() < listaGaz.getElektrownie().get(3).getCenaZakupu())){
+            listaGaz.komunikat();
+        }
 
         else if (e.getSource() == listaGaz.kup5 && gracz.getBalans() > listaGaz.getElektrownie().get(4).getCenaZakupu()){
             listaGaz.actionPerformed(e);
             gracz.zakupElektrowni(listaGaz.getNrEle(),4,listaGaz.getElektrownie().get(4));
             gracz.odejmijBalans(listaGaz.getElektrownie().get(4).getCenaZakupu());
             zaktualizujStanKonta();
+        }
+        else if (e.getSource() == listaGaz.kup5 && (gracz.getBalans() < listaGaz.getElektrownie().get(4).getCenaZakupu())){
+            listaGaz.komunikat();
         }
 
         //-------- Weglowa -------------------------
@@ -324,12 +356,18 @@ public class GamePanel extends JPanel implements ActionListener, ChangeListener 
             gracz.odejmijBalans(listaWegiel.getElektrownie().get(0).getCenaZakupu());
             zaktualizujStanKonta();
         }
+        else if (e.getSource() == listaWegiel.kup1 && (gracz.getBalans() < listaWegiel.getElektrownie().get(0).getCenaZakupu())){
+            listaWegiel.komunikat();
+        }
 
         else if (e.getSource() == listaWegiel.kup2 && gracz.getBalans() > listaWegiel.getElektrownie().get(1).getCenaZakupu()){
             listaWegiel.actionPerformed(e);
             gracz.zakupElektrowni(listaWegiel.getNrEle(),1,listaWegiel.getElektrownie().get(1));
             gracz.odejmijBalans(listaWegiel.getElektrownie().get(1).getCenaZakupu());
             zaktualizujStanKonta();
+        }
+        else if (e.getSource() == listaWegiel.kup2 && (gracz.getBalans() < listaWegiel.getElektrownie().get(1).getCenaZakupu())){
+            listaWegiel.komunikat();
         }
 
         else if (e.getSource() == listaWegiel.kup3 && gracz.getBalans() > listaWegiel.getElektrownie().get(2).getCenaZakupu()){
@@ -338,6 +376,9 @@ public class GamePanel extends JPanel implements ActionListener, ChangeListener 
             gracz.odejmijBalans(listaWegiel.getElektrownie().get(2).getCenaZakupu());
             zaktualizujStanKonta();
         }
+        else if (e.getSource() == listaWegiel.kup3 && (gracz.getBalans() < listaWegiel.getElektrownie().get(2).getCenaZakupu())){
+            listaWegiel.komunikat();
+        }
 
         else if (e.getSource() == listaWegiel.kup4 && gracz.getBalans() > listaWegiel.getElektrownie().get(3).getCenaZakupu()){
             listaWegiel.actionPerformed(e);
@@ -345,12 +386,18 @@ public class GamePanel extends JPanel implements ActionListener, ChangeListener 
             gracz.odejmijBalans(listaWegiel.getElektrownie().get(3).getCenaZakupu());
             zaktualizujStanKonta();
         }
+        else if (e.getSource() == listaWegiel.kup4 && (gracz.getBalans() < listaWegiel.getElektrownie().get(3).getCenaZakupu())){
+            listaWegiel.komunikat();
+        }
 
         else if (e.getSource() == listaWegiel.kup5 && gracz.getBalans() > listaWegiel.getElektrownie().get(4).getCenaZakupu()){
             listaWegiel.actionPerformed(e);
             gracz.zakupElektrowni(listaWegiel.getNrEle(),4,listaWegiel.getElektrownie().get(4));
             gracz.odejmijBalans(listaWegiel.getElektrownie().get(4).getCenaZakupu());
             zaktualizujStanKonta();
+        }
+        else if (e.getSource() == listaWegiel.kup5 && (gracz.getBalans() < listaWegiel.getElektrownie().get(4).getCenaZakupu())){
+            listaWegiel.komunikat();
         }
 
         //-------- Fotowoltaiczna -------------------------
@@ -361,12 +408,18 @@ public class GamePanel extends JPanel implements ActionListener, ChangeListener 
             gracz.odejmijBalans(listaFoto.getElektrownie().get(0).getCenaZakupu());
             zaktualizujStanKonta();
         }
+        else if (e.getSource() == listaFoto.kup1 && (gracz.getBalans() < listaFoto.getElektrownie().get(0).getCenaZakupu())){
+            listaFoto.komunikat();
+        }
 
         else if (e.getSource() == listaFoto.kup2 && gracz.getBalans() > listaFoto.getElektrownie().get(1).getCenaZakupu()){
             listaFoto.actionPerformed(e);
             gracz.zakupElektrowni(listaFoto.getNrEle(),1,listaFoto.getElektrownie().get(1));
             gracz.odejmijBalans(listaFoto.getElektrownie().get(1).getCenaZakupu());
             zaktualizujStanKonta();
+        }
+        else if (e.getSource() == listaFoto.kup2 && (gracz.getBalans() < listaFoto.getElektrownie().get(1).getCenaZakupu())){
+            listaFoto.komunikat();
         }
 
         else if (e.getSource() == listaFoto.kup3 && gracz.getBalans() > listaFoto.getElektrownie().get(2).getCenaZakupu()){
@@ -375,6 +428,9 @@ public class GamePanel extends JPanel implements ActionListener, ChangeListener 
             gracz.odejmijBalans(listaFoto.getElektrownie().get(2).getCenaZakupu());
             zaktualizujStanKonta();
         }
+        else if (e.getSource() == listaFoto.kup3 && (gracz.getBalans() < listaFoto.getElektrownie().get(2).getCenaZakupu())){
+            listaFoto.komunikat();
+        }
 
         else if (e.getSource() == listaFoto.kup4 && gracz.getBalans() > listaFoto.getElektrownie().get(3).getCenaZakupu()){
             listaFoto.actionPerformed(e);
@@ -382,6 +438,9 @@ public class GamePanel extends JPanel implements ActionListener, ChangeListener 
             gracz.odejmijBalans(listaFoto.getElektrownie().get(3).getCenaZakupu());
             listaFoto.actionPerformed(e);
             zaktualizujStanKonta();
+        }
+        else if (e.getSource() == listaFoto.kup4 && (gracz.getBalans() < listaFoto.getElektrownie().get(3).getCenaZakupu())){
+            listaFoto.komunikat();
         }
 
         else if (e.getSource() == listaFoto.kup5 && (gracz.getBalans() > listaFoto.getElektrownie().get(4).getCenaZakupu())){
@@ -614,25 +673,31 @@ public class GamePanel extends JPanel implements ActionListener, ChangeListener 
     public void reakcjaAtakRadia(ElektrowniaOknoAbstract okno, Gracz gracz,int indeksElektrowni,ActionEvent e){
         if (e.getSource() == okno.atakBrak){
             gracz.getListaElektrowni().get(indeksElektrowni).setSposobNaReakcjeNaAtak(0);
+            gracz.getListaElektrowni().get(indeksElektrowni).odswiezReakcje();
         }else if (e.getSource() == okno.atak1){
             gracz.getListaElektrowni().get(indeksElektrowni).setSposobNaReakcjeNaAtak(1);
             gracz.getListaElektrowni().get(indeksElektrowni).setReakcjeNaAtakTerrorystyczny(new Sposob1ReakcjaNaAtakTerrorystyczny());
+            gracz.getListaElektrowni().get(indeksElektrowni).odswiezReakcje();
         }else if (e.getSource() == okno.atak2){
             gracz.getListaElektrowni().get(indeksElektrowni).setSposobNaReakcjeNaAtak(2);
             gracz.getListaElektrowni().get(indeksElektrowni).setReakcjeNaAtakTerrorystyczny(new Sposob2ReakcjaNaAtakTerrorystyczny());
+            gracz.getListaElektrowni().get(indeksElektrowni).odswiezReakcje();
         }
     }
     public void reakcjaAwariaRadia(ElektrowniaOknoAbstract okno, Gracz gracz,int indeksElektrowni,ActionEvent e){
         if (e.getSource() == okno.awariaBrak){
             gracz.getListaElektrowni().get(indeksElektrowni).setSposobNaReakcjeNaAwarie(0);
+            gracz.getListaElektrowni().get(indeksElektrowni).odswiezReakcje();
         }else if (e.getSource() == okno.awaria1){
             gracz.getListaElektrowni().get(indeksElektrowni).setSposobNaReakcjeNaAwarie(1);
             gracz.getListaElektrowni().get(indeksElektrowni).setReakcjaNaAwarieZasilania(new Sposob1ReakcjaNaAwarieZasilania());
+            gracz.getListaElektrowni().get(indeksElektrowni).odswiezReakcje();
         }else if (e.getSource() == okno.awaria2){
             gracz.getListaElektrowni().get(indeksElektrowni).setSposobNaReakcjeNaAwarie(2);
             gracz.getListaElektrowni().get(indeksElektrowni).setReakcjaNaAwarieZasilania(new Sposob2ReakcjaNaAwarieZasilania());
-
+            gracz.getListaElektrowni().get(indeksElektrowni).odswiezReakcje();
         }
+
     }
     public void przypisButtonow(ElektrowniaOknoAbstract panel, JFrame okno,int indeksEle,int miejsce,ArrayList<Elektrownia> lista,ListaEle rodzaj,Gracz gracz,boolean bool,ActionEvent e){
 
@@ -690,6 +755,16 @@ public class GamePanel extends JPanel implements ActionListener, ChangeListener 
         } else {
             panel.mocLabel.setForeground(Color.white);
         }
+        gracz.getListaElektrowni().get(indeksEle).setMocChwilowa(panel.mocSlider.getValue() * gracz.getListaElektrowni().get(indeksEle).getMocMaksymalna() / 100);
+
+    }
+
+    public void awariaNotification(String miasto){
+        JOptionPane.showMessageDialog(null,"Doszło do awarii elektrowni w " + miasto + "!","Komunikat",JOptionPane.INFORMATION_MESSAGE);
+    }
+
+    public void atakNotification(String miasto){
+        JOptionPane.showMessageDialog(null,"Doszło do ataku terrorystycznego na elektrownie w " + miasto + "!","Komunikat",JOptionPane.INFORMATION_MESSAGE);
     }
 
 

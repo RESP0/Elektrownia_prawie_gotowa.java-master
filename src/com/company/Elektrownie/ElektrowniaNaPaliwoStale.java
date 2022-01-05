@@ -2,7 +2,6 @@ package com.company.Elektrownie;
 
 import com.company.Dochod.ObliczDochodElektrowni;
 import com.company.Head.Wlasciciel;
-import com.company.Wytwarzanie.SpalaniePaliwKopalnych;
 import com.company.uslugodawcy.DystrybutorPradu;
 
 public abstract class ElektrowniaNaPaliwoStale extends Elektrownia  {
@@ -27,7 +26,7 @@ public abstract class ElektrowniaNaPaliwoStale extends Elektrownia  {
 		this.RodzajPaliwa = RodzajPaliwa;
 		this.ZuzyciePaliwa = ZuzyciePaliwa;
 		this.LiczbaBlokow = LiczbaBlokow;
-		this.kiedyDokupic = 0;
+		this.kiedyDokupic = kiedyDokupic;
 
 	}
 

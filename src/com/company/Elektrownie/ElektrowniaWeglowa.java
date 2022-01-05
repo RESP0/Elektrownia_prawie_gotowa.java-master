@@ -5,7 +5,6 @@ import com.company.Awarie.Sposob1ReakcjaNaAwarieZasilania;
 import com.company.Dochod.DochodWeglowa;
 import com.company.Head.Pracownicy;
 import com.company.Head.Wlasciciel;
-import com.company.Wytwarzanie.SpalaniePaliwKopalnych;
 import com.company.uslugodawcy.DostawcaWegla;
 import com.company.uslugodawcy.DystrybutorPradu;
 
@@ -67,6 +66,6 @@ public class ElektrowniaWeglowa extends ElektrowniaNaPaliwoStale  {
 
     @Override
     public float ObliczDochod(Elektrownia e) {
-        return 0;
+        return obliczDochodElektrowni.ObliczDochod(e);
     }
 }
